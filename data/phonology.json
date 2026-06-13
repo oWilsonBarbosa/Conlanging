@@ -1,0 +1,40 @@
+{
+  "language": "Proto-Sevelian",
+  "comment": "Single source of truth for the phoneme inventory and root phonotactics. Prose documentation: proto/01-phonology.md, proto/02-phonotactics.md.",
+  "consonants": {
+    "stops": {
+      "voiceless": ["p", "t", "k", "kʷ"],
+      "voiced": ["b", "d", "g", "gʷ"],
+      "aspirated": ["pʰ", "tʰ", "kʰ", "kʷʰ"]
+    },
+    "laryngeals": ["h₁", "h₂", "h₃"],
+    "fricatives": ["s"],
+    "resonants": ["m", "n", "r", "l", "y", "w"]
+  },
+  "weights": {
+    "p": 2.0, "t": 3.0, "k": 3.0, "kʷ": 1.5,
+    "b": 0.3, "d": 2.0, "g": 1.5, "gʷ": 0.8,
+    "pʰ": 1.0, "tʰ": 1.5, "kʰ": 1.5, "kʷʰ": 0.6,
+    "h₁": 1.2, "h₂": 1.5, "h₃": 0.8,
+    "s": 3.0,
+    "m": 2.0, "n": 2.5, "r": 2.5, "l": 2.0, "y": 1.5, "w": 2.0
+  },
+  "vowels": {
+    "short": ["e", "o", "a"],
+    "long": ["ē", "ō", "ā"]
+  },
+  "syllabic_resonants": {
+    "m": "m̥", "n": "n̥", "r": "r̥", "l": "l̥", "y": "i", "w": "u"
+  },
+  "root": {
+    "onset_resonant_probability": 0.25,
+    "coda_resonant_probability": 0.3
+  },
+  "constraints": [
+    "C1 and C2 must differ",
+    "at most one voiced stop per root",
+    "onset cluster C1R requires non-resonant C1",
+    "no identical resonant on both sides of the root vowel",
+    "no geminates"
+  ]
+}
