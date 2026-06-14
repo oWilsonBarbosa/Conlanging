@@ -24,8 +24,9 @@ applying (see `../diachrony.md`):
 - **Past = initial-syllable reduplication** → initial cluster/diphthong (*tapa* →
   **taipa**).
 
-Replaces the *‑pa/‑ta* suffix and augment ideas. Coda resolution = place vocalization
-(labial→u, velar→u, coronal→i; identical→geminate; sonorant/s = legal coda).
+Replaces the *‑pa/‑ta* suffix and augment ideas. Coda resolution: **labial → u,
+non-labial obstruent → i**; identical → geminate; nasals trigger **post-nasal voicing +
+place assimilation** (*manda*, *nanga*); sonorant/s = legal coda.
 
 - **Future = non-past perfective** (Slavic-style emergent future). **Open.**
 - Open: reduplication now marks **tense**, so the **perfect** aspect needs another
