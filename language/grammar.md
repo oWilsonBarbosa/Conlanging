@@ -111,7 +111,50 @@ _Case, number, class/gender — TBD (Lesson 05)._
 
 ## Verbs
 
-_TAM, agreement, valency — TBD (Lessons 04, 09)._
+> Tense + aspect are set (L04); **mood, voice, agreement, valency** still TBD.
+
+### Tense — absolute: past / non-past
+
+Binary. **Past** = an **augment prefix** (provisional *a‑*, Greek-style) in the tense
+prefix slot; **non-past** = unmarked (∅).
+
+### Aspect — perfective / imperfective / perfect (three stems)
+
+Greek/Sanskrit-style aspect stems, built from the existing machinery:
+
+| Aspect | Built with | *tap‑* "strike" |
+|---|---|---|
+| **Imperfective** (ongoing/habitual) | nasal infix ‹-N-› | *tanpa* |
+| **Perfective** (whole/packaged) | plain/ablaut grade | *tappa* |
+| **Perfect** (prior + relevant) | **reduplication** + ā-grade | *tatāpa* |
+
+Consonant gradation falls out automatically: *tappa* (geminate, strong) · *tanpa*
+(singleton — infix fills the coda) · *tatāpa* (singleton — after a heavy nucleus).
+
+### Finite TAM grid (2 × 3)
+
+| | Perfective | Imperfective | Perfect |
+|---|---|---|---|
+| **Past** (*a‑*) | aorist — *a-tappa* "struck" | imperfect — *a-tanpa* "was striking" | pluperfect — *a-tatāpa* "had struck" |
+| **Non-past** (∅) | **future** — *tappa* "will strike" | present — *tanpa* "strikes" | pres. perfect — *tatāpa* "has struck" |
+
+> **Future is emergent:** non-past + perfective reads as future (Slavic-style); no
+> dedicated future tense needed. *(Alternative: a separate prospective marker — open.)*
+
+### Relative tense — non-finite forms
+
+Participles/converbs encode time **relative to the matrix clause** (not to "now"):
+
+| Relative | Meaning | Aspect pairing |
+|---|---|---|
+| **Anterior** | before the main event ("having struck") | perfect / perfective |
+| **Simultaneous** | during ("while striking") | imperfective |
+| **Posterior** | after / about to ("about to strike") | prospective |
+
+### Still TBD
+
+Mood (indic / subjunctive / optative / imperative), voice (active / middle / …),
+person agreement (mono- vs polypersonal), valency/derivation. → rest of L04 + L09.
 
 ## Syntax
 

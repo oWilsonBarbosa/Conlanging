@@ -14,7 +14,7 @@ Copy [`_template.md`](_template.md) for each new lesson.
 | 01 | Introduction to Conlanging (+ The Greatest Conlang Ever) | [01](01-introduction.md) | — (goals & aesthetic) |
 | 02 | Phonology 1 | [02](02-phonology-1.md) | PHOIBLE, CLTS, BDPROTO |
 | 03 | Morphology 1 | [03](03-morphology-1.md) · [03b](03b-morphophonology.md) | WALS, Grambank, MorphyNet, PBase |
-| 04 | Verbs 1 | _todo_ | WALS, Grambank |
+| 04 | Verbs 1 | [04](04-verbs-1.md) (tense+aspect; mood/voice/agr TBD) | WALS, Grambank |
 | 05 | Nouns 1 — Case / Number / Class / Alignment | _todo_ | WALS, Grambank |
 | 06 | Phonology 2 | [06](06-phonology-2.md) | Phonotacticon, PBase, CLTS |
 | 07 | Lexicon 1 | _todo_ | Concepticon, WOLD |
