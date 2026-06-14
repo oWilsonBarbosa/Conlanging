@@ -107,7 +107,33 @@ Agglutination feeds the Lesson 06 rules automatically:
 
 ## Nouns
 
-_Case, number, class/gender — TBD (Lesson 05)._
+### Alignment — split-ergative by aspect
+
+Alignment tracks the **verb's aspect**:
+
+- **Imperfective** clauses → **nominative–accusative** (S = A unmarked, P marked).
+- **Perfective / perfect** clauses → **ergative–absolutive** (S = P unmarked, A marked).
+
+Economical core: one unmarked **DIRECT** case + **ERGATIVE** + **ACCUSATIVE**.
+
+| role | Imperfective | Perfective / Perfect |
+|---|---|---|
+| **S** (intr. subject) | DIRECT | DIRECT |
+| **A** (tr. agent) | DIRECT | **ERGATIVE** |
+| **P** (tr. patient) | **ACCUSATIVE** | DIRECT |
+
+So **S is always unmarked**; the split surfaces on **A** (ergative only in pfv/perfect)
+and **P** (accusative only in impfv) — the Hindi/Georgian aspect-split pattern. Verb
+**agreement** will likely split in parallel (track the unmarked argument) — TBD with the
+agreement system.
+
+> Semantic fit: in the perfective the **agent** is the marked (ergative) one,
+> foregrounding the completed result — matching perfective semantics.
+
+### Case markers, number, class
+
+Case is **suffixal** (DIRECT / ERG / ACC + obliques); the markers are to be set (ideally
+derived diachronically). **Number** and **noun class** — TBD.
 
 ## Verbs
 
