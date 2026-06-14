@@ -3,8 +3,9 @@
 > Living reference — current state of the sound system. Updated from the Phonology
 > lessons (CU 02, 06, 10, 11). Rationale and sources live in [`design/`](design/).
 >
-> Status: **inventory (Lesson 02) and phonotactics (Lesson 06) set.** Suprasegmentals
-> and processes still TBD (Lessons 10/11).
+> Status: **inventory (L02) + phonotactics (L06) set; revised in the morphophonology
+> pass (see [`design/03b-morphophonology.md`](design/03b-morphophonology.md)).**
+> Suprasegmentals & processes still TBD (L10/11).
 
 ## Consonants (20)
 
@@ -22,18 +23,18 @@
 
 - **Three-way laryngeal contrast** (aspirated / voiceless / voiced) on the stops —
   the Classical Greek system (φ π β, θ τ δ, χ κ γ), plus a glottal stop /ʔ/.
-- **Fricatives f s x h** span labial→glottal; all voiceless (no voiced fricatives),
-  keeping an archaic, "breathy" texture.
+- **Fricatives f s x h** span labial→glottal; all voiceless.
 - All segments validated as well-formed BIPA against CLTS.
 
 ## Vowels
 
-A minimal **/a i u/** triangle, contrasting in **length** and **nasality**.
+A minimal **/a i u/** triangle, contrasting in **length** only.
+(Nasal vowels were **removed** in the morphophonology revision.)
 
 | | Front | Central | Back |
 |---|---|---|---|
-| Close | i  iː  ĩ | | u  uː  ũ |
-| Open | | a  aː  ã | |
+| Close | i · iː | | u · uː |
+| Open | | a · aː | |
 
 **Diphthongs (6, all falling / head-initial** — first element is the moraic nucleus,
 second is an offglide):
@@ -42,6 +43,8 @@ second is an offglide):
 
 > Note: cross-linguistically *ia/ua* are usually *rising*; Alantian deliberately treats
 > all six as falling (prominence on the first mora) for a uniform, chant-like cadence.
+> The vowels, diphthongs, and syllabic sonorants form the **ablaut grade ladder** used
+> in derivation/inflection — see `grammar.md` → Morphology.
 
 ## Syllable nuclei & the moraic system
 
@@ -49,42 +52,48 @@ Alantian is **mora-timed**; weight is phonemic and comes from several sources:
 
 | Nucleus / structure | Moras |
 |---|---|
-| Short vowel (a i u) or short nasal vowel | 1 |
+| Short vowel (a i u) | 1 |
 | **Syllabic sonorant** (m̩ n̩ l̩ r̩) | 1 |
 | Long vowel (aː iː uː) | 2 |
 | Diphthong (ai, au, …) | 2 |
-| Coda consonant, or **geminate** (mm nn ll rr ss) | +1 |
+| Coda consonant, or **geminate** (any C: pp tt kk … mm ll ss) | +1 |
 
 **Syllabic sonorants** (Sanskrit/PIE-style *ṛ ḷ ṃ ṇ*) can head a syllable on their own,
-adding a ringing, vowel-like resonance. Geminates add weight on the consonant side but
-are limited to the coda-legal set (see Phonotactics).
+adding a ringing, vowel-like resonance. Geminates add weight on the consonant side, and
+**any consonant may geminate** (see Phonotactics).
 
 ## Phonotactics
 
-### Syllable template — (C)V(C)
+### Syllable template — (C)V(C₁), basically CV(R)
 
 Optional single onset, obligatory nucleus, optional single coda. **No tautosyllabic
-clusters.** (WALS 12A: *moderately complex*, at the simple end — codas allowed, onset
-clusters not.)
+clusters.** The coda **C₁** is licensed only if it is:
 
-- **Onset:** any single consonant (optional).
-- **Nucleus:** short / long / nasal vowel, a falling diphthong, or a syllabic sonorant.
-- **Coda:** at most one of **{m n l r s}** — sonorants + /s/ (realized [ŋ] before a velar).
+1. a **sonorant R {m n l r}** — the basic, unmarked coda (so the core shape is **CV(R)**;
+   realized [ŋ] before a velar); **or**
+2. **/s/** — the one plain obstruent that may close a syllable; **or**
+3. the **first half of a geminate** — *any* consonant, when the following onset is
+   identical (C₁C₁).
 
-> **Automatic consequence:** since only {m n l r s} may close a syllable, **every
-> obstruent (stops, f x h, ʔ) is onset-only.** Aspirates and voiced stops never end a
-> syllable — so syllables open clean and close on a ringing or sibilant sound.
+> So a plain obstruent coda is illegal (\*at.ka), but a **geminate** (at.ta), a
+> **sonorant** coda (an.ka), or an **/s/** coda (as.ka) are all fine. This is the
+> Japanese-style "coda = moraic sonorant / sibilant / geminate-half" pattern.
+
+> **Roots vs. syllables:** a **root** may be **CVRC** (L03), but that is a *morpheme*
+> shape, not a syllable. A CVRC root's final C surfaces as an **onset** under suffixation
+> (*tarn-a* → *tar.na*) and resolves word-finally via a syllabic sonorant / epenthesis.
 
 ### Medial clusters (coda + onset)
 
-Clusters occur only across a syllable boundary — a legal coda + any onset:
-*an.ta, ar.kʰa, as.pa, al.ma, is.tʰu*. Permitted shape: **{m n l r s} + C**.
+Across a syllable boundary: **{m n l r s} + C**, plus geminates **C₁C₁** —
+*an.ta, as.pa, al.ma, at.ta, ak.kʰa*.
 
 ### Geminates
 
-A geminate = coda + identical onset, so geminates are limited to the coda-legal set:
-**mm nn ll rr ss** (*amma, anna, alla, arra, assa*). Geminate stops are impossible
-(no stop coda) — reinforcing the resonant aesthetic.
+**Any consonant may geminate** (coda-half + identical onset):
+pp tt kk · bb dd gg · ff ss xx · mm nn ll rr. The glides **/w j/**, **/h/**, and **/ʔ/**
+do **not** geminate. A geminate adds one mora (heavy syllable). An aspirated geminate
+surfaces as unaspirated hold + aspirated release [p.pʰ] (written *pph, tth, kkh*).
 
 ### Hiatus resolution
 
@@ -100,11 +109,12 @@ Vowel + vowel never surfaces as two open syllables; it resolves:
 
 - **Light (1 mora):** (C)V, or a syllabic sonorant (C̩).
 - **Heavy (2 moras):** (C)Vː, (C)+diphthong, or a closed syllable (C)VC.
-- Syllabic sonorants surface where a sonorant has no adjacent vowel (PIE/Sanskrit-style).
 
-### Settled from Lesson 02
+### Revised from earlier lessons (morphophonology pass)
 
-- **Nasal vowels are short only** — long-nasal vowels (ãː ĩː ũː) do **not** occur.
+- **Nasal vowels removed** — vowels contrast in length only.
+- **Geminates generalized** — *any* consonant may geminate (not just sonorants + s).
+- **Coda licensing** restated as CV(R) + /s/ + geminate-half.
 
 ## Suprasegmentals
 
@@ -113,15 +123,17 @@ the Greek/Vedic model, weight-sensitive **pitch accent** is a strong candidate._
 
 ## Phonological processes
 
-_Allophony (e.g. /n/ → [ŋ] before velars), assimilation — TBD._
+_Allophony (e.g. /n/ → [ŋ] before velars), assimilation — TBD. **Consonant gradation**
+and **vowel harmony** are under decision (see `grammar.md` → Morphology)._
 
 ## Romanization (provisional)
 
 - Aspirated stops → digraphs **ph th kh**; plain **p t k**, voiced **b d g**;
   glottal stop /ʔ/ → **ʼ**.
 - Fricatives **f s x h** (x = velar [x]).
-- Long vowels → macron **ā ī ū**; nasal vowels → tilde **ã ĩ ũ**.
+- Long vowels → macron **ā ī ū**.
 - Syllabic sonorants → under-dot **ṃ ṇ ḷ ṛ**.
-- Geminates → doubled letters; diphthongs written as the vowel pair (*ai, au, …*).
-- Examples: /tʰaː.ras/ → *thāras* · /al.la/ → *alla* · /mi.ʔũ/ → *miʼũ* (hiatus break) ·
+- Geminates → doubled letters (aspirated geminates → *pph tth kkh*); diphthongs written
+  as the vowel pair (*ai, au, …*).
+- Examples: /tʰaː.ras/ → *thāras* · /al.la/ → *alla* · /at.ti/ → *atti* ·
   /ta.r̩n/ → *taṛn* (syllabic *ṛ*) · /pʰai.tu/ → *phaitu* (diphthong).
