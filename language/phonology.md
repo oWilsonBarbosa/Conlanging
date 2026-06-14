@@ -53,7 +53,7 @@ Alantian is **mora-timed**; weight is phonemic and comes from several sources:
 | **Syllabic sonorant** (m̩ n̩ l̩ r̩) | 1 |
 | Long vowel (aː iː uː) | 2 |
 | Diphthong (ai, au, …) | 2 |
-| Coda consonant / **geminate** (pp, tt, mm, ll, …) | +1 |
+| Coda consonant, or **geminate** (mm nn ll rr ss) | +1 |
 
 **Syllabic sonorants** (Sanskrit/PIE-style *ṛ ḷ ṃ ṇ*) can head a syllable on their own,
 adding a ringing, vowel-like resonance. Geminates add weight on the consonant side but
@@ -123,4 +123,5 @@ _Allophony (e.g. /n/ → [ŋ] before velars), assimilation — TBD._
 - Long vowels → macron **ā ī ū**; nasal vowels → tilde **ã ĩ ũ**.
 - Syllabic sonorants → under-dot **ṃ ṇ ḷ ṛ**.
 - Geminates → doubled letters; diphthongs written as the vowel pair (*ai, au, …*).
-- Example: /kʰaːr̩.ʔũ/ → *khārʼũ*.
+- Examples: /tʰaː.ras/ → *thāras* · /al.la/ → *alla* · /mi.ʔũ/ → *miʼũ* (hiatus break) ·
+  /ta.r̩n/ → *taṛn* (syllabic *ṛ*) · /pʰai.tu/ → *phaitu* (diphthong).
