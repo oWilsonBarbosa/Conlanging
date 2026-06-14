@@ -16,7 +16,7 @@ Copy [`_template.md`](_template.md) for each new lesson.
 | 03 | Morphology 1 | _todo_ | WALS, Grambank, MorphyNet |
 | 04 | Verbs 1 | _todo_ | WALS, Grambank |
 | 05 | Nouns 1 — Case / Number / Class / Alignment | _todo_ | WALS, Grambank |
-| 06 | Phonology 2 | _todo_ | Phonotacticon, PBase, CLTS |
+| 06 | Phonology 2 | [06](06-phonology-2.md) | Phonotacticon, PBase, CLTS |
 | 07 | Lexicon 1 | _todo_ | Concepticon, WOLD |
 | 08 | Documentation 1 | _todo_ | — (method) |
 | 09 | Verbs 2 | _todo_ | WALS, Grambank |
