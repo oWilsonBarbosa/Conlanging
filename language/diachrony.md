@@ -18,7 +18,10 @@ deferred suprasegmental decision (L10/11) — modern stress likely descends from
 | **S2** | Post-nasal voicing | A voiceless stop **voices after a nasal** coda: *m‑t > m‑d, *n‑k > n‑g. |
 | **S3** | Nasal place assimilation | A nasal coda takes the **place of the following stop**: m → n /_d, n → ŋ /_g, etc. |
 | **S4a** | Gemination | A coda stop + an **identical** onset → a geminate (p‑p → pp). |
-| **S4b** | Obstruent vocalization | A remaining **coda obstruent** becomes a glide: **labial → u**, **non-labial (coronal/velar) → i**, forming a diphthong with the preceding vowel. |
+| **S4b** | Obstruent vocalization | A remaining **coda obstruent** becomes a glide: **labial → u**, **non-labial (coronal/velar) → i**, forming a diphthong. Its **[voice] transfers** to the next stop (*bata* → *bauda*, *waka* → *wauga*). |
+| **S5** | Intervocalic voicing | A voiceless stop **between vowels** voices: p→b, t→d, k→g (*tana* → *tadan*, *taja* → *tadai*). |
+| **S6** | /h/ loss + lengthening | /h/ is lost, **lengthening** the preceding vowel (compensatory): *hata* → *hāta*. |
+| **S7** | Initial /ʔ/ loss | Word-initial /ʔ/ deletes: *ʔata* → *āta / atta*. |
 
 **Codas that survive untouched:** sonorant liquids /l r/, nasals (→ homorganic via S2–S3),
 and /s/. After these changes the only possible codas are **sonorant, /s/, or a
@@ -73,17 +76,37 @@ When the vocalized glide matches the stem vowel, the result is a **long vowel**:
 | *kupa* (u) | **kuipa** | k→i, u+i → ui |
 | *pita* (i) | **piuta** | p→u, i+u → iu |
 
-### Weak consonants (w j h ʔ) — *proposed, open*
+### PST has two routes (working analysis — confirm conditioning)
 
-These cannot geminate (NPST) or survive as a coda (PST). **Proposal:** they leave their
-weight as **vowel length** (compensatory), fitting the moraic system:
+- **Syncope route** — C₁ becomes a coda and resolves (vocalize / legal coda / nasal-cluster).
+- **Apocope route** — the final vowel drops; the medial C₁ stays **intervocalic** and
+  voices (S5).
 
-- *hapa* (h-initial) PST → **hāpa** (h-coda → ∅ + lengthening)
-- *ʔapa* (ʔ-initial) PST → **ʔāpa**
-- *sawa* (w-medial) N.PST → **sāwa** (length, not \*ww)
+The choice is conditioned by C₁/C₂ (e.g. whether C₁ can stand as a coda before C₂) — the
+exact rule is **to be pinned down** (see Open).
 
-Edge case to decide: **nasal + nasal** stems (e.g. *mana*) give PST *manna* = N.PST
-*manna* — a past/non-past **syncretism**; keep, or repair?
+### Full worked set (PST / N.PST)
+
+| stem | PST | N.PST | stem | PST | N.PST |
+|---|---|---|---|---|---|
+| *hata* | hāta | hatta | *masa* | mansa | massa |
+| *taha* | tadā | tā | *jala* | jaila | jalla |
+| *husu* | hūsu | hussu | *nawa* | nanu | nawa |
+| *suhu* | **sūssu** ⚠ | sūhu | *ʔata* | āta | atta |
+| *tana* | tadan | tanna | *bata* | bauda | batta |
+| *nata* | nanda | natta | *hala* | hāla | halla |
+| *raka* | rarka | rakka | *sawa* | sasu | sawa |
+| *kara* | kaira | karra | *hapa* | hāpa | happa |
+| *pasa* | pausa | passa | *taja* | tadai | taia |
+| *waka* | wauga | wakka | *pawa* | **pabu** ⚠ | pawa |
+
+⚠ = derivation to confirm with the designer.
+
+### Open
+
+- **PST route conditioning:** exactly when does syncope vs apocope apply?
+- *suhu* → **sūssu** and *pawa* → **pabu**: confirm the intermediate steps.
+- **nasal + nasal** stems (*mana*) → PST = N.PST = *manna* (syncretism); keep or repair?
 
 ## What the modern grammar inherits (residue)
 
