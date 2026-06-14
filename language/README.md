@@ -1,6 +1,7 @@
-# The Conlang
+# Alantian
 
-> **Working name:** _TBD_ — rename throughout when you pick one.
+> **Working name:** Alantian — an a-priori language of a fictional ancient culture.
+> Aesthetic: *ancient, elevated, moraic, resonant.*
 
 An original constructed language built by following the
 [Conlangs University curriculum](https://sites.google.com/view/conlangs-university/lessons)
