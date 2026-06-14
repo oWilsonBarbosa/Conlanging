@@ -124,18 +124,22 @@ applies — see [`diachrony.md`](diachrony.md)):
 
 (This replaces the earlier *‑pa/‑ta* suffix and augment ideas — tense is **reduplicative**.)
 
-### Aspect — perfective / imperfective / perfect (three stems)
+### Aspect — by stem vowel a / i / u (under design)
 
-Greek/Sanskrit-style aspect stems, built from the existing machinery:
+Aspect is marked **non-concatenatively, by the stem/theme vowel** (**a / i / u** — a
+root-and-pattern / ablaut device) and combines with the reduplicative **tense**: a
+(largely consonantal) root takes an aspect vowel, then reduplicates an edge for tense.
 
-| Aspect | Built with | *tap‑* "strike" |
+| root *p‑k*, aspect = | PST (initial redup) | N.PST (final redup) |
 |---|---|---|
-| **Imperfective** (ongoing/habitual) | nasal infix ‹-N-› | *tanpa* |
-| **Perfective** (whole/packaged) | plain/ablaut grade | *tappa* |
-| **Perfect** (prior + relevant) | **reduplication** + ā-grade | *tatāpa* |
+| **a** | *pauka* | *pakka* |
+| **u** | *pūka* | *pakku* |
+| **i** | *piuka* | *pakki* |
 
-Consonant gradation falls out automatically: *tappa* (geminate, strong) · *tanpa*
-(singleton — infix fills the coda) · *tatāpa* (singleton — after a heavy nucleus).
+There may also be a **bare / un-reduplicated** stem (e.g. *kala / kalu / kali*, or
+*taga*) as a third TAM value — giving a **3 × 3** grid (aspect × form), all run through
+the S1–S8 sound laws. **Open:** the aspect→meaning mapping (imperfective / perfective /
+perfect) and the syncope-vs-apocope ambiguity for some stems.
 
 ### Finite TAM grid (2 × 3)
 

@@ -106,9 +106,17 @@ Licitness follows the proto-language's cluster phonotactics.
 | *pasa* | pausa | passa | *taja* | tadai | taia |
 | *waka* | wauga | wakka | *pawa* | **pabu** | pawa |
 
-### Open
+### Resolved
 
-- **nasal + nasal** stems (*mana*) → PST = N.PST = *manna* (syncretism); keep or repair?
+- **nasal + nasal** stems (*mana*): PST **maman** (apocope, *mamana* → *maman*),
+  N.PST **manna** (*manana* → *manna*) — distinct, no syncretism.
+
+### Open / in design
+
+- **Aspect** marked by the **stem vowel a / i / u** (root-and-pattern / ablaut), combined
+  with the reduplicative tense (and a possible bare form) → a 3×3 paradigm. See
+  `grammar.md` → Verbs. Aspect→meaning mapping and the syncope/apocope ambiguity for some
+  stems still to be fixed.
 
 ## What the modern grammar inherits (residue)
 
