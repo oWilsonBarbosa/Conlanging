@@ -115,12 +115,14 @@ _Case, number, class/gender — TBD (Lesson 05)._
 
 ### Tense — absolute: past / non-past
 
-Binary, marked **suffixally** and surfacing through regular sound change (see
-[`diachrony.md`](diachrony.md)): **non-past** *‑pa*, **past** *‑ta*, added to the *‑a*
-stem, after which post-tonic syncope + coda resolution apply. (The earlier augment-prefix
-idea is **retired**.)
+Binary, built by **reduplicating one edge of the stem** (regular sound change then
+applies — see [`diachrony.md`](diachrony.md)):
 
-> e.g. *tápa‑pa* → **tappa** (N.PST) · *tápa‑ta* → **tauta** (PST).
+- **Non-past = final-syllable reduplication** → a **medial geminate**: *tapa* → **tappa**.
+- **Past = initial-syllable reduplication** → an **initial cluster / diphthong**:
+  *tapa* → *tatpa* → **taipa**.
+
+(This replaces the earlier *‑pa/‑ta* suffix and augment ideas — tense is **reduplicative**.)
 
 ### Aspect — perfective / imperfective / perfect (three stems)
 
@@ -139,15 +141,16 @@ Consonant gradation falls out automatically: *tappa* (geminate, strong) · *tanp
 
 | | Perfective | Imperfective | Perfect |
 |---|---|---|---|
-| **Past** (*‑ta*) | aorist "struck" | imperfect "was striking" | pluperfect "had struck" |
-| **Non-past** (*‑pa*) | **future** "will strike" | present "strikes" | pres. perfect "has struck" |
+| **Past** (initial redup) | aorist "struck" | imperfect "was striking" | pluperfect "had struck" |
+| **Non-past** (final redup) | **future** "will strike" | present "strikes" | pres. perfect "has struck" |
 
 > **Future is emergent:** non-past + perfective reads as future (Slavic-style); no
 > dedicated future tense needed. *(Alternative: a separate prospective marker — open.)*
 
-> **Realisation note:** tense is the **suffix** *‑pa*/*‑ta* (diachronic — see
-> `diachrony.md`); e.g. N.PST *tap‑* = **tappa**, PST = **tauta**. How these endings
-> combine with the aspect stems (infix / reduplication) is still open.
+> **Realisation note:** tense = **edge reduplication** (diachronic — see `diachrony.md`):
+> N.PST *tap‑* = **tappa**, PST = **taipa**. Since reduplication now marks tense, the
+> **perfect** aspect needs another exponent (ablaut grade?) — open, with the rest of the
+> tense × aspect interaction.
 
 ### Relative tense — non-finite forms
 

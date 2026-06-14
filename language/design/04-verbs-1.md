@@ -15,16 +15,21 @@
   - Perfect ← **reduplication + ā-grade** (*tatāpa*) — adopts reduplication (the one new tool)
 - **Finite TAM grid** = past/non-past × pfv/ipfv/perfect (2 × 3, six cells).
 
-## Tense realisation — diachronic & suffixal (revised)
+## Tense realisation — reduplicative & diachronic (revised)
 
-Tense is **suffixal**, derived by sound change (see `../diachrony.md`): **N.PST** *‑pa*,
-**PST** *‑ta* on the *‑a* stem; post-tonic syncope + coda resolution then apply
-(*tápa‑pa* → **tappa**; *tápa‑ta* → **tauta**). The **augment prefix is retired**.
+Tense is built by **reduplicating one edge** of the stem, with regular sound change
+applying (see `../diachrony.md`):
 
-- **Future = non-past perfective** (Slavic-style emergent future); alternative is a
-  dedicated prospective marker. **Open.**
-- Open: how tense suffixes interact with aspect stems (infix/reduplication); S2c
-  (non-labial coda resolution).
+- **Non-past = final-syllable reduplication** → medial geminate (*tapa* → **tappa**).
+- **Past = initial-syllable reduplication** → initial cluster/diphthong (*tapa* →
+  **taipa**).
+
+Replaces the *‑pa/‑ta* suffix and augment ideas. Coda resolution = place vocalization
+(labial→u, velar→u, coronal→i; identical→geminate; sonorant/s = legal coda).
+
+- **Future = non-past perfective** (Slavic-style emergent future). **Open.**
+- Open: reduplication now marks **tense**, so the **perfect** aspect needs another
+  exponent (ablaut?); tense × aspect interaction generally.
 
 ## Worked paradigm — root *tap‑* "to strike"
 
