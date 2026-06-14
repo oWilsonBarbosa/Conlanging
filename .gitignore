@@ -1,0 +1,22 @@
+# --- Third-party datasets (not committed; fetch with scripts/fetch_data.sh) ---
+data/*.zip
+data/*.tar.gz
+# Extracted dataset directories
+data/*/
+!data/README.md
+!data/sources.csv
+
+# --- Course materials (third-party; not redistributed here) ---
+course/*.pdf
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+.venv/
+venv/
