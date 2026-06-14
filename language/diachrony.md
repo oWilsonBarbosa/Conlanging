@@ -47,6 +47,44 @@ So **non-past always shows a medial geminate**, while **past shows the root's fi
 consonant as a coda** — surfacing as a diphthong (obstruent → glide), a prenasalized
 voiced cluster (nasal), a geminate (identical), or a plain *s*-cluster.
 
+### More stem classes (a-stems)
+
+| stem | PST (initial redup) | N.PST (final redup) | note |
+|---|---|---|---|
+| *pata* | **pauta** | **patta** | labial p→u |
+| *bada* (voiced) | **bauda** | **badda** | voiced stops vocalize by place |
+| *gaba* (voiced) | **gaiba** | **gabba** | g→i |
+| *tʰapʰa* (aspir.) | **taipha** | **tappha** | coda de-aspirates (tʰ→i); NPST geminate aspirate [p·pʰ] |
+| *fata* (fric.) | **fauta** | **fatta** | f→u |
+| *xapa* (fric.) | **xaipa** | **xappa** | x→i |
+| *lapa* (liquid) | **lalpa** | **lappa** | l = legal coda |
+| *rasa* (liquid) | **rarsa** | **rassa** | r = legal coda |
+| *wapa* (glide) | **waupa** | **wappa** | w→u |
+| *japa* (glide) | **jaipa** | **jappa** | j→i |
+
+### Vowel interactions → long vowels
+
+When the vocalized glide matches the stem vowel, the result is a **long vowel**:
+
+| stem | PST | derivation |
+|---|---|---|
+| *kipa* (i) | **kīpa** | k→i, i+i → ī |
+| *puka* (u) | **pūka** | p→u, u+u → ū |
+| *kupa* (u) | **kuipa** | k→i, u+i → ui |
+| *pita* (i) | **piuta** | p→u, i+u → iu |
+
+### Weak consonants (w j h ʔ) — *proposed, open*
+
+These cannot geminate (NPST) or survive as a coda (PST). **Proposal:** they leave their
+weight as **vowel length** (compensatory), fitting the moraic system:
+
+- *hapa* (h-initial) PST → **hāpa** (h-coda → ∅ + lengthening)
+- *ʔapa* (ʔ-initial) PST → **ʔāpa**
+- *sawa* (w-medial) N.PST → **sāwa** (length, not \*ww)
+
+Edge case to decide: **nasal + nasal** stems (e.g. *mana*) give PST *manna* = N.PST
+*manna* — a past/non-past **syncretism**; keep, or repair?
+
 ## What the modern grammar inherits (residue)
 
 - **Geminates** ← S4a fused C+C.
