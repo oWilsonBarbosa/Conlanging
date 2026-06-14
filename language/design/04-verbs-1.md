@@ -8,12 +8,12 @@
 
 - **Tense — absolute: past / non-past** (binary), **plus relative tense** on non-finite
   forms (anterior / simultaneous / posterior, anchored to the matrix clause).
-- **Aspect — perfective / imperfective / perfect** (three Greek/Sanskrit-style stems).
-- **Stem building (reuses existing machinery):**
-  - Imperfective ← **nasal infix ‹-N-›** (*tap* → *tanpa*)
-  - Perfective ← **plain/ablaut grade** (*tappa*)
-  - Perfect ← **reduplication + ā-grade** (*tatāpa*) — adopts reduplication (the one new tool)
-- **Finite TAM grid** = past/non-past × pfv/ipfv/perfect (2 × 3, six cells).
+- **Aspect — imperfective / perfective / perfect**, marked by the **reduplicant vowel**
+  (a / i / u respectively). Tense + aspect share **one reduplicative affix**: position =
+  tense (initial PST / final N.PST), vowel = aspect.
+- **Finite TAM grid** = 3 aspect × 2 tense (six cells); bare stem = citation.
+  Root *p‑k*: PST *pauka/piuka/pūka*, N.PST *pakka/pakki/pakku*.
+- **Register:** apocope route = educated, syncope = common (analogical).
 
 ## Tense realisation — reduplicative & diachronic (revised)
 

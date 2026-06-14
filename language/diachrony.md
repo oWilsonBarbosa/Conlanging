@@ -111,12 +111,11 @@ Licitness follows the proto-language's cluster phonotactics.
 - **nasal + nasal** stems (*mana*): PST **maman** (apocope, *mamana* → *maman*),
   N.PST **manna** (*manana* → *manna*) — distinct, no syncretism.
 
-### Open / in design
-
-- **Aspect** marked by the **stem vowel a / i / u** (root-and-pattern / ablaut), combined
-  with the reduplicative tense (and a possible bare form) → a 3×3 paradigm. See
-  `grammar.md` → Verbs. Aspect→meaning mapping and the syncope/apocope ambiguity for some
-  stems still to be fixed.
+- **Tense + aspect = one reduplicative affix**: position = tense (initial PST / final
+  N.PST), **reduplicant vowel = aspect** (a = imperfective, i = perfective, u = perfect).
+  Bare stem = citation. → 3 aspect × 2 tense (see `grammar.md`).
+- **Register variation:** where a root admits both PST routes, **apocope = educated**,
+  **syncope = common** (analogical) — e.g. *pana* PST *paban* (educated) ~ *pauna* (common).
 
 ## What the modern grammar inherits (residue)
 

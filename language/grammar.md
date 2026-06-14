@@ -124,37 +124,35 @@ applies — see [`diachrony.md`](diachrony.md)):
 
 (This replaces the earlier *‑pa/‑ta* suffix and augment ideas — tense is **reduplicative**.)
 
-### Aspect — by stem vowel a / i / u (under design)
+### Aspect & tense — one reduplicative affix
 
-Aspect is marked **non-concatenatively, by the stem/theme vowel** (**a / i / u** — a
-root-and-pattern / ablaut device) and combines with the reduplicative **tense**: a
-(largely consonantal) root takes an aspect vowel, then reduplicates an edge for tense.
+Tense and aspect are carried together by a single **reduplicative affix**: its
+**position** marks tense (initial = PST, final = N.PST) and its **vowel** marks aspect —
+**a = imperfective, i = perfective, u = perfect**. The reduplicant copies a root
+consonant (C₁ for PST, C₂ for N.PST) and supplies the aspect vowel; the **root keeps its
+own vowel**; then the S1–S8 sound laws apply. The bare stem (*paka*) is the **citation**
+form, not a tense.
 
-| root *p‑k*, aspect = | PST (initial redup) | N.PST (final redup) |
+Root *p‑k* (citation *paka*):
+
+| aspect | PST (C₁-redup) | N.PST (C₂-redup) |
 |---|---|---|
-| **a** | *pauka* | *pakka* |
-| **u** | *pūka* | *pakku* |
-| **i** | *piuka* | *pakki* |
+| **imperfective** (a) | *pauka* | *pakka* |
+| **perfective** (i) | *piuka* | *pakki* |
+| **perfect** (u) | *pūka* | *pakku* |
 
-There may also be a **bare / un-reduplicated** stem (e.g. *kala / kalu / kali*, or
-*taga*) as a third TAM value — giving a **3 × 3** grid (aspect × form), all run through
-the S1–S8 sound laws. **Open:** the aspect→meaning mapping (imperfective / perfective /
-perfect) and the syncope-vs-apocope ambiguity for some stems.
+### Finite TAM grid (3 aspect × 2 tense) — root *p‑k*
 
-### Finite TAM grid (2 × 3)
-
-| | Perfective | Imperfective | Perfect |
+| | Imperfective (a) | Perfective (i) | Perfect (u) |
 |---|---|---|---|
-| **Past** (initial redup) | aorist "struck" | imperfect "was striking" | pluperfect "had struck" |
-| **Non-past** (final redup) | **future** "will strike" | present "strikes" | pres. perfect "has struck" |
+| **Past** (initial redup) | *pauka* "was V-ing" | *piuka* "V-ed" (aorist) | *pūka* "had V-ed" |
+| **Non-past** (final redup) | *pakka* "V-s" | *pakki* "will V" (future) | *pakku* "has V-ed" |
 
-> **Future is emergent:** non-past + perfective reads as future (Slavic-style); no
-> dedicated future tense needed. *(Alternative: a separate prospective marker — open.)*
+> **Future is emergent:** non-past + perfective = future. All six cells run through the
+> S1–S8 sound laws.
 
-> **Realisation note:** tense = **edge reduplication** (diachronic — see `diachrony.md`):
-> N.PST *tap‑* = **tappa**, PST = **taipa**. Since reduplication now marks tense, the
-> **perfect** aspect needs another exponent (ablaut grade?) — open, with the rest of the
-> tense × aspect interaction.
+> **Register:** where a root admits both routes, **apocope = educated/high** register,
+> **syncope = common** (analogical) — e.g. *pana* PST *paban* (educated) ~ *pauna* (common).
 
 ### Relative tense — non-finite forms
 
