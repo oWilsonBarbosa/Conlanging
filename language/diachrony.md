@@ -22,6 +22,7 @@ deferred suprasegmental decision (L10/11) — modern stress likely descends from
 | **S5** | Intervocalic voicing | A voiceless stop **between vowels** voices: p→b, t→d, k→g (*tana* → *tadan*, *taja* → *tadai*). |
 | **S6** | /h/ loss + lengthening | /h/ is lost, **lengthening** the preceding vowel (compensatory): *hata* → *hāta*. |
 | **S7** | Initial /ʔ/ loss | Word-initial /ʔ/ deletes: *ʔata* → *āta / atta*. |
+| **S8** | Sibilant assimilation | /h/ assimilates to a preceding /s/: *s·h* → *ss*, with lengthening (*sushu* → *sūssu*). |
 
 **Codas that survive untouched:** sonorant liquids /l r/, nasals (→ homorganic via S2–S3),
 and /s/. After these changes the only possible codas are **sonorant, /s/, or a
@@ -76,14 +77,19 @@ When the vocalized glide matches the stem vowel, the result is a **long vowel**:
 | *kupa* (u) | **kuipa** | k→i, u+i → ui |
 | *pita* (i) | **piuta** | p→u, i+u → iu |
 
-### PST has two routes (working analysis — confirm conditioning)
+### PST: two routes (conditioned by coda licitness)
 
-- **Syncope route** — C₁ becomes a coda and resolves (vocalize / legal coda / nasal-cluster).
-- **Apocope route** — the final vowel drops; the medial C₁ stays **intervocalic** and
-  voices (S5).
+After initial reduplication, the medial syllable reduces one of two ways, **chosen by
+whether C₁ can be a licit coda before C₂**:
 
-The choice is conditioned by C₁/C₂ (e.g. whether C₁ can stand as a coda before C₂) — the
-exact rule is **to be pinned down** (see Open).
+- **Syncope** (C₁ *can* be a licit coda) — C₁ becomes a coda and resolves: vocalize →
+  diphthong; legal /s l r/ or nasal coda; or h-coda → length.
+  → *hata > \*hahta > hāta*, *pasa > \*papsa > pausa*.
+- **Apocope** (C₁ *cannot*) — the final vowel drops; the medial C₁ stays **intervocalic**
+  and voices (S5).
+  → *taha > \*tatah > tadā*, *husu > \*huhus > hūsu*.
+
+Licitness follows the proto-language's cluster phonotactics.
 
 ### Full worked set (PST / N.PST)
 
@@ -92,20 +98,16 @@ exact rule is **to be pinned down** (see Open).
 | *hata* | hāta | hatta | *masa* | mansa | massa |
 | *taha* | tadā | tā | *jala* | jaila | jalla |
 | *husu* | hūsu | hussu | *nawa* | nanu | nawa |
-| *suhu* | **sūssu** ⚠ | sūhu | *ʔata* | āta | atta |
+| *suhu* | **sūssu** | sūhu | *ʔata* | āta | atta |
 | *tana* | tadan | tanna | *bata* | bauda | batta |
 | *nata* | nanda | natta | *hala* | hāla | halla |
 | *raka* | rarka | rakka | *sawa* | sasu | sawa |
 | *kara* | kaira | karra | *hapa* | hāpa | happa |
 | *pasa* | pausa | passa | *taja* | tadai | taia |
-| *waka* | wauga | wakka | *pawa* | **pabu** ⚠ | pawa |
-
-⚠ = derivation to confirm with the designer.
+| *waka* | wauga | wakka | *pawa* | **pabu** | pawa |
 
 ### Open
 
-- **PST route conditioning:** exactly when does syncope vs apocope apply?
-- *suhu* → **sūssu** and *pawa* → **pabu**: confirm the intermediate steps.
 - **nasal + nasal** stems (*mana*) → PST = N.PST = *manna* (syncretism); keep or repair?
 
 ## What the modern grammar inherits (residue)
