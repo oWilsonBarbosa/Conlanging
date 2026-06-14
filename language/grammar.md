@@ -11,7 +11,7 @@
 
 | Parameter | Value | Source ref |
 |---|---|---|
-| Basic word order | _TBD_ | WALS 81A |
+| Basic word order | **SOV** (verb-final) | WALS 81A |
 | Morphological type | **Agglutinative** | WALS 20A (fusion) |
 | Affix position | **Both** prefixes & suffixes | WALS 26A |
 | Alignment | _TBD_ | WALS 98A / Grambank |
@@ -128,10 +128,22 @@ agreement system.
 > Semantic fit: in the perfective the **agent** is the marked (ergative) one,
 > foregrounding the completed result — matching perfective semantics.
 
-### Case markers, number, class
+### Case marking — by reduplication
 
-Case is **suffixal** (DIRECT / ERG / ACC + obliques); the markers are to be set (ideally
-derived diachronically). **Number** and **noun class** — TBD.
+Core case **reuses the reduplicative morphology** (exactly like verb TAM), run through
+the S1–S7 sound laws:
+
+| case | role | marking | *kut-* "dog" | *kar-* "man" |
+|---|---|---|---|---|
+| **DIRECT** | S; A (impfv); P (pfv) | bare stem (+ echo vowel) | *kutu* | *kara* |
+| **ERGATIVE** | A (pfv / perfect) | **final** reduplication → geminate | *kuttu* | *karra* |
+| **ACCUSATIVE** | P (impfv) | **initial** reduplication | *kuitu* | *kagar* |
+
+ERG mirrors verbal **N.PST**, ACC mirrors verbal **PST** — one engine for the whole
+language. ACC shows the syncope/apocope **register** split (*kuitu* syncope ~ *kagar*
+apocope / *kair*). DIRECT of a C-final root takes an **echo vowel** (*kut* → *kutu*).
+
+Obliques, **number**, **noun class** — TBD.
 
 ## Verbs
 

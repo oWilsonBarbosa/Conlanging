@@ -40,10 +40,37 @@
 | WALS 100A (alignment of verbal person marking) | Agreement alignment | Flags that agreement may split too (TBD) |
 | Grambank | Ergative/accusative case features | Validates the split design |
 
+## Case marking = reduplication (established by worked examples)
+
+Core case reuses the **reduplicative morphology** (like verb TAM):
+
+| case | marking | dog | man |
+|---|---|---|---|
+| DIRECT | bare + echo vowel | kutu | kara |
+| ERGATIVE | final redup → geminate (= verbal N.PST) | kuttu | karra |
+| ACCUSATIVE | initial redup (= verbal PST) | kuitu | kagar/kair |
+
+Also established: **word order SOV** (verb-final); **echo-vowel epenthesis** for C-final
+roots (kut → kutu).
+
+### Worked sentences (lexicon: kut- dog, kar- man, iana see, nata sleep)
+
+| Alantian | gloss |
+|---|---|
+| kutu ianna | dog-DIR see.N.PST.IPFV — "dog sees" |
+| kara īna | man-DIR see.PST.PFV — "man saw" |
+| kutu nanda | dog-DIR sleep.PST.IPFV — "dog was sleeping" |
+| kara natti | man-DIR sleep.N.PST.PFV — "man will sleep" |
+| kutu kagar ianna | dog-DIR man-ACC see.IPFV — "dog sees man" (nom-acc) |
+| kara kuitu ianna | man-DIR dog-ACC see.IPFV — "man sees dog" |
+| kuttu kara īna | dog-ERG man-DIR see.PFV — "dog saw man" (erg-abs) |
+| karra kutu īna | man-ERG dog-DIR see.PFV — "man saw dog" |
+
 ## Outputs
 
-- [x] `grammar.md` — Nouns: alignment + DIRECT/ERG/ACC core
-- [ ] case markers (forms), oblique cases, number, class
+- [x] `grammar.md` — Nouns: alignment + case-by-reduplication (DIRECT/ERG/ACC); SOV
+- [x] `lexicon.csv` — first entries (kut, kar, iana, nata)
+- [ ] oblique cases, number, class
 
 ## Open / next
 
