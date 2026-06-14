@@ -6,6 +6,11 @@
   **place / manner / feature** grounds, and characterize the result against real
   languages. (Supersedes the earlier frequency-only draft.)
 
+> **Later revision (2026-06-14):** the **aspirated series (pʰ tʰ kʰ)**, **/ʔ/**, and
+> **syllabic sonorants** were removed. Stops are now a two-way voiceless/voiced contrast;
+> the inventory is **16 consonants**. See `../phonology.md`. The reasoning below reflects
+> the original 20-consonant design.
+
 ## Method
 
 Rather than picking "common" segments, each dimension was chosen for the effect it has

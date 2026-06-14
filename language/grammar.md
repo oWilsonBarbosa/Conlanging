@@ -85,20 +85,18 @@ imperfective/durative. The full infix inventory is set in the verb/noun lessons.
 | Shape | Frequency | Example | Notes |
 |---|---|---|---|
 | **CV** | rare, archaic ("primitive" layer) | *ta, ku, si* | oldest roots; light (1 mora) |
-| **CVC** | default / most common | *tʰar, sal, men, kus* | the workhorse root |
-| **CVRC** | sonorant + final C | *tarn, kʰuls, mirk* | final cluster is **split by suffixation** |
+| **CVC** | default / most common | *tar, sal, men, kus* | the workhorse root |
+| **CVRC** | sonorant + final C | *tarn, kuls, mirk* | final cluster is **split by suffixation** |
 
 R = a sonorant {m n l r}. A **CVRC** root shows its final consonant before vowel-initial
-material (*tarn-a* → *tar.na*) and resolves word-finally via a **syllabic sonorant** or
-epenthesis (*tarn* → *tar.ṇ* / *ta.ran*) — Sanskrit/PIE-style root behaviour. (Root shape
-≠ syllable shape, which is CV(R); see `phonology.md`.)
+material (*tarn-a* → *tar.na*) and resolves word-finally via **epenthesis**
+(*tarn* → *ta.ran*). (Root shape ≠ syllable shape, which is CV(R); see `phonology.md`.)
 
 ### Morphophonology
 
 Agglutination feeds the Lesson 06 rules automatically:
 
-- Vowel-initial suffix after a vowel-final root → **coalescence** (long V / diphthong)
-  or an epenthetic **/ʔ/** across a morpheme boundary.
+- Vowel-initial suffix after a vowel-final root → **coalescence** (long V / diphthong).
 - Boundary consonant sequences are syllabified as legal `{m n l r s} + C` clusters,
   geminates, or repaired; CVRC roots split as above.
 - **Vowel harmony:** none — suffix vowels are fixed (ablaut already supplies the
@@ -156,7 +154,7 @@ Tense and aspect are carried together by a single **reduplicative affix**: its
 **position** marks tense (initial = PST, final = N.PST) and its **vowel** marks aspect —
 **a = imperfective, i = perfective, u = perfect**. The reduplicant copies a root
 consonant (C₁ for PST, C₂ for N.PST) and supplies the aspect vowel; the **root keeps its
-own vowel**; then the S1–S8 sound laws apply. The bare stem (*paka*) is the **citation**
+own vowel**; then the S1–S7 sound laws apply. The bare stem (*paka*) is the **citation**
 form, not a tense.
 
 Root *p‑k* (citation *paka*):
@@ -175,7 +173,7 @@ Root *p‑k* (citation *paka*):
 | **Non-past** (final redup) | *pakka* "V-s" | *pakki* "will V" (future) | *pakku* "has V-ed" |
 
 > **Future is emergent:** non-past + perfective = future. All six cells run through the
-> S1–S8 sound laws.
+> S1–S7 sound laws.
 
 > **Register:** where a root admits both routes, **apocope = educated/high** register,
 > **syncope = common** (analogical) — e.g. *pana* PST *paban* (educated) ~ *pauna* (common).

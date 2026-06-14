@@ -21,8 +21,7 @@ deferred suprasegmental decision (L10/11) — modern stress likely descends from
 | **S4b** | Obstruent vocalization | A remaining **coda obstruent** becomes a glide: **labial → u**, **non-labial (coronal/velar) → i**, forming a diphthong. Its **[voice] transfers** to the next stop (*bata* → *bauda*, *waka* → *wauga*). |
 | **S5** | Intervocalic voicing | A voiceless stop **between vowels** voices: p→b, t→d, k→g (*tana* → *tadan*, *taja* → *tadai*). |
 | **S6** | /h/ loss + lengthening | /h/ is lost, **lengthening** the preceding vowel (compensatory): *hata* → *hāta*. |
-| **S7** | Initial /ʔ/ loss | Word-initial /ʔ/ deletes: *ʔata* → *āta / atta*. |
-| **S8** | Sibilant assimilation | /h/ assimilates to a preceding /s/: *s·h* → *ss*, with lengthening (*sushu* → *sūssu*). |
+| **S7** | Sibilant assimilation | /h/ assimilates to a preceding /s/: *s·h* → *ss*, with lengthening (*sushu* → *sūssu*). |
 
 **Codas that survive untouched:** sonorant liquids /l r/, nasals (→ homorganic via S2–S3),
 and /s/. After these changes the only possible codas are **sonorant, /s/, or a
@@ -58,7 +57,6 @@ voiced cluster (nasal), a geminate (identical), or a plain *s*-cluster.
 | *pata* | **pauta** | **patta** | labial p→u |
 | *bada* (voiced) | **bauda** | **badda** | voiced stops vocalize by place |
 | *gaba* (voiced) | **gaiba** | **gabba** | g→i |
-| *tʰapʰa* (aspir.) | **taipha** | **tappha** | coda de-aspirates (tʰ→i); NPST geminate aspirate [p·pʰ] |
 | *fata* (fric.) | **fauta** | **fatta** | f→u |
 | *xapa* (fric.) | **xaipa** | **xappa** | x→i |
 | *lapa* (liquid) | **lalpa** | **lappa** | l = legal coda |
@@ -98,7 +96,7 @@ Licitness follows the proto-language's cluster phonotactics.
 | *hata* | hāta | hatta | *masa* | mansa | massa |
 | *taha* | tadā | tā | *jala* | jaila | jalla |
 | *husu* | hūsu | hussu | *nawa* | nanu | nawa |
-| *suhu* | **sūssu** | sūhu | *ʔata* | āta | atta |
+| *suhu* | **sūssu** | sūhu | *kata* | kaita | katta |
 | *tana* | tadan | tanna | *bata* | bauda | batta |
 | *nata* | nanda | natta | *hala* | hāla | halla |
 | *raka* | rarka | rakka | *sawa* | sasu | sawa |
