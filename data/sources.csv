@@ -6,7 +6,7 @@ concepticon,https://github.com/concepticon/concepticon-data/archive/refs/tags/v3
 clts,https://github.com/cldf-clts/clts/archive/refs/heads/master.zip,master,CC-BY-4.0,yes,Cross-Linguistic Transcription Systems
 clts-2.3.0,https://github.com/cldf-clts/clts/archive/refs/tags/v2.3.0.zip,v2.3.0,CC-BY-4.0,yes,CLTS pinned release
 wold,https://github.com/lexibank/wold/archive/refs/heads/master.zip,master,CC-BY-4.0,yes,World Loanword Database (CLDF)
-phonotacticon,https://github.com/phonotacticon/phonotacticon/archive/refs/heads/main.zip,main,CC-BY-4.0,yes,Phonotacticon syllable-structure database (verify URL)
+phonotacticon,https://github.com/ianjoo/phonotacticon/archive/refs/heads/main.zip,main,CC-BY-4.0,yes,Phonotacticon syllable-structure database (Joo 2023)
 bdproto,https://github.com/bdproto/bdproto/archive/refs/heads/master.zip,master,CC-BY-SA-4.0,yes,BDPROTO reconstructed-proto inventories; ShareAlike
 morphynet,https://github.com/kbatsuren/MorphyNet/archive/refs/heads/main.zip,main,CC-BY-SA-4.0,yes,MorphyNet morphological database; ShareAlike
 phoible,https://github.com/phoible/dev/archive/refs/heads/master.zip,master,GPL-3.0+CC-BY-SA-3.0,yes,PHOIBLE phonological inventories; code GPL-3.0 / data CC-BY-SA; ShareAlike

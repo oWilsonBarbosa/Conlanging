@@ -5,13 +5,10 @@ conlanging (constructed-language) course. **Those PDFs have been removed** becau
 they are third-party copyrighted materials and this repository should not
 redistribute them.
 
-Based on their internal links (conlang.org, the Language Creation Conference,
-r/conlangs) and the curriculum structure, they appear to come from the community
-**Conlang University** lessons. If you maintain this repo, please confirm the
-original source and credit it here.
+These materials are the **Conlangs University** lessons, a free community
+conlanging course. Please get them from — and credit — the original source:
 
-> **Maintainer:** replace this note with the correct attribution and an official
-> link to where these materials can be obtained.
+- **Conlangs University — Lessons:** <https://sites.google.com/view/conlangs-university/lessons>
 
 ## Curriculum outline
 

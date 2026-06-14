@@ -45,7 +45,8 @@ same (or a compatible) license and preserve attribution.
   List, J.-M., Anderson, C., Tresoldi, T., Forkel, R. *CLTS.*
 - **WOLD — World Loanword Database** · CC-BY 4.0 · <https://wold.clld.org> · <https://github.com/lexibank/wold>
   Haspelmath, M. & Tadmor, U. (eds.) (2009). *WOLD.* Leipzig: MPI-EVA.
-- **Phonotacticon** · CC-BY 4.0 · CLDF dataset (verify exact upstream URL in `data/sources.csv`).
+- **Phonotacticon** · CC-BY 4.0 · <https://github.com/ianjoo/phonotacticon>
+  Joo, Ian (2023). *Phonotacticon: A cross-linguistic database of phonotactic patterns.* Linguistic Typology. <https://doi.org/10.1515/lingty-2023-0094>
 - **BDPROTO** · CC-BY-SA 4.0 · <https://github.com/bdproto/bdproto>
   Marsico, E., Flavier, S., Verkerk, A., Moran, S. (2018). *BDPROTO.*
 - **MorphyNet** · CC-BY-SA 4.0 · <https://github.com/kbatsuren/MorphyNet>
