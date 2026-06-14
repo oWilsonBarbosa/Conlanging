@@ -42,19 +42,38 @@ NEG – AGR – ASP/MOOD – [ C ‹INFIX› …root… ]root+ABLAUT – DERIV �
 
 ### Non-concatenative morphology
 
-**Ablaut (nucleus gradation).** The vowels, diphthongs, and syllabic sonorants form a
-graded ladder; shifting a root's nucleus grade marks grammatical categories
-(Sanskrit *guṇa/vṛddhi*, PIE-style). Functions per grade are fixed in L04/L05.
+**Ablaut (nucleus gradation).** A root's nucleus takes one of **four grades**, formed by
+**colouring the base vowel** with ∅ / i / u / a and then resolving by the regular hiatus
+rules. The four grades regenerate exactly Alantian's 3 plain + 3 long + 6 diphthong
+nuclei. Functions per grade are fixed in L04/L05.
 
-| Grade | i-root | u-root | a-root | CVRC root |
+| base ＼ grade | plain (∅) | i-grade (+i) | u-grade (+u) | a-grade (+a) |
 |---|---|---|---|---|
-| **Zero** (weak) | ∅ / i̯ | ∅ / u̯ | ∅ | syllabic R (*tarn* → *tṛn*) |
-| **Full** (basic) | i | u | a | a (*tarn*) |
-| **Strong** (guṇa) | ai | au | ā | ā (*tārn*) |
-| **Long** (vṛddhi) | āi | āu | ā | — |
+| **a** | a | ai | au | ā |
+| **i** | i | ī | iu | ia |
+| **u** | u | ui | ū | ua |
 
-> Example schema (functions placeholder): *kis-* (zero *ks-*, full *kis-*, strong
-> *kais-*, long *kāis-*) — one root, four grades doing grammatical work.
+(So i-grade of /a/ = a+i = *ai*; i-grade of /i/ = i+i = *ī*; a-grade of /i/ = i+a = *ia*.
+The a-offglide in *ia/ua* may be written with a breve — *iă, uă*.) Ablaut targets the
+root vowel in any root shape (CV, CVC, CVRC alike).
+
+> Example: root **kis-** → plain *kis*, i-grade *kīs*, u-grade *kius*, a-grade *kias* —
+> one root, four grades doing grammatical work.
+
+**Consonant gradation (3 grades).** A plain voiceless stop **p t k** that heads a
+syllable alternates by the shape of that syllable — a Finnic-style system that uses
+**both** gemination and lenition (so geminates = strong grade, fricatives = weak grade):
+
+| Grade | p | t | k | Environment |
+|---|---|---|---|---|
+| **Strong** (geminate) | pp | tt | kk | before a light **open** syllable (adds weight) |
+| **Basic** (singleton) | p | t | k | after a heavy nucleus (long V / diphthong); default |
+| **Weak** (lenited) | f | s | x | before a **closed** syllable (suffix adds a coda) |
+
+Examples (root *kap-* 'stone'): *kap+a* → **kappa** (open → strong) ·
+*kap+an* → **kafan** (closed → weak) · *kāp+a* → **kāpa** (heavy nucleus → basic).
+Voiced stops, aspirates, sonorants and /s/ stand outside the productive alternation
+(details TBD).
 
 **Infixation.** An infix is inserted **inside the root**. Default model: a **nasal infix
 ‹-N-›** placed before the final root consonant (PIE-style), surfacing as the coda
@@ -82,8 +101,9 @@ Agglutination feeds the Lesson 06 rules automatically:
   or an epenthetic **/ʔ/** across a morpheme boundary.
 - Boundary consonant sequences are syllabified as legal `{m n l r s} + C` clusters,
   geminates, or repaired; CVRC roots split as above.
-- **Vowel harmony** and **consonant gradation** — *under decision* (see design/03b);
-  options being weighed for how affix vowels / stem consonants alternate.
+- **Vowel harmony:** none — suffix vowels are fixed (ablaut already supplies the
+  root-internal vowel play). **Consonant gradation:** active, 3-grade (geminate ↔
+  singleton ↔ fricative); see above.
 
 ## Nouns
 

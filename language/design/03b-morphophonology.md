@@ -12,19 +12,28 @@
    do not geminate. Syllable stays **CV(R)** (coda = sonorant, /s/, or geminate-half).
 3. **Infixation added.** Morphology is now prefix + infix + suffix + ablaut. Default
    infix: nasal **‹-N-›** before the final root consonant (PIE-style), e.g. *tak- → tank-*.
-4. **Ablaut system added.** Vowels, diphthongs, and syllabic sonorants form a grade
-   ladder (Sanskrit *guṇa/vṛddhi* / PIE-style) used for derivation & inflection:
+4. **Ablaut system (4 grades).** A root nucleus is **coloured** by ∅/i/u/a, resolved by
+   the hiatus rules. The four grades regenerate the entire vowel inventory (3 plain +
+   3 long + 6 diphthongs):
 
-   | Grade | i | u | a | CVRC |
+   | base ＼ grade | plain | i-grade | u-grade | a-grade |
    |---|---|---|---|---|
-   | Zero | ∅/i̯ | ∅/u̯ | ∅ | syllabic R (*tṛn*) |
-   | Full | i | u | a | a (*tarn*) |
-   | Strong (guṇa) | ai | au | ā | ā (*tārn*) |
-   | Long (vṛddhi) | āi | āu | ā | — |
+   | **a** | a | ai | au | ā |
+   | **i** | i | ī | iu | ia |
+   | **u** | u | ui | ū | ua |
+
+   Applies to any root shape (CV/CVC/CVRC). Example: *kis-* → kis / kīs / kius / kias.
 
 5. **Affix labour reaffirmed** (from L03): prefixes = NEG / AGR / ASP·MOOD; suffixes =
    DERIV / NUMBER / CASE; **infix** inside root; **ablaut** on the root nucleus. Concrete
    morpheme→category mappings are still set in Nouns L05 / Verbs L04·L09.
+
+6. **Vowel harmony: none.** Suffix vowels are fixed (ablaut covers vowel play).
+7. **Consonant gradation: both (3-grade).** p t k → strong **geminate** (pp tt kk)
+   before an open syllable / **weak** **fricative** (f s x) before a closed syllable /
+   **basic** singleton after a heavy nucleus. E.g. *kap+a → kappa*, *kap+an → kafan*,
+   *kāp+a → kāpa*. Geminates = strong grade; f s x = weak grade — both inventory
+   features become load-bearing.
 
 ## Why this fits the aesthetic
 
@@ -34,13 +43,10 @@
   naturally with a possible **consonant gradation** (geminate ↔ singleton).
 - Dropping nasal vowels keeps the vowel system lean so the **ablaut ladder** stays clean.
 
-## Open — to decide now: vowel harmony &/or consonant gradation
+## Decided: harmony & gradation
 
-See the menu in chat / below. Both interact with ablaut and affixation.
-
-- **Vowel harmony** candidates: none · rounding (i↔u) · frontness (i vs u, a neutral).
-- **Consonant gradation** candidates: none · quantitative (geminate↔singleton) ·
-  lenition (p→f, k→x, t→s/r) · both.
+- **Vowel harmony — none.**
+- **Consonant gradation — both** (3-grade geminate ↔ singleton ↔ fricative; see #7).
 
 ## Characterization vs. real languages
 
@@ -61,8 +67,8 @@ See the menu in chat / below. Both interact with ablaut and affixation.
 ## Outputs
 
 - [x] `phonology.md` — nasal vowels removed; geminates generalized; CV(R) coda licensing
-- [x] `grammar.md` — infixation + ablaut ladder + non-concatenative section
-- [ ] (pending) vowel harmony / consonant gradation once chosen
+- [x] `grammar.md` — infixation + 4-grade ablaut matrix + 3-grade consonant gradation;
+      vowel harmony set to none
 
 ## License note
 
