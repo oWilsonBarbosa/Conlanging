@@ -12,7 +12,7 @@ Copy [`_template.md`](_template.md) for each new lesson.
 | # | CU Lesson | Log | Primary databases to consult |
 |---|---|---|---|
 | 01 | Introduction to Conlanging (+ The Greatest Conlang Ever) | [01](01-introduction.md) | — (goals & aesthetic) |
-| 02 | Phonology 1 | _todo_ | PHOIBLE, CLTS, BDPROTO |
+| 02 | Phonology 1 | [02](02-phonology-1.md) | PHOIBLE, CLTS, BDPROTO |
 | 03 | Morphology 1 | _todo_ | WALS, Grambank, MorphyNet |
 | 04 | Verbs 1 | _todo_ | WALS, Grambank |
 | 05 | Nouns 1 — Case / Number / Class / Alignment | _todo_ | WALS, Grambank |
