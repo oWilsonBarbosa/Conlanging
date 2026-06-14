@@ -15,11 +15,16 @@
   - Perfect ← **reduplication + ā-grade** (*tatāpa*) — adopts reduplication (the one new tool)
 - **Finite TAM grid** = past/non-past × pfv/ipfv/perfect (2 × 3, six cells).
 
-## Provisional / proposed (confirm)
+## Tense realisation — diachronic & suffixal (revised)
 
-- **Past augment prefix** *a‑* (Greek é-style). Form provisional.
+Tense is **suffixal**, derived by sound change (see `../diachrony.md`): **N.PST** *‑pa*,
+**PST** *‑ta* on the *‑a* stem; post-tonic syncope + coda resolution then apply
+(*tápa‑pa* → **tappa**; *tápa‑ta* → **tauta**). The **augment prefix is retired**.
+
 - **Future = non-past perfective** (Slavic-style emergent future); alternative is a
   dedicated prospective marker. **Open.**
+- Open: how tense suffixes interact with aspect stems (infix/reduplication); S2c
+  (non-labial coda resolution).
 
 ## Worked paradigm — root *tap‑* "to strike"
 

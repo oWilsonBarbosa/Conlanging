@@ -18,6 +18,7 @@ language's own content is licensed under the repo's `LICENSE` (CC BY 4.0).
 | [`design/`](design/) | **The journey.** One log per CU lesson: goal, decisions, sources consulted, rationale. This is where "strategies and sources used" get recorded. |
 | `phonology.md` | **Living reference** — current inventory & phonotactics. |
 | `grammar.md` | **Living reference** — current morphology & syntax. |
+| `diachrony.md` | **Living reference** — proto-forms & ordered sound changes (the history behind the morphophonology). |
 | `lexicon.csv` | **Living reference** — the words (form, IPA, gloss, source). |
 
 **Workflow per lesson:** open the CU lesson → copy `design/_template.md` to the next

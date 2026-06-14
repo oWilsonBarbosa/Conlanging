@@ -115,8 +115,12 @@ _Case, number, class/gender — TBD (Lesson 05)._
 
 ### Tense — absolute: past / non-past
 
-Binary. **Past** = an **augment prefix** (provisional *a‑*, Greek-style) in the tense
-prefix slot; **non-past** = unmarked (∅).
+Binary, marked **suffixally** and surfacing through regular sound change (see
+[`diachrony.md`](diachrony.md)): **non-past** *‑pa*, **past** *‑ta*, added to the *‑a*
+stem, after which post-tonic syncope + coda resolution apply. (The earlier augment-prefix
+idea is **retired**.)
+
+> e.g. *tápa‑pa* → **tappa** (N.PST) · *tápa‑ta* → **tauta** (PST).
 
 ### Aspect — perfective / imperfective / perfect (three stems)
 
@@ -135,11 +139,15 @@ Consonant gradation falls out automatically: *tappa* (geminate, strong) · *tanp
 
 | | Perfective | Imperfective | Perfect |
 |---|---|---|---|
-| **Past** (*a‑*) | aorist — *a-tappa* "struck" | imperfect — *a-tanpa* "was striking" | pluperfect — *a-tatāpa* "had struck" |
-| **Non-past** (∅) | **future** — *tappa* "will strike" | present — *tanpa* "strikes" | pres. perfect — *tatāpa* "has struck" |
+| **Past** (*‑ta*) | aorist "struck" | imperfect "was striking" | pluperfect "had struck" |
+| **Non-past** (*‑pa*) | **future** "will strike" | present "strikes" | pres. perfect "has struck" |
 
 > **Future is emergent:** non-past + perfective reads as future (Slavic-style); no
 > dedicated future tense needed. *(Alternative: a separate prospective marker — open.)*
+
+> **Realisation note:** tense is the **suffix** *‑pa*/*‑ta* (diachronic — see
+> `diachrony.md`); e.g. N.PST *tap‑* = **tappa**, PST = **tauta**. How these endings
+> combine with the aspect stems (infix / reduplication) is still open.
 
 ### Relative tense — non-finite forms
 
