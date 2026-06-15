@@ -23,9 +23,9 @@ local working folder.
 
 The language being built is documented in [`docs/`](docs/):
 
-- [`docs/phonology.md`](docs/phonology.md) — phoneme inventory, phonotactics,
-  prosody (weight/mora/stress), and an ordered set of allophonic rules, each
-  grounded in PHOIBLE/WALS/PBASE.
+- [`docs/phonology.md`](docs/phonology.md) — phoneme inventory (14 consonants +
+  3 vowels), grounded in PHOIBLE/WALS. Allophony, syllable structure, and prosody
+  are still to be designed.
 
 ## `course/` — design curriculum
 
