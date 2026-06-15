@@ -29,6 +29,9 @@ The language being built is documented in [`docs/`](docs/):
 - [`docs/morphology.md`](docs/morphology.md) — morphological type: agglutinating,
   suffixing, SOV, suffixal case, no gender ("Bundle A"), grounded in WALS/Grambank.
   Detailed case/TAM inventories and morphophonology still to come.
+- [`docs/verbs.md`](docs/verbs.md) — verb system (Verbs 1): valency, subject
+  agreement, tense/aspect/mood, valency-changing morphology, with a verb template
+  and paradigm. Alignment (05d) and morphophonology still to come.
 
 ## `course/` — design curriculum
 
