@@ -26,6 +26,9 @@ The language being built is documented in [`docs/`](docs/):
 - [`docs/phonology.md`](docs/phonology.md) — phoneme inventory (14 consonants +
   3 vowels), grounded in PHOIBLE/WALS. Allophony, syllable structure, and prosody
   are still to be designed.
+- [`docs/morphology.md`](docs/morphology.md) — morphological type: agglutinating,
+  suffixing, SOV, suffixal case, no gender ("Bundle A"), grounded in WALS/Grambank.
+  Detailed case/TAM inventories and morphophonology still to come.
 
 ## `course/` — design curriculum
 
