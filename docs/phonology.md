@@ -42,22 +42,73 @@ Design philosophy: a **small, contrast-light inventory** whose realism comes fro
 
 ---
 
-## 2. Phonotactics
+## 2. Syllable structure & phonotactics
 
-- **Syllable template:** `(C) V (C)` — optional onset, short vowel nucleus,
-  optional coda. *(Design choice — see §10. No underlying clusters or long vowels.)*
-- **Onset:** any single consonant.
-- **Coda:** any single consonant (subject to the coda rules in §5).
-- **Surface CVV / CVC** both occur; CVV arises only from lengthening (§4–5).
+### 2.1 Template
+Canonical maximal syllable: **(C)(C) V (V) (C)** — an onset of up to two
+consonants, a nucleus that is a short vowel or a diphthong, and a single coda.
+Attested shapes: CV, CVC, CCV, CCVC, CVV, CVVC. *(Moderately complex — the
+cross-linguistic plurality, WALS 12A; see §10 for the simple↔complex knob.)*
+
+### 2.2 Sonority hierarchy
+Clusters are governed by sonority (Phonology 2). Scale, most→least sonorous (as
+given in the course deck):
+
+> **vowels > glides /j w/ > liquids /r l/ > nasals /m n/ > fricatives /s h/ > voiced stops /b d ɡ/ > voiceless stops /p t k/**
+
+(within classes: low /a/ > high /i u/; rhotic /r/ > lateral /l/.)
+
+### 2.3 Onsets — Sonority Sequencing Principle (SSP)
+Sonority must **rise** from the onset toward the nucleus:
+- **Single onset:** any consonant.
+- **CC onset:** C₂ must be **more sonorous than C₁** — in practice a **liquid or glide**:
+  - obstruent + liquid — /pl pr kl kr bl br ɡl ɡr tr dr/ ( */tl dl/ excluded, marked)
+  - obstruent + glide — /pj pw tj tw kj kw bj sj …/
+  - nasal + glide — /mj nj mw nw/
+  - *(optional /s/-appendix: /sp st sk/ — SSP-violating but common; off by default, §10)*
+
+This is exactly the deck's rule (*"initial stops may only be followed by
+approximants or glides"*) and matches Phonotacticon's top onsets — all formable
+from this inventory.
+
+### 2.4 Nucleus & diphthongs
+- **Nucleus:** a short vowel /i a u/ **or a diphthong** (one branching nucleus —
+  per the course, two vocoids in a single syllable count as one unit).
+- **Diphthongs:** core /ai̯ au̯/; marginal /ui̯ iu̯/; homorganic */ij uw/ banned.
+- A diphthong is **heavy** (2 μ). (Phonemically analyzable as /Vj Vw/; treated as a
+  branching nucleus for weight — §10.)
+- Long monophthongs [Vː] are **derived only** (§4–5).
+
+### 2.5 Codas
+- **Single coda (default):** any consonant — subject to final devoicing (B2) and
+  nasal place assimilation (B1).
+- **CC coda (optional extension):** sonorant + obstruent, **falling** sonority —
+  /rt rk lt lk nt mp ns rs ks st/ (the Phonotacticon coda profile). Off by default (§10).
+
+### 2.6 Maximal Onset Principle (syllabification)
+Per the deck: *"if an intervocalic consonant can be assigned to the onset without
+breaking other rules … it is."* Maximize the following onset within legality; the
+remainder becomes the coda of the preceding syllable:
+
+| Input | Legal onset? | Syllabification | Why |
+|---|---|---|---|
+| /patra/ | /tr/ ✓ | pa.tra | rising-sonority onset preferred |
+| /panta/ | /nt/ ✗ (falling) | pan.ta | /n/ stranded → coda |
+| /akra/ | /kr/ ✓ | a.kra | |
+| /paila/ | nucleus /ai/ | pai.la | diphthong = one nucleus |
+| /aspa/ | /sp/ only with appendix | as.pa (default) · a.spa (appendix) | §2.3 |
+
+MOP feeds the prosody: a stranded coda (pan.ta) makes the syllable **heavy**,
+which drives weight-sensitive stress (§3).
 
 ---
 
 ## 3. Prosody: weight, mora & stress
 
-- **Mora (μ):** short V = 1μ; a coda consonant adds 1μ; a derived long V = 2μ.
+- **Mora (μ):** short V = 1μ; a coda consonant adds 1μ; a diphthong or derived long V = 2μ.
 - **Weight:** a syllable is **heavy** if its rhyme branches — i.e. it has a coda
-  **or** a long nucleus (2μ); otherwise **light** (CV, 1μ).
-  - Underlyingly, only **codas** make a syllable heavy (no underlying long vowels).
+  **or** a branching nucleus (diphthong / long V, 2μ); otherwise **light** (CV, 1μ).
+  - Underlyingly, **codas and diphthongs** make a syllable heavy (no underlying long monophthongs).
 - **Stress — weight-sensitive, right-edge moraic trochee** ("Latin Stress Rule"):
   1. The **final** syllable is extrametrical (skipped).
   2. Stress the **penult** if it is **heavy**; otherwise stress the **antepenult**.
@@ -132,11 +183,15 @@ The order above is engineered for these feeding/bleeding/opacity effects:
 | /tanka/ | ˈtan.ka | ˈtaŋ.ka | — | ˈtaŋ.kə | ˈtãŋ.kə | **[ˈtãŋkə]** |
 | /lubad/ | ˈlu.bad | ˈlu.bat | — | ˈluː.bət | ˈluː.βət | **[ˈluːβət]** |
 | /kasma/ (B3 on) | ˈkas.ma | ˈkaː.ma | — | ˈkaː.mə | — | **[ˈkaːmə]** |
+| /trapi/ | ˈtra.pi (MOP: tra.pi) | — | — | ˈtraː.pɪ | — | **[ˈtraːpɪ]** |
+| /paila/ | ˈpai.la (diphthong) | — | — | ˈpai.lə | — | **[ˈpailə]** |
 
 Each shows the system working: palatalization + lengthening + spirantization +
 final-vowel reduction (*sibi*); nasal assimilation + nasalization + reduction
 (*tanka*); lengthening + spirantization + final devoicing + reduction (*lubad*);
-compensatory lengthening preserving weight (*kasma*).
+compensatory lengthening preserving weight (*kasma*); MOP onset-cluster
+syllabification + lengthening (*trapi*); and a heavy diphthong nucleus attracting
+stress (*paila*).
 
 ---
 
@@ -167,6 +222,10 @@ Computed from the repo datasets (see `scripts/extract_data.sh`):
 - **PBASE** (7,319 rules) — process frequency **assimilation ≫ deletion ≳ lenition**;
   prosodic conditioning is common: syllable-position 7.5 %, length 6.4 %, stress
   4.0 % (e.g. *"stressed short /i/ → [ɛ]"*, *"unstressed → ∅"*).
+- **Phonotacticon** (457 lects) — CC onsets are modal (41 %; 34 % single-C, 21 %
+  CCC); single codas modal (53 %; 34 % CC). Top onsets are obstruent + liquid/glide
+  (/pl kl pr kr bl br tr · pj kj kw mj nj/), top codas sonorant + obstruent
+  (/nt nd rt rk mp lt lk · st ks/) — every one formable from this inventory.
 
 ---
 
@@ -185,8 +244,10 @@ Computed from the repo datasets (see `scripts/extract_data.sh`):
 
 Choices made to instantiate the system — all adjustable:
 
-1. **Syllable template `(C)V(C)`** — simple/moderate. Could add onset clusters or a
-   coda sonority hierarchy (Phonology 2).
+1. **Syllable template `(C)(C)V(V)(C)`** (§2) — moderately complex. Toggles: the
+   **/s/-appendix onset** (/sp st sk/) and the **CC coda** (sonorant+obstruent) are
+   off by default; turning both on makes it "complex," dropping CC onsets makes it
+   "simple" (WALS 12A).
 2. **Stress = Latin weight-sensitive rule** — one of several attested weight-sensitive
    systems; could instead be fixed initial/penult (WALS 14A) or unbounded.
 3. **Length & nasal vowels allophonic** (not phonemic) — promotable later.
@@ -194,6 +255,8 @@ Choices made to instantiate the system — all adjustable:
    /s h/ pre-C and word-final coda nasals — scope can widen or narrow.
 5. **/l/ vs /r/ kept as two phonemes** (the 39 % pattern); could collapse to one
    liquid with [l]~[ɾ] allophony instead.
+6. **Diphthongs** analyzed as branching nuclei /ai̯ au̯/ (core); could instead be
+   /Vj Vw/ coda-glide sequences, or be dropped entirely.
 
-Questions worth deciding next: stress-rule variant, whether to add geminates
-(referenced by E1), and whether to allow tautosyllabic diphthongs.
+Questions worth deciding next: the /s/-appendix and CC-coda toggles, whether to add
+geminates (referenced by E1), and which marginal diphthongs (/ui̯ iu̯/) to admit.
