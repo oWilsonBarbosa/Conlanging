@@ -15,8 +15,17 @@ local working folder.
 .
 ├── course/   # 24 PDF lessons + assignments — the conlang design curriculum
 ├── data/     # 14 zipped linguistic reference datasets (~166 MB)
+├── docs/     # the conlang's own design specs
 └── scripts/  # helper scripts (data extraction)
 ```
+
+## Design
+
+The language being built is documented in [`docs/`](docs/):
+
+- [`docs/phonology.md`](docs/phonology.md) — phoneme inventory, phonotactics,
+  prosody (weight/mora/stress), and an ordered set of allophonic rules, each
+  grounded in PHOIBLE/WALS/PBASE.
 
 ## `course/` — design curriculum
 
