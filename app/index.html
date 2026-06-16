@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phonological Inventory Builder</title>
+<meta name="description" content="Build a naturalistic phonological inventory by toggling IPA blocks, with plausibility feedback grounded in PHOIBLE. Complexity unlocks by level, following the Conlangs University course (Phonology 1, 2, 3, 4).">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="title">
+    <h1>Phonological Inventory&nbsp;Builder</h1>
+    <p class="tag">Snap IPA blocks together; the inventory is checked against
+      <abbr title="3,020 inventories, PHOIBLE 2.0">real-language typology</abbr>.</p>
+  </div>
+  <nav class="levels" id="levelNav" aria-label="Complexity level"></nav>
+</header>
+
+<main>
+  <section class="board" aria-label="Sound chart">
+    <div class="board-head">
+      <h2 id="levelTitle">Phonology 1 — Segments</h2>
+      <p id="levelDesc" class="muted"></p>
+    </div>
+
+    <div class="chart-wrap">
+      <h3 class="chart-title">Consonants <span class="muted" id="cCount"></span></h3>
+      <div class="chart-scroll"><table class="chart" id="consonantChart"></table></div>
+      <h3 class="chart-title">Other common consonants</h3>
+      <div class="extras" id="consonantExtras"></div>
+    </div>
+
+    <div class="chart-wrap">
+      <h3 class="chart-title">Vowels <span class="muted" id="vCount"></span></h3>
+      <div class="chart-scroll"><table class="chart vowels" id="vowelChart"></table></div>
+    </div>
+
+    <div class="locked-levels" id="lockedLevels"></div>
+  </section>
+
+  <aside class="panel" aria-label="Inventory and feedback">
+    <div class="card inventory-card">
+      <div class="card-head">
+        <h2>Your inventory</h2>
+        <div class="toolbar">
+          <button id="btnClear" class="btn ghost" title="Remove all sounds">Clear</button>
+          <details class="menu">
+            <summary class="btn ghost">Presets ▾</summary>
+            <div class="menu-list" id="presetMenu"></div>
+          </details>
+        </div>
+      </div>
+      <div class="tray" id="tray"><p class="muted empty">No sounds yet — click blocks on the chart to add them.</p></div>
+      <div class="ipa-line"><code id="ipaLine"></code></div>
+    </div>
+
+    <div class="card score-card">
+      <div class="card-head"><h2>Naturalness</h2>
+        <span class="score-badge" id="scoreBadge">—</span></div>
+      <div class="gauge"><div class="gauge-fill" id="gaugeFill"></div></div>
+      <ul class="feedback" id="feedback"></ul>
+    </div>
+
+    <div class="card export-card">
+      <div class="card-head"><h2>Export</h2></div>
+      <div class="toolbar wrap">
+        <button id="btnMd" class="btn">Copy Markdown</button>
+        <button id="btnJson" class="btn">Copy JSON</button>
+        <button id="btnImport" class="btn ghost">Import JSON…</button>
+      </div>
+      <p class="muted small">Markdown matches <code>language/phonology.md</code> tables. State auto-saves in your browser.</p>
+    </div>
+  </aside>
+</main>
+
+<footer class="foot">
+  <p>Naturalness data: <strong>PHOIBLE 2.0</strong> (Moran &amp; McCloy 2019),
+     <a href="https://phoible.org" target="_blank" rel="noopener">phoible.org</a> —
+     CC-BY-SA 3.0. App © project authors, CC-BY 4.0.
+     <span id="metaLine" class="muted"></span></p>
+</footer>
+
+<div class="hint" id="hint" hidden></div>
+<script src="main.js"></script>
+</body>
+</html>

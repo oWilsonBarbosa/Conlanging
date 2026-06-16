@@ -18,9 +18,27 @@ credited.
 ├── data/
 │   ├── README.md      What each dataset is and how to get it
 │   └── sources.csv    Machine-readable manifest: name, url, version, license, …
+├── app/
+│   ├── README.md      Phonological Inventory Builder — a static web app
+│   └── …              Build inventories by level (Phonology 1…4), checked vs PHOIBLE
 └── scripts/
-    └── fetch_data.sh  Downloads the datasets from their original sources
+    ├── fetch_data.sh            Downloads the datasets from their original sources
+    └── build_phoible_summary.py Distils PHOIBLE into the app's offline data file
 ```
+
+## Phonological Inventory Builder (`app/`)
+
+A small, dependency-free web app for assembling a phonological inventory by
+toggling IPA "blocks", with **naturalness feedback grounded in PHOIBLE** and
+complexity gated by **level** (Phonology 1…4, following the course). Level 1 is
+fully implemented; later levels are scaffolded. It's a static page that loads a
+data file, so serve it over HTTP:
+
+```bash
+cd app && python3 -m http.server 8000   # then open http://localhost:8000/
+```
+
+See [`app/README.md`](app/README.md) for details.
 
 ## Datasets are not committed
 
