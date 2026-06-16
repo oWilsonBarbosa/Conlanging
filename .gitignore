@@ -1,0 +1,7 @@
+# Unpacked datasets — regenerate from the zips in data/ via scripts/extract_data.sh
+data/extracted/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
