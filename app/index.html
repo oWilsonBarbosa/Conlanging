@@ -24,15 +24,25 @@
       <p id="levelDesc" class="muted"></p>
     </div>
 
-    <div class="chart-wrap">
-      <h3 class="chart-title">Consonants <span class="muted" id="cCount"></span></h3>
+    <div class="tabs" id="chartTabs" role="tablist"></div>
+
+    <div class="tabpanel" id="tab-pulmonic" role="tabpanel">
+      <p class="muted small panel-note">Pulmonic consonants — place (columns) × manner (rows). Left = voiceless, right = voiced.</p>
       <div class="chart-scroll"><table class="chart" id="consonantChart"></table></div>
-      <h3 class="chart-title">Other common consonants</h3>
-      <div class="extras" id="consonantExtras"></div>
     </div>
 
-    <div class="chart-wrap">
-      <h3 class="chart-title">Vowels <span class="muted" id="vCount"></span></h3>
+    <div class="tabpanel" id="tab-nonpulm" role="tabpanel">
+      <p class="muted small panel-note">Non-pulmonic consonants — made with a non-lung airstream (clicks, implosives, ejectives).</p>
+      <div id="nonpulmGroups"></div>
+    </div>
+
+    <div class="tabpanel" id="tab-other" role="tabpanel">
+      <p class="muted small panel-note">Other symbols — co-articulated sounds, affricates, and miscellaneous segments.</p>
+      <div id="otherGroups"></div>
+    </div>
+
+    <div class="tabpanel" id="tab-vowels" role="tabpanel">
+      <p class="muted small panel-note">Vowels — height (rows) × backness (columns). Left = unrounded, right = rounded.</p>
       <div class="chart-scroll"><table class="chart vowels" id="vowelChart"></table></div>
     </div>
 

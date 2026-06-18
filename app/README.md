@@ -9,7 +9,7 @@ Complexity is gated by **level**, mirroring the Conlangs University course:
 
 | Level | Course | Status | What it covers |
 |------:|--------|--------|----------------|
-| **1** | Phonology 1 | ✅ implemented | Segments: consonant grid, vowel quadrilateral, common affricates/labial-velars |
+| **1** | Phonology 1 | ✅ implemented | Segments, in four tabs mirroring the IPA chart: **Pulmonic** · **Non-pulmonic** (clicks, implosives, ejectives) · **Other / co-articulated** (w, ʍ, ɥ, k͡p, ɡ͡b, affricates, ɕ ʑ, epiglottals…) · **Vowels** |
 | 2 | Phonology 2 | 🚧 scaffolded | Length & gemination, nasal vowels, diphthongs, syllable templates, cluster/coda rules |
 | 3 | Phonology 3 | 🚧 scaffolded | Stress, mora weight, vowel harmony |
 | 4 | Phonology 4 | 🚧 scaffolded | Register/contour tone, pitch accent, sandhi |
@@ -65,7 +65,8 @@ python3 scripts/build_wals_phonology.py /path/to/wals/cldf
 
 ## Features
 
-- Click blocks to add/remove sounds; commonness is shaded into each block.
+- Four tabs (Pulmonic / Non-pulmonic / Other / Vowels) with live per-tab counts;
+  click blocks to add/remove sounds; commonness is shaded into each block.
 - Live **naturalness** gauge + a transparent, itemised feedback list (no black box).
 - **Presets**: cross-linguistic core, a five-vowel workhorse, and this repo's
   Alantian inventory.

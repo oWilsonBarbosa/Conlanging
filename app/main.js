@@ -39,12 +39,25 @@ const C_CELLS = {
   "latapprox|alveolar":[null,"l"], "latapprox|retroflex":[null,"ɭ"],
   "latapprox|palatal":[null,"ʎ"], "latapprox|velar":[null,"ʟ"],
 };
-// Common consonants that don't sit in the pulmonic grid (exact PHOIBLE keys).
-const C_EXTRAS = [
-  ["w","labial-velar approximant"], ["t̠ʃ","voiceless postalveolar affricate"],
-  ["d̠ʒ","voiced postalveolar affricate"], ["ts","voiceless alveolar affricate"],
-  ["dz","voiced alveolar affricate"], ["kp","voiceless labial-velar stop"],
-  ["ɡb","voiced labial-velar stop"],
+// Consonants beyond the pulmonic grid, grouped as on the official IPA chart.
+// Exact PHOIBLE keys; /ʔ/ stays in the grid (plosive×glottal), not here.
+const C_NONPULM = [   // non-pulmonic: made with a non-lung airstream
+  ["Clicks", ["ʘ","ǀ","ǃ","ǂ","ǁ"]],
+  ["Voiced implosives", ["ɓ","ɗ","ʄ","ɠ","ʛ"]],
+  ["Ejectives", ["pʼ","tʼ","kʼ","qʼ","sʼ"]],
+];
+const C_OTHER = [     // IPA "Other symbols": co-articulated, affricates, misc.
+  ["Co-articulated", ["ʍ","w","ɥ","kp","ɡb"]],
+  ["Affricates", ["t̠ʃ","d̠ʒ","ts","dz"]],
+  ["Other", ["ɕ","ʑ","ʜ","ʢ","ʡ","ɺ","ɧ"]],
+];
+
+// Tabs for the board; each consonant tab counts toward its own group.
+const TABS = [
+  {id:"pulmonic", label:"Pulmonic"},
+  {id:"nonpulm",  label:"Non-pulmonic"},
+  {id:"other",    label:"Other / co-art."},
+  {id:"vowels",   label:"Vowels"},
 ];
 
 const V_HEIGHTS = [
@@ -103,13 +116,14 @@ const PRESETS = [
 const LS_KEY = "pib.v1";
 let DATA = null;                 // PHOIBLE summary
 let WALS = null;                 // WALS phonology summary (typological cross-check)
-const state = { level:1, selected:new Set() };
+const state = { level:1, tab:"pulmonic", selected:new Set() };
 
-function save(){ localStorage.setItem(LS_KEY, JSON.stringify({level:state.level, selected:[...state.selected]})); }
+function save(){ localStorage.setItem(LS_KEY, JSON.stringify({level:state.level, tab:state.tab, selected:[...state.selected]})); }
 function load(){
   try{ const o = JSON.parse(localStorage.getItem(LS_KEY)||"{}");
     if(Array.isArray(o.selected)) state.selected = new Set(o.selected);
     if(o.level) state.level = o.level;
+    if(o.tab) state.tab = o.tab;
   }catch(e){}
 }
 
@@ -163,11 +177,50 @@ function renderConsonants(){
       td.appendChild(wrap);
     });
   });
-  // extras
-  const ex = $("#consonantExtras"); ex.innerHTML="";
-  C_EXTRAS.forEach(([sym,desc])=>{
-    register(sym,{cls:"consonant",label:sym,desc});
-    ex.appendChild(makeBlock(sym,"consonant","extra","extra"));
+}
+
+/* Render grouped block rows (non-pulmonic, other/co-articulated). */
+function renderGroups(containerId, groups){
+  const c = $("#"+containerId); c.innerHTML="";
+  groups.forEach(([label, syms])=>{
+    const g = document.createElement("div"); g.className="cgroup";
+    const h = document.createElement("div"); h.className="cgroup-h"; h.textContent=label;
+    const row = document.createElement("div"); row.className="cgroup-row";
+    syms.forEach(s=> row.appendChild(makeBlock(s,"consonant",label,label)));
+    g.appendChild(h); g.appendChild(row); c.appendChild(g);
+  });
+}
+
+/* Board tabs (Pulmonic / Non-pulmonic / Other / Vowels). */
+function tabSyms(id){
+  if(id==="pulmonic") return Object.values(C_CELLS).flat().filter(Boolean);
+  if(id==="nonpulm")  return C_NONPULM.flatMap(([,s])=>s);
+  if(id==="other")    return C_OTHER.flatMap(([,s])=>s);
+  if(id==="vowels")   return Object.values(V_CELLS).flat().filter(Boolean);
+  return [];
+}
+function renderTabs(){
+  const bar = $("#chartTabs"); bar.innerHTML="";
+  TABS.forEach(t=>{
+    const b = document.createElement("button");
+    b.className = "tab"; b.dataset.tab = t.id; b.setAttribute("role","tab");
+    b.innerHTML = `${t.label} <span class="cnt"></span>`;
+    b.addEventListener("click", ()=>setTab(t.id));
+    bar.appendChild(b);
+  });
+  setTab(state.tab || "pulmonic");
+}
+function setTab(id){
+  state.tab = id; save();
+  document.querySelectorAll("#chartTabs .tab").forEach(b=>b.classList.toggle("active", b.dataset.tab===id));
+  document.querySelectorAll(".tabpanel").forEach(p=>p.classList.toggle("active", p.id===`tab-${id}`));
+  updateTabCounts();
+}
+function updateTabCounts(){
+  TABS.forEach(t=>{
+    const n = tabSyms(t.id).filter(s=>state.selected.has(s)).length;
+    const el = document.querySelector(`#chartTabs .tab[data-tab="${t.id}"] .cnt`);
+    if(el){ el.textContent = n; el.style.visibility = n ? "visible" : "hidden"; }
   });
 }
 
@@ -240,8 +293,6 @@ function renderTray(){
   }
   const cons=sel.filter(s=>classOf(s)==="consonant");
   const vows=sel.filter(s=>classOf(s)==="vowel");
-  $("#cCount").textContent = cons.length?`· ${cons.length} selected`:"";
-  $("#vCount").textContent = vows.length?`· ${vows.length} selected`:"";
   $("#ipaLine").textContent = sel.length? "/ "+[...cons,...vows].join(" ")+" /" : "";
 }
 
@@ -406,7 +457,7 @@ function refreshSelectionUI(){
   document.querySelectorAll(".block").forEach(b=>{
     if(b.dataset.sym) b.classList.toggle("on", state.selected.has(b.dataset.sym));
   });
-  renderTray(); renderFeedback();
+  renderTray(); renderFeedback(); updateTabCounts();
 }
 function setInventory(list){ state.selected=new Set(list); save(); refreshSelectionUI(); }
 
@@ -434,8 +485,8 @@ function exportMarkdown(){
         return pr.filter(s=>s&&state.selected.has(s)).join(" ");});
       L.push(`| **${ml}** | ${row.join(" | ")} |`);
     });
-    const extras=C_EXTRAS.map(e=>e[0]).filter(s=>state.selected.has(s));
-    if(extras.length) L.push("",`Other: ${extras.map(s=>"/"+s+"/").join(", ")}`);
+    const otherSel=[...C_NONPULM,...C_OTHER].flatMap(([,syms])=>syms).filter(s=>state.selected.has(s));
+    if(otherSel.length) L.push("",`Non-pulmonic / other: ${otherSel.map(s=>"/"+s+"/").join(", ")}`);
     L.push("");
   }
   if(vows.length){
@@ -506,7 +557,10 @@ function renderPresets(){
 async function boot(){
   load();
   renderLevels(); renderHeader();
-  renderConsonants(); renderVowels(); renderPresets();
+  renderConsonants();
+  renderGroups("nonpulmGroups", C_NONPULM);
+  renderGroups("otherGroups", C_OTHER);
+  renderVowels(); renderTabs(); renderPresets();
   // wire toolbar
   $("#btnClear").addEventListener("click",()=>{ if(state.selected.size){ setInventory([]); toast("Inventory cleared."); }});
   $("#btnMd").addEventListener("click",()=>copy(exportMarkdown(),"Markdown"));
@@ -529,7 +583,10 @@ async function boot(){
       $("#metaLine").textContent += ` · WALS cross-check (${WALS.features["19A"].n} langs)`; }
   }catch(e){ /* WALS is an optional enhancement */ }
   // re-render now that frequencies are available
-  renderConsonants(); renderVowels();
-  renderTray(); renderFeedback();
+  renderConsonants();
+  renderGroups("nonpulmGroups", C_NONPULM);
+  renderGroups("otherGroups", C_OTHER);
+  renderVowels();
+  renderTray(); renderFeedback(); updateTabCounts();
 }
 document.addEventListener("DOMContentLoaded", boot);
