@@ -102,6 +102,7 @@ const PRESETS = [
  * ------------------------------------------------------------------ */
 const LS_KEY = "pib.v1";
 let DATA = null;                 // PHOIBLE summary
+let WALS = null;                 // WALS phonology summary (typological cross-check)
 const state = { level:1, selected:new Set() };
 
 function save(){ localStorage.setItem(LS_KEY, JSON.stringify({level:state.level, selected:[...state.selected]})); }
@@ -249,6 +250,58 @@ function renderTray(){
  * ------------------------------------------------------------------ */
 const NASALS=["m","n","ŋ","ɲ","ɳ","ɱ","ɴ","ʙ"]; // (ʙ harmless)
 function has(s){ return state.selected.has(s); }
+const any = arr => arr.some(has);
+
+/* Structural groups used to map an inventory onto WALS categories. */
+const W = {
+  voicedPlos:["b","d","ɖ","ɟ","ɡ","ɢ"], voicelessPlos:["p","t","ʈ","c","k","q","ʔ"],
+  voicedFric:["β","v","ð","z","ʒ","ʐ","ʝ","ɣ","ʁ","ʕ","ɦ","ɮ"],
+  voicelessFric:["ɸ","f","θ","s","ʃ","ʂ","ç","x","χ","ħ","h","ɬ"],
+  uvularStop:["q","ɢ"], uvularCont:["χ","ʁ","ɴ","ʀ"], frHigh:["y","ʏ"], frMid:["ø","œ"],
+  nasals:["m","ɱ","n","ɳ","ɲ","ŋ","ɴ"], bilabials:["p","b","m","ɸ","β","ʙ"],
+  labialVelars:["kp","ɡb"], pharyngeals:["ħ","ʕ"], thSounds:["θ","ð"], clicks:["ʘ","ǀ","ǃ","ǂ","ǁ"],
+};
+
+/* Cross the inventory against WALS typological classes -> feedback lines. */
+function walsItems(cons, vows){
+  const items=[]; let pen=0; const F=WALS.features;
+  const P=v=>Math.round(v*100)+"%";
+  const sh=(pid,cat)=>{ const f=F[pid]; if(!f) return null; return f.n? (f.dist[cat]||0)/f.n : null; };
+  const haveShare=pid=>{ const f=F[pid]; if(!f) return null; return (f.n-(f.dist["None"]||0))/f.n; };
+  const binName=(pid,x)=>{ const b=F[pid]&&F[pid].bins; if(!b) return null;
+    for(const [mx,nm] of b){ if(mx==null||x<=mx) return nm; } return b[b.length-1][1]; };
+  const push=(lvl,html,w=0)=>{ items.push({level:lvl,html}); pen+=w; };
+
+  if(cons.length){ const nm=binName("1A",cons.length), s=sh("1A",nm);
+    push(nm==="Average"?"good":"info",
+      `<b>${cons.length} consonants</b> → a <b>${nm.toLowerCase()}</b> inventory${s!=null?` (${P(s)} of the WALS sample)`:""}.`); }
+  if(vows.length){ const nm=binName("2A",vows.length), s=sh("2A",nm);
+    push(nm.startsWith("Average")?"good":"info",
+      `<b>${vows.length} vowel qualities</b> → a <b>${nm.replace(/\s*\(.*\)/,"").toLowerCase()}</b> vowel system${s!=null?` (${P(s)} of WALS)`:""}.`); }
+
+  if(any(W.voicedPlos)||any(W.voicelessPlos)||any(W.voicedFric)||any(W.voicelessFric)){
+    const cp=any(W.voicedPlos)&&any(W.voicelessPlos), cf=any(W.voicedFric)&&any(W.voicelessFric);
+    const cat=cp&&cf?"In both plosives and fricatives":cp?"In plosives alone":cf?"In fricatives alone":"No voicing contrast";
+    const s=sh("4A",cat); push("info",`Voicing contrast: <b>${cat.toLowerCase()}</b>${s!=null?` — ${P(s)} of WALS languages`:""}.`); }
+
+  if(any(W.uvularStop)||any(W.uvularCont)){ const hv=haveShare("6A");
+    push("info",`Uvular consonants present — uncommon: only ${P(hv)} of WALS languages have any uvular.`); }
+  if(has("ŋ")){ const f=F["9A"]; const s=f?((f.dist["Initial velar nasal"]||0)+(f.dist["No initial velar nasal"]||0))/f.n:null;
+    push("info",`Includes <b>/ŋ/</b>${s!=null?` — ~${P(s)} of WALS languages have a velar nasal`:""}.`); }
+  if(any(W.frHigh)||any(W.frMid)){ const hv=haveShare("11A");
+    push("info",`<b>Front rounded vowels</b> are cross-linguistically rare — only ${P(hv)} of WALS languages have any.`); }
+
+  if(cons.length){ const fric=W.voicedFric.concat(W.voicelessFric);
+    if(!any(W.nasals)) push("info",`No nasals — WALS records none in just ${P(sh("18A","No nasals"))} of languages.`);
+    if(!any(fric))     push("warn",`No fricatives at all — a real but uncommon gap (${P(sh("18A","No fricatives"))} of WALS).`,5);
+    if(!any(W.bilabials)) push("warn",`No bilabial consonants — extremely rare (${P(sh("18A","No bilabials"))} of WALS).`,6); }
+
+  [["Clicks",W.clicks],["Labial-velars",W.labialVelars],["Pharyngeals",W.pharyngeals],["'Th' sounds",W.thSounds]]
+    .forEach(([cat,set])=>{ if(any(set)){ const s=sh("19A",cat);
+      push("info",`Uncommon class — <b>${cat.toLowerCase()}</b>: ~${s!=null?P(s):"few"} of WALS languages. Distinctive but attested.`); }});
+
+  return {items, pen};
+}
 
 function evaluate(){
   const fb=[]; const warnSyms=new Set();
@@ -302,6 +355,16 @@ function evaluate(){
   const avg = sel.reduce((a,s)=>a+freq(s),0)/sel.length;
   if(sel.length>=5) add("info",`Mean segment commonness: <b>${pct(avg)}%</b> across your ${sel.length} sounds.`);
 
+  // ---- WALS typological cross-check (separate source)
+  if(WALS && WALS.features){
+    const {items,pen}=walsItems(cons,vows);
+    if(items.length){
+      fb.push({level:"div", html:"WALS typological cross-check"});
+      items.forEach(it=>fb.push({level:it.level, html:it.html, src:"wals"}));
+      penalty+=pen;
+    }
+  }
+
   let score = Math.max(0, Math.min(100, 100-penalty));
   return {fb, score, warnSyms};
 }
@@ -315,8 +378,12 @@ function renderFeedback(){
   // list
   const ul=$("#feedback"); ul.innerHTML="";
   const icon={good:"✓",warn:"!",bad:"✕",info:"i"};
-  fb.forEach(f=>{ const li=document.createElement("li"); li.className=f.level;
-    li.innerHTML=`<span class="ic">${icon[f.level]}</span><span>${f.html}</span>`; ul.appendChild(li); });
+  fb.forEach(f=>{
+    if(f.level==="div"){ const li=document.createElement("li"); li.className="divider"; li.textContent=f.html; ul.appendChild(li); return; }
+    const li=document.createElement("li"); li.className=f.level;
+    const tag = f.src==="wals" ? '<span class="src">WALS</span>' : "";
+    li.innerHTML=`<span class="ic">${icon[f.level]}</span><span>${tag}${f.html}</span>`; ul.appendChild(li);
+  });
   // badge + gauge
   const badge=$("#scoreBadge"), fill=$("#gaugeFill");
   if(score==null){ badge.textContent="—"; fill.style.width="0"; }
@@ -451,11 +518,16 @@ async function boot(){
     if(!res.ok) throw new Error(res.status);
     DATA=await res.json();
     const m=DATA.meta;
-    $("#metaLine").textContent=`· ${m.n_inventories} inventories · generated ${m.generated}`;
+    $("#metaLine").textContent=`· PHOIBLE ${m.n_inventories} inventories · generated ${m.generated}`;
   }catch(e){
     toast("Could not load PHOIBLE summary — serve this folder over http (see README).");
     $("#metaLine").textContent="· PHOIBLE summary not loaded";
   }
+  try{
+    const r2=await fetch("data/wals-phonology.json");
+    if(r2.ok){ WALS=await r2.json();
+      $("#metaLine").textContent += ` · WALS cross-check (${WALS.features["19A"].n} langs)`; }
+  }catch(e){ /* WALS is an optional enhancement */ }
   // re-render now that frequencies are available
   renderConsonants(); renderVowels();
   renderTray(); renderFeedback();

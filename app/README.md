@@ -32,21 +32,35 @@ It also works as-is on **GitHub Pages** (point Pages at `/app`).
 
 ## What the feedback is based on
 
-`data/phoible-summary.json` is a compact summary distilled from PHOIBLE by
+Two complementary sources are crossed:
+
+**PHOIBLE 2.0** → `data/phoible-summary.json`, distilled by
 [`../scripts/build_phoible_summary.py`](../scripts/build_phoible_summary.py):
 
-- **Segment frequency** — % of PHOIBLE inventories containing each sound (shown
-  on every block, and used to praise/nudge).
-- **Inventory-size stats** — mean/median/percentiles for consonants & vowels, so
-  "16 consonants" can be judged *typical / small / large*.
+- **Segment frequency** — % of 3,020 inventories containing each sound (shown on
+  every block, and used to praise/nudge).
+- **Inventory-size stats** — mean/median/percentiles for consonants & vowels.
 - **Implicational co-occurrence** — e.g. *91% of languages with /ɡ/ also have /k/*;
   drives the "you have X but not Y" warnings (computed from the data, not hard-coded).
 
-To refresh after pinning a new PHOIBLE release:
+**WALS** → `data/wals-phonology.json`, distilled by
+[`../scripts/build_wals_phonology.py`](../scripts/build_wals_phonology.py), adds the
+*typological* view (its ~567-language phonology sample) as a labelled **WALS**
+cross-check in the feedback panel:
+
+- **Inventory-size class** (1A/2A) — "16 consonants → an *average* inventory (35% of WALS)".
+- **Voicing contrast** (4A) — in plosives, fricatives, both, or neither.
+- **Uncommon consonants** (19A) — clicks, labial-velars, pharyngeals, 'th' sounds.
+- **Absence of common consonants** (18A) — no nasals / fricatives / bilabials.
+- **Uvulars** (6A), **velar nasal** (9A), **front rounded vowels** (11A).
+
+To refresh after pinning new releases:
 
 ```bash
 scripts/fetch_data.sh phoible          # or grab data/phoible.csv directly
 python3 scripts/build_phoible_summary.py /path/to/phoible.csv
+scripts/fetch_data.sh wals             # then point at the unzipped cldf/ dir
+python3 scripts/build_wals_phonology.py /path/to/wals/cldf
 ```
 
 ## Features
@@ -67,7 +81,9 @@ app/
 ├── main.js         charts, level framework, naturalness engine, export
 ├── data/
 │   ├── phoible-summary.json     derived PHOIBLE summary (CC-BY-SA 3.0)
-│   └── phoible-summary.LICENSE  attribution + license for that file
+│   ├── phoible-summary.LICENSE  attribution + license for that file
+│   ├── wals-phonology.json      derived WALS summary (CC-BY 4.0)
+│   └── wals-phonology.LICENSE   attribution + license for that file
 └── README.md       you are here
 ```
 

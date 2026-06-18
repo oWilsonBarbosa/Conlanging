@@ -111,6 +111,10 @@ table.chart td{padding:3px;text-align:center;border-left:1px solid #ffffff08}
 .feedback .good .ic{color:var(--good)} .feedback .warn .ic{color:var(--warn)}
 .feedback .bad .ic{color:var(--bad)} .feedback .info .ic{color:var(--accent)}
 .feedback b{color:#fff;font-weight:600}
+.feedback li.divider{display:block;margin-top:4px;padding-top:8px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.7px}
+.feedback .src{display:inline-block;font-size:9px;font-weight:800;color:#cdbcff;background:#241f3a;
+  border:1px solid #4a3f7a;border-radius:4px;padding:0 4px;margin-right:6px;vertical-align:1px;letter-spacing:.3px}
 
 .menu{position:relative}
 .menu summary{list-style:none}.menu summary::-webkit-details-marker{display:none}

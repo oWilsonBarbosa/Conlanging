@@ -72,5 +72,11 @@ file is checked in:
   Moran & McCloy (2019); see `app/data/phoible-summary.LICENSE`. This obligation
   applies to that file only — the app's own code is CC-BY 4.0.
 
+- **`app/data/wals-phonology.json`** — per-category language counts for nine WALS
+  phonology features, computed from **WALS Online** by
+  `scripts/build_wals_phonology.py`, used as the app's typological cross-check.
+  As an adaptation of WALS data it is **CC-BY 4.0** with attribution to Dryer &
+  Haspelmath (2013); see `app/data/wals-phonology.LICENSE`.
+
 > If you spot an out-of-date citation, version, or license, please open an issue or
 > correct `data/sources.csv` and this file together.
