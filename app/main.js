@@ -136,6 +136,23 @@ function freq(sym){
 function classOf(sym){ return CATALOG.get(sym)?.cls
   || (DATA && DATA.vowels[sym] ? "vowel" : "consonant"); }
 
+/* Display info: the direct PHOIBLE proportion, or an aggregate fallback for
+   symbols stored only inside composites (e.g. clicks → /kǀ/), flagged approx. */
+function segInfo(sym){
+  if(!DATA) return {p:0, approx:false, note:null};
+  const direct = DATA.consonants[sym] ?? DATA.vowels[sym] ?? DATA.tones[sym];
+  if(direct!=null) return {p: direct/DATA.meta.n_inventories, approx:false, note:null};
+  const agg = DATA.aggregates && DATA.aggregates[sym];
+  if(agg) return {p: agg.n/DATA.meta.n_inventories, approx:true, note:agg.note};
+  return {p:0, approx:false, note:null};
+}
+function fmtPct(p){ const x=p*100;
+  if(x>=1) return Math.round(x)+"%";
+  if(x>=0.1) return x.toFixed(1)+"%";
+  if(x>0) return "<0.1%";
+  return null;
+}
+
 /* ------------------------------------------------------------------ *
  * 5. Rendering
  * ------------------------------------------------------------------ */
@@ -146,13 +163,17 @@ function pct(x){ return Math.round(x*100); }
 function makeBlock(sym, cls, place, manner){
   if(!sym){ const d=document.createElement("div"); d.className="block empty"; return d; }
   register(sym, {cls, place, manner, label:sym});
-  const f = freq(sym);
+  const info = segInfo(sym);
+  let lab = info.p ? fmtPct(info.p) : "rare";
+  if(info.approx && lab && lab[0] !== "<") lab = "~"+lab;
   const b = document.createElement("button");
   b.className = "block" + (state.selected.has(sym) ? " on":"");
-  b.style.setProperty("--f", Math.min(1, f/0.9).toFixed(3));
+  b.style.setProperty("--f", Math.min(1, info.p/0.9).toFixed(3));
   b.dataset.sym = sym;
-  b.innerHTML = `<b class="ipa">${sym}</b><span class="fr">${f? pct(f)+"%":"rare"}</span>`;
-  b.title = `/${sym}/ — in ${f?pct(f)+"% of PHOIBLE languages":"<0.1% (rare/unattested)"}`;
+  b.innerHTML = `<b class="ipa">${sym}</b><span class="fr">${lab}</span>`;
+  b.title = info.p
+    ? `/${sym}/ — ${info.approx?"≈":"in "}${fmtPct(info.p)} of PHOIBLE inventories${info.note?` (${info.note})`:""}`
+    : `/${sym}/ — <0.1% of PHOIBLE inventories (rare/unattested)`;
   b.addEventListener("click", ()=>toggle(sym));
   return b;
 }
@@ -280,13 +301,14 @@ function renderTray(){
   if(!sel.length){ tray.innerHTML='<p class="muted empty">No sounds yet — click blocks on the chart to add them.</p>'; }
   else{
     tray.innerHTML="";
-    // order: consonants by frequency then vowels by frequency
-    const order=(a,b)=>freq(b)-freq(a);
+    // order: consonants by commonness then vowels by commonness
+    const order=(a,b)=>segInfo(b).p-segInfo(a).p;
     const cons=sel.filter(s=>classOf(s)==="consonant").sort(order);
     const vows=sel.filter(s=>classOf(s)==="vowel").sort(order);
     [...cons,...vows].forEach(sym=>{
       const c=document.createElement("button"); c.className="chip"; c.title="Click to remove";
-      c.innerHTML=`<span class="ipa">${sym}</span><small>${freq(sym)?pct(freq(sym))+"%":"·"}</small>`;
+      const ti=segInfo(sym); let tl=ti.p?fmtPct(ti.p):"·"; if(ti.approx&&tl&&tl[0]!=="<")tl="~"+tl;
+      c.innerHTML=`<span class="ipa">${sym}</span><small>${tl}</small>`;
       c.addEventListener("click",()=>toggle(sym));
       tray.appendChild(c);
     });

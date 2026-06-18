@@ -61,6 +61,15 @@ IMPLICATIONS = [
 
 MIN_INV = 3  # keep segments attested in >= this many inventories
 
+# Clicks are stored in PHOIBLE as composite segments (/kǀ/, /ŋǀ/, …), so the bare
+# click letter is essentially never a standalone phoneme and would read "rare".
+# Surface an honest class prevalence: # inventories with ANY segment containing
+# the click letter. (These letters occur only in clicks, so substring is safe.)
+CLICK_LETTERS = {
+    "ʘ": "bilabial click", "ǀ": "dental click", "ǃ": "(post)alveolar click",
+    "ǂ": "palatal click", "ǁ": "lateral click",
+}
+
 
 def main() -> None:
     inv: dict[str, dict[str, set]] = {}
@@ -94,6 +103,13 @@ def main() -> None:
         pass
     buckets = {k: dict(sorted(v.items(), key=lambda kv: -kv[1])) for k, v in buckets.items()}
 
+    # Aggregate prevalence for symbols that PHOIBLE only stores inside composites.
+    aggregates = {}
+    for c, desc in CLICK_LETTERS.items():
+        n = sum(1 for d in inv.values() if any(c in p for p in d["all"]))
+        if n:
+            aggregates[c] = {"n": n, "note": f"{desc}; counted across composite click segments like /kǀ/"}
+
     implications = []
     for a, b, note in IMPLICATIONS:
         ia = seg_inv.get(a, set())
@@ -118,6 +134,7 @@ def main() -> None:
         "consonants": buckets["consonant"],
         "vowels": buckets["vowel"],
         "tones": buckets["tone"],
+        "aggregates": aggregates,
         "implications": implications,
     }
 
