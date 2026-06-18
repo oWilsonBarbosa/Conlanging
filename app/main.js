@@ -44,7 +44,7 @@ const C_EXTRAS = [
   ["w","labial-velar approximant"], ["t̠ʃ","voiceless postalveolar affricate"],
   ["d̠ʒ","voiced postalveolar affricate"], ["ts","voiceless alveolar affricate"],
   ["dz","voiced alveolar affricate"], ["kp","voiceless labial-velar stop"],
-  ["ɡb","voiced labial-velar stop"], ["ʔ","glottal stop"],
+  ["ɡb","voiced labial-velar stop"],
 ];
 
 const V_HEIGHTS = [
