@@ -67,6 +67,10 @@ python3 scripts/build_wals_phonology.py /path/to/wals/cldf
 
 - Four tabs (Pulmonic / Non-pulmonic / Other / Vowels) with live per-tab counts;
   click blocks to add/remove sounds; commonness is shaded into each block.
+- The pulmonic grid is the **complete** IPA chart: impossible articulations are
+  shaded, and a **“Show derived ⟨t̪ m̥⟩”** toggle reveals cells written with a
+  diacritic (dental/labiodental stops, dental nasal, voiceless sonorants…),
+  hidden by default to keep the base chart clean.
 - Live **naturalness** gauge + a transparent, itemised feedback list (no black box).
 - **Presets**: cross-linguistic core, a five-vowel workhorse, and this repo's
   Alantian inventory.

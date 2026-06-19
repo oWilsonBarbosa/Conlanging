@@ -49,6 +49,31 @@ const IMPOSSIBLE = new Set([
   "latfric|bilabial","latfric|labiodental","latfric|pharyngeal","latfric|glottal",
   "latapprox|bilabial","latapprox|labiodental","latapprox|pharyngeal","latapprox|glottal",
 ]);
+
+// "Derived" cells: possible articulations the IPA writes with a diacritic rather
+// than a dedicated letter (dental/labiodental stops, dental nasal, voiceless
+// sonorants…). Hidden behind a toggle so the base chart stays clean. Slots fill
+// the empty half of a base cell (e.g. voiceless /m̥/ beside /m/).
+const DERIVED = {
+  "plosive|labiodental":["p̪","b̪"], "plosive|dental":["t̪","d̪"],
+  "nasal|bilabial":["m̥",null], "nasal|labiodental":["ɱ̊",null], "nasal|dental":[null,"n̪"],
+  "nasal|alveolar":["n̥",null], "nasal|retroflex":["ɳ̊",null], "nasal|palatal":["ɲ̊",null],
+  "nasal|velar":["ŋ̊",null], "nasal|uvular":["ɴ̥",null],
+  "trill|bilabial":["ʙ̥",null], "trill|alveolar":["r̥",null], "trill|uvular":["ʀ̥",null],
+  "tap|labiodental":["ⱱ̥",null], "tap|alveolar":["ɾ̥",null], "tap|retroflex":["ɽ̊",null],
+  "approx|bilabial":[null,"β̞"], "approx|dental":[null,"ð̞"], "approx|alveolar":["ɹ̥",null],
+  "approx|palatal":["j̊",null],
+  "latapprox|dental":[null,"l̪"], "latapprox|alveolar":["l̥",null], "latapprox|retroflex":["ɭ̊",null],
+  "latapprox|palatal":["ʎ̊",null], "latapprox|velar":["ʟ̥",null],
+};
+// Merge base + derived into one lookup (base symbol wins each slot).
+const MCELLS = {};
+{
+  const keys = new Set([...Object.keys(C_CELLS), ...Object.keys(DERIVED)]);
+  keys.forEach(k=>{ const b=C_CELLS[k]||[null,null], d=DERIVED[k]||[null,null];
+    MCELLS[k] = [b[0]||d[0]||null, b[1]||d[1]||null]; });
+}
+const isDerived = (k,i) => !(C_CELLS[k] && C_CELLS[k][i]) && !!(DERIVED[k] && DERIVED[k][i]);
 // Consonants beyond the pulmonic grid, grouped as on the official IPA chart.
 // Exact PHOIBLE keys; /ʔ/ stays in the grid (plosive×glottal), not here.
 const C_NONPULM = [   // non-pulmonic: made with a non-lung airstream
@@ -126,14 +151,15 @@ const PRESETS = [
 const LS_KEY = "pib.v1";
 let DATA = null;                 // PHOIBLE summary
 let WALS = null;                 // WALS phonology summary (typological cross-check)
-const state = { level:1, tab:"pulmonic", selected:new Set() };
+const state = { level:1, tab:"pulmonic", derived:false, selected:new Set() };
 
-function save(){ localStorage.setItem(LS_KEY, JSON.stringify({level:state.level, tab:state.tab, selected:[...state.selected]})); }
+function save(){ localStorage.setItem(LS_KEY, JSON.stringify({level:state.level, tab:state.tab, derived:state.derived, selected:[...state.selected]})); }
 function load(){
   try{ const o = JSON.parse(localStorage.getItem(LS_KEY)||"{}");
     if(Array.isArray(o.selected)) state.selected = new Set(o.selected);
     if(o.level) state.level = o.level;
     if(o.tab) state.tab = o.tab;
+    if(typeof o.derived==="boolean") state.derived = o.derived;
   }catch(e){}
 }
 
@@ -170,20 +196,21 @@ const $ = s => document.querySelector(s);
 
 function pct(x){ return Math.round(x*100); }
 
-function makeBlock(sym, cls, place, manner){
+function makeBlock(sym, cls, place, manner, derived){
   if(!sym){ const d=document.createElement("div"); d.className="block empty"; return d; }
   register(sym, {cls, place, manner, label:sym});
   const info = segInfo(sym);
   let lab = info.p ? fmtPct(info.p) : "rare";
   if(info.approx && lab && lab[0] !== "<") lab = "~"+lab;
   const b = document.createElement("button");
-  b.className = "block" + (state.selected.has(sym) ? " on":"");
+  b.className = "block" + (state.selected.has(sym) ? " on":"") + (derived ? " derived":"");
   b.style.setProperty("--f", Math.min(1, info.p/0.9).toFixed(3));
   b.dataset.sym = sym;
   b.innerHTML = `<b class="ipa">${sym}</b><span class="fr">${lab}</span>`;
-  b.title = info.p
+  const base = info.p
     ? `/${sym}/ — ${info.approx?"≈":"in "}${fmtPct(info.p)} of PHOIBLE inventories${info.note?` (${info.note})`:""}`
     : `/${sym}/ — <0.1% of PHOIBLE inventories (rare/unattested)`;
+  b.title = derived ? base + " · derived (written with a diacritic)" : base;
   b.addEventListener("click", ()=>toggle(sym));
   return b;
 }
@@ -200,13 +227,14 @@ function renderConsonants(){
     tr.insertCell().outerHTML = `<th class="row">${mlabel}</th>`;
     C_PLACES.forEach(([pid])=>{
       const td = tr.insertCell();
-      const pair = C_CELLS[`${mid}|${pid}`];
-      if(pair){
+      const key = `${mid}|${pid}`;
+      const pair = MCELLS[key];
+      if(pair && (pair[0] || pair[1])){
         const wrap = document.createElement("div"); wrap.className="cellpair";
-        wrap.appendChild(makeBlock(pair[0],"consonant",pid,mid));
-        wrap.appendChild(makeBlock(pair[1],"consonant",pid,mid));
+        wrap.appendChild(makeBlock(pair[0],"consonant",pid,mid, isDerived(key,0)));
+        wrap.appendChild(makeBlock(pair[1],"consonant",pid,mid, isDerived(key,1)));
         td.appendChild(wrap);
-      } else if(IMPOSSIBLE.has(`${mid}|${pid}`)){
+      } else if(IMPOSSIBLE.has(key)){
         td.className = "imp"; td.title = "Articulation judged impossible";
       }
     });
@@ -227,7 +255,7 @@ function renderGroups(containerId, groups){
 
 /* Board tabs (Pulmonic / Non-pulmonic / Other / Vowels). */
 function tabSyms(id){
-  if(id==="pulmonic") return Object.values(C_CELLS).flat().filter(Boolean);
+  if(id==="pulmonic") return Object.values(MCELLS).flat().filter(Boolean);
   if(id==="nonpulm")  return C_NONPULM.flatMap(([,s])=>s);
   if(id==="other")    return C_OTHER.flatMap(([,s])=>s);
   if(id==="vowels")   return Object.values(V_CELLS).flat().filter(Boolean);
@@ -249,6 +277,9 @@ function setTab(id){
   document.querySelectorAll("#chartTabs .tab").forEach(b=>b.classList.toggle("active", b.dataset.tab===id));
   document.querySelectorAll(".tabpanel").forEach(p=>p.classList.toggle("active", p.id===`tab-${id}`));
   updateTabCounts();
+}
+function applyDerived(){
+  const t=$("#consonantChart"); if(t) t.classList.toggle("show-derived", !!state.derived);
 }
 function updateTabCounts(){
   TABS.forEach(t=>{
@@ -334,7 +365,7 @@ function renderTray(){
 /* ------------------------------------------------------------------ *
  * 6. Naturalness engine
  * ------------------------------------------------------------------ */
-const NASALS=["m","n","ŋ","ɲ","ɳ","ɱ","ɴ","ʙ"]; // (ʙ harmless)
+const NASALS=["m","n","ŋ","ɲ","ɳ","ɱ","ɴ","n̪"]; // include the dental nasal
 function has(s){ return state.selected.has(s); }
 const any = arr => arr.some(has);
 
@@ -344,7 +375,7 @@ const W = {
   voicedFric:["β","v","ð","z","ʒ","ʐ","ʝ","ɣ","ʁ","ʕ","ɦ","ɮ"],
   voicelessFric:["ɸ","f","θ","s","ʃ","ʂ","ç","x","χ","ħ","h","ɬ"],
   uvularStop:["q","ɢ"], uvularCont:["χ","ʁ","ɴ","ʀ"], frHigh:["y","ʏ"], frMid:["ø","œ"],
-  nasals:["m","ɱ","n","ɳ","ɲ","ŋ","ɴ"], bilabials:["p","b","m","ɸ","β","ʙ"],
+  nasals:["m","ɱ","n","n̪","ɳ","ɲ","ŋ","ɴ"], bilabials:["p","b","m","ɸ","β","ʙ"],
   labialVelars:["kp","ɡb"], pharyngeals:["ħ","ʕ"], thSounds:["θ","ð"], clicks:["ʘ","ǀ","ǃ","ǂ","ǁ"],
 };
 
@@ -509,14 +540,14 @@ function exportMarkdown(){
   // consonant table — only places/manners in use
   if(cons.length){
     const usedP=C_PLACES.filter(([pid])=>C_MANNERS.some(([mid])=>{
-      const pr=C_CELLS[`${mid}|${pid}`]; return pr&&pr.some(s=>s&&state.selected.has(s));}));
+      const pr=MCELLS[`${mid}|${pid}`]; return pr&&pr.some(s=>s&&state.selected.has(s));}));
     const usedM=C_MANNERS.filter(([mid])=>C_PLACES.some(([pid])=>{
-      const pr=C_CELLS[`${mid}|${pid}`]; return pr&&pr.some(s=>s&&state.selected.has(s));}));
+      const pr=MCELLS[`${mid}|${pid}`]; return pr&&pr.some(s=>s&&state.selected.has(s));}));
     L.push(`## Consonants (${cons.length})`,"");
     L.push("| | "+usedP.map(p=>p[1]).join(" | ")+" |");
     L.push("|---|"+usedP.map(()=>"---").join("|")+"|");
     usedM.forEach(([mid,ml])=>{
-      const row=usedP.map(([pid])=>{ const pr=C_CELLS[`${mid}|${pid}`]||[];
+      const row=usedP.map(([pid])=>{ const pr=MCELLS[`${mid}|${pid}`]||[];
         return pr.filter(s=>s&&state.selected.has(s)).join(" ");});
       L.push(`| **${ml}** | ${row.join(" | ")} |`);
     });
@@ -595,8 +626,12 @@ async function boot(){
   renderConsonants();
   renderGroups("nonpulmGroups", C_NONPULM);
   renderGroups("otherGroups", C_OTHER);
-  renderVowels(); renderTabs(); renderPresets();
+  renderVowels(); renderTabs(); renderPresets(); applyDerived();
   // wire toolbar
+  const dt=$("#derivedToggle");
+  if(dt){ dt.checked=!!state.derived;
+    dt.addEventListener("change",()=>{ state.derived=dt.checked; save(); applyDerived();
+      toast(state.derived?"Showing derived (diacritic) segments.":"Hiding derived segments."); }); }
   $("#btnClear").addEventListener("click",()=>{ if(state.selected.size){ setInventory([]); toast("Inventory cleared."); }});
   $("#btnMd").addEventListener("click",()=>copy(exportMarkdown(),"Markdown"));
   $("#btnJson").addEventListener("click",()=>copy(exportJSON(),"JSON"));
@@ -621,7 +656,7 @@ async function boot(){
   renderConsonants();
   renderGroups("nonpulmGroups", C_NONPULM);
   renderGroups("otherGroups", C_OTHER);
-  renderVowels();
+  renderVowels(); applyDerived();
   renderTray(); renderFeedback(); updateTabCounts();
 }
 document.addEventListener("DOMContentLoaded", boot);

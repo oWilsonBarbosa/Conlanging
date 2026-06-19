@@ -27,7 +27,12 @@
     <div class="tabs" id="chartTabs" role="tablist"></div>
 
     <div class="tabpanel" id="tab-pulmonic" role="tabpanel">
-      <p class="muted small panel-note">Pulmonic consonants — place (columns) × manner (rows). Left = voiceless, right = voiced.</p>
+      <div class="panel-note-row">
+        <p class="muted small panel-note">Pulmonic consonants — place (columns) × manner (rows). Left = voiceless, right = voiced.</p>
+        <label class="switch" title="Show possible cells written with a diacritic (dental stops, voiceless sonorants…)">
+          <input type="checkbox" id="derivedToggle"> <span>Show derived ⟨t̪ m̥⟩</span>
+        </label>
+      </div>
       <div class="chart-scroll"><table class="chart" id="consonantChart"></table></div>
     </div>
 
