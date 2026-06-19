@@ -17,7 +17,7 @@ const C_PLACES = [
 ];
 const C_MANNERS = [
   ["plosive","Plosive"],["nasal","Nasal"],["trill","Trill"],["tap","Tap/Flap"],
-  ["fricative","Fricative"],["latfric","Lateral fric."],
+  ["sibilant","Sibilant fric."],["nonsibilant","Non-sibilant fric."],["latfric","Lateral fric."],
   ["approx","Approximant"],["latapprox","Lateral approx."],
 ];
 // "manner|place": [voiceless, voiced]   (null where IPA has no symbol)
@@ -29,10 +29,10 @@ const C_CELLS = {
   "nasal|retroflex":[null,"ɳ"], "nasal|palatal":[null,"ɲ"], "nasal|velar":[null,"ŋ"], "nasal|uvular":[null,"ɴ"],
   "trill|bilabial":[null,"ʙ"], "trill|alveolar":[null,"r"], "trill|uvular":[null,"ʀ"],
   "tap|alveolar":[null,"ɾ"], "tap|retroflex":[null,"ɽ"],
-  "fricative|bilabial":["ɸ","β"], "fricative|labiodental":["f","v"], "fricative|dental":["θ","ð"],
-  "fricative|alveolar":["s","z"], "fricative|postalveolar":["ʃ","ʒ"], "fricative|retroflex":["ʂ","ʐ"],
-  "fricative|palatal":["ç","ʝ"], "fricative|velar":["x","ɣ"], "fricative|uvular":["χ","ʁ"],
-  "fricative|pharyngeal":["ħ","ʕ"], "fricative|glottal":["h","ɦ"],
+  "sibilant|alveolar":["s","z"], "sibilant|postalveolar":["ʃ","ʒ"], "sibilant|retroflex":["ʂ","ʐ"],
+  "nonsibilant|bilabial":["ɸ","β"], "nonsibilant|labiodental":["f","v"], "nonsibilant|dental":["θ","ð"],
+  "nonsibilant|palatal":["ç","ʝ"], "nonsibilant|velar":["x","ɣ"], "nonsibilant|uvular":["χ","ʁ"],
+  "nonsibilant|pharyngeal":["ħ","ʕ"], "nonsibilant|glottal":["h","ɦ"],
   "latfric|alveolar":["ɬ","ɮ"],
   "approx|labiodental":[null,"ʋ"], "approx|alveolar":[null,"ɹ"], "approx|retroflex":[null,"ɻ"],
   "approx|palatal":[null,"j"], "approx|velar":[null,"ɰ"],
