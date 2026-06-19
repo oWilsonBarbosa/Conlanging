@@ -28,7 +28,7 @@ const C_CELLS = {
   "nasal|bilabial":[null,"m"], "nasal|labiodental":[null,"ɱ"], "nasal|alveolar":[null,"n"],
   "nasal|retroflex":[null,"ɳ"], "nasal|palatal":[null,"ɲ"], "nasal|velar":[null,"ŋ"], "nasal|uvular":[null,"ɴ"],
   "trill|bilabial":[null,"ʙ"], "trill|alveolar":[null,"r"], "trill|uvular":[null,"ʀ"],
-  "tap|alveolar":[null,"ɾ"], "tap|retroflex":[null,"ɽ"],
+  "tap|labiodental":[null,"ⱱ"], "tap|alveolar":[null,"ɾ"], "tap|retroflex":[null,"ɽ"],
   "sibilant|alveolar":["s","z"], "sibilant|postalveolar":["ʃ","ʒ"], "sibilant|retroflex":["ʂ","ʐ"],
   "nonsibilant|bilabial":["ɸ","β"], "nonsibilant|labiodental":["f","v"], "nonsibilant|dental":["θ","ð"],
   "nonsibilant|palatal":["ç","ʝ"], "nonsibilant|velar":["x","ɣ"], "nonsibilant|uvular":["χ","ʁ"],
@@ -39,6 +39,16 @@ const C_CELLS = {
   "latapprox|alveolar":[null,"l"], "latapprox|retroflex":[null,"ɭ"],
   "latapprox|palatal":[null,"ʎ"], "latapprox|velar":[null,"ʟ"],
 };
+// Cells the IPA shades as "articulation judged impossible" (articulatory grounds).
+const IMPOSSIBLE = new Set([
+  "plosive|pharyngeal",
+  "nasal|pharyngeal","nasal|glottal",
+  "trill|labiodental","trill|postalveolar","trill|retroflex","trill|palatal","trill|velar","trill|pharyngeal","trill|glottal",
+  "tap|bilabial","tap|palatal","tap|velar","tap|pharyngeal","tap|glottal",
+  "sibilant|bilabial","sibilant|labiodental","sibilant|dental","sibilant|palatal","sibilant|velar","sibilant|uvular","sibilant|pharyngeal","sibilant|glottal",
+  "latfric|bilabial","latfric|labiodental","latfric|pharyngeal","latfric|glottal",
+  "latapprox|bilabial","latapprox|labiodental","latapprox|pharyngeal","latapprox|glottal",
+]);
 // Consonants beyond the pulmonic grid, grouped as on the official IPA chart.
 // Exact PHOIBLE keys; /ʔ/ stays in the grid (plosive×glottal), not here.
 const C_NONPULM = [   // non-pulmonic: made with a non-lung airstream
@@ -191,11 +201,14 @@ function renderConsonants(){
     C_PLACES.forEach(([pid])=>{
       const td = tr.insertCell();
       const pair = C_CELLS[`${mid}|${pid}`];
-      if(!pair) return;
-      const wrap = document.createElement("div"); wrap.className="cellpair";
-      wrap.appendChild(makeBlock(pair[0],"consonant",pid,mid));
-      wrap.appendChild(makeBlock(pair[1],"consonant",pid,mid));
-      td.appendChild(wrap);
+      if(pair){
+        const wrap = document.createElement("div"); wrap.className="cellpair";
+        wrap.appendChild(makeBlock(pair[0],"consonant",pid,mid));
+        wrap.appendChild(makeBlock(pair[1],"consonant",pid,mid));
+        td.appendChild(wrap);
+      } else if(IMPOSSIBLE.has(`${mid}|${pid}`)){
+        td.className = "imp"; td.title = "Articulation judged impossible";
+      }
     });
   });
 }
