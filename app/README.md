@@ -72,8 +72,11 @@ python3 scripts/build_wals_phonology.py /path/to/wals/cldf
   diacritic (dental/labiodental stops, dental nasal, voiceless sonorants…),
   hidden by default to keep the base chart clean.
 - Live **naturalness** gauge + a transparent, itemised feedback list (no black box).
-- **Presets**: cross-linguistic core, a five-vowel workhorse, and this repo's
-  Alantian inventory.
+- **Presets**: 9 starting points spanning the typological space — a
+  cross-linguistic core and five-vowel workhorse, plus profiles modelled on real
+  language types (Australian with no fricatives, minimal Polynesian, back-heavy
+  Arabic, ejective Caucasian/Andean, labial-velar West African, vowel-rich
+  Turkic) and this repo's Alantian inventory.
 - **Export**: Markdown tables matching `language/phonology.md`, or JSON; **Import**
   JSON / a space-separated IPA list. Work auto-saves to `localStorage`.
 
