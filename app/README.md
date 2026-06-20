@@ -10,12 +10,12 @@ Complexity is gated by **level**, mirroring the Conlangs University course:
 | Level | Course | Status | What it covers |
 |------:|--------|--------|----------------|
 | **1** | Phonology 1 | ✅ implemented | Segments, in four tabs mirroring the IPA chart: **Pulmonic** · **Non-pulmonic** (clicks, implosives, ejectives) · **Other / co-articulated** (w, ʍ, ɥ, k͡p, ɡ͡b, affricates, ɕ ʑ, epiglottals…) · **Vowels** |
-| 2 | Phonology 2 | 🚧 scaffolded | Length & gemination, nasal vowels, diphthongs, syllable templates, cluster/coda rules |
+| **2** | Phonology 2 | ✅ implemented | **Suprasegmental contrasts** layered onto your segments — vowel length (Vː), nasal vowels (Ṽ), geminate consonants (Cː), closing diphthongs — plus a **syllable-structure** builder (onset/coda complexity → WALS-12A class) with worked examples |
 | 3 | Phonology 3 | 🚧 scaffolded | Stress, mora weight, vowel harmony |
 | 4 | Phonology 4 | 🚧 scaffolded | Register/contour tone, pitch accent, sandhi |
 
-This is **v1**: Level 1 is fully interactive; Levels 2–4 are defined in the level
-framework (`LEVELS` in `main.js`) and shown as roadmap cards, ready to fill in.
+Levels 1–2 are fully interactive; Levels 3–4 are defined in the level framework
+(`LEVELS` in `main.js`) and shown as roadmap cards, ready to fill in.
 
 ## Run it
 
@@ -53,6 +53,12 @@ cross-check in the feedback panel:
 - **Uncommon consonants** (19A) — clicks, labial-velars, pharyngeals, 'th' sounds.
 - **Absence of common consonants** (18A) — no nasals / fricatives / bilabials.
 - **Uvulars** (6A), **velar nasal** (9A), **front rounded vowels** (11A).
+- **Syllable structure** (12A) — Simple / Moderately complex / Complex, classifying
+  the onset/coda template you build in Level 2.
+
+Level-2 suprasegmentals reuse the PHOIBLE summary directly: each derived sound
+(`/aː/`, `/ĩ/`, `/mː/`…) is looked up by its **NFD** key, so the chips show that
+sound's real cross-linguistic share.
 
 To refresh after pinning new releases:
 
@@ -72,6 +78,10 @@ python3 scripts/build_wals_phonology.py /path/to/wals/cldf
   diacritic (dental/labiodental stops, dental nasal, voiceless sonorants…),
   hidden by default to keep the base chart clean.
 - Live **naturalness** gauge + a transparent, itemised feedback list (no black box).
+- **Level 2** unlocks a suprasegmentals panel (toggle vowel length, nasal vowels,
+  gemination, diphthongs — each previewed with its real PHOIBLE frequency) and a
+  syllable-structure builder that names the WALS-12A complexity class and shows a
+  worked example syllable drawn from your inventory.
 - **Presets**: 9 starting points spanning the typological space — a
   cross-linguistic core and five-vowel workhorse, plus profiles modelled on real
   language types (Australian with no fricatives, minimal Polynesian, back-heavy

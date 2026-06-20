@@ -1,8 +1,9 @@
 /* Phonological Inventory Builder — static, no build step.
  * Toggle IPA "blocks" to assemble an inventory; feedback is grounded in a
  * PHOIBLE-derived summary (data/phoible-summary.json). Complexity is gated by
- * level, mirroring the Conlangs University course (Phonology 1..4). v1 fully
- * implements Phonology 1 and scaffolds the later levels.
+ * level, mirroring the Conlangs University course (Phonology 1..4). Phonology 1
+ * (segments) and Phonology 2 (length, nasalization, gemination, diphthongs and
+ * syllable structure) are interactive; Phonology 3..4 are scaffolded.
  */
 "use strict";
 
@@ -122,8 +123,8 @@ const LEVELS = [
   {n:1, id:"seg", name:"Segments", status:"active",
    desc:"Pick the contrastive consonants and base vowel qualities. Decide place, manner and voicing — the bones of the inventory.",
    adds:["Pulmonic consonant grid","Vowel quadrilateral","Common affricates & labial-velars"]},
-  {n:2, id:"phon2", name:"Length & syllables", status:"soon",
-   desc:"Phonology 2: weight and phonotactics.",
+  {n:2, id:"phon2", name:"Length & syllables", status:"active",
+   desc:"Add suprasegmental contrasts to your segments — length, nasalization, gemination, diphthongs — then set how syllables are built (onset and coda complexity).",
    adds:["Length (Vː) & gemination","Nasal vowels (Ṽ) & diphthongs","Syllable templates (onset/nucleus/coda)","Cluster & coda constraints"]},
   {n:3, id:"phon3", name:"Prosody", status:"soon",
    desc:"Phonology 3: suprasegmentals.",
@@ -163,15 +164,24 @@ const PRESETS = [
 const LS_KEY = "pib.v1";
 let DATA = null;                 // PHOIBLE summary
 let WALS = null;                 // WALS phonology summary (typological cross-check)
-const state = { level:1, tab:"pulmonic", derived:false, selected:new Set() };
+const state = {
+  level:1, tab:"pulmonic", derived:false, selected:new Set(),
+  // Phonology 2 — suprasegmental contrasts + syllable phonotactics
+  supra:{ length:false, nasal:false, gemination:false, diphthong:false },
+  syll:{ onset:1, coda:0 },  // max consonants in onset / coda (0..3)
+};
 
-function save(){ localStorage.setItem(LS_KEY, JSON.stringify({level:state.level, tab:state.tab, derived:state.derived, selected:[...state.selected]})); }
+function save(){ localStorage.setItem(LS_KEY, JSON.stringify({
+  level:state.level, tab:state.tab, derived:state.derived, selected:[...state.selected],
+  supra:state.supra, syll:state.syll })); }
 function load(){
   try{ const o = JSON.parse(localStorage.getItem(LS_KEY)||"{}");
     if(Array.isArray(o.selected)) state.selected = new Set(o.selected);
     if(o.level) state.level = o.level;
     if(o.tab) state.tab = o.tab;
     if(typeof o.derived==="boolean") state.derived = o.derived;
+    if(o.supra) Object.assign(state.supra, o.supra);
+    if(o.syll)  Object.assign(state.syll,  o.syll);
   }catch(e){}
 }
 
@@ -199,6 +209,57 @@ function fmtPct(p){ const x=p*100;
   if(x>=0.1) return x.toFixed(1)+"%";
   if(x>0) return "<0.1%";
   return null;
+}
+
+/* ------------------------------------------------------------------ *
+ * 4b. Phonology 2 — suprasegmental contrasts + syllable phonotactics
+ * ------------------------------------------------------------------ */
+const NFD = s => s.normalize("NFD");
+const LONG = "ː", TILDE = "̃", NONSYL = "̯"; // ː · combining tilde · inverted breve below
+
+function selConsonants(){ return [...state.selected].filter(s=>classOf(s)==="consonant"); }
+function selVowels(){ return [...state.selected].filter(s=>classOf(s)==="vowel"); }
+
+/* Suprasegmental variants are built from the *base* inventory and normalised to
+   NFD so the keys line up with the PHOIBLE summary (e.g. /aː/, /ĩ/, /mː/). */
+function longVowels(){ return selVowels().map(v=>NFD(v+LONG)); }
+function nasalVowels(){ return selVowels().map(v=>NFD(v+TILDE)); }
+function geminates(){ return selConsonants().map(c=>NFD(c+LONG)); }
+/* Closing diphthongs (the commonest type): a non-high nucleus + a high offglide
+   /i̯ u̯/, only when that high vowel is itself in the inventory. */
+function diphthongs(){
+  const vs=new Set(selVowels()), out=[];
+  const glides=[["i",NFD("i"+NONSYL)],["u",NFD("u"+NONSYL)]];
+  ["a","e","o","ɛ","ɔ","ə"].forEach(v=>{ if(!vs.has(v)) return;
+    glides.forEach(([h,gl])=>{ if(vs.has(h)) out.push(NFD(v+gl)); }); });
+  return out;
+}
+/* Map a suprasegmental key to the segments it contributes (for preview/export). */
+const SUPRA = [
+  {key:"length",    label:"Vowel length",       sym:"Vː", gen:longVowels,
+   blurb:"a length contrast on every vowel quality (e.g. /aˑ/ vs /aː/)"},
+  {key:"nasal",     label:"Nasal vowels",        sym:"Ṽ",  gen:nasalVowels,
+   blurb:"a phonemic oral/nasal contrast on the vowels"},
+  {key:"gemination",label:"Geminate consonants", sym:"Cː", gen:geminates,
+   blurb:"a short/long (singleton/geminate) contrast on the consonants"},
+  {key:"diphthong", label:"Diphthongs",          sym:"ai̯", gen:diphthongs,
+   blurb:"closing diphthongs as complex nuclei (e.g. /ai̯ au̯/)"},
+];
+function supraSegments(){
+  return SUPRA.filter(s=>state.supra[s.key]).flatMap(s=>s.gen());
+}
+
+/* Syllable template + WALS-12A class from onset/coda maximum consonant counts. */
+function syllableTemplate(){
+  const opt=n=>"(C)".repeat(n);
+  const nuc=state.supra.diphthong ? "V(V)" : "V";
+  return `${opt(state.syll.onset)}${nuc}${opt(state.syll.coda)}`;
+}
+function syllableClass(){
+  const on=state.syll.onset, co=state.syll.coda;
+  if(on<=1 && co===0) return "Simple";
+  if(on<=2 && co<=1)  return "Moderately complex";
+  return "Complex";
 }
 
 /* ------------------------------------------------------------------ *
@@ -330,7 +391,7 @@ function renderLevels(){
     b.innerHTML=`<span class="n">${L.n}</span> ${L.name}`+(L.status==="soon"?` <span class="lock">soon</span>`:"");
     b.addEventListener("click",()=>{
       if(L.status==="soon"){ toast(`Level ${L.n} (“${L.name}”) is on the roadmap — see the cards below.`); $("#lockedLevels").scrollIntoView({behavior:"smooth"}); return; }
-      state.level=L.n; save(); renderLevels(); renderHeader();
+      state.level=L.n; save(); renderLevels(); renderHeader(); renderLevel2();
     });
     nav.appendChild(b);
   });
@@ -349,6 +410,74 @@ function renderHeader(){
   const L=LEVELS.find(x=>x.n===state.level);
   $("#levelTitle").textContent=`Phonology ${L.n} — ${L.name}`;
   $("#levelDesc").textContent=L.desc;
+}
+
+/* ---- Phonology 2 panel: suprasegmentals + syllable structure ---- */
+function dchip(sym){
+  const i=segInfo(sym); let l=i.p?fmtPct(i.p):"rare"; if(i.approx&&l&&l[0]!=="<")l="~"+l;
+  const t=i.p?`/${sym}/ — in ${fmtPct(i.p)} of PHOIBLE inventories`:`/${sym}/ — rare/unattested`;
+  return `<span class="dchip" title="${t}"><b>${sym}</b><small>${l}</small></span>`;
+}
+function renderSupra(){
+  const host=$("#supraList"); if(!host) return; host.innerHTML="";
+  SUPRA.forEach(s=>{
+    const on=!!state.supra[s.key], segs=s.gen();
+    const need=s.key==="gemination"?"consonants":"vowels";
+    const preview = !segs.length
+      ? `<span class="muted small">pick ${need} above to derive ${s.sym}</span>`
+      : segs.slice(0,8).map(dchip).join("")+(segs.length>8?`<span class="muted small more">+${segs.length-8}</span>`:"");
+    const row=document.createElement("div"); row.className="supra-item"+(on?" on":"");
+    row.innerHTML=`<label class="supra-top">
+        <input type="checkbox" ${on?"checked":""} data-supra="${s.key}">
+        <span class="supra-name"><b>${s.label}</b> <span class="supra-sym">${s.sym}</span><br><span class="muted small">${s.blurb}</span></span>
+        <span class="supra-n">${on&&segs.length?`+${segs.length}`:""}</span>
+      </label><div class="supra-prev">${preview}</div>`;
+    row.querySelector("input").addEventListener("change",e=>{
+      state.supra[s.key]=e.target.checked; save();
+      renderSupra(); renderSyllable(); renderTray(); renderFeedback();
+    });
+    host.appendChild(row);
+  });
+}
+function segButtons(hostSel, val, onPick){
+  const host=$(hostSel); if(!host) return; host.innerHTML="";
+  [0,1,2,3].forEach(n=>{
+    const b=document.createElement("button"); b.type="button";
+    b.className="segb"+(n===val?" active":""); b.textContent=String(n);
+    b.setAttribute("aria-pressed", n===val?"true":"false");
+    b.addEventListener("click",()=>onPick(n));
+    host.appendChild(b);
+  });
+}
+function syllableExample(){
+  const cons=selConsonants(), vows=selVowels();
+  if(!cons.length||!vows.length) return "Add consonants and vowels above to see a worked example.";
+  const byFreq=a=>[...a].sort((x,y)=>segInfo(y).p-segInfo(x).p);
+  const C=byFreq(cons), V=byFreq(vows);
+  const liquids=["l","r","ɾ","ɹ","w","j","ʎ","ɭ"];
+  const onset=n=>{ if(!n) return "";
+    const obs=C.filter(c=>!liquids.includes(c)), liq=C.filter(c=>liquids.includes(c)), seq=[];
+    for(let i=0;i<n;i++){ if(i===n-1 && n>1 && liq.length) seq.push(liq[0]); else seq.push(obs[i]||C[i%C.length]); }
+    return seq.join("");
+  };
+  const coda=n=> n? C.slice(0,n).reverse().join("") : "";
+  const nuc = state.supra.diphthong && diphthongs().length ? diphthongs()[0] : V[0];
+  const syl = onset(state.syll.onset)+nuc+coda(state.syll.coda);
+  return `Worked example: <code>/${syl}/</code> <span class="muted">(${syllableTemplate()})</span>`;
+}
+function renderSyllable(){
+  segButtons("#onsetSeg", state.syll.onset, n=>{ state.syll.onset=n; save(); renderSyllable(); renderFeedback(); });
+  segButtons("#codaSeg",  state.syll.coda,  n=>{ state.syll.coda=n;  save(); renderSyllable(); renderFeedback(); });
+  const tpl=$("#syllTemplate"); if(tpl) tpl.textContent=syllableTemplate();
+  const cls=syllableClass(), cl=$("#syllClass");
+  if(cl){ cl.textContent=cls; cl.dataset.cls=cls.split(" ")[0].toLowerCase(); }
+  const ex=$("#syllExamples"); if(ex) ex.innerHTML=syllableExample();
+}
+function renderLevel2(){
+  const panel=$("#level2Panel"); if(!panel) return;
+  const show = state.level>=2;
+  panel.hidden = !show;
+  if(show){ renderSupra(); renderSyllable(); }
 }
 
 function renderTray(){
@@ -432,6 +561,53 @@ function walsItems(cons, vows){
   return {items, pen};
 }
 
+/* Phonology-2 layer: suprasegmental contrasts + syllable phonotactics. */
+function phon2Items(){
+  const items=[]; let pen=0;
+  const add=(lvl,html,w=0)=>{ items.push({level:lvl,html}); pen+=w; };
+  const vows=selVowels(), cons=selConsonants();
+  const meanShare=arr=>arr.length? arr.reduce((a,s)=>a+segInfo(s).p,0)/arr.length : 0;
+  const eg=arr=>arr.slice(0,3).map(s=>"/"+s+"/").join(" ");
+
+  if(state.supra.length){
+    const segs=longVowels();
+    if(!segs.length) add("warn","Vowel length is on, but there are no vowels to lengthen yet.",3);
+    else add("info",`<b>Vowel length</b> → ${segs.length} long vowel${segs.length>1?"s":""} (${eg(segs)}); long vowels average ~<b>${pct(meanShare(segs))}%</b> of PHOIBLE inventories.`);
+  }
+  if(state.supra.nasal){
+    const segs=nasalVowels();
+    if(!segs.length) add("warn","Nasal vowels are on, but there are no vowels to nasalize yet.",3);
+    else{ add("info",`<b>Nasal vowels</b> → ${segs.length} contrast${segs.length>1?"s":""} (${eg(segs)}); ~<b>${pct(meanShare(segs))}%</b> of inventories on average.`);
+      if(!NASALS.some(has)) add("info","Nasal vowels typically pattern with nasal consonants — you have none (attested, e.g. via lost nasals, but unusual).",2); }
+  }
+  if(state.supra.gemination){
+    const segs=geminates();
+    if(!segs.length) add("warn","Gemination is on, but there are no consonants to geminate yet.",3);
+    else add("info",`<b>Geminate consonants</b> → a length contrast on ${segs.length} consonant${segs.length>1?"s":""}; geminates are uncommon phonemes (each ~2–3% of PHOIBLE).`);
+  }
+  if(state.supra.diphthong){
+    const segs=diphthongs();
+    if(!segs.length) add("warn","Diphthongs are on, but none can be formed — add a non-high vowel plus /i/ or /u/.",2);
+    else add("good",`<b>Diphthongs</b> → ${segs.length} closing diphthong${segs.length>1?"s":""} (${eg(segs)}); the cross-linguistically commonest type.`);
+  }
+
+  // ---- syllable structure → WALS 12A
+  const cls=syllableClass();
+  let share=null;
+  if(WALS&&WALS.features&&WALS.features["12A"]){ const f=WALS.features["12A"]; share=f.dist[cls]!=null?f.dist[cls]/f.n:null; }
+  add(cls==="Moderately complex"?"good":"info",
+    `Syllable template <code>${syllableTemplate()}</code> → <b>${cls.toLowerCase()}</b> structure${share!=null?` — ${Math.round(share*100)}% of WALS languages`:""}.`);
+  const liquids=["l","r","ɾ","ɹ","w","j","ʎ","ɭ","ʀ","ʁ"];
+  if(state.syll.onset>=2 && cons.length && !cons.some(c=>liquids.includes(c)))
+    add("warn","Onset clusters but no liquids or glides — most cluster systems are built around /l r w j/.",4);
+  if(state.syll.coda>=2 && state.syll.onset===0)
+    add("warn","Complex codas with no onset at all is a very marked, near-unattested combination.",5);
+  if(state.syll.onset===0 && state.syll.coda===0 && cons.length)
+    add("info","Onset 0 / coda 0 makes every syllable a bare V — even minimal systems usually allow (C)V.",1);
+
+  return {items, pen};
+}
+
 function evaluate(){
   const fb=[]; const warnSyms=new Set();
   const sel=[...state.selected];
@@ -483,6 +659,16 @@ function evaluate(){
   // ---- average commonness note
   const avg = sel.reduce((a,s)=>a+freq(s),0)/sel.length;
   if(sel.length>=5) add("info",`Mean segment commonness: <b>${pct(avg)}%</b> across your ${sel.length} sounds.`);
+
+  // ---- Phonology 2 layer (only once the level is unlocked)
+  if(state.level>=2){
+    const {items,pen}=phon2Items();
+    if(items.length){
+      fb.push({level:"div", html:"Phonology 2 — length & syllables"});
+      items.forEach(it=>fb.push({level:it.level, html:it.html}));
+      penalty+=pen;
+    }
+  }
 
   // ---- WALS typological cross-check (separate source)
   if(WALS && WALS.features){
@@ -536,6 +722,7 @@ function refreshSelectionUI(){
     if(b.dataset.sym) b.classList.toggle("on", state.selected.has(b.dataset.sym));
   });
   renderTray(); renderFeedback(); updateTabCounts();
+  if(state.level>=2){ renderSupra(); renderSyllable(); } // derived previews track the base inventory
 }
 function setInventory(list){ state.selected=new Set(list); save(); refreshSelectionUI(); }
 
@@ -582,15 +769,38 @@ function exportMarkdown(){
     });
     L.push("");
   }
+  // ---- Phonology 2: suprasegmentals & phonotactics
+  if(state.level>=2){
+    L.push(`## Suprasegmentals & phonotactics`,"");
+    const rows=[];
+    const fmt=(name,arr)=>{ if(arr.length) rows.push(`- **${name}** (${arr.length}): ${arr.map(s=>"/"+s+"/").join(" ")}`); };
+    if(state.supra.length)     fmt("Vowel length",longVowels());
+    if(state.supra.nasal)      fmt("Nasal vowels",nasalVowels());
+    if(state.supra.gemination) fmt("Geminate consonants",geminates());
+    if(state.supra.diphthong)  fmt("Diphthongs",diphthongs());
+    L.push(...(rows.length?rows:["- No suprasegmental contrasts selected."]));
+    L.push(`- **Syllable structure**: \`${syllableTemplate()}\` — ${syllableClass()} (WALS 12A).`,"");
+  }
   L.push(`IPA: /${[...cons,...vows].join(" ")}/`);
   return L.join("\n");
 }
 function exportJSON(){
-  return JSON.stringify({
+  const o={
     schema:"phonological-inventory/v1",
     consonants:[...state.selected].filter(s=>classOf(s)==="consonant"),
     vowels:[...state.selected].filter(s=>classOf(s)==="vowel"),
-  }, null, 2);
+  };
+  if(state.level>=2){
+    o.suprasegmentals={
+      length:     state.supra.length     ? longVowels()  : [],
+      nasal:      state.supra.nasal      ? nasalVowels() : [],
+      gemination: state.supra.gemination ? geminates()   : [],
+      diphthongs: state.supra.diphthong  ? diphthongs()  : [],
+    };
+    o.syllable={ onset:state.syll.onset, coda:state.syll.coda,
+      template:syllableTemplate(), class:syllableClass() };
+  }
+  return JSON.stringify(o, null, 2);
 }
 async function copy(text,label){
   try{ await navigator.clipboard.writeText(text); toast(`${label} copied to clipboard`); }
@@ -603,12 +813,26 @@ async function copy(text,label){
 function importJSON(){
   const raw=prompt("Paste an inventory JSON (or a space-separated IPA list):");
   if(!raw) return;
-  let list=[];
-  try{ const o=JSON.parse(raw);
-    if(Array.isArray(o)) list=o;
+  let list=[], o=null;
+  try{ o=JSON.parse(raw);
+    if(Array.isArray(o)){ list=o; o=null; }
     else list=[...(o.consonants||[]),...(o.vowels||[]),...(o.segments||[])];
   }catch(e){ list=raw.trim().replace(/[\/\[\]]/g,"").split(/\s+/).filter(Boolean); }
-  if(list.length) setInventory(list); else toast("Nothing recognised in that input.");
+  if(!list.length){ toast("Nothing recognised in that input."); return; }
+  setInventory(list);
+  // round-trip the Phonology-2 layer if present (toggles are rederived from the base)
+  if(o){
+    if(o.syllable){ if(Number.isInteger(o.syllable.onset)) state.syll.onset=Math.max(0,Math.min(3,o.syllable.onset));
+                    if(Number.isInteger(o.syllable.coda))  state.syll.coda =Math.max(0,Math.min(3,o.syllable.coda)); }
+    if(o.suprasegmentals){ const s=o.suprasegmentals;
+      state.supra.length    =!!(s.length     && s.length.length);
+      state.supra.nasal     =!!(s.nasal      && s.nasal.length);
+      state.supra.gemination=!!(s.gemination && s.gemination.length);
+      state.supra.diphthong =!!(s.diphthongs && s.diphthongs.length);
+    }
+    if((o.syllable||o.suprasegmentals) && state.level<2) state.level=2;
+    save(); renderLevels(); renderHeader(); renderLevel2(); renderFeedback();
+  }
 }
 
 /* ------------------------------------------------------------------ *
@@ -634,7 +858,7 @@ function renderPresets(){
  * ------------------------------------------------------------------ */
 async function boot(){
   load();
-  renderLevels(); renderHeader();
+  renderLevels(); renderHeader(); renderLevel2();
   renderConsonants();
   renderGroups("nonpulmGroups", C_NONPULM);
   renderGroups("otherGroups", C_OTHER);
@@ -669,6 +893,6 @@ async function boot(){
   renderGroups("nonpulmGroups", C_NONPULM);
   renderGroups("otherGroups", C_OTHER);
   renderVowels(); applyDerived();
-  renderTray(); renderFeedback(); updateTabCounts();
+  renderTray(); renderFeedback(); updateTabCounts(); renderLevel2();
 }
 document.addEventListener("DOMContentLoaded", boot);

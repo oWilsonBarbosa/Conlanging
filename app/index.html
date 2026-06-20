@@ -51,6 +51,28 @@
       <div class="chart-scroll"><table class="chart vowels" id="vowelChart"></table></div>
     </div>
 
+    <section class="level2" id="level2Panel" hidden aria-label="Phonology 2 — suprasegmentals and syllable structure">
+      <div class="l2-head">
+        <span class="pill l2-pill">Phonology 2</span>
+        <h3>Suprasegmentals &amp; syllable structure</h3>
+      </div>
+      <div class="l2-grid">
+        <div class="l2-card">
+          <h4>Suprasegmental contrasts</h4>
+          <p class="muted small">Layer extra contrasts onto the qualities you picked above. Each chip shows the real PHOIBLE share of that derived sound.</p>
+          <div class="supra-list" id="supraList"></div>
+        </div>
+        <div class="l2-card">
+          <h4>Syllable structure</h4>
+          <p class="muted small">How many consonants may cluster before and after the vowel?</p>
+          <div class="syll-row"><span class="syll-lab">Onset</span><div class="seg" id="onsetSeg" role="group" aria-label="Maximum onset consonants"></div></div>
+          <div class="syll-row"><span class="syll-lab">Coda</span><div class="seg" id="codaSeg" role="group" aria-label="Maximum coda consonants"></div></div>
+          <div class="syll-out"><code id="syllTemplate">CV</code><span class="syll-class" id="syllClass"></span></div>
+          <p class="muted small syll-ex" id="syllExamples"></p>
+        </div>
+      </div>
+    </section>
+
     <div class="locked-levels" id="lockedLevels"></div>
   </section>
 
