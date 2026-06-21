@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phonological Inventory Builder</title>
+<meta name="description" content="Build a naturalistic phonological inventory by toggling IPA blocks, with plausibility feedback grounded in PHOIBLE. Complexity unlocks by level, following the Conlangs University course (Phonology 1, 2, 3, 4).">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="title">
+    <h1>Phonological Inventory&nbsp;Builder</h1>
+    <p class="tag">Snap IPA blocks together; the inventory is checked against
+      <abbr title="3,020 inventories, PHOIBLE 2.0">real-language typology</abbr>.</p>
+  </div>
+  <nav class="levels" id="levelNav" aria-label="Complexity level"></nav>
+</header>
+
+<main>
+  <section class="board" aria-label="Sound chart">
+    <div class="board-head">
+      <h2 id="levelTitle">Phonology 1 — Segments</h2>
+      <p id="levelDesc" class="muted"></p>
+    </div>
+
+    <div class="tabs" id="chartTabs" role="tablist"></div>
+
+    <div class="tabpanel" id="tab-pulmonic" role="tabpanel">
+      <div class="panel-note-row">
+        <p class="muted small panel-note">Pulmonic consonants — place (columns) × manner (rows). Left = voiceless, right = voiced.</p>
+        <label class="switch" title="Show possible cells written with a diacritic (dental stops, voiceless sonorants…)">
+          <input type="checkbox" id="derivedToggle"> <span>Show derived ⟨t̪ m̥⟩</span>
+        </label>
+      </div>
+      <div class="chart-scroll"><table class="chart" id="consonantChart"></table></div>
+    </div>
+
+    <div class="tabpanel" id="tab-nonpulm" role="tabpanel">
+      <p class="muted small panel-note">Non-pulmonic consonants — made with a non-lung airstream (clicks, implosives, ejectives).</p>
+      <div id="nonpulmGroups"></div>
+    </div>
+
+    <div class="tabpanel" id="tab-other" role="tabpanel">
+      <p class="muted small panel-note">Other symbols — co-articulated sounds, affricates, and miscellaneous segments.</p>
+      <div id="otherGroups"></div>
+    </div>
+
+    <div class="tabpanel" id="tab-vowels" role="tabpanel">
+      <p class="muted small panel-note">Vowels — height (rows) × backness (columns). Left = unrounded, right = rounded.</p>
+      <div class="chart-scroll"><table class="chart vowels" id="vowelChart"></table></div>
+    </div>
+
+    <section class="level2" id="level2Panel" hidden aria-label="Phonology 2 — suprasegmentals and syllable structure">
+      <div class="l2-head">
+        <span class="pill l2-pill">Phonology 2</span>
+        <h3>Suprasegmentals &amp; syllable structure</h3>
+      </div>
+      <div class="l2-grid">
+        <div class="l2-card">
+          <h4>Suprasegmental contrasts</h4>
+          <p class="muted small">Layer extra contrasts onto the qualities you picked above. Each chip shows the real PHOIBLE share of that derived sound.</p>
+          <div class="supra-list" id="supraList"></div>
+        </div>
+        <div class="l2-card">
+          <h4>Syllable structure</h4>
+          <p class="muted small">How many consonants may cluster before and after the vowel?</p>
+          <div class="syll-row"><span class="syll-lab">Onset</span><div class="seg" id="onsetSeg" role="group" aria-label="Maximum onset consonants"></div></div>
+          <div class="syll-row"><span class="syll-lab">Coda</span><div class="seg" id="codaSeg" role="group" aria-label="Maximum coda consonants"></div></div>
+          <div class="syll-out"><code id="syllTemplate">CV</code><span class="syll-class" id="syllClass"></span></div>
+          <p class="muted small syll-ex" id="syllExamples"></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="locked-levels" id="lockedLevels"></div>
+  </section>
+
+  <aside class="panel" aria-label="Inventory and feedback">
+    <div class="card inventory-card">
+      <div class="card-head">
+        <h2>Your inventory</h2>
+        <div class="toolbar">
+          <button id="btnClear" class="btn ghost" title="Remove all sounds">Clear</button>
+          <details class="menu">
+            <summary class="btn ghost">Presets ▾</summary>
+            <div class="menu-list" id="presetMenu"></div>
+          </details>
+        </div>
+      </div>
+      <div class="tray" id="tray"><p class="muted empty">No sounds yet — click blocks on the chart to add them.</p></div>
+      <div class="ipa-line"><code id="ipaLine"></code></div>
+    </div>
+
+    <div class="card score-card">
+      <div class="card-head"><h2>Naturalness</h2>
+        <span class="score-badge" id="scoreBadge">—</span></div>
+      <div class="gauge"><div class="gauge-fill" id="gaugeFill"></div></div>
+      <ul class="feedback" id="feedback"></ul>
+    </div>
+
+    <div class="card export-card">
+      <div class="card-head"><h2>Export</h2></div>
+      <div class="toolbar wrap">
+        <button id="btnMd" class="btn">Copy Markdown</button>
+        <button id="btnJson" class="btn">Copy JSON</button>
+        <button id="btnImport" class="btn ghost">Import JSON…</button>
+      </div>
+      <p class="muted small">Markdown matches <code>language/phonology.md</code> tables. State auto-saves in your browser.</p>
+    </div>
+  </aside>
+</main>
+
+<footer class="foot">
+  <p>Naturalness data: <strong>PHOIBLE 2.0</strong> (Moran &amp; McCloy 2019),
+     <a href="https://phoible.org" target="_blank" rel="noopener">phoible.org</a> — CC-BY-SA 3.0;
+     typological cross-check from <strong>WALS</strong> (Dryer &amp; Haspelmath 2013),
+     <a href="https://wals.info" target="_blank" rel="noopener">wals.info</a> — CC-BY 4.0.
+     App © project authors, CC-BY 4.0.
+     <span id="metaLine" class="muted"></span></p>
+</footer>
+
+<div class="hint" id="hint" hidden></div>
+<script src="main.js"></script>
+</body>
+</html>

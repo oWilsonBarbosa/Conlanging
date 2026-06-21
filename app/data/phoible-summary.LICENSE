@@ -1,0 +1,24 @@
+phoible-summary.json — license & attribution
+=============================================
+
+This file is a DERIVED summary (segment frequencies, inventory-size statistics,
+and co-occurrence conditionals) computed from PHOIBLE 2.0 by
+`scripts/build_phoible_summary.py`. It is an adaptation of PHOIBLE data and is
+therefore distributed under the SAME license as that data:
+
+    License : CC-BY-SA 3.0  (https://creativecommons.org/licenses/by-sa/3.0/)
+    ShareAlike: any redistribution or further adaptation must keep a
+                compatible (CC-BY-SA) license and preserve this attribution.
+
+Source / please cite:
+
+    Moran, Steven & McCloy, Daniel (eds.) 2019.
+    PHOIBLE 2.0. Jena: Max Planck Institute for the Science of Human History.
+    https://phoible.org   ·   https://github.com/phoible/dev
+
+PHOIBLE's database code is GPL-3.0; only the *data* (summarized here) is
+CC-BY-SA. See ../../ATTRIBUTION.md for the project-wide credits.
+
+NOTE: This CC-BY-SA obligation applies to THIS derived data file only. The rest
+of the Phonological Inventory Builder app (HTML/CSS/JS) is the repository's own
+original work under CC-BY 4.0 (see ../../LICENSE).

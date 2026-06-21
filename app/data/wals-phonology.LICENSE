@@ -1,0 +1,19 @@
+wals-phonology.json — license & attribution
+============================================
+
+This file is a DERIVED summary (per-category language counts for selected WALS
+phonology features) computed from WALS Online by
+`scripts/build_wals_phonology.py`. It is an adaptation of WALS data and is
+distributed under the same license, with attribution:
+
+    License : CC-BY 4.0  (https://creativecommons.org/licenses/by/4.0/)
+
+Source / please cite:
+
+    Dryer, Matthew S. & Haspelmath, Martin (eds.) 2013.
+    The World Atlas of Language Structures Online. Leipzig: MPI-EVA.
+    https://wals.info   ·   https://github.com/cldf-datasets/wals
+
+Features summarized: 1A, 2A, 4A, 6A, 8A, 9A, 11A, 18A, 19A (the phonology
+chapters crossed with Level 1 of the app). See ../../ATTRIBUTION.md for the
+project-wide credits.

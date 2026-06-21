@@ -60,5 +60,23 @@ same (or a compatible) license and preserve attribution.
 - **MorphoLex-en** · CC-BY-NC-SA 4.0 · <https://github.com/hugomailhot/MorphoLex-en>
   Sánchez-Gutiérrez, C. H., Mailhot, H., Deacon, S. H., Wilson, M. A. (2018). *MorphoLex.*
 
+## Derived data committed in this repo
+
+Unlike the raw datasets above (which are fetched, not committed), one **derived**
+file is checked in:
+
+- **`app/data/phoible-summary.json`** — segment frequencies, inventory-size
+  statistics, and co-occurrence conditionals computed from **PHOIBLE 2.0** by
+  `scripts/build_phoible_summary.py`, for the Phonological Inventory Builder app.
+  As an adaptation of PHOIBLE data it is **CC-BY-SA 3.0** with attribution to
+  Moran & McCloy (2019); see `app/data/phoible-summary.LICENSE`. This obligation
+  applies to that file only — the app's own code is CC-BY 4.0.
+
+- **`app/data/wals-phonology.json`** — per-category language counts for nine WALS
+  phonology features, computed from **WALS Online** by
+  `scripts/build_wals_phonology.py`, used as the app's typological cross-check.
+  As an adaptation of WALS data it is **CC-BY 4.0** with attribution to Dryer &
+  Haspelmath (2013); see `app/data/wals-phonology.LICENSE`.
+
 > If you spot an out-of-date citation, version, or license, please open an issue or
 > correct `data/sources.csv` and this file together.
