@@ -79,9 +79,12 @@ python3 scripts/build_wals_phonology.py /path/to/wals/cldf
   hidden by default to keep the base chart clean.
 - Live **naturalness** gauge + a transparent, itemised feedback list (no black box).
 - **Level 2** unlocks a suprasegmentals panel (toggle vowel length, nasal vowels,
-  gemination, diphthongs — each previewed with its real PHOIBLE frequency) and a
-  syllable-structure builder that names the WALS-12A complexity class and shows a
-  worked example syllable drawn from your inventory.
+  gemination, diphthongs — each previewed with its real PHOIBLE frequency;
+  switching on both length and nasalization also derives the long nasal vowels
+  /ĩː ãː …/ they jointly imply) and a syllable-structure builder that names the
+  WALS-12A complexity class and shows a worked example syllable. The inventory
+  card tracks the **effective phoneme count** — base qualities plus everything the
+  contrasts add (e.g. *26 base · +21 via Phonology 2 → 47 phonemes*).
 - **Presets**: 9 starting points spanning the typological space — a
   cross-linguistic core and five-vowel workhorse, plus profiles modelled on real
   language types (Australian with no fricatives, minimal Polynesian, back-heavy

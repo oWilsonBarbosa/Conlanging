@@ -224,6 +224,12 @@ function selVowels(){ return [...state.selected].filter(s=>classOf(s)==="vowel")
    NFD so the keys line up with the PHOIBLE summary (e.g. /aː/, /ĩ/, /mː/). */
 function longVowels(){ return selVowels().map(v=>NFD(v+LONG)); }
 function nasalVowels(){ return selVowels().map(v=>NFD(v+TILDE)); }
+/* Length and nasalization are independent contrasts: when both are on they cross,
+   so the system also has long nasal vowels /ĩː ãː …/ (tilde *before* length, to
+   match the PHOIBLE NFD spelling i+◌̃+ː). */
+function longNasalVowels(){
+  return (state.supra.length && state.supra.nasal) ? selVowels().map(v=>NFD(v+TILDE+LONG)) : [];
+}
 /* Geminate only consonants that realistically take a length contrast: exclude
    clicks, implosives, ejectives and the labial-velar stops /kp ɡb/, which
    effectively never geminate (and are unattested as geminates in PHOIBLE). */
@@ -249,6 +255,17 @@ const SUPRA = [
   {key:"diphthong", label:"Diphthongs",          sym:"ai̯", gen:diphthongs,
    blurb:"closing diphthongs as complex nuclei (e.g. /ai̯ au̯/)"},
 ];
+/* Every extra phoneme the Phonology-2 contrasts add on top of the base inventory
+   (length×nasal cross-products included). Drives the effective phoneme count. */
+function derivedSegments(){
+  const o=[];
+  if(state.supra.length)     o.push(...longVowels());
+  if(state.supra.nasal)      o.push(...nasalVowels());
+  o.push(...longNasalVowels());            // non-empty only when length & nasal both on
+  if(state.supra.gemination) o.push(...geminates());
+  if(state.supra.diphthong)  o.push(...diphthongs());
+  return o;
+}
 
 /* Syllable template + WALS-12A class from onset/coda maximum consonant counts. */
 function syllableTemplate(){
@@ -479,6 +496,7 @@ function renderLevel2(){
   const show = state.level>=2;
   panel.hidden = !show;
   if(show){ renderSupra(); renderSyllable(); }
+  renderCounts();
 }
 
 function renderTray(){
@@ -502,6 +520,19 @@ function renderTray(){
   const cons=sel.filter(s=>classOf(s)==="consonant");
   const vows=sel.filter(s=>classOf(s)==="vowel");
   $("#ipaLine").textContent = sel.length? "/ "+[...cons,...vows].join(" ")+" /" : "";
+  renderCounts();
+}
+/* Effective phoneme count: base qualities + everything the Phonology-2 layer adds. */
+function renderCounts(){
+  const el=$("#invCount"); if(!el) return;
+  const c=selConsonants().length, v=selVowels().length, base=c+v;
+  if(!base){ el.innerHTML=""; return; }
+  let s=`${base} base segment${base>1?"s":""} · ${c} C · ${v} V`;
+  if(state.level>=2){
+    const d=derivedSegments().length;
+    if(d) s+=` · +${d} via Phonology 2 → <b>${base+d} phonemes</b>`;
+  }
+  el.innerHTML=s;
 }
 
 /* ------------------------------------------------------------------ *
@@ -582,6 +613,10 @@ function phon2Items(){
     else{ add("info",`<b>Nasal vowels</b> → ${segs.length} contrast${segs.length>1?"s":""}; commonest: ${egF(segs)}.`);
       if(!NASALS.some(has)) add("info","Nasal vowels typically pattern with nasal consonants — you have none (attested, e.g. via lost nasals, but unusual).",2); }
   }
+  if(state.supra.length && state.supra.nasal){
+    const segs=longNasalVowels();
+    if(segs.length) add("info",`<b>Length × nasalization</b> cross → ${segs.length} long nasal vowel${segs.length>1?"s":""} (${segs.slice(0,3).map(s=>"/"+s+"/").join(" ")}); rarer, around 2–3% of inventories each.`);
+  }
   if(state.supra.gemination){
     const segs=geminates();
     if(!segs.length) add("warn","Gemination is on, but there are no geminable consonants yet.",3);
@@ -600,8 +635,13 @@ function phon2Items(){
   add(cls==="Moderately complex"?"good":"info",
     `Syllable template <code>${syllableTemplate()}</code> → <b>${cls.toLowerCase()}</b> structure${share!=null?` — ${Math.round(share*100)}% of WALS languages`:""}.`);
   const liquids=["l","r","ɾ","ɹ","w","j","ʎ","ɭ","ʀ","ʁ"];
-  if(state.syll.onset>=2 && cons.length && !cons.some(c=>liquids.includes(c)))
-    add("warn","Onset clusters but no liquids or glides — most cluster systems are built around /l r w j/.",4);
+  const hasLiquid=cons.some(c=>liquids.includes(c));
+  if(state.syll.onset>=2){
+    if(cons.length && !hasLiquid)
+      add("warn","Onset clusters but no liquids or glides — most cluster systems are built around /l r w j/.",4);
+    else if(hasLiquid)
+      add("info","WALS treats a two-consonant onset as moderately complex when C2 is a liquid or glide — your /l r w j/ can fill that slot.");
+  }
   if(state.syll.coda>=2 && state.syll.onset===0)
     add("warn","Complex codas with no onset at all is a very marked, near-unattested combination.",5);
   if(state.syll.onset===0 && state.syll.coda===0 && cons.length)
@@ -778,6 +818,7 @@ function exportMarkdown(){
     const fmt=(name,arr)=>{ if(arr.length) rows.push(`- **${name}** (${arr.length}): ${arr.map(s=>"/"+s+"/").join(" ")}`); };
     if(state.supra.length)     fmt("Vowel length",longVowels());
     if(state.supra.nasal)      fmt("Nasal vowels",nasalVowels());
+    if(state.supra.length&&state.supra.nasal) fmt("Long nasal vowels",longNasalVowels());
     if(state.supra.gemination) fmt("Geminate consonants",geminates());
     if(state.supra.diphthong)  fmt("Diphthongs",diphthongs());
     L.push(...(rows.length?rows:["- No suprasegmental contrasts selected."]));
@@ -794,10 +835,11 @@ function exportJSON(){
   };
   if(state.level>=2){
     o.suprasegmentals={
-      length:     state.supra.length     ? longVowels()  : [],
-      nasal:      state.supra.nasal      ? nasalVowels() : [],
-      gemination: state.supra.gemination ? geminates()   : [],
-      diphthongs: state.supra.diphthong  ? diphthongs()  : [],
+      length:     state.supra.length     ? longVowels()     : [],
+      nasal:      state.supra.nasal      ? nasalVowels()    : [],
+      longNasal:  longNasalVowels(),     // non-empty only when length & nasal both on
+      gemination: state.supra.gemination ? geminates()      : [],
+      diphthongs: state.supra.diphthong  ? diphthongs()     : [],
     };
     o.syllable={ onset:state.syll.onset, coda:state.syll.coda,
       template:syllableTemplate(), class:syllableClass() };
