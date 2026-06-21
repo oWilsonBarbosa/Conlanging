@@ -224,7 +224,11 @@ function selVowels(){ return [...state.selected].filter(s=>classOf(s)==="vowel")
    NFD so the keys line up with the PHOIBLE summary (e.g. /aː/, /ĩ/, /mː/). */
 function longVowels(){ return selVowels().map(v=>NFD(v+LONG)); }
 function nasalVowels(){ return selVowels().map(v=>NFD(v+TILDE)); }
-function geminates(){ return selConsonants().map(c=>NFD(c+LONG)); }
+/* Geminate only consonants that realistically take a length contrast: exclude
+   clicks, implosives, ejectives and the labial-velar stops /kp ɡb/, which
+   effectively never geminate (and are unattested as geminates in PHOIBLE). */
+const NON_GEMINABLE = new Set([...C_NONPULM.flatMap(([,s])=>s), "kp", "ɡb"]);
+function geminates(){ return selConsonants().filter(c=>!NON_GEMINABLE.has(c)).map(c=>NFD(c+LONG)); }
 /* Closing diphthongs (the commonest type): a non-high nucleus + a high offglide
    /i̯ u̯/, only when that high vowel is itself in the inventory. */
 function diphthongs(){
@@ -237,7 +241,7 @@ function diphthongs(){
 /* Map a suprasegmental key to the segments it contributes (for preview/export). */
 const SUPRA = [
   {key:"length",    label:"Vowel length",       sym:"Vː", gen:longVowels,
-   blurb:"a length contrast on every vowel quality (e.g. /aˑ/ vs /aː/)"},
+   blurb:"a length contrast on every vowel quality (e.g. /a/ vs /aː/)"},
   {key:"nasal",     label:"Nasal vowels",        sym:"Ṽ",  gen:nasalVowels,
    blurb:"a phonemic oral/nasal contrast on the vowels"},
   {key:"gemination",label:"Geminate consonants", sym:"Cː", gen:geminates,
@@ -245,9 +249,6 @@ const SUPRA = [
   {key:"diphthong", label:"Diphthongs",          sym:"ai̯", gen:diphthongs,
    blurb:"closing diphthongs as complex nuclei (e.g. /ai̯ au̯/)"},
 ];
-function supraSegments(){
-  return SUPRA.filter(s=>state.supra[s.key]).flatMap(s=>s.gen());
-}
 
 /* Syllable template + WALS-12A class from onset/coda maximum consonant counts. */
 function syllableTemplate(){
@@ -566,29 +567,30 @@ function phon2Items(){
   const items=[]; let pen=0;
   const add=(lvl,html,w=0)=>{ items.push({level:lvl,html}); pen+=w; };
   const vows=selVowels(), cons=selConsonants();
-  const meanShare=arr=>arr.length? arr.reduce((a,s)=>a+segInfo(s).p,0)/arr.length : 0;
-  const eg=arr=>arr.slice(0,3).map(s=>"/"+s+"/").join(" ");
+  // examples ordered by real PHOIBLE prevalence, each tagged with its own share
+  const egF=arr=>[...arr].sort((a,b)=>segInfo(b).p-segInfo(a).p).slice(0,3)
+    .map(s=>{ const p=segInfo(s).p; return `/${s}/${p?` ${fmtPct(p)}`:""}`; }).join(", ");
 
   if(state.supra.length){
     const segs=longVowels();
     if(!segs.length) add("warn","Vowel length is on, but there are no vowels to lengthen yet.",3);
-    else add("info",`<b>Vowel length</b> → ${segs.length} long vowel${segs.length>1?"s":""} (${eg(segs)}); long vowels average ~<b>${pct(meanShare(segs))}%</b> of PHOIBLE inventories.`);
+    else add("info",`<b>Vowel length</b> → ${segs.length} long vowel${segs.length>1?"s":""}; commonest: ${egF(segs)}.`);
   }
   if(state.supra.nasal){
     const segs=nasalVowels();
     if(!segs.length) add("warn","Nasal vowels are on, but there are no vowels to nasalize yet.",3);
-    else{ add("info",`<b>Nasal vowels</b> → ${segs.length} contrast${segs.length>1?"s":""} (${eg(segs)}); ~<b>${pct(meanShare(segs))}%</b> of inventories on average.`);
+    else{ add("info",`<b>Nasal vowels</b> → ${segs.length} contrast${segs.length>1?"s":""}; commonest: ${egF(segs)}.`);
       if(!NASALS.some(has)) add("info","Nasal vowels typically pattern with nasal consonants — you have none (attested, e.g. via lost nasals, but unusual).",2); }
   }
   if(state.supra.gemination){
     const segs=geminates();
-    if(!segs.length) add("warn","Gemination is on, but there are no consonants to geminate yet.",3);
-    else add("info",`<b>Geminate consonants</b> → a length contrast on ${segs.length} consonant${segs.length>1?"s":""}; geminates are uncommon phonemes (each ~2–3% of PHOIBLE).`);
+    if(!segs.length) add("warn","Gemination is on, but there are no geminable consonants yet.",3);
+    else add("info",`<b>Geminate consonants</b> → a length contrast on ${segs.length} consonant${segs.length>1?"s":""}; commonest: ${egF(segs)} — geminates are uncommon phonemes.`);
   }
   if(state.supra.diphthong){
     const segs=diphthongs();
     if(!segs.length) add("warn","Diphthongs are on, but none can be formed — add a non-high vowel plus /i/ or /u/.",2);
-    else add("good",`<b>Diphthongs</b> → ${segs.length} closing diphthong${segs.length>1?"s":""} (${eg(segs)}); the cross-linguistically commonest type.`);
+    else add("good",`<b>Diphthongs</b> → ${segs.length} closing diphthong${segs.length>1?"s":""} (${segs.slice(0,3).map(s=>"/"+s+"/").join(" ")}); the commonest type cross-linguistically, though any single one is individually rare.`);
   }
 
   // ---- syllable structure → WALS 12A
