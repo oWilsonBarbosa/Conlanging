@@ -75,10 +75,22 @@ def fam_ok(ourfam, glfam):
     ofk = FAM_ALIAS.get(ofk, ofk)
     return bool(ofk) and (gfk == ofk or ofk in gfk or gfk in ofk)
 
+# ---- mapeamento manual curado (resolve a cauda de não-casados) ----
+MANUAL = {}   # language -> glottocode
+manual_csv = os.path.join(DATA, "glottolog-manual.csv")
+if os.path.exists(manual_csv):
+    for r in csv.DictReader(open(manual_csv, encoding="utf-8")):
+        MANUAL[r["language"]] = r["glottocode"]
+
 LEVEL_RANK = {"language": 0, "dialect": 1, "family": 2}
 rows = []     # (lang, ourfam, glottocode, glname, glfam, status)
-matched = unmatched = agree = differ = areal_n = ambig = 0
+matched = unmatched = agree = differ = areal_n = ambig = manual_n = 0
 for lang, ourfam in ours:
+    # override manual tem prioridade
+    if lang in MANUAL and MANUAL[lang] in by_code:
+        r = by_code[MANUAL[lang]]
+        rows.append((lang, ourfam, r["Glottocode"], r["Name"], fam_name(r), "MANUAL"))
+        matched += 1; manual_n += 1; continue
     cands = [r for r in by_name.get(norm(lang), [])
              if famkey(fam_name(r)) not in PSEUDO]
     is_areal = is_areal_fam(ourfam)
@@ -119,14 +131,17 @@ A("e sinaliza divergências. **Não-destrutivo** — nada nos arquivos curados f
 A("Mapeamento completo (inclusive não-casados) em [`glottolog-map.csv`](glottolog-map.csv).")
 A("")
 A(f"- Nomes confrontados: **{len(ours)}**")
-A(f"- Casaram por nome: **{matched}** ({100*matched//len(ours)}%) — sem match: **{unmatched}**")
-A(f"- Dos casados: **{agree}** família OK · **{differ}** DIFERE · **{ambig}** AMBÍGUO "
+A(f"- Com glottocode: **{matched}** ({100*matched//len(ours)}%) — sem match: **{unmatched}**")
+A(f"- Por automático: **{matched - manual_n}** · por **mapa manual**: **{manual_n}** "
+  f"([`glottolog-manual.csv`](glottolog-manual.csv))")
+A(f"- Dos automáticos: **{agree}** família OK · **{differ}** DIFERE · **{ambig}** AMBÍGUO "
   f"(homônimo) · **{areal_n}** rótulo areal")
 A("")
-A("> Match por nome exato (normalizado), **sensível ao contexto**: entre homônimos escolhe-se")
-A("> a candidata cuja família bate com a nossa; pseudo-famílias do Glottolog (*Bookkeeping*,")
-A("> *Spurious*…) são descartadas. O Glottolog costuma **dividir** o que listamos como uma")
-A("> língua (Armenian → Eastern/Western Armenian), o que explica a cauda de não-casados.")
+A("> Match automático por nome exato (normalizado), **sensível ao contexto**: entre homônimos")
+A("> escolhe-se a candidata cuja família bate com a nossa; pseudo-famílias (*Bookkeeping*,")
+A("> *Spurious*…) são descartadas. A cauda que o Glottolog **divide** ou nomeia diferente")
+A("> (Armenian → Eastern/Western; Sardinian → Logudorese) foi resolvida **manualmente** em")
+A("> `glottolog-manual.csv` e entra aqui com status `MANUAL`.")
 A("")
 
 diffs = [r for r in rows if r[5] == "DIFERE"]
@@ -161,18 +176,21 @@ if amb:
 A("")
 
 unm = [r[0] for r in rows if r[5] == "SEM-MATCH"]
-A(f"## Não-casados ({len(unm)}) — pendentes de mapeamento manual")
+A(f"## Não-casados ({len(unm)}) — pendentes")
 A("")
-A("Maioria por granularidade/alternância de nome no Glottolog. Resolver depois (estágio 2).")
-A("")
-A(", ".join(unm))
+if unm:
+    A("Sem glottocode no automático nem no mapa manual. Adicionar a `glottolog-manual.csv`.")
+    A("")
+    A(", ".join(unm))
+else:
+    A("*(nenhum — toda a cauda foi resolvida em `glottolog-manual.csv`.)*")
 A("")
 
 open(REkP, "w", encoding="utf-8").write("\n".join(L) + "\n")
 
 # ---- stdout ----
-print(f"casaram {matched}/{len(ours)} | OK {agree} | DIFERE {differ} | AMBÍGUO {ambig} | "
-      f"areal {areal_n} | sem-match {unmatched}")
+print(f"com glottocode {matched}/{len(ours)} (auto {matched-manual_n} + manual {manual_n}) | "
+      f"OK {agree} | DIFERE {differ} | AMBÍGUO {ambig} | areal {areal_n} | sem-match {unmatched}")
 print("\nDIFERE (família difere, match confiável):")
 for lang, of, code, gn, gf, st in diffs:
     print(f"  {lang:24} {of:30} -> {gf}")

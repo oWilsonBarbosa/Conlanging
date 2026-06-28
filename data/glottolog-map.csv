@@ -7,27 +7,27 @@ Plautdietsch,Indo-European,plau1238,Plautdietsch,Indo-European,OK
 Old Dutch,Indo-European,oldd1238,Old Dutch,Indo-European,OK
 Dutch,Indo-European,dutc1256,Dutch,Indo-European,OK
 Afrikaans,Indo-European,afri1274,Afrikaans,Indo-European,OK
-Zealandic,Indo-European,,,,SEM-MATCH
+Zealandic,Indo-European,zeeu1238,Zeeuws,Indo-European,MANUAL
 Old High German,Indo-European,oldh1241,Old High German (ca. 750-1050),Indo-European,OK
 German,Indo-European,stan1295,German,Indo-European,OK
-Alemannic German,Indo-European,,,,SEM-MATCH
+Alemannic German,Indo-European,swis1247,Central Alemannic,Indo-European,MANUAL
 Bavarian,Indo-European,bava1246,Bavarian,Indo-European,OK
-East Central German (Silesian),Indo-European,,,,SEM-MATCH
+East Central German (Silesian),Indo-European,lowe1388,Lower Silesian,Indo-European,MANUAL
 Hunsrik,Indo-European,riog1239,Hunsrik,Indo-European,OK
-Luxembourgish,Indo-European,,,,SEM-MATCH
+Luxembourgish,Indo-European,luxe1241,Moselle Franconian,Indo-European,MANUAL
 Mòcheno,Indo-European,moch1255,Mòcheno,Indo-European,OK
 Pennsylvania German,Indo-European,penn1240,Pennsylvania German,Indo-European,OK
-Vilamovian,Indo-European,,,,SEM-MATCH
-Yiddish,Indo-European,,,,SEM-MATCH
-North Frisian (Föhr-Amrum),Indo-European,,,,SEM-MATCH
-Saterland Frisian,Indo-European,,,,SEM-MATCH
-West Frisian,Indo-European,,,,SEM-MATCH
+Vilamovian,Indo-European,wymy1235,Wymysorys,Indo-European,MANUAL
+Yiddish,Indo-European,east2295,Eastern Yiddish,Indo-European,MANUAL
+North Frisian (Föhr-Amrum),Indo-European,nort2626,Northern Frisian,Indo-European,MANUAL
+Saterland Frisian,Indo-European,sate1242,Ems-Weser Frisian,Indo-European,MANUAL
+West Frisian,Indo-European,west2354,Western Frisian,Indo-European,MANUAL
 Old Norse,Indo-European,oldn1244,Old Norse,Indo-European,OK
 Danish,Indo-European,dani1285,Danish,Indo-European,OK
 Elfdalian,Indo-European,elfd1234,Elfdalian,Indo-European,OK
 Faroese,Indo-European,faro1244,Faroese,Indo-European,OK
 Icelandic,Indo-European,icel1247,Icelandic,Indo-European,OK
-Norn,Indo-European,,,,SEM-MATCH
+Norn,Indo-European,oldn1246,Old Norn,Indo-European,MANUAL
 Norwegian Bokmål,Indo-European,norw1259,Norwegian Bokmål,Indo-European,OK
 Norwegian Nynorsk,Indo-European,norw1262,Norwegian Nynorsk,Indo-European,OK
 Swedish,Indo-European,swed1254,Swedish,Indo-European,OK
@@ -46,23 +46,23 @@ Spanish,Indo-European,stan1288,Spanish,Indo-European,OK
 Old French,Indo-European,oldf1239,Old French (842-ca. 1400),Indo-European,OK
 Middle French,Indo-European,midd1316,Middle French,Indo-European,OK
 French,Indo-European,stan1290,French,Indo-European,OK
-Franco-Provençal,Indo-European,,,,SEM-MATCH
-Old Occitan,Indo-European,,,,SEM-MATCH
+Franco-Provençal,Indo-European,fran1260,Arpitan,Indo-European,MANUAL
+Old Occitan,Indo-European,oldp1253,Old Provençal,Indo-European,MANUAL
 Occitan,Indo-European,occi1239,Occitan,Indo-European,OK
 Walloon,Indo-European,wall1255,Walloon,Indo-European,OK
-Emilian,Indo-European,,,,SEM-MATCH
+Emilian,Indo-European,emil1241,Emiliano,Indo-European,MANUAL
 Ligurian,Indo-European,ligu1248,Ligurian,Indo-European,OK
 Lombard,Indo-European,lomb1257,Lombard,Indo-European,OK
-Piedmontese,Indo-European,,,,SEM-MATCH
+Piedmontese,Indo-European,piem1238,Piemontese,Indo-European,MANUAL
 Romagnol,Indo-European,roma1328,Romagnol,Indo-European,OK
-Venetan,Indo-European,,,,SEM-MATCH
+Venetan,Indo-European,vene1258,Venetian,Indo-European,MANUAL
 Corsican,Indo-European,cors1241,Corsican,Indo-European,OK
 Dalmatian,Indo-European,dalm1243,Dalmatian,Indo-European,OK
 Istriot,Indo-European,istr1244,Istriot,Indo-European,OK
 Italian,Indo-European,ital1282,Italian,Indo-European,OK
-Neapolitan,Indo-European,,,,SEM-MATCH
+Neapolitan,Indo-European,neap1235,Continental Southern Italian,Indo-European,MANUAL
 Sicilian,Indo-European,sici1248,Sicilian,Indo-European,OK
-Tarantino,Indo-European,,,,SEM-MATCH
+Tarantino,Indo-European,neap1235,Continental Southern Italian,Indo-European,MANUAL
 Friulian,Indo-European,friu1240,Friulian,Indo-European,OK
 Ladin,Indo-European,ladi1250,Ladin,Indo-European,OK
 Romansh,Indo-European,roma1326,Romansh,Indo-European,OK
@@ -70,7 +70,7 @@ Aromanian,Indo-European,arom1237,Aromanian,Indo-European,OK
 Istro-Romanian,Indo-European,istr1245,Istro-Romanian,Indo-European,OK
 Megleno-Romanian,Indo-European,megl1237,Megleno-Romanian,Indo-European,OK
 Romanian,Indo-European,roma1327,Romanian,Indo-European,OK
-Sardinian,Indo-European,,,,SEM-MATCH
+Sardinian,Indo-European,logu1236,Logudorese Sardinian,Indo-European,MANUAL
 Old Irish,Indo-European,oldi1246,Old Irish (8-9th century),Indo-European,OK
 Irish,Indo-European,iris1253,Irish,Indo-European,OK
 Scottish Gaelic,Indo-European,scot1245,Scottish Gaelic,Indo-European,OK
@@ -78,31 +78,31 @@ Manx,Indo-European,manx1243,Manx,Indo-European,OK
 Breton,Indo-European,bret1244,Breton,Indo-European,OK
 Cornish,Indo-European,corn1251,Cornish,Indo-European,OK
 Welsh,Indo-European,wels1247,Welsh,Indo-European,OK
-Old East Slavic,Indo-European,,,,SEM-MATCH
+Old East Slavic,Indo-European,oldr1238,Old Russian,Indo-European,MANUAL
 Belarusian,Indo-European,bela1254,Belarusian,Indo-European,OK
 Russian,Indo-European,russ1263,Russian,Indo-European,OK
 Ukrainian,Indo-European,ukra1253,Ukrainian,Indo-European,OK
-Carpathian Rusyn,Indo-European,,,,SEM-MATCH
-Pannonian Rusyn,Indo-European,,,,SEM-MATCH
+Carpathian Rusyn,Indo-European,rusy1239,Rusyn,Indo-European,MANUAL
+Pannonian Rusyn,Indo-European,pann1240,Pannonian Ruthenian,Indo-European,MANUAL
 Old Polish,Indo-European,oldp1256,Old Polish,Indo-European,OK
 Polish,Indo-European,poli1260,Polish,Indo-European,OK
 Kashubian,Indo-European,kash1274,Kashubian,Indo-European,OK
 Silesian,Indo-European,sile1253,Silesian,Indo-European,OK
 Old Czech,Indo-European,oldc1253,Old Czech,Indo-European,OK
 Czech,Indo-European,czec1258,Czech,Indo-European,OK
-Old Slovak,Indo-European,,,,SEM-MATCH
+Old Slovak,Indo-European,slov1269,Slovak,Indo-European,MANUAL
 Slovak,Indo-European,slov1269,Slovak,Indo-European,OK
 Lower Sorbian,Indo-European,lowe1385,Lower Sorbian,Indo-European,OK
 Upper Sorbian,Indo-European,uppe1395,Upper Sorbian,Indo-European,OK
-Old Church Slavonic,Indo-European,,,,SEM-MATCH
+Old Church Slavonic,Indo-European,chur1257,Church Slavic,Indo-European,MANUAL
 Bulgarian,Indo-European,bulg1262,Bulgarian,Indo-European,OK
 Macedonian,Indo-European,mace1250,Macedonian,Indo-European,OK
-Serbo-Croatian,Indo-European,,,,SEM-MATCH
-Slovene,Indo-European,,,,SEM-MATCH
+Serbo-Croatian,Indo-European,sout1528,Serbian-Croatian-Bosnian,Indo-European,MANUAL
+Slovene,Indo-European,slov1268,Slovenian,Indo-European,MANUAL
 Lithuanian,Indo-European,lith1251,Lithuanian,Indo-European,OK
 Samogitian,Indo-European,samo1265,Samogitian,Indo-European,OK
 Latvian,Indo-European,latv1249,Latvian,Indo-European,OK
-Latgalian,Indo-European,,,,SEM-MATCH
+Latgalian,Indo-European,east2282,East Latvian,Indo-European,MANUAL
 Old Prussian,Indo-European,prus1238,Old Prussian,Indo-European,OK
 Sanskrit,Indo-European,sans1269,Sanskrit,Indo-European,OK
 Pali,Indo-European,pali1273,Pali,Indo-European,OK
@@ -122,47 +122,47 @@ Marathi,Indo-European,mara1378,Marathi,Indo-European,OK
 Marwari,Indo-European,marw1260,Marwari (India),Indo-European,OK
 Nepali,Indo-European,nepa1254,Nepali,Indo-European,OK
 Odia,Indo-European,oriy1255,Odia,Indo-European,OK
-Punjabi,Indo-European,,,,SEM-MATCH
+Punjabi,Indo-European,panj1256,Eastern Panjabi,Indo-European,MANUAL
 Rohingya,Indo-European,rohi1238,Rohingya,Indo-European,OK
 Romani,Indo-European,roma1329,Romani,Indo-European,OK
 Sindhi,Indo-European,sind1272,Sindhi,Indo-European,OK
-Sinhalese,Indo-European,,,,SEM-MATCH
+Sinhalese,Indo-European,sinh1246,Sinhala,Indo-European,MANUAL
 Sylheti,Indo-European,sylh1242,Sylheti,Indo-European,OK
 Urdu,Indo-European,urdu1245,Urdu,Indo-European,OK
 Vaghri,Indo-European,vagh1246,Vaghri,Indo-European,OK
 Old Persian,Indo-European,oldp1254,Old Persian (ca. 600-400 B.C.),Indo-European,OK
-Middle Persian,Indo-European,,,,SEM-MATCH
+Middle Persian,Indo-European,pahl1241,Pahlavi,Indo-European,MANUAL
 Dari,Indo-European,dari1249,Dari,Indo-European,OK
-Iranian Persian,Indo-European,,,,SEM-MATCH
+Iranian Persian,Indo-European,west2369,Western Farsi,Indo-European,MANUAL
 Tajik,Indo-European,taji1245,Tajik,Indo-European,OK
 Central Kurdish,Indo-European,cent1972,Central Kurdish,Indo-European,OK
 Northern Kurdish,Indo-European,nort2641,Northern Kurdish,Indo-European,OK
 Southern Kurdish,Indo-European,sout2640,Southern Kurdish,Indo-European,OK
 Laki,Indo-European,laki1244,Laki,Indo-European,OK
-Zazaki,Indo-European,,,,SEM-MATCH
-Talysh,Indo-European,,,,SEM-MATCH
-Tat,Indo-European,,,,SEM-MATCH
+Zazaki,Indo-European,diml1238,Dimli,Indo-European,MANUAL
+Talysh,Indo-European,taly1247,North-Central Talysh,Indo-European,MANUAL
+Tat,Indo-European,musl1236,Muslim Tat,Indo-European,MANUAL
 Mazanderani,Indo-European,maza1291,Mazanderani,Indo-European,OK
 Sivandi,Indo-European,siva1239,Sivandi,Indo-European,OK
-Baluchi,Indo-European,,,,SEM-MATCH
+Baluchi,Indo-European,balo1260,Balochic,Indo-European,MANUAL
 Avestan,Indo-European,aves1237,Avestan,Indo-European,OK
-Ossetian,Indo-European,,,,SEM-MATCH
+Ossetian,Indo-European,iron1242,Iron Ossetian,Indo-European,MANUAL
 Pashto,Indo-European,pash1269,Pashto,Indo-European,OK
-Yaghnobi,Indo-European,,,,SEM-MATCH
+Yaghnobi,Indo-European,yagn1238,Yagnobi,Indo-European,MANUAL
 Shughni,Indo-European,shug1248,Shughni,Indo-European,OK
 Sarikoli,Indo-European,sari1246,Sarikoli,Indo-European,OK
-Yazghulami,Indo-European,,,,SEM-MATCH
+Yazghulami,Indo-European,yazg1240,Yazgulyam,Indo-European,MANUAL
 Munji,Indo-European,munj1244,Munji,Indo-European,OK
 Yidgha,Indo-European,yidg1240,Yidgha,Indo-European,OK
 Parachi,Indo-European,para1299,Parachi,Indo-European,OK
-Ancient Greek,Indo-European,,,,SEM-MATCH
+Ancient Greek,Indo-European,anci1242,Ionic-Attic Ancient Greek,Indo-European,MANUAL
 Greek,Indo-European,gree1276,Greek,Indo-European,OK
 Albanian,Indo-European,alba1267,Albanian,Indo-European,OK
-Armenian,Indo-European,,,,SEM-MATCH
+Armenian,Indo-European,nucl1235,Eastern Armenian,Indo-European,MANUAL
 Hittite,Indo-European,hitt1242,Hittite,Indo-European,OK
-Luwian,Indo-European,,,,SEM-MATCH
-Tocharian A,Indo-European,,,,SEM-MATCH
-Tocharian B,Indo-European,,,,SEM-MATCH
+Luwian,Indo-European,cune1239,Cuneiform Luwian,Indo-European,MANUAL
+Tocharian A,Indo-European,tokh1242,Tokharian A,Indo-European,MANUAL
+Tocharian B,Indo-European,tokh1243,Tokharian B,Indo-European,MANUAL
 Akkadian,Afro-Asiatic,akka1240,Akkadian,Afro-Asiatic,OK
 Arabic,Afro-Asiatic,arab1395,Arabic,Afro-Asiatic,OK
 Egyptian Arabic,Afro-Asiatic,egyp1253,Egyptian Arabic,Afro-Asiatic,OK
@@ -172,8 +172,8 @@ Moroccan Arabic,Afro-Asiatic,moro1292,Moroccan Arabic,Afro-Asiatic,OK
 South Levantine Arabic,Afro-Asiatic,sout3123,South Levantine Arabic,Afro-Asiatic,OK
 Maltese,Afro-Asiatic,malt1254,Maltese,Afro-Asiatic,OK
 Aramaic (Hebrew script),Afro-Asiatic,aram1259,Aramaic,Afro-Asiatic,OK
-Syriac,Afro-Asiatic,,,,SEM-MATCH
-Hebrew,Afro-Asiatic,,,,SEM-MATCH
+Syriac,Afro-Asiatic,clas1252,Classical Syriac,Afro-Asiatic,MANUAL
+Hebrew,Afro-Asiatic,hebr1245,Modern Hebrew,Afro-Asiatic,MANUAL
 Phoenician,Afro-Asiatic,phoe1239,Phoenician,Afro-Asiatic,OK
 Ugaritic,Afro-Asiatic,ugar1238,Ugaritic,Afro-Asiatic,OK
 Ge'ez,Afro-Asiatic,geez1241,Geez,Afro-Asiatic,OK
@@ -182,12 +182,12 @@ Tigrinya,Afro-Asiatic,tigr1271,Tigrinya,Afro-Asiatic,OK
 Argobba,Afro-Asiatic,argo1244,Argobba,Afro-Asiatic,OK
 Harsusi,Afro-Asiatic,hars1241,Harsusi,Afro-Asiatic,OK
 Soqotri,Afro-Asiatic,soqo1240,Soqotri,Afro-Asiatic,OK
-Central Atlas Tamazight,Afro-Asiatic,,,,SEM-MATCH
-Tarifit,Afro-Asiatic,,,,SEM-MATCH
+Central Atlas Tamazight,Afro-Asiatic,cent2194,Central Moroccan Berber,Afro-Asiatic,MANUAL
+Tarifit,Afro-Asiatic,tari1263,Tarifiyt-Beni-Iznasen-Eastern Middle Atlas Berber,Afro-Asiatic,MANUAL
 Tuareg,Afro-Asiatic,tuar1240,Tuareg,Afro-Asiatic,OK
 Afar,Afro-Asiatic,afar1241,Afar,Afro-Asiatic,OK
 Saho,Afro-Asiatic,saho1246,Saho,Afro-Asiatic,OK
-Oromo,Afro-Asiatic,,,,SEM-MATCH
+Oromo,Afro-Asiatic,west2721,West Central Oromo,Afro-Asiatic,MANUAL
 Somali,Afro-Asiatic,soma1255,Somali,Afro-Asiatic,OK
 Sidamo,Afro-Asiatic,sida1246,Sidamo,Afro-Asiatic,OK
 Kambaata,Afro-Asiatic,kamb1316,Kambaata,Afro-Asiatic,OK
@@ -198,20 +198,20 @@ Hausa,Afro-Asiatic,haus1257,Hausa,Afro-Asiatic,OK
 Estonian,Uralic,esto1258,Estonian,Uralic,OK
 Finnish,Uralic,finn1318,Finnish,Uralic,OK
 Karelian,Uralic,kare1335,Karelian,Uralic,OK
-Livonian,Uralic,,,,SEM-MATCH
+Livonian,Uralic,livv1244,Liv,Uralic,MANUAL
 Veps,Uralic,veps1250,Veps,Uralic,OK
 Võro,Uralic,voro1243,Võro,Uralic,OK
 Votic,Uralic,voti1245,Votic,Uralic,OK
-Akkala Sami,Uralic,,,,SEM-MATCH
-Inari Sami,Uralic,,,,SEM-MATCH
-Kildin Sami,Uralic,,,,SEM-MATCH
-Lule Sami,Uralic,,,,SEM-MATCH
-Northern Sami,Uralic,,,,SEM-MATCH
-Pite Sami,Uralic,,,,SEM-MATCH
-Skolt Sami,Uralic,,,,SEM-MATCH
-Southern Sami,Uralic,,,,SEM-MATCH
-Ter Sami,Uralic,,,,SEM-MATCH
-Ume Sami,Uralic,,,,SEM-MATCH
+Akkala Sami,Uralic,akka1237,Akkala Saami,Uralic,MANUAL
+Inari Sami,Uralic,inar1241,Inari Saami,Uralic,MANUAL
+Kildin Sami,Uralic,kild1236,Kildin Saami,Uralic,MANUAL
+Lule Sami,Uralic,lule1254,Lule Saami,Uralic,MANUAL
+Northern Sami,Uralic,nort2671,North Saami,Uralic,MANUAL
+Pite Sami,Uralic,pite1240,Pite Saami,Uralic,MANUAL
+Skolt Sami,Uralic,skol1241,Skolt Saami,Uralic,MANUAL
+Southern Sami,Uralic,sout2674,South Saami,Uralic,MANUAL
+Ter Sami,Uralic,ters1235,Ter Saami,Uralic,MANUAL
+Ume Sami,Uralic,umes1235,Ume Saami,Uralic,MANUAL
 Erzya,Uralic,erzy1239,Erzya,Uralic,OK
 Moksha,Uralic,moks1248,Moksha,Uralic,OK
 Eastern Mari,Uralic,east2328,Eastern Mari,Uralic,OK
@@ -219,39 +219,39 @@ Western Mari,Uralic,west2392,Western Mari,Uralic,OK
 Komi-Zyrian,Uralic,komi1268,Komi-Zyrian,Uralic,OK
 Udmurt,Uralic,udmu1245,Udmurt,Uralic,OK
 Hungarian,Uralic,hung1274,Hungarian,Uralic,OK
-Eastern Khanty,Uralic,,,,SEM-MATCH
+Eastern Khanty,Uralic,east2774,East Khanty,Uralic,MANUAL
 Northern Mansi,Uralic,mans1258,Northern Mansi,Uralic,OK
 Tundra Nenets,Uralic,nene1249,Tundra Nenets,Uralic,OK
 Nganasan,Uralic,ngan1291,Nganasan,Uralic,OK
 Chuvash,Turkic,chuv1255,Chuvash,Turkic,OK
 Ottoman Turkish,Turkic,otto1234,Ottoman Turkish,Turkic,OK
 Turkish,Turkic,nucl1301,Turkish,Turkic,OK
-Azerbaijani,Turkic,,,,SEM-MATCH
+Azerbaijani,Turkic,nort2697,North Azerbaijani,Turkic,MANUAL
 Turkmen,Turkic,turk1304,Turkmen,Turkic,OK
 Gagauz,Turkic,gaga1249,Gagauz,Turkic,OK
 Tatar,Turkic,tata1255,Tatar,Turkic,OK
 Bashkir,Turkic,bash1264,Bashkir,Turkic,OK
 Kazakh,Turkic,kaza1248,Kazakh,Turkic,OK
 Karakalpak,Turkic,kara1467,Kara-Kalpak,Turkic,OK
-Kyrgyz,Turkic,,,,SEM-MATCH
+Kyrgyz,Turkic,kirg1245,Kirghiz,Turkic,MANUAL
 Karachay-Balkar,Turkic,kara1465,Karachay-Balkar,Turkic,OK
 Kumyk,Turkic,kumy1244,Kumyk,Turkic,OK
 Nogai,Turkic,noga1249,Nogai,Turkic,OK
 Crimean Tatar,Turkic,crim1257,Crimean Tatar,Turkic,OK
 Chagatai,Turkic,chag1247,Chagatai,Turkic,OK
 Uzbek,Turkic,uzbe1247,Uzbek,Turkic,OK
-Uyghur,Turkic,,,,SEM-MATCH
+Uyghur,Turkic,uigh1240,Uighur,Turkic,MANUAL
 Old Uyghur,Turkic,oldu1239,Old Uyghur,Turkic,OK
-Yakut,Turkic,,,,SEM-MATCH
+Yakut,Turkic,yaku1245,Sakha,Turkic,MANUAL
 Dolgan,Turkic,dolg1241,Dolgan,Turkic,OK
 Khakas,Turkic,khak1248,Khakas,Turkic,OK
-Shor,Turkic,,,,SEM-MATCH
-Tuvan,Turkic,,,,SEM-MATCH
+Shor,Turkic,shor1247,Mrassu Shor-Tutal,Turkic,MANUAL
+Tuvan,Turkic,tuvi1240,Tuvinian,Turkic,MANUAL
 Southern Altai,Turkic,sout2694,Southern Altai,Turkic,OK
 Mongolian,Mongolic,mong1331,Mongolian,Mongolic-Khitan,OK
-Buryat,Mongolic,,,,SEM-MATCH
+Buryat,Mongolic,russ1264,Russia Buriat,Mongolic-Khitan,MANUAL
 Kalmyk,Mongolic,kalm1244,Kalmyk,Mongolic-Khitan,OK
-Daur,Mongolic,,,,SEM-MATCH
+Daur,Mongolic,daur1238,Dagur,Mongolic-Khitan,MANUAL
 Bonan,Mongolic,bona1250,Bonan,Mongolic-Khitan,OK
 Dongxiang,Mongolic,dong1285,Dongxiang,Mongolic-Khitan,OK
 Mangghuer,Mongolic,minh1238,Mangghuer,Mongolic-Khitan,OK
@@ -259,18 +259,18 @@ Mongghul,Mongolic,huzh1238,Mongghul,Mongolic-Khitan,OK
 Evenki,Tungusic,even1259,Evenki,Tungusic,OK
 Manchu,Tungusic,manc1252,Manchu,Tungusic,OK
 Nanai,Tungusic,nana1257,Nanai,Tungusic,OK
-Mandarin,Sino-Tibetan,,,,SEM-MATCH
+Mandarin,Sino-Tibetan,mand1415,Mandarin Chinese,Sino-Tibetan,MANUAL
 Dungan,Sino-Tibetan,dung1253,Dungan,Sino-Tibetan,OK
 Cantonese,Sino-Tibetan,cant1236,Cantonese,Sino-Tibetan,OK
-Eastern Min,Sino-Tibetan,,,,SEM-MATCH
-Hokkien,Sino-Tibetan,,,,SEM-MATCH
-Hakka,Sino-Tibetan,,,,SEM-MATCH
-Wu,Sino-Tibetan,wuuu1240,Wu,Austroasiatic,DIFERE
+Eastern Min,Sino-Tibetan,mind1253,Min Dong Chinese,Sino-Tibetan,MANUAL
+Hokkien,Sino-Tibetan,minn1241,Min Nan Chinese,Sino-Tibetan,MANUAL
+Hakka,Sino-Tibetan,hakk1236,Hakka Chinese,Sino-Tibetan,MANUAL
+Wu,Sino-Tibetan,wuch1236,Wu Chinese,Sino-Tibetan,MANUAL
 Tibetan,Sino-Tibetan,tibe1272,Tibetan,Sino-Tibetan,OK
 Dzongkha,Sino-Tibetan,dzon1239,Dzongkha,Sino-Tibetan,OK
-Sherpa,Sino-Tibetan,,,,SEM-MATCH
+Sherpa,Sino-Tibetan,sher1255,Solu-Khumbu Sherpa,Sino-Tibetan,MANUAL
 Burmese,Sino-Tibetan,nucl1310,Burmese,Sino-Tibetan,OK
-Nuosu,Sino-Tibetan,,,,SEM-MATCH
+Nuosu,Sino-Tibetan,sich1238,Sichuan Yi,Sino-Tibetan,MANUAL
 Naxi,Sino-Tibetan,naxi1245,Naxi,Sino-Tibetan,OK
 Pa'o Karen,Sino-Tibetan,paok1235,Pa'o Karen,Sino-Tibetan,OK
 S'gaw Karen,Sino-Tibetan,sgaw1245,S'gaw Karen,Sino-Tibetan,OK
@@ -282,23 +282,23 @@ Chepang,Sino-Tibetan,chep1245,Chepang,Sino-Tibetan,OK
 Drung,Sino-Tibetan,drun1238,Drung,Sino-Tibetan,OK
 Lepcha,Sino-Tibetan,lepc1244,Lepcha,Sino-Tibetan,OK
 Limbu,Sino-Tibetan,limb1266,Limbu,Sino-Tibetan,OK
-Lutuv,Sino-Tibetan,,,,SEM-MATCH
+Lutuv,Sino-Tibetan,laut1236,Lautu,Sino-Tibetan,MANUAL
 Newar,Sino-Tibetan,newa1247,Newar,Sino-Tibetan,OK
 Thai,Kra-Dai (Tai-Kadai),thai1261,Thai,Tai-Kadai,OK
 Northern Thai,Kra-Dai (Tai-Kadai),nort2740,Northern Thai,Tai-Kadai,OK
-Isan,Kra-Dai (Tai-Kadai),isan1244,Isan,Nuclear Trans New Guinea,DIFERE
+Isan,Kra-Dai (Tai-Kadai),nort2741,Northeastern Thai,Tai-Kadai,MANUAL
 Lao,Kra-Dai (Tai-Kadai),laoo1244,Lao,Tai-Kadai,OK
 Shan,Kra-Dai (Tai-Kadai),shan1277,Shan,Tai-Kadai,OK
 Lü,Kra-Dai (Tai-Kadai),luuu1242,Lü,Tai-Kadai,OK
 Tai Dam,Kra-Dai (Tai-Kadai),taid1247,Tai Dam,Tai-Kadai,OK
 Tai Nüa,Kra-Dai (Tai-Kadai),tain1252,Tai Nüa,Tai-Kadai,OK
 Tày,Kra-Dai (Tai-Kadai),tayy1238,Tày,Tai-Kadai,OK
-Zhuang,Kra-Dai (Tai-Kadai),,,,SEM-MATCH
+Zhuang,Kra-Dai (Tai-Kadai),yong1276,Yongbei Zhuang,Tai-Kadai,MANUAL
 Saek,Kra-Dai (Tai-Kadai),saek1240,Saek,Tai-Kadai,OK
 Mulam,Kra-Dai (Tai-Kadai),mula1253,Mulam,Tai-Kadai,OK
 Sui,Kra-Dai (Tai-Kadai),suii1243,Sui,Tai-Kadai,OK
 Bouyei,Kra-Dai (Tai-Kadai),bouy1240,Bouyei,Tai-Kadai,OK
-White Hmong,Hmong-Mien,,,,SEM-MATCH
+White Hmong,Hmong-Mien,hmon1333,Hmong Daw,Hmong-Mien,MANUAL
 Iu Mien,Hmong-Mien,iumi1238,Iu Mien,Hmong-Mien,OK
 Vietnamese,Austroasiatic,viet1252,Vietnamese,Austroasiatic,OK
 Muong,Austroasiatic,muon1246,Muong,Austroasiatic,OK
@@ -308,7 +308,7 @@ Pacoh,Austroasiatic,paco1243,Pacoh,Austroasiatic,OK
 Bahnar,Austroasiatic,bahn1262,Bahnar,Austroasiatic,OK
 Sedang,Austroasiatic,seda1262,Sedang,Austroasiatic,OK
 Hrê,Austroasiatic,hree1244,Hre,Austroasiatic,OK
-Khmer,Austroasiatic,,,,SEM-MATCH
+Khmer,Austroasiatic,cent1989,Central Khmer,Austroasiatic,MANUAL
 Mon,Austroasiatic,monn1252,Mon,Austroasiatic,OK
 Eastern Lawa,Austroasiatic,east2330,Eastern Lawa,Austroasiatic,OK
 Western Lawa,Austroasiatic,west2396,Western Lawa,Austroasiatic,OK
@@ -316,12 +316,12 @@ Santali,Austroasiatic,sant1410,Santali,Austroasiatic,OK
 Amis,Austronesian,amis1246,Amis,Austronesian,OK
 Puyuma,Austronesian,puyu1239,Puyuma,Austronesian,OK
 Aklanon,Austronesian,akla1240,Aklanon,Austronesian,OK
-Asi,Austronesian,,,,SEM-MATCH
-Central Bikol,Austronesian,,,,SEM-MATCH
-Rinconada Bikol,Austronesian,,,,SEM-MATCH
+Asi,Austronesian,bant1288,Bantoanon,Austronesian,MANUAL
+Central Bikol,Austronesian,cent2087,Coastal-Naga Bikol,Austronesian,MANUAL
+Rinconada Bikol,Austronesian,irig1242,Iriga Bicolano,Austronesian,MANUAL
 Cebuano,Austronesian,cebu1242,Cebuano,Austronesian,OK
 Hiligaynon,Austronesian,hili1240,Hiligaynon,Austronesian,OK
-Ilocano,Austronesian,,,,SEM-MATCH
+Ilocano,Austronesian,ilok1237,Iloko,Austronesian,MANUAL
 Kinaray-a,Austronesian,kina1250,Kinaray-a,Austronesian,OK
 Iranun,Austronesian,iran1262,Iranun,Austronesian,OK
 Maguindanao,Austronesian,magu1243,Maguindanao,Austronesian,OK
@@ -329,11 +329,11 @@ Western Bukidnon Manobo,Austronesian,west2555,Western Bukidnon Manobo,Austronesi
 Maranao,Austronesian,mara1404,Maranao,Austronesian,OK
 Tagalog,Austronesian,taga1270,Tagalog,Austronesian,OK
 Tausug,Austronesian,taus1251,Tausug,Austronesian,OK
-Waray-Waray,Austronesian,,,,SEM-MATCH
+Waray-Waray,Austronesian,wara1300,Waray (Philippines),Austronesian,MANUAL
 Yakan,Austronesian,yaka1277,Yakan,Austronesian,OK
 Malay,Austronesian,mala1492,Malay (Ati),Austronesian,OK
 Brunei Malay,Austronesian,brun1243,Brunei Malay,Austronesian,OK
-Indonesian,Austronesian,,,,SEM-MATCH
+Indonesian,Austronesian,indo1316,Standard Indonesian,Austronesian,MANUAL
 Iban,Austronesian,iban1264,Iban,Austronesian,OK
 Minangkabau,Austronesian,mina1268,Minangkabau,Austronesian,OK
 Eastern Cham,Austronesian,east2563,Eastern Cham,Austronesian,OK
@@ -343,13 +343,13 @@ Balinese,Austronesian,bali1278,Balinese,Austronesian,OK
 Lampung Api,Austronesian,lamp1243,Lampung Api,Austronesian,OK
 Madurese,Austronesian,nucl1460,Madurese,Austronesian,OK
 Sasak,Austronesian,sasa1249,Sasak,Austronesian,OK
-Bakung,Austronesian,,,,SEM-MATCH
+Bakung,Austronesian,baku1265,Bakung Kenyah,Bookkeeping,MANUAL
 Balantak,Austronesian,bala1315,Balantak,Austronesian,OK
-Karo Batak,Austronesian,,,,SEM-MATCH
-Toba Batak,Austronesian,,,,SEM-MATCH
-Bau Bidayuh,Austronesian,,,,SEM-MATCH
+Karo Batak,Austronesian,bata1293,Batak Karo,Austronesian,MANUAL
+Toba Batak,Austronesian,bata1289,Batak Toba,Austronesian,MANUAL
+Bau Bidayuh,Austronesian,baub1235,Bau-Jagoi Bidayuh,Austronesian,MANUAL
 Buginese,Austronesian,bugi1244,Buginese,Austronesian,OK
-Old Javanese,Austronesian,,,,SEM-MATCH
+Old Javanese,Austronesian,kawi1241,Kawi,Austronesian,MANUAL
 Javanese,Austronesian,java1254,Javanese,Austronesian,OK
 Kelabit,Austronesian,kela1258,Kelabit,Austronesian,OK
 Lun Bawang,Austronesian,lunb1237,Lun Bawang,Austronesian,OK
@@ -377,18 +377,18 @@ Jawe,Austronesian,jawe1237,Jawe,Austronesian,OK
 Nemi,Austronesian,nemi1240,Nemi,Austronesian,OK
 Pije,Austronesian,pije1237,Pije,Austronesian,OK
 Vurës,Austronesian,vure1239,Vurës,Austronesian,OK
-Rapa Nui,Austronesian,,,,SEM-MATCH
+Rapa Nui,Austronesian,rapa1244,Rapanui,Austronesian,MANUAL
 Rotuman,Austronesian,rotu1241,Rotuman,Austronesian,OK
 Samoan,Austronesian,samo1305,Samoan,Austronesian,OK
 Tahitian,Austronesian,tahi1242,Tahitian,Austronesian,OK
 Tetum,Austronesian,tetu1245,Tetum,Austronesian,OK
-Tokelauan,Austronesian,,,,SEM-MATCH
-Tongan,Austronesian,,,,SEM-MATCH
+Tokelauan,Austronesian,toke1240,Tokelau,Austronesian,MANUAL
+Tongan,Austronesian,tong1325,Tonga (Tonga Islands),Austronesian,MANUAL
 Ternate,Papuan (geographic cover term — several unrelated families),tern1247,Ternate,North Halmahera,AREAL
 Tidore,Papuan (geographic cover term — several unrelated families),tido1248,Tidore,North Halmahera,AREAL
 West Makian,Papuan (geographic cover term — several unrelated families),west2600,West Makian,North Halmahera,AREAL
 Fataluku,Papuan (geographic cover term — several unrelated families),fata1247,Fataluku,Timor-Alor-Pantar,AREAL
-Makasae,Papuan (geographic cover term — several unrelated families),,,,SEM-MATCH
+Makasae,Papuan (geographic cover term — several unrelated families),maka1316,Makasae-Makalero,Timor-Alor-Pantar,MANUAL
 Angaataha,Papuan (geographic cover term — several unrelated families),anga1290,Angaataha,Angan,AREAL
 Enga,Papuan (geographic cover term — several unrelated families),enga1252,Enga,Nuclear Trans New Guinea,AREAL
 Nii,Papuan (geographic cover term — several unrelated families),niii1240,Nii,Nuclear Trans New Guinea,AREAL
@@ -408,17 +408,17 @@ Laz,Kartvelian,lazz1240,Laz,Kartvelian,OK
 Mingrelian,Kartvelian,ming1252,Mingrelian,Kartvelian,OK
 Svan,Kartvelian,svan1243,Svan,Kartvelian,OK
 Abkhaz,Northwest Caucasian,abkh1244,Abkhaz,Abkhaz-Adyge,OK
-East Circassian (Kabardian),Northwest Caucasian,,,,SEM-MATCH
+East Circassian (Kabardian),Northwest Caucasian,kaba1278,Kabardian,Abkhaz-Adyge,MANUAL
 West Circassian,Northwest Caucasian,adyg1241,West Circassian,Abkhaz-Adyge,OK
 Chechen,Northeast Caucasian (Nakh-Daghestanian),chec1245,Chechen,Nakh-Daghestanian,OK
 Ingush,Northeast Caucasian (Nakh-Daghestanian),ingu1240,Ingush,Nakh-Daghestanian,OK
 Bats,Northeast Caucasian (Nakh-Daghestanian),bats1242,Bats,Nakh-Daghestanian,OK
 Avar,Northeast Caucasian (Nakh-Daghestanian),avar1256,Avar,Nakh-Daghestanian,OK
 Andi,Northeast Caucasian (Nakh-Daghestanian),andi1255,Andi,Nakh-Daghestanian,OK
-Dargwa,Northeast Caucasian (Nakh-Daghestanian),,,,SEM-MATCH
-Kaitag,Northeast Caucasian (Nakh-Daghestanian),,,,SEM-MATCH
+Dargwa,Northeast Caucasian (Nakh-Daghestanian),darg1241,North-Central Dargwa,Nakh-Daghestanian,MANUAL
+Kaitag,Northeast Caucasian (Nakh-Daghestanian),kajt1238,Kajtak,Nakh-Daghestanian,MANUAL
 Lak,Northeast Caucasian (Nakh-Daghestanian),lakk1252,Lak,Nakh-Daghestanian,OK
-Lezgi,Northeast Caucasian (Nakh-Daghestanian),,,,SEM-MATCH
+Lezgi,Northeast Caucasian (Nakh-Daghestanian),lezg1247,Lezgian,Nakh-Daghestanian,MANUAL
 Tabasaran,Northeast Caucasian (Nakh-Daghestanian),taba1259,Tabasaran,Nakh-Daghestanian,OK
 Rutul,Northeast Caucasian (Nakh-Daghestanian),rutu1240,Rutul,Nakh-Daghestanian,OK
 Tsakhur,Northeast Caucasian (Nakh-Daghestanian),tsak1249,Tsakhur,Nakh-Daghestanian,OK
@@ -427,9 +427,9 @@ Archi,Northeast Caucasian (Nakh-Daghestanian),arch1244,Archi,Nakh-Daghestanian,O
 Ket,Yeniseian,kett1243,Ket,Yeniseian,OK
 Pumpokol,Yeniseian,pump1237,Pumpokol,Yeniseian,OK
 Chukchi,Chukotko-Kamchatkan,chuk1273,Chukchi,Chukotko-Kamchatkan,OK
-Itelmen,Chukotko-Kamchatkan,,,,SEM-MATCH
-Greenlandic,Eskimo-Aleut,,,,SEM-MATCH
-Inuktitut,Eskimo-Aleut,,,,SEM-MATCH
+Itelmen,Chukotko-Kamchatkan,itel1242,West Itelmen,Chukotko-Kamchatkan,MANUAL
+Greenlandic,Eskimo-Aleut,kala1399,Kalaallisut,Eskimo-Aleut,MANUAL
+Inuktitut,Eskimo-Aleut,east2534,Eastern Canadian Inuktitut,Eskimo-Aleut,MANUAL
 Yup'ik,Eskimo-Aleut,yupi1267,Yupik,Eskimo-Aleut,OK
 Northern Yukaghir,Yukaghir,nort2745,Northern Yukaghir,Yukaghir,OK
 Old Japanese,Japonic,oldj1239,Old Japanese,Japonic,OK
@@ -444,13 +444,13 @@ Sumerian,Isolates,sume1241,Sumerian,(isolate),OK
 Yámana,Isolates,yama1264,Yámana,(isolate),OK
 Xhosa,Niger-Congo,xhos1239,Xhosa,Atlantic-Congo,OK
 Zulu,Niger-Congo,zulu1248,Zulu,Atlantic-Congo,OK
-Sotho,Niger-Congo,,,,SEM-MATCH
+Sotho,Niger-Congo,sout2807,Southern Sotho,Atlantic-Congo,MANUAL
 Tswana,Niger-Congo,tswa1253,Tswana,Atlantic-Congo,OK
 Boloki,Niger-Congo,bolo1262,Boloki,Atlantic-Congo,OK
-Chichewa,Niger-Congo,,,,SEM-MATCH
+Chichewa,Niger-Congo,nyan1308,Nyanja,Atlantic-Congo,MANUAL
 Kikuyu,Niger-Congo,kiku1240,Kikuyu,Atlantic-Congo,OK
-Kitembo,Niger-Congo,,,,SEM-MATCH
-Lingala,Niger-Congo,,,,SEM-MATCH
+Kitembo,Niger-Congo,temb1270,Tembo (Kitembo),Atlantic-Congo,MANUAL
+Lingala,Niger-Congo,ling1263,Kinshasa Lingala,Atlantic-Congo,MANUAL
 Mwani,Niger-Congo,mwan1247,Mwani,Atlantic-Congo,OK
 Shona,Niger-Congo,shon1251,Shona,Atlantic-Congo,OK
 Swahili,Niger-Congo,swah1253,Swahili,Atlantic-Congo,OK
@@ -460,20 +460,20 @@ Igbo,Niger-Congo,nucl1417,Igbo,Atlantic-Congo,OK
 Nkonya,Niger-Congo,nkon1248,Nkonya,Atlantic-Congo,OK
 Yoruba,Niger-Congo,yoru1245,Yoruba,Atlantic-Congo,OK
 Farefare,Niger-Congo,fare1241,Farefare,Atlantic-Congo,OK
-Moore,Niger-Congo,,,,SEM-MATCH
-Nafaanra,Niger-Congo,,,,SEM-MATCH
+Moore,Niger-Congo,moss1236,Mossi,Atlantic-Congo,MANUAL
+Nafaanra,Niger-Congo,nafa1258,Nafanan,Atlantic-Congo,MANUAL
 Wolof,Niger-Congo,nucl1347,Wolof,Atlantic-Congo,OK
 Duun,Niger-Congo,duun1245,Duun,Mande,DIFERE
-Samo,Niger-Congo,samo1303,Samo,East Strickland,DIFERE
+Samo,Niger-Congo,mand1437,Mande Samo,Mande,MANUAL
 Sango,Niger-Congo,sang1328,Sango,Atlantic-Congo,OK
-Kanuri,Saharan (Nilo-Saharan),,,,SEM-MATCH
+Kanuri,Saharan (Nilo-Saharan),cent2050,Central Kanuri,Saharan,MANUAL
 ǃKung,"Khoisan (areal grouping, not a genetic family)",kung1260,Kung,Atlantic-Congo,AREAL
-ǃXóõ,"Khoisan (areal grouping, not a genetic family)",,,,SEM-MATCH
+ǃXóõ,"Khoisan (areal grouping, not a genetic family)",huaa1248,East Taa,Tuu,MANUAL
 Cheyenne,Americas,chey1247,Cheyenne,Algic,AREAL
 Cree,Americas,cree1272,Cree,Algic,AREAL
-Mohegan-Pequot,Americas,,,,SEM-MATCH
+Mohegan-Pequot,Americas,pequ1242,Pequot-Mohegan,Algic,MANUAL
 Nanticoke,Americas,nant1249,Nanticoke,Algic,AREAL
-Ojibwe,Americas,,,,SEM-MATCH
+Ojibwe,Americas,ojib1241,Ojibwa,Algic,MANUAL
 Navajo,Americas,nava1243,Navajo,Athabaskan-Eyak-Tlingit,AREAL
 Tlingit,Americas,tlin1245,Tlingit,Athabaskan-Eyak-Tlingit,AREAL
 Central Nahuatl,Americas,cent2258,Central Nahuatl,Uto-Aztecan,AREAL
@@ -483,16 +483,16 @@ Comanche,Americas,coma1245,Comanche,Uto-Aztecan,AREAL
 K'iche',Americas,kich1262,K'iche',Mayan,AREAL
 Yucatec Maya,Americas,yuca1254,Yucatec Maya,Mayan,AREAL
 Tzotzil,Americas,tzot1259,Tzotzil,Mayan,AREAL
-Quechua,Americas,,,,SEM-MATCH
-Aymara,Americas,,,,SEM-MATCH
+Quechua,Americas,quec1387,Quechuan,Quechuan,MANUAL
+Aymara,Americas,cent2142,Central Aymara,Aymaran,MANUAL
 Aché,Americas,ache1246,Aché,Tupian,AREAL
 Amanayé,Americas,aman1266,Amanayé,Tupian,AREAL
-Amondawa,Americas,,,,SEM-MATCH
+Amondawa,Americas,amun1246,Amundava,Tupian,MANUAL
 Apiaká,Americas,apia1248,Apiaká,Tupian,AREAL
 Mbya Guarani,Americas,mbya1239,Mbyá Guaraní,Tupian,AREAL
 Paraguayan Guarani,Americas,para1311,Paraguayan Guaraní,Tupian,AREAL
-Old Tupi,Americas,,,,SEM-MATCH
-Canela,Americas,,,,SEM-MATCH
+Old Tupi,Americas,tupi1274,Lingua Geral Paulista,Tupian,MANUAL
+Canela,Americas,cane1242,Central-Southern Timbira,Nuclear-Macro-Je,MANUAL
 Kaingang,Americas,kain1272,Kaingang,Nuclear-Macro-Je,AREAL
 Borôro,Americas,boro1282,Bororo,Bororoan,AREAL
 Apalaí,Americas,apal1257,Apalaí,Cariban,AREAL
@@ -507,26 +507,26 @@ Taos (Tanoan),Americas,taos1236,Taos,Kiowa-Tanoan,AREAL
 Ipai (Yuman),Americas,ipai1240,Ipai,Cochimi-Yuman,AREAL
 Tipai (Yuman),Americas,tipa1241,Tipai,Cochimi-Yuman,AREAL
 Saanich (Salishan),Americas,saan1246,Saanich,Salishan,AREAL
-Lushootseed (Salishan),Americas,,,,SEM-MATCH
+Lushootseed (Salishan),Americas,lush1252,Northern Lushootseed,Salishan,MANUAL
 Wappo (Yuki-Wappo),Americas,wapp1239,Wappo,Yuki-Wappo,AREAL
 Eastern Arrernte,Australian,east2379,Eastern Arrernte,Pama-Nyungan,OK
 Linngithigh,Australian,leni1238,Linngithigh,Pama-Nyungan,OK
-Ngarrindjeri,Australian,,,,SEM-MATCH
+Ngarrindjeri,Australian,narr1259,Narrinyeri,Pama-Nyungan,MANUAL
 Pitjantjatjara,Australian,pitj1243,Pitjantjatjara,Pama-Nyungan,OK
 Woiwurrung,Australian,woiw1238,Woiwurrung,Pama-Nyungan,OK
 Esperanto,Constructed languages,espe1235,Esperanto,Artificial Language,AREAL
 Ido,Constructed languages,idoo1234,Ido,Artificial Language,AREAL
 Interlingua,Constructed languages,inte1239,Interlingua (International Auxiliary Language Association),Artificial Language,AREAL
 Volapük,Constructed languages,vola1234,Volapük,Artificial Language,AREAL
-Antillean Creole,Creoles & pidgins,,,,SEM-MATCH
-Haitian Creole,Creoles & pidgins,,,,SEM-MATCH
+Antillean Creole,Creoles & pidgins,guad1242,Guadeloupe-Martinique Creole French,Indo-European,MANUAL
+Haitian Creole,Creoles & pidgins,hait1244,Haitian,Indo-European,MANUAL
 Karipúna Creole French,Creoles & pidgins,kari1318,Karipuna Creole French,Indo-European,AREAL
-Guinea-Bissau Creole,Creoles & pidgins,,,,SEM-MATCH
-Korlai Creole Portuguese,Creoles & pidgins,,,,SEM-MATCH
-Kristang,Creoles & pidgins,,,,SEM-MATCH
+Guinea-Bissau Creole,Creoles & pidgins,uppe1455,Upper Guinea Crioulo,Indo-European,MANUAL
+Korlai Creole Portuguese,Creoles & pidgins,korl1238,Korlai Portuguese,Indo-European,MANUAL
+Kristang,Creoles & pidgins,mala1533,Malacca-Batavia Portuguese Creole,Indo-European,MANUAL
 Macanese,Creoles & pidgins,maca1262,Macanese,Indo-European,AREAL
 Aukan,Creoles & pidgins,ndyu1242,Aukan,Indo-European,AREAL
-Jamaican Creole,Creoles & pidgins,,,,SEM-MATCH
+Jamaican Creole,Creoles & pidgins,jama1262,Jamaican Creole English,Indo-European,MANUAL
 Sranan Tongo,Creoles & pidgins,sran1240,Sranan Tongo,Indo-European,AREAL
 Tok Pisin,Creoles & pidgins,tokp1240,Tok Pisin,Indo-European,AREAL
-Yilan Creole,Creoles & pidgins,,,,SEM-MATCH
+Yilan Creole,Creoles & pidgins,yila1234,Vernacular Atayalic Japanese,Japonic,MANUAL
