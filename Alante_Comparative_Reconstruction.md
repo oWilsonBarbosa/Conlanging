@@ -9,19 +9,43 @@
 
 ---
 
+## 0. Status and Methodological Standing — READ FIRST
+
+This document is **design-mode (creative), not evidence-mode (analytical).** It must be read alongside, and is subordinate to, three derived-only documents that govern the evidence layer of this project:
+
+- `Alante_Cognate_Check.md`
+- `Alante_Inventory_Consolidation.md`
+- `Alante_Synchronic_Areal_Profile.md`
+
+**The verdict of the evidence layer is that the Alante lexicons are NOT cognate.** Across the 53 meanings shared by Angélico and Pavanam, mean form-similarity is ~0.21 (chance level), only one pair ("water," eʋes ~ eihes) exceeds 0.5, and **no recurring sound correspondences exist** — the actual signature of genetic descent. The word-forms were invented independently, not derived from a common ancestor by sound change.
+
+That verdict is correct on the data, and it directly constrains how this document may be used:
+
+1. **The "sound laws" here are stipulations, not findings.** Each of the new laws proposed in §2.2 (C21 `*w→b`, C22 `*bʱ→m`/coda, C23 `*ŋr` metathesis) and §3 (V2, V3) rests on a **single** cognate set. A genuine sound law requires the same correspondence recurring across many words; a correspondence seen once is curve-fitting, not evidence. Treat them as *design proposals* — "if the family were built cognate, this is how the forms could relate."
+
+2. **Only Tier 1 has even the start of empirical support,** and only weakly: `*w → ʋ` in Angélico recurs twice (eʋes "water", madiua "grass"), but the same two words send Pavanam's `*w` to two different outcomes, so even the anchor is inconsistent. Everything at Tier 2/3 is below the noise floor by comparative-method standards.
+
+3. **This corresponds to the Cognate Check's path (C) — "generate cognates (creative, not analytical)."** The document answers a design question (*if* a genetically coherent family is the goal, here is a reconstruction to build toward), not a descriptive one. Its forms become real evidence only if the daughter lexicons are actually rebuilt *from* ProtoAlante by these sound changes — construction work that has not been done.
+
+4. **Source-selection differs from the derived-only layer.** This document uses the declared inventories, `ProtoAlante_OLD.xlsx`, and Classical Alantian; the derived-only documents exclude all three and admit only lexicon-attested segments. Where inventory counts disagree (e.g. Angélico 17C here vs. 15C derived-only), the derived-only figure is the evidentiary one; the difference is admissibility rules, not a factual dispute.
+
+In short: **keep this for its design value; do not cite it as proof of descent.** The genealogy it describes is declared design intent, not a result recovered from the lexicon.
+
+---
+
 ## 1. Premises and Scope
 
 The Comparative Method operates on three requirements: (1) two or more attested daughter forms sharing the same meaning, (2) systematic phonological correspondence (not accidental similarity), and (3) the impossibility of borrowing as a simpler explanation. Applying this to the Alante family presents a structural problem: most Angélico and Pavanam vocabulary for the same concept appears to come from *different roots entirely*. This is itself a philological finding and is treated as such in §6 (The Lexical Replacement Problem).
 
 Where cognates are identified, they are assigned to one of three tiers:
 
-| Tier | Criterion | Symbol |
-|---|---|---|
-| 1 — Definite | Forms identical or differ only by established sound laws | ✦ |
-| 2 — Probable | Forms derivable through proposed but not yet confirmed laws | ◆ |
-| 3 — Theoretical | Forms require multiple inference steps; typologically plausible | ◇ |
+| Tier | Criterion | Symbol | Evidentiary weight |
+|---|---|---|---|
+| 1 — Definite | Forms identical or differ only by a correspondence seen ≥2× | ✦ | Weak but real |
+| 2 — Probable | Forms derivable through a correspondence proposed from a single example | ◆ | Stipulated (design) |
+| 3 — Theoretical | Forms require multiple inference steps; typologically plausible | ◇ | Speculative (design) |
 
-ProtoAlante reconstructions are marked with an asterisk (*). Reconstructions inferred only from a single daughter are marked (*?).
+ProtoAlante reconstructions are marked with an asterisk (*). Reconstructions inferred only from a single daughter are marked (*?). **Per §0, only Tier 1 carries any empirical weight, and even that weakly; Tiers 2–3 are design proposals, not findings.**
 
 ---
 
