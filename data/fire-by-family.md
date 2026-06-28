@@ -1,192 +1,218 @@
 # *Fire* por família linguística
 
-Lista de palavras para **fogo** (`fire`) das ~400 línguas da Wiktionary, reorganizada
-por família e ramo. Acompanha o trabalho de léxico (`concept-list.csv`, onde *fire* é
-o conceito #1 mais estável e menos emprestado).
+Lista de palavras para **fogo** (`fire`) das ~400 línguas da Wiktionary, organizada por
+**família → ramo** e, dentro de cada ramo, em **árvore genealógica**: as línguas-mãe
+(estágios mais antigos atestados) aparecem acima e suas descendentes aninhadas abaixo;
+línguas do mesmo nível são irmãs. Sub-ramos primários (ex.: *West / North / East
+Germanic*) servem de rótulo. Acompanha o trabalho de léxico (`concept-list.csv`, onde
+*fire* é o conceito #1 mais estável e menos emprestado).
 
 ## Indo-European
 
 ### Germanic
 
-- **Afrikaans:** vuur
-- **Danish:** ild
-- **Dutch:** vuur
-- **Old Dutch:** fuir
-- **Elfdalian:** jäld
-- **Old English:** fȳr, æled, ad, al
-- **Faroese:** eldur
-- **North Frisian (Föhr-Amrum):** ial
-- **Saterland Frisian:** Fjuur
-- **West Frisian:** fjoer
-- **German:** Feuer
-- **Alemannic German:** Füür
-- **Bavarian:** Feia
-- **East Central German (Silesian):** Feier
-- **Old High German:** fiur
-- **Gothic:** fōn
-- **Hunsrik:** Feier, fayer
-- **Icelandic:** eldur, bál
-- **Low German:** Füer
-- **Luxembourgish:** Feier
-- **Mòcheno:** vaier
-- **Norn:** eld
-- **Norwegian Bokmål:** ild
-- **Norwegian Nynorsk:** eld
-- **Old Norse:** eldr
-- **Old Saxon:** fiur, ēld
-- **Pennsylvania German:** Feier
-- **Plautdietsch:** Fia
-- **Scots:** fire
-- **Swedish:** eld, brand
-- **Vilamovian:** faojer
-- **Yiddish:** fayer
-- **Zealandic:** vier
+- **West Germanic**
+  - **Old English:** fȳr, æled, ad, al
+    - **Scots:** fire
+  - **Old Saxon:** fiur, ēld
+    - **Low German:** Füer
+      - **Plautdietsch:** Fia
+  - **Old Dutch:** fuir
+    - **Dutch:** vuur
+      - **Afrikaans:** vuur
+    - **Zealandic:** vier
+  - **Old High German:** fiur
+    - **German:** Feuer
+    - **Alemannic German:** Füür
+    - **Bavarian:** Feia
+    - **East Central German (Silesian):** Feier
+    - **Hunsrik:** Feier, fayer
+    - **Luxembourgish:** Feier
+    - **Mòcheno:** vaier
+    - **Pennsylvania German:** Feier
+    - **Vilamovian:** faojer
+    - **Yiddish:** fayer
+  - **Frisian**
+    - **North Frisian (Föhr-Amrum):** ial
+    - **Saterland Frisian:** Fjuur
+    - **West Frisian:** fjoer
+- **North Germanic**
+  - **Old Norse:** eldr
+    - **Danish:** ild
+    - **Elfdalian:** jäld
+    - **Faroese:** eldur
+    - **Icelandic:** eldur, bál
+    - **Norn:** eld
+    - **Norwegian Bokmål:** ild
+    - **Norwegian Nynorsk:** eld
+    - **Swedish:** eld, brand
+- **East Germanic**
+  - **Gothic:** fōn
 
 ### Italic / Romance
 
-- **Aragonese:** fuego
-- **Aromanian:** foc
-- **Asturian:** fueu, llume
-- **Catalan:** foc
-- **Corsican:** focu, fogu
-- **Dalmatian:** fuc
-- **Emilian:** fûg
-- **Extremaduran:** huegu
-- **Fala:** fogu
-- **Franco-Provençal:** fuè
-- **French:** feu
-- **Middle French:** feu
-- **Old French:** fu, feu
-- **Friulian:** fûc
-- **Galician:** lume, fogo
-- **Istriot:** fogo
-- **Istro-Romanian:** foc
-- **Italian:** fuoco
-- **Ladin:** fech, fesc
-- **Ladino:** fuego
 - **Latin:** ignis, focus, flamma
-- **Ligurian:** feugu
-- **Lombard:** foeugh
-- **Megleno-Romanian:** foc
-- **Mirandese:** fuogo
-- **Neapolitan:** fuoco
-- **Occitan:** fuòc, fòc, huec
-- **Old Occitan:** fuoc
-- **Piedmontese:** feugh, feu
-- **Portuguese:** fogo
-- **Romagnol:** fug
-- **Romanian:** foc
-- **Romansh:** fieu, fö, fiug
-- **Sardinian:** fócu, focu, fogu
-- **Sicilian:** focu
-- **Spanish:** fuego, incendio
-- **Tarantino:** fuèche
-- **Venetan:** fogo
-- **Walloon:** feu
+  - **Ibero-Romance**
+    - **Aragonese:** fuego
+    - **Asturian:** fueu, llume
+    - **Catalan:** foc
+    - **Extremaduran:** huegu
+    - **Fala:** fogu
+    - **Galician:** lume, fogo
+    - **Ladino:** fuego
+    - **Mirandese:** fuogo
+    - **Portuguese:** fogo
+    - **Spanish:** fuego, incendio
+  - **Gallo-Romance**
+    - **Old French:** fu, feu
+      - **Middle French:** feu
+        - **French:** feu
+    - **Franco-Provençal:** fuè
+    - **Old Occitan:** fuoc
+      - **Occitan:** fuòc, fòc, huec
+    - **Walloon:** feu
+  - **Gallo-Italic**
+    - **Emilian:** fûg
+    - **Ligurian:** feugu
+    - **Lombard:** foeugh
+    - **Piedmontese:** feugh, feu
+    - **Romagnol:** fug
+    - **Venetan:** fogo
+  - **Italo-Dalmatian**
+    - **Corsican:** focu, fogu
+    - **Dalmatian:** fuc
+    - **Istriot:** fogo
+    - **Italian:** fuoco
+    - **Neapolitan:** fuoco
+    - **Sicilian:** focu
+    - **Tarantino:** fuèche
+  - **Rhaeto-Romance**
+    - **Friulian:** fûc
+    - **Ladin:** fech, fesc
+    - **Romansh:** fieu, fö, fiug
+  - **Eastern Romance**
+    - **Aromanian:** foc
+    - **Istro-Romanian:** foc
+    - **Megleno-Romanian:** foc
+    - **Romanian:** foc
+  - **Sardinian**
+    - **Sardinian:** fócu, focu, fogu
 
 ### Celtic
 
-- **Breton:** tan
-- **Cornish:** tan
-- **Irish:** tine
-- **Old Irish:** teine
-- **Manx:** çhenney
-- **Scottish Gaelic:** teine
-- **Welsh:** tân, ufel
+- **Goidelic**
+  - **Old Irish:** teine
+    - **Irish:** tine
+    - **Scottish Gaelic:** teine
+    - **Manx:** çhenney
+- **Brythonic**
+  - **Breton:** tan
+  - **Cornish:** tan
+  - **Welsh:** tân, ufel
 
 ### Slavic
 
-- **Belarusian:** ahónʹ
-- **Bulgarian:** ógǎn
-- **Carpathian Rusyn:** ohénʹ, vátra
-- **Czech:** oheň, hoření
-- **Old Czech:** oheň
-- **Kashubian:** òdżin
-- **Macedonian:** ogan
-- **Old Church Slavonic:** ognĭ
-- **Old East Slavic:** ognĭ
-- **Pannonian Rusyn:** ohenʹ
-- **Polish:** ogień
-- **Old Polish:** ogień
-- **Russian:** ogónʹ
-- **Serbo-Croatian:** vatra, oganj
-- **Silesian:** ôgyń
-- **Slovak:** oheň
-- **Old Slovak:** oheň
-- **Slovene:** ogenj
-- **Lower Sorbian:** wogeń
-- **Upper Sorbian:** woheń
-- **Ukrainian:** vohónʹ, vátra
+- **East Slavic**
+  - **Old East Slavic:** ognĭ
+    - **Belarusian:** ahónʹ
+    - **Russian:** ogónʹ
+    - **Ukrainian:** vohónʹ, vátra
+    - **Carpathian Rusyn:** ohénʹ, vátra
+    - **Pannonian Rusyn:** ohenʹ
+- **West Slavic**
+  - **Old Polish:** ogień
+    - **Polish:** ogień
+  - **Kashubian:** òdżin
+  - **Silesian:** ôgyń
+  - **Old Czech:** oheň
+    - **Czech:** oheň, hoření
+  - **Old Slovak:** oheň
+    - **Slovak:** oheň
+  - **Lower Sorbian:** wogeń
+  - **Upper Sorbian:** woheń
+- **South Slavic**
+  - **Old Church Slavonic:** ognĭ
+    - **Bulgarian:** ógǎn
+    - **Macedonian:** ogan
+    - **Serbo-Croatian:** vatra, oganj
+    - **Slovene:** ogenj
 
 ### Baltic
 
-- **Latgalian:** guņs
-- **Latvian:** uguns, guns
-- **Lithuanian:** ugnis
-- **Old Prussian:** panno, ugnis
-- **Samogitian:** ognės
+- **Eastern Baltic**
+  - **Lithuanian:** ugnis
+    - **Samogitian:** ognės
+  - **Latvian:** uguns, guns
+    - **Latgalian:** guņs
+- **Western Baltic**
+  - **Old Prussian:** panno, ugnis
 
 ### Indo-Aryan
 
-- **Assamese:** zui
-- **Awadhi:** āgi
-- **Bengali:** agun, ogni, onol, atoś, śorbobhuk
-- **Bhojpuri:** āgi, bhaur
-- **Dhivehi:** alifān
-- **Dogri:** agg
-- **Gandhari:** agi
-- **Gujarati:** āga
-- **Hindi:** āg, agni, ātiś, jalan, agnī, agan, āgi, śolā
-- **Kashmiri:** ogun
-- **Magahi:** āgi
-- **Maithili:** āgɨ
-- **Marathi:** agni
-- **Marwari:** agnī, agan
-- **Nepali:** āgo
-- **Odia:** agni
-- **Pali:** aggi
-- **Punjabi:** agga, agan
-- **Rohingya:** ooin
-- **Romani:** jag
-- **Sanskrit:** agni, bhārata, pṛthu, hari, yajña, tīrtha, sarala
-- **Sindhi:** bāhi
-- **Sinhalese:** ginna, agniya, karkaya, kr̥śānuwa, pāthaya
-- **Sylheti:** aguin
-- **Urdu:** āg, ātiś, agnī
-- **Vaghri:** agg
+- **Old Indo-Aryan**
+  - **Sanskrit:** agni, bhārata, pṛthu, hari, yajña, tīrtha, sarala
+- **Middle Indo-Aryan**
+  - **Pali:** aggi
+  - **Gandhari:** agi
+- **New Indo-Aryan**
+  - **Assamese:** zui
+  - **Awadhi:** āgi
+  - **Bengali:** agun, ogni, onol, atoś, śorbobhuk
+  - **Bhojpuri:** āgi, bhaur
+  - **Dhivehi:** alifān
+  - **Dogri:** agg
+  - **Gujarati:** āga
+  - **Hindi:** āg, agni, ātiś, jalan, agnī, agan, āgi, śolā
+  - **Kashmiri:** ogun
+  - **Magahi:** āgi
+  - **Maithili:** āgɨ
+  - **Marathi:** agni
+  - **Marwari:** agnī, agan
+  - **Nepali:** āgo
+  - **Odia:** agni
+  - **Punjabi:** agga, agan
+  - **Rohingya:** ooin
+  - **Romani:** jag
+  - **Sindhi:** bāhi
+  - **Sinhalese:** ginna, agniya, karkaya, kr̥śānuwa, pāthaya
+  - **Sylheti:** aguin
+  - **Urdu:** āg, ātiś, agnī
+  - **Vaghri:** agg
 
 ### Iranian
 
-- **Avestan:** ātar
-- **Baluchi:** ás, ác
-- **Central Kurdish:** agir, awir
-- **Laki:** agir
-- **Northern Kurdish:** agir, ar
-- **Southern Kurdish:** agir
-- **Mazanderani:** taš
-- **Munji:** yūr
-- **Ossetian:** art
-- **Parachi:** âṛ
-- **Pashto:** or
-- **Dari:** ātaš, āzar
-- **Iranian Persian:** âtaš, âzar
-- **Middle Persian:** ādur
-- **Old Persian:** ātar
-- **Sarikoli:** yuc
-- **Shughni:** yōc
-- **Sivandi:** ūīr
-- **Tajik:** otaš, ozar
-- **Talysh:** otəş, ârâ
-- **Tat:** ataş
-- **Yaghnobi:** olov
-- **Yazghulami:** yec
-- **Yidgha:** yūṛ
-- **Zazaki:** adır
+- **Western Iranian**
+  - **Old Persian:** ātar
+    - **Middle Persian:** ādur
+      - **Dari:** ātaš, āzar
+      - **Iranian Persian:** âtaš, âzar
+      - **Tajik:** otaš, ozar
+  - **Central Kurdish:** agir, awir
+  - **Northern Kurdish:** agir, ar
+  - **Southern Kurdish:** agir
+  - **Laki:** agir
+  - **Zazaki:** adır
+  - **Talysh:** otəş, ârâ
+  - **Tat:** ataş
+  - **Mazanderani:** taš
+  - **Sivandi:** ūīr
+  - **Baluchi:** ás, ác
+- **Eastern Iranian**
+  - **Avestan:** ātar
+  - **Ossetian:** art
+  - **Pashto:** or
+  - **Yaghnobi:** olov
+  - **Shughni:** yōc
+  - **Sarikoli:** yuc
+  - **Yazghulami:** yec
+  - **Munji:** yūr
+  - **Yidgha:** yūṛ
+  - **Parachi:** âṛ
 
 ### Hellenic
 
-- **Greek:** fotiá
 - **Ancient Greek:** pûr
+  - **Greek:** fotiá
 
 ### Albanian
 
@@ -210,25 +236,28 @@ o conceito #1 mais estável e menos emprestado).
 
 ### Semitic
 
-- **Akkadian:** išātu
-- **Amharic:** ʾəsat, ḳaṭlo
-- **Arabic:** nār
-- **Egyptian Arabic:** nar
-- **Gulf Arabic:** nār
-- **Hijazi Arabic:** nār
-- **Moroccan Arabic:** ʕāfya, nār
-- **South Levantine Arabic:** nār
-- **Aramaic (Hebrew script):** nūrā'
-- **Syriac:** nūrā'
-- **Argobba:** isat
-- **Ge'ez:** ʾəsat
-- **Harsusi:** śeweṭ
-- **Hebrew:** esh
-- **Maltese:** nar
-- **Phoenician:** ʾš
-- **Soqotri:** ŝiyáṭ
-- **Tigrinya:** ḥawi, barʿ
-- **Ugaritic:** ỉšt
+- **East Semitic**
+  - **Akkadian:** išātu
+- **Central Semitic**
+  - **Arabic:** nār
+    - **Egyptian Arabic:** nar
+    - **Gulf Arabic:** nār
+    - **Hijazi Arabic:** nār
+    - **Moroccan Arabic:** ʕāfya, nār
+    - **South Levantine Arabic:** nār
+    - **Maltese:** nar
+  - **Aramaic (Hebrew script):** nūrā'
+    - **Syriac:** nūrā'
+  - **Hebrew:** esh
+  - **Phoenician:** ʾš
+  - **Ugaritic:** ỉšt
+- **South Semitic**
+  - **Ge'ez:** ʾəsat
+    - **Amharic:** ʾəsat, ḳaṭlo
+    - **Tigrinya:** ḥawi, barʿ
+    - **Argobba:** isat
+  - **Harsusi:** śeweṭ
+  - **Soqotri:** ŝiyáṭ
 
 ### Berber
 
@@ -238,12 +267,14 @@ o conceito #1 mais estável e menos emprestado).
 
 ### Cushitic
 
-- **Afar:** gira
-- **Kambaata:** gira
-- **Oromo:** abidda, ibidda
-- **Saho:** gira
-- **Sidamo:** gira
-- **Somali:** dab
+- **Lowland East Cushitic**
+  - **Afar:** gira
+  - **Saho:** gira
+  - **Oromo:** abidda, ibidda
+  - **Somali:** dab
+- **Highland East Cushitic**
+  - **Sidamo:** gira
+  - **Kambaata:** gira
 
 ### Omotic
 
@@ -252,7 +283,7 @@ o conceito #1 mais estável e menos emprestado).
 ### Egyptian / Coptic
 
 - **Egyptian:** sḏt, ḫt, nsrt
-- **Coptic:** khrōm, sati, krōm, sate
+  - **Coptic:** khrōm, sati, krōm, sate
 
 ### Chadic
 
@@ -301,8 +332,9 @@ o conceito #1 mais estável e menos emprestado).
 ### Ugric
 
 - **Hungarian:** tűz
-- **Eastern Khanty:** tüḥət
-- **Northern Mansi:** ulâ, nāj
+- **Ob-Ugric**
+  - **Eastern Khanty:** tüḥət
+  - **Northern Mansi:** ulâ, nāj
 
 ### Samoyedic
 
@@ -311,97 +343,118 @@ o conceito #1 mais estável e menos emprestado).
 
 ## Turkic
 
-- **Southern Altai:** ot
-- **Azerbaijani:** od, atəş
-- **Bashkir:** ut
-- **Chagatai:** ōt
-- **Chuvash:** vut, śulăm
-- **Crimean Tatar:** ot, ateş
-- **Dolgan:** uot
-- **Gagauz:** ateş
-- **Karachay-Balkar:** ot
-- **Karakalpak:** ot
-- **Kazakh:** ot
-- **Khakas:** ot
-- **Kumyk:** ot
-- **Kyrgyz:** ot
-- **Nogai:** ot
-- **Old Uyghur:** oot
-- **Ottoman Turkish:** ateş, nar, azer, od
-- **Shor:** ot
-- **Tatar:** ut, yalqın
-- **Turkish:** ateş, od
-- **Turkmen:** ot
-- **Tuvan:** ot
-- **Uyghur:** ot
-- **Uzbek:** oʻt, otash
-- **Yakut:** uot
+- **Oghur**
+  - **Chuvash:** vut, śulăm
+- **Oghuz**
+  - **Ottoman Turkish:** ateş, nar, azer, od
+    - **Turkish:** ateş, od
+  - **Azerbaijani:** od, atəş
+  - **Turkmen:** ot
+  - **Gagauz:** ateş
+- **Kipchak**
+  - **Tatar:** ut, yalqın
+  - **Bashkir:** ut
+  - **Kazakh:** ot
+  - **Karakalpak:** ot
+  - **Kyrgyz:** ot
+  - **Karachay-Balkar:** ot
+  - **Kumyk:** ot
+  - **Nogai:** ot
+  - **Crimean Tatar:** ot, ateş
+- **Karluk**
+  - **Chagatai:** ōt
+    - **Uzbek:** oʻt, otash
+    - **Uyghur:** ot
+  - **Old Uyghur:** oot
+- **Siberian**
+  - **Yakut:** uot
+    - **Dolgan:** uot
+  - **Khakas:** ot
+  - **Shor:** ot
+  - **Tuvan:** ot
+  - **Southern Altai:** ot
 
 ## Mongolic
 
-- **Bonan:** xal
-- **Buryat:** gal
-- **Daur:** galy
-- **Dongxiang:** khan
-- **Kalmyk:** ğal
-- **Mangghuer:** ghar
-- **Mongghul:** ghal
-- **Mongolian:** gal, ɣal
+- **Central Mongolic**
+  - **Mongolian:** gal, ɣal
+  - **Buryat:** gal
+  - **Kalmyk:** ğal
+- **Dagur**
+  - **Daur:** galy
+- **Shirongolic**
+  - **Bonan:** xal
+  - **Dongxiang:** khan
+  - **Mangghuer:** ghar
+  - **Mongghul:** ghal
 
 ## Tungusic
 
-- **Evenki:** tog, togo
-- **Manchu:** tuwa
-- **Nanai:** tawa
+- **Northern Tungusic**
+  - **Evenki:** tog, togo
+- **Southern Tungusic**
+  - **Manchu:** tuwa
+  - **Nanai:** tawa
 
 ## Sino-Tibetan
 
 ### Sinitic (Chinese)
 
-- **Cantonese:** fo2
-- **Dungan:** huə
-- **Eastern Min:** huōi
-- **Hakka:** fó
-- **Hokkien:** hóe, hé
 - **Mandarin:** huǒ
-- **Wu:** huo
+  - **Dungan:** huə
+- **Yue**
+  - **Cantonese:** fo2
+- **Min**
+  - **Eastern Min:** huōi
+  - **Hokkien:** hóe, hé
+- **Hakka**
+  - **Hakka:** fó
+- **Wu**
+  - **Wu:** huo
 
 ### Tibeto-Burman
 
-- **Burmese:** mi:, tejau:
-- **Chepang:** mheh
-- **Drung:** tvmi, mi
-- **Dzongkha:** me
-- **Lepcha:** mi
-- **Limbu:** mi
-- **Lutuv:** myi
-- **Manipuri:** mei
-- **Mizo:** mei
-- **Naxi:** mi
-- **Newar:** mi
-- **Nuosu:** mup dut
-- **Sherpa:** me
-- **Tibetan:** me
-- **Khiamniungan Naga:** ìe
-- **Pa'o Karen:** me
-- **S'gaw Karen:** maỳ, maỳ ʼoo
-- **Zou:** mei
+- **Bodish**
+  - **Tibetan:** me
+  - **Dzongkha:** me
+  - **Sherpa:** me
+- **Lolo-Burmese**
+  - **Burmese:** mi:, tejau:
+  - **Nuosu:** mup dut
+  - **Naxi:** mi
+- **Karenic**
+  - **Pa'o Karen:** me
+  - **S'gaw Karen:** maỳ, maỳ ʼoo
+- **Kuki-Chin & Naga**
+  - **Mizo:** mei
+  - **Zou:** mei
+  - **Manipuri:** mei
+  - **Khiamniungan Naga:** ìe
+- **Other Tibeto-Burman**
+  - **Chepang:** mheh
+  - **Drung:** tvmi, mi
+  - **Lepcha:** mi
+  - **Limbu:** mi
+  - **Lutuv:** myi
+  - **Newar:** mi
 
 ## Kra-Dai (Tai-Kadai)
 
 ### Tai
 
-- **Isan:** fai
-- **Lao:** fai
-- **Lü:** fay
-- **Saek:** wii
-- **Shan:** phái, fái
-- **Tai Dam:** fai
-- **Tai Nüa:** fäy
-- **Tày:** fầy
-- **Thai:** fai
-- **Northern Thai:** fai
-- **Zhuang:** feiz
+- **Southwestern Tai**
+  - **Thai:** fai
+  - **Northern Thai:** fai
+  - **Isan:** fai
+  - **Lao:** fai
+  - **Shan:** phái, fái
+  - **Lü:** fay
+  - **Tai Dam:** fai
+  - **Tai Nüa:** fäy
+  - **Tày:** fầy
+- **Northern Tai**
+  - **Zhuang:** feiz
+  - **Saek:** wii
 
 ### Kam-Sui
 
@@ -414,25 +467,33 @@ o conceito #1 mais estável e menos emprestado).
 
 ## Hmong-Mien
 
-- **White Hmong:** hluav taws
-- **Iu Mien:** douz
+- **Hmongic**
+  - **White Hmong:** hluav taws
+- **Mienic**
+  - **Iu Mien:** douz
 
 ## Austroasiatic
 
 ### Mon-Khmer
 
-- **Bahnar:** ŭnh
-- **Eastern Bru:** ũih
-- **Khmer:** pləəng, ʼakkiʼ
-- **Eastern Katu:** óih
-- **Eastern Lawa:** ngoa
-- **Western Lawa:** ngoa
-- **Mon:** kəmot
-- **Muong:** cúi
-- **Pacoh:** uih
-- **Sedang:** on
-- **Vietnamese:** lửa
-- **Hrê:** ùnh
+- **Vietic**
+  - **Vietnamese:** lửa
+  - **Muong:** cúi
+- **Katuic**
+  - **Eastern Bru:** ũih
+  - **Eastern Katu:** óih
+  - **Pacoh:** uih
+- **Bahnaric**
+  - **Bahnar:** ŭnh
+  - **Sedang:** on
+  - **Hrê:** ùnh
+- **Khmeric**
+  - **Khmer:** pləəng, ʼakkiʼ
+- **Monic**
+  - **Mon:** kəmot
+- **Palaungic**
+  - **Eastern Lawa:** ngoa
+  - **Western Lawa:** ngoa
 
 ### Munda
 
@@ -466,18 +527,21 @@ o conceito #1 mais estável e menos emprestado).
 
 ### Malayic & Chamic
 
-- **Acehnese:** apuy
-- **Balinese:** api
-- **Eastern Cham:** apwei, pwei
-- **Iban:** api
-- **Indonesian:** api
-- **Jarai:** apui
-- **Lampung Api:** apuy
-- **Madurese:** apoy
-- **Malay:** api, pawaka
-- **Brunei Malay:** api
-- **Minangkabau:** api
-- **Sasak:** api
+- **Malayic**
+  - **Malay:** api, pawaka
+    - **Brunei Malay:** api
+  - **Indonesian:** api
+  - **Iban:** api
+  - **Minangkabau:** api
+- **Chamic**
+  - **Eastern Cham:** apwei, pwei
+  - **Jarai:** apui
+- **Other Malayo-Sumbawan**
+  - **Acehnese:** apuy
+  - **Balinese:** api
+  - **Lampung Api:** apuy
+  - **Madurese:** apoy
+  - **Sasak:** api
 
 ### Other Western Malayo-Polynesian
 
@@ -487,8 +551,8 @@ o conceito #1 mais estável e menos emprestado).
 - **Toba Batak:** api
 - **Bau Bidayuh:** apuy
 - **Buginese:** api
-- **Javanese:** geni, latu
 - **Old Javanese:** agni
+  - **Javanese:** geni, latu
 - **Kelabit:** apuy
 - **Lun Bawang:** afui
 - **Makasar:** pepe
@@ -513,11 +577,12 @@ o conceito #1 mais estável e menos emprestado).
 - **Marshallese:** kijeek
 - **Mwotlap:** ep
 - **Niuean:** afi
-- **Fwâi:** yaak
-- **Jawe:** yaak
-- **Nemi:** yaak
-- **Pije:** yaak
-- **Vurës:** ev
+- **New Caledonian**
+  - **Fwâi:** yaak
+  - **Jawe:** yaak
+  - **Nemi:** yaak
+  - **Pije:** yaak
+  - **Vurës:** ev
 - **Rapa Nui:** ahi
 - **Rotuman:** rạhi
 - **Samoan:** afi
@@ -528,58 +593,74 @@ o conceito #1 mais estável e menos emprestado).
 
 ## Papuan (geographic cover term — several unrelated families)
 
-- **Aimele:** di
-- **Ama:** ta
-- **Angaataha:** sisɨha
-- **Enga:** ita
-- **Fataluku:** aca
-- **Kamasau:** wase
-- **Makasae:** ata
-- **Murik (New Guinea):** auur
-- **Nii:** dup
-- **Sougb:** smougb
-- **Ternate:** uku
-- **Tidore:** uku
-- **West Makian:** ipi
+- **North Halmaheran**
+  - **Ternate:** uku
+  - **Tidore:** uku
+  - **West Makian:** ipi
+- **Timor–Alor–Pantar**
+  - **Fataluku:** aca
+  - **Makasae:** ata
+- **Trans-New Guinea**
+  - **Angaataha:** sisɨha
+  - **Enga:** ita
+  - **Nii:** dup
+- **Other / unclassified**
+  - **Aimele:** di
+  - **Ama:** ta
+  - **Kamasau:** wase
+  - **Murik (New Guinea):** auur
+  - **Sougb:** smougb
 
 ## Dravidian
 
-- **Badaga:** kiccu
-- **Kannada:** beṅki, agni, kiccu
-- **Malayalam:** tī, agni
-- **Tamil:** neruppu, tī
-- **Telugu:** agni
-- **Tulu:** tū
+- **South Dravidian**
+  - **Tamil:** neruppu, tī
+  - **Malayalam:** tī, agni
+  - **Kannada:** beṅki, agni, kiccu
+    - **Badaga:** kiccu
+  - **Tulu:** tū
+- **South-Central Dravidian**
+  - **Telugu:** agni
 
 ## Kartvelian
 
-- **Georgian:** cecxli, ali
-- **Laz:** daçxiri, daçxuri
-- **Mingrelian:** dačxiri
-- **Svan:** lemesg
+- **Georgic**
+  - **Georgian:** cecxli, ali
+- **Zan**
+  - **Laz:** daçxiri, daçxuri
+  - **Mingrelian:** dačxiri
+- **Svan**
+  - **Svan:** lemesg
 
 ## Northwest Caucasian
 
-- **Abkhaz:** amca
-- **East Circassian (Kabardian):** mafʼɛ
-- **West Circassian:** mašʷʼo
+- **Abkhaz-Abaza**
+  - **Abkhaz:** amca
+- **Circassian**
+  - **East Circassian (Kabardian):** mafʼɛ
+  - **West Circassian:** mašʷʼo
 
 ## Northeast Caucasian (Nakh-Daghestanian)
 
-- **Andi:** cʼa
-- **Archi:** ocʼ
-- **Avar:** cʼa
-- **Bats:** c̣e
-- **Budukh:** cʼa
-- **Chechen:** cʼe
-- **Dargwa:** c̣a
-- **Ingush:** cʼi
-- **Kaitag:** c̣a, his
-- **Lak:** cʼu
-- **Lezgi:** c̣aj
-- **Rutul:** c̣aj
-- **Tabasaran:** c̣a
-- **Tsakhur:** c̣ʲi
+- **Nakh**
+  - **Chechen:** cʼe
+  - **Ingush:** cʼi
+  - **Bats:** c̣e
+- **Avar-Andic**
+  - **Avar:** cʼa
+  - **Andi:** cʼa
+- **Dargwa**
+  - **Dargwa:** c̣a
+  - **Kaitag:** c̣a, his
+- **Lak**
+  - **Lak:** cʼu
+- **Lezgic**
+  - **Lezgi:** c̣aj
+  - **Tabasaran:** c̣a
+  - **Rutul:** c̣aj
+  - **Tsakhur:** c̣ʲi
+  - **Budukh:** cʼa
+  - **Archi:** ocʼ
 
 ## Yeniseian
 
@@ -588,14 +669,18 @@ o conceito #1 mais estável e menos emprestado).
 
 ## Chukotko-Kamchatkan
 
-- **Chukchi:** jynjyn
-- **Itelmen:** himlkh
+- **Chukotkan**
+  - **Chukchi:** jynjyn
+- **Kamchatkan**
+  - **Itelmen:** himlkh
 
 ## Eskimo-Aleut
 
-- **Greenlandic:** inneq
-- **Inuktitut:** ikoma
-- **Yup'ik:** keneq
+- **Inuit**
+  - **Greenlandic:** inneq
+  - **Inuktitut:** ikoma
+- **Yupik**
+  - **Yup'ik:** keneq
 
 ## Yukaghir
 
@@ -603,8 +688,8 @@ o conceito #1 mais estável e menos emprestado).
 
 ## Japonic
 
-- **Japanese:** hi
 - **Old Japanese:** pi
+  - **Japanese:** hi
 
 ## Koreanic
 
@@ -615,28 +700,31 @@ o conceito #1 mais estável e menos emprestado).
 - **Ainu:** ape
 - **Basque:** su
 - **Etruscan:** verse
+- **Mapudungun:** kütral, kvxal
 - **Nivkh:** tʼuγř
 - **Sumerian:** NE
-- **Mapudungun:** kütral, kvxal
 - **Yámana:** puSak, pušaki
 
 ## Niger-Congo
 
 ### Bantu
 
-- **Boloki:** mweya
-- **Chichewa:** moto
-- **Kikuyu:** mwaki
-- **Kitembo:** muliro
-- **Lingala:** mɔ̌tɔ, mweya, moto
-- **Mwani:** moto
-- **Shona:** moto
-- **Sotho:** mollo
-- **Swahili:** moto
-- **Tswana:** molelo
-- **Tumbuka:** moto
-- **Xhosa:** umlilo
-- **Zulu:** umlilo
+- **Nguni**
+  - **Xhosa:** umlilo
+  - **Zulu:** umlilo
+- **Sotho-Tswana**
+  - **Sotho:** mollo
+  - **Tswana:** molelo
+- **Other Bantu**
+  - **Boloki:** mweya
+  - **Chichewa:** moto
+  - **Kikuyu:** mwaki
+  - **Kitembo:** muliro
+  - **Lingala:** mɔ̌tɔ, mweya, moto
+  - **Mwani:** moto
+  - **Shona:** moto
+  - **Swahili:** moto
+  - **Tumbuka:** moto
 
 ### Volta-Niger
 
@@ -690,10 +778,12 @@ o conceito #1 mais estável e menos emprestado).
 
 ### Uto-Aztecan
 
-- **Central Nahuatl:** tletl
-- **Classical Nahuatl:** tletl
-- **Comanche:** kuuna
-- **Pipil:** tit
+- **Nahuan**
+  - **Central Nahuatl:** tletl
+  - **Classical Nahuatl:** tletl
+  - **Pipil:** tit
+- **Numic**
+  - **Comanche:** kuuna
 
 ### Mayan
 
@@ -765,41 +855,44 @@ o conceito #1 mais estável e menos emprestado).
 
 ## Creoles & pidgins
 
-- **Antillean Creole:** fé
-- **Aukan:** faya
-- **Guinea-Bissau Creole:** fugu
-- **Haitian Creole:** dife
-- **Jamaican Creole:** faya
-- **Karipúna Creole French:** djife
-- **Korlai Creole Portuguese:** fog
-- **Kristang:** fogu
-- **Macanese:** fogo
-- **Sranan Tongo:** faya
-- **Tok Pisin:** paia
-- **Yilan Creole:** hi
+- **French-based**
+  - **Antillean Creole:** fé
+  - **Haitian Creole:** dife
+  - **Karipúna Creole French:** djife
+- **Portuguese-based**
+  - **Guinea-Bissau Creole:** fugu
+  - **Korlai Creole Portuguese:** fog
+  - **Kristang:** fogu
+  - **Macanese:** fogo
+- **English-based**
+  - **Aukan:** faya
+  - **Jamaican Creole:** faya
+  - **Sranan Tongo:** faya
+  - **Tok Pisin:** paia
+- **Japanese-based**
+  - **Yilan Creole:** hi
 
 ## Notas / Notes
 
-- **Fonte:** tabela de traduções de *fire* (sentido "reação de oxidação") da Wiktionary.
-  Reorganizada por **família linguística → ramo**; apenas a forma romanizada/IPA de cada
-  língua foi mantida (script nativo, gênero e notas de registro foram omitidos).
-- Entradas marcadas como *"please add this translation"* foram descartadas; dialetos
-  aparecem como línguas próprias dentro do seu ramo.
-- **Por que agrupar por família:** os outros arquivos de palavras-fonte agrupam por número
-  de vogais (encaixe fonológico). Agrupar por genealogia torna visível o problema dos
-  cognatos: ao buscar inspiração para raízes nativas, prefira formas de famílias *não
-  aparentadas* em vez de repetir a mesma raiz indo-europeia várias vezes.
+- **Fonte:** tabela de traduções de *fire* (sentido "reação de oxidação") da Wiktionary,
+  só com a forma romanizada/IPA por língua.
+- **Aninhamento:** uma língua é colocada *abaixo* de outra apenas quando esta é seu estágio
+  mais antigo atestado **presente na lista** (ex.: Old Norse → islandês; Egyptian → Coptic;
+  Latin → línguas românicas; Ottoman Turkish → turco). Nenhuma proto-língua reconstruída foi
+  inventada; rótulos de sub-ramo (em **negrito sem forma**) são apenas nomes de clado.
 
-### Classificações incertas / disputadas
+### Mães por aproximação / classificações disputadas
 
-- **Turkic / Mongolic / Tungusic** são listadas como famílias separadas — a hipótese
-  "Altaica" que as uniria não é consensual.
-- **Coreano** (Koreanic) e **Japonês** (Japonic) aparecem como famílias próprias; um
-  parentesco entre elas é debatido, não estabelecido.
-- **"Papuan"** e **"Khoisan"** são rótulos *geográficos/areais*, não famílias genéticas:
-  agrupam línguas de várias famílias não relacionadas.
-- **Omótico** é tratado aqui como ramo do Afro-Asiático (posição majoritária, mas
-  contestada).
-- Algumas línguas americanas pequenas estão reunidas em "Other American families" com a
-  família indicada entre parênteses.
+Alguns nós-mãe são o **estágio mais antigo atestado** de um grupo, não o ancestral literal
+de toda língua aninhada sob eles:
+
+- **Old Church Slavonic** — eslavo meridional mais antigo atestado, não mãe de todo o eslavo.
+- **Ge'ez** — etiossemítico mais antigo; **Sanskrit** — estágio ind-ariano antigo (as línguas
+  modernas descem via prácritos/ind-ariano médio); **Chagatai** — ancestral literário carluque
+  do usbeque/uigur; **Ottoman Turkish** → turco.
+- **Turcomano/Mongol/Tungúsico** continuam famílias separadas (hipótese "Altaica" não consensual);
+  **Coreano** e **Japonês** como famílias próprias; **"Papuan"** e **"Khoisan"** são rótulos
+  *areais*, não famílias genéticas; **Omótico** tratado como ramo afro-asiático (posição
+  majoritária, mas contestada). Subgrupos de iraniano (Avestan, Parachi, Baluchi), tibeto-birmano
+  e tai foram colocados no clado primário mais padrão; casos limítrofes são aproximações.
 
