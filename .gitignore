@@ -1,3 +1,6 @@
 # Python bytecode cache
 __pycache__/
 *.py[cod]
+
+# Glottolog CSV cache (downloaded by tools/glottolog_check.py)
+data/.glottolog-languages.csv
