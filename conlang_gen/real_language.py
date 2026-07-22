@@ -11,6 +11,7 @@ from .reference_data import (
     find_phonotacticon_language_id,
     load_bdproto_inventory,
     load_cluster_profile,
+    load_phoible_inventory,
 )
 
 
@@ -38,14 +39,27 @@ class RealLanguageResult:
     cluster_profile: ClusterProfile | None
 
 
-def build_inventory_from_language(language_name: str) -> RealLanguageResult:
-    """Load a real phoneme inventory from BDPROTO and turn it into a usable Inventory.
+def build_inventory_from_language(
+    language_name: str, source: str = "phoible", inventory_id: str | None = None
+) -> RealLanguageResult:
+    """Load a real phoneme inventory and turn it into a usable Inventory.
+
+    source is "phoible" (default; ~2,700 living and historical languages, an
+    explicit consonant/vowel label per phoneme) or "bdproto" (~800 languages,
+    mostly reconstructed proto-languages). inventory_id disambiguates between
+    PHOIBLE's multiple source inventories for one language name, when present;
+    ignored for bdproto.
 
     If the language can be matched to Phonotacticon via Glottocode, the returned
     cluster_profile can be used by conlang_gen.stats to score generated words
     against clusters actually attested in that language.
     """
-    real = load_bdproto_inventory(language_name)
+    if source == "phoible":
+        real = load_phoible_inventory(language_name, inventory_id=inventory_id)
+    elif source == "bdproto":
+        real = load_bdproto_inventory(language_name)
+    else:
+        raise ValueError(f"Unknown source {source!r}; expected 'phoible' or 'bdproto'.")
     if not real.consonants:
         raise ValueError(
             f"{real.language_name!r} has no phonemes classifiable as consonants; "

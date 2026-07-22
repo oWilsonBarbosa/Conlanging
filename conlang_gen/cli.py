@@ -10,7 +10,11 @@ from pathlib import Path
 from .generate import Word, generate_words
 from .inventory import TEMPLATE_INVENTORY, Inventory
 from .real_language import build_inventory_from_language
-from .reference_data import ReferenceDataError, search_bdproto_languages
+from .reference_data import (
+    ReferenceDataError,
+    search_bdproto_languages,
+    search_phoible_languages,
+)
 from .stats import NaturalismReport, analyze
 
 
@@ -69,9 +73,10 @@ def cmd_new_inventory(args: argparse.Namespace) -> int:
 
 
 def cmd_search_language(args: argparse.Namespace) -> int:
-    matches = search_bdproto_languages(args.query, limit=args.limit)
+    search = search_phoible_languages if args.source == "phoible" else search_bdproto_languages
+    matches = search(args.query, limit=args.limit)
     if not matches:
-        print(f"No BDPROTO languages match {args.query!r}.")
+        print(f"No {args.source.upper()} languages match {args.query!r}.")
         return 1
     for name in matches:
         print(name)
@@ -80,10 +85,13 @@ def cmd_search_language(args: argparse.Namespace) -> int:
 
 def cmd_from_language(args: argparse.Namespace) -> int:
     try:
-        result = build_inventory_from_language(args.language)
+        result = build_inventory_from_language(
+            args.language, source=args.source, inventory_id=args.inventory_id
+        )
     except ReferenceDataError as exc:
         print(f"error: {exc}", file=sys.stderr)
-        suggestions = search_bdproto_languages(args.language, limit=10)
+        search = search_phoible_languages if args.source == "phoible" else search_bdproto_languages
+        suggestions = search(args.language, limit=10)
         if suggestions:
             print("Did you mean one of:", file=sys.stderr)
             for name in suggestions:
@@ -94,7 +102,16 @@ def cmd_from_language(args: argparse.Namespace) -> int:
         return 1
 
     real = result.real_inventory
-    print(f"{real.language_name} (Glottocode: {real.glottocode or 'unknown'})")
+    print(f"{real.language_name} [{real.source}] (Glottocode: {real.glottocode or 'unknown'})")
+    if real.inventory_id is not None:
+        print(f"  Inventory ID: {real.inventory_id}", end="")
+        if real.other_inventory_ids:
+            print(
+                f"  (other sources available: {', '.join(real.other_inventory_ids)}"
+                " -- pick with --inventory-id)"
+            )
+        else:
+            print()
     print(f"  Consonants ({len(real.consonants)}): {' '.join(real.consonants)}")
     print(f"  Vowels ({len(real.vowels)}): {' '.join(real.vowels)}")
     if real.unclassified:
@@ -145,17 +162,35 @@ def build_parser() -> argparse.ArgumentParser:
     p_new.set_defaults(func=cmd_new_inventory)
 
     p_search = subparsers.add_parser(
-        "search-language", help="Search BDPROTO for language names (for use with from-language)."
+        "search-language", help="Search PHOIBLE or BDPROTO for language names (for use with from-language)."
     )
-    p_search.add_argument("query", help="Substring to search for, e.g. 'Proto' or 'Hawaiian'.")
+    p_search.add_argument("query", help="Substring to search for, e.g. 'Hawaiian' or 'Proto'.")
+    p_search.add_argument(
+        "--source",
+        choices=["phoible", "bdproto"],
+        default="phoible",
+        help="Which database to search (default: phoible, ~2,700 living/historical languages).",
+    )
     p_search.add_argument("--limit", type=int, default=25)
     p_search.set_defaults(func=cmd_search_language)
 
     p_real = subparsers.add_parser(
         "from-language",
-        help="Generate words using a real phoneme inventory from BDPROTO, and score naturalism.",
+        help="Generate words using a real phoneme inventory, and score naturalism.",
     )
-    p_real.add_argument("language", help="Exact BDPROTO language name, e.g. 'Hawaiian'.")
+    p_real.add_argument("language", help="Exact language name, e.g. 'Hawaiian'.")
+    p_real.add_argument(
+        "--source",
+        choices=["phoible", "bdproto"],
+        default="phoible",
+        help="phoible (default): ~2,700 living/historical languages. "
+        "bdproto: ~800 languages, mostly reconstructed proto-languages.",
+    )
+    p_real.add_argument(
+        "--inventory-id",
+        default=None,
+        help="Disambiguate between PHOIBLE's multiple source inventories for one language name.",
+    )
     p_real.add_argument("--count", type=int, default=20, help="Number of words to generate.")
     p_real.add_argument("--seed", type=int, default=None, help="Random seed for reproducibility.")
     p_real.add_argument(

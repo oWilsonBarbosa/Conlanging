@@ -29,22 +29,30 @@ likelihood of 1-, 2-, 3-syllable words).
 
 `data/` already contains bundled linguistic databases:
 
-- **BDPROTO** — phoneme inventories for ~800 languages and proto-languages.
-- **CLTS (BIPA)** — canonical IPA symbol lists, used to classify each BDPROTO
-  phoneme as a consonant or vowel.
+- **PHOIBLE** (default source) — phoneme inventories for ~2,700 living and
+  historical languages, each phoneme explicitly labeled consonant/vowel/tone.
+  Some language names have multiple independent source inventories; pick one
+  with `--inventory-id` (the command lists the alternatives).
+- **BDPROTO** (`--source bdproto`) — phoneme inventories for ~800 languages,
+  mostly reconstructed proto-languages (e.g. `Proto-Polynesian`). Has no
+  consonant/vowel column of its own, so phonemes are classified using
+  **CLTS (BIPA)**'s canonical IPA symbol lists.
 - **Phonotacticon** — attested onset/coda consonant clusters for ~500
-  languages, matched to BDPROTO via Glottocode.
+  languages, matched to PHOIBLE/BDPROTO via Glottocode (281 PHOIBLE languages
+  and 5 BDPROTO languages currently overlap).
 
 Find a language name:
 
 ```
 python -m conlang_gen search-language hawaiian
+python -m conlang_gen search-language proto --source bdproto
 ```
 
 Generate words from its real phoneme inventory, and get a naturalism report:
 
 ```
 python -m conlang_gen from-language Hawaiian --count 20
+python -m conlang_gen from-language English --inventory-id 2252 --count 20
 ```
 
 This prints the derived consonant/vowel split, generates words with
@@ -56,11 +64,14 @@ cluster complexity when a Phonotacticon match is found), and reports:
   generator produced, what fraction are actually attested for that language
   in Phonotacticon. This is the main "how naturalistic is this?" signal —
   low rates mean the generator is inventing clusters that don't occur in the
-  real language.
+  real language. For example, `from-language English` typically lands
+  around 10-15% onset legality and near 0% coda legality, showing that
+  naive random consonant-clustering is far from how English actually
+  clusters sounds.
 
-Note this only checks clusters, since BDPROTO gives a phoneme *inventory*,
-not a corpus of real syllables — single consonants/vowels are always
-"legal." Phonotacticon coverage is also a sample of each language's
+Note this only checks clusters, since PHOIBLE/BDPROTO give a phoneme
+*inventory*, not a corpus of real syllables — single consonants/vowels are
+always "legal." Phonotacticon coverage is also a sample of each language's
 attested wordlist, not an exhaustive phonotactic grammar, so treat the rate
 as a rough signal, not a certainty.
 

@@ -3,10 +3,16 @@
 All reads happen directly against the zip files, so nothing needs to be
 extracted to disk. Sources used:
 
+- PHOIBLE (data/dev-master.zip): phoneme inventories for ~2,700 living
+  and historical languages, with an explicit consonant/vowel/tone label
+  per phoneme. The primary source for real-language inventories.
 - BDPROTO (data/bdproto-master.zip): phoneme inventories for ~800
-  languages and proto-languages.
+  languages and proto-languages (mostly reconstructed proto-languages).
+  A secondary source, kept for reconstructed/proto-language lookups
+  PHOIBLE doesn't cover.
 - CLTS BIPA (data/clts-2.3.0.zip): canonical IPA symbol lists, used to
-  classify a phoneme as a consonant or vowel.
+  classify a BDPROTO phoneme as a consonant or vowel (BDPROTO has no
+  such column of its own).
 - Phonotacticon (data/phonotacticon-main.zip): attested onset/coda
   consonant clusters for ~500 languages, keyed by Glottocode.
 """
@@ -28,6 +34,9 @@ BDPROTO_CSV_MEMBER = "bdproto-master/bdproto.csv"
 CLTS_ZIP = DATA_DIR / "clts-2.3.0.zip"
 CLTS_CONSONANTS_MEMBER = "clts-2.3.0/pkg/transcriptionsystems/bipa/consonants.tsv"
 CLTS_VOWELS_MEMBER = "clts-2.3.0/pkg/transcriptionsystems/bipa/vowels.tsv"
+
+PHOIBLE_ZIP = DATA_DIR / "dev-master.zip"
+PHOIBLE_CSV_MEMBER = "dev-master/data/phoible.csv"
 
 PHONOTACTICON_ZIP = DATA_DIR / "phonotacticon-main.zip"
 PHONOTACTICON_LANGUAGES_MEMBER = "phonotacticon-main/cldf/languages.csv"
@@ -97,6 +106,9 @@ class RealInventory:
     consonants: list[str]
     vowels: list[str]
     unclassified: list[str]
+    source: str = "bdproto"
+    inventory_id: str | None = None
+    other_inventory_ids: tuple[str, ...] = ()
 
 
 def load_bdproto_inventory(language_name: str) -> RealInventory:
@@ -133,6 +145,89 @@ def load_bdproto_inventory(language_name: str) -> RealInventory:
         consonants=consonants,
         vowels=vowels,
         unclassified=unclassified,
+    )
+
+
+@lru_cache(maxsize=1)
+def _phoible_rows() -> list[dict[str, str]]:
+    return _read_csv_member(PHOIBLE_ZIP, PHOIBLE_CSV_MEMBER)
+
+
+def search_phoible_languages(query: str, limit: int = 25) -> list[str]:
+    query = query.lower().strip()
+    names = {row["LanguageName"] for row in _phoible_rows() if row.get("LanguageName")}
+    matches = sorted(name for name in names if query in name.lower())
+    return matches[:limit]
+
+
+def list_phoible_inventory_ids(language_name: str) -> list[str]:
+    """Distinct PHOIBLE source inventories available for a language name (it can have more
+    than one, since PHOIBLE aggregates independent phonological descriptions)."""
+    ids = {
+        row["InventoryID"]
+        for row in _phoible_rows()
+        if row.get("LanguageName", "").lower() == language_name.lower()
+    }
+    return sorted(ids, key=int)
+
+
+def load_phoible_inventory(language_name: str, inventory_id: str | None = None) -> RealInventory:
+    candidates = [
+        row for row in _phoible_rows() if row.get("LanguageName", "").lower() == language_name.lower()
+    ]
+    if not candidates:
+        raise ReferenceDataError(
+            f"No PHOIBLE language matches {language_name!r} exactly. "
+            "Use search_phoible_languages() to find valid names."
+        )
+
+    available_ids = sorted({row["InventoryID"] for row in candidates}, key=int)
+    if inventory_id is None:
+        if len(available_ids) == 1:
+            inventory_id = available_ids[0]
+        else:
+            # Default to whichever source inventory lists the most phonemes.
+            counts = {
+                inv_id: sum(1 for row in candidates if row["InventoryID"] == inv_id)
+                for inv_id in available_ids
+            }
+            inventory_id = max(available_ids, key=lambda inv_id: counts[inv_id])
+    elif inventory_id not in available_ids:
+        raise ReferenceDataError(
+            f"PHOIBLE inventory ID {inventory_id!r} not found for {language_name!r}. "
+            f"Available IDs: {', '.join(available_ids)}."
+        )
+
+    rows = [row for row in candidates if row["InventoryID"] == inventory_id]
+    consonants: list[str] = []
+    vowels: list[str] = []
+    seen: set[str] = set()
+    for row in rows:
+        if row.get("Marginal") == "TRUE":
+            continue  # peripheral/loanword-only phoneme
+        phoneme = row["Phoneme"]
+        if phoneme in seen:
+            continue
+        seen.add(phoneme)
+        if row["SegmentClass"] == "consonant":
+            consonants.append(phoneme)
+        elif row["SegmentClass"] == "vowel":
+            vowels.append(phoneme)
+        # "tone" segments are suprasegmental, not slotted into C/V syllable patterns.
+
+    glottocode = rows[0].get("Glottocode") or None
+    if glottocode == "NA":
+        glottocode = None
+
+    return RealInventory(
+        language_name=rows[0]["LanguageName"],
+        glottocode=glottocode,
+        consonants=consonants,
+        vowels=vowels,
+        unclassified=[],
+        source="phoible",
+        inventory_id=inventory_id,
+        other_inventory_ids=tuple(i for i in available_ids if i != inventory_id),
     )
 
 
