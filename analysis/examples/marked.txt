@@ -1,0 +1,12 @@
+# A deliberately marked draft, written to trip the implicational checker.
+# It has nasal vowels without all their oral counterparts, ejectives without
+# the velar anchor, a retroflex series without plain coronals, and voiced
+# sibilants without voiceless ones.
+
+p t ʈ ɳ ɭ
+pʼ tʼ
+m n
+z ʒ
+j w
+
+i ĩ ẽ õ ã u

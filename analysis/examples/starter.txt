@@ -1,0 +1,11 @@
+# The typologically unmarked core: every segment here is present in at least
+# 60% of the 2,176 languages in PHOIBLE. Useful as a baseline to modify, not
+# as an inventory to ship -- an inventory this default reads as generic.
+
+p t k b
+m n ŋ
+s
+l
+j w
+
+i e a o u
