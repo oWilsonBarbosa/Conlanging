@@ -1,0 +1,20 @@
+# The irreducible core.
+#
+# Not simply the most frequent segments -- these are the ones that survive
+# when a language has almost nothing. Measured on the 186 PHOIBLE languages
+# with <=20 segments: each of these holds or nearly holds its overall share
+# under that compression, while /l/, /b/, /s/, /e/, /o/ and /ŋ/ lose half of
+# theirs despite being common overall.
+#
+# This is a floor, not an inventory. Shipping it as-is gives you the most
+# generic possible language.
+
+p t k
+m n
+
+i a u
+
+# The glides sit just below the floor (resilience 0.98 and 0.88). Include
+# them unless you have a reason not to -- /w/ and /j/ are in 84.6% and 90.2%
+# of all languages.
+w j
