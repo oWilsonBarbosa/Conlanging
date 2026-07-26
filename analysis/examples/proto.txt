@@ -1,0 +1,34 @@
+# A proto-language inventory: 27 segments.
+#
+# Sized and shaped against BDPROTO (268 reconstructed proto-languages),
+# not against the "primitive core" -- see the note at the bottom.
+# Percentages below are share of reconstructed proto-languages.
+#
+# Voiceless stops, four places (p 83%, t 92%, k 93%, kʷ 21%)
+p t k kʷ
+
+# Voiced stops at two places only. The missing *ɡ is deliberate: 8% of
+# reconstructed protos have *b and *d without *ɡ. It is the engine of this
+# inventory -- see README notes.
+b d
+
+# One affricate (ts 30%), two fricatives (s 82%, h 50%)
+ts
+s h
+
+# Three nasals (m 91%, n 94%, ŋ 47%)
+m n ŋ
+
+# Two liquids (l 73%, r 69%) -- protos differ from small modern inventories
+# here, where a single tap wins instead
+l r
+
+# Glides (w 79%, j 83%) and the glottal stop (ʔ 42%)
+w j
+ʔ
+
+# Five qualities (i 83%, e 61%, a 72%, o 61%, u 78%)
+i e a o u
+
+# ...crossed with length (iː 38%, uː 35%, aː 33%, eː 29%, oː 28%)
+iː eː aː oː uː
