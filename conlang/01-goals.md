@@ -1,156 +1,205 @@
-# Lesson 1 — Goals
+# Lesson 1 — Introduction & Goals
 
-Course sources: `01 Introduction to Conlanging.pdf`, `01a The Greatest Conlang Ever.pdf`
+Course sources: `course/01 Introduction to Conlanging.pdf` (18 pp),
+`course/01a The Greatest Conlang Ever.pdf` (6 pp)
 
-Lesson 01a's whole argument is that a conlang is "good" when it is *as it should
-be* — so before anything else, decide what it should be. This document is that
-decision. Everything in Lessons 2–13 gets evaluated against it.
-
----
-
-## The language
-
-**Kelunta** — the lake tongue. Spoken by the **Keluri**, a lakeland people of
-northwestern Meridia on Planet #06cy8vf7zvurfgpbrgnm4l. Full setting notes:
-[`world/speakers.md`](world/speakers.md).
-
-The name is provisional-but-committed: *kelu* "standing water, lake" + *-nta*.
-Lesson 3 has to make that suffix real or the name changes.
+**Status: guidance delivered, decisions open.** Part A and B below are the course
+material. Part C is the set of choices Lesson 1 asks *you* to make; it gets filled
+in with your answers, not mine.
 
 ---
 
-## Classification (Lesson 01's taxonomy)
+## Part A — Lesson 01: Introduction to Conlanging
 
-| Axis | This conlang |
+### What a conlang is
+
+The course's working definition: *"a conscious effort to create a language not
+naturally evolved through speech communities."* It explicitly excludes
+reconstructions (Proto-Indo-European) and revivals (Modern Hebrew) — those are
+scientific rather than artistic acts.
+
+A conlang is **not** a code, a cypher, or a twist on your native language. The
+course is blunt about this: designing a new means of communication is the job.
+
+### The classification axes
+
+A conlang can carry more than one label. Four axes matter:
+
+**1. Inspiration — a priori vs. a posteriori**
+
+| | Meaning |
 |---|---|
-| Inspiration | **A priori.** No lexicon or morphology derived from any real language. Typological *patterns* are borrowed freely — that is research, not derivation. |
-| Means of expression | **Spoken**, with a writing system deferred (reed and clay surfaces are available in-world if I want one later). |
-| Design goal | **Artlang**, specifically a fictional language supporting a worldbuilding project. |
-| Naturalism | **Naturalistic.** Human speakers, human vocal tract, no feature that could not occur in a real language. |
+| **A priori** | Not derived from any existing language. |
+| **A posteriori** | Major parts directly derived from at least one real language, living or dead. |
 
----
+It's a spectrum, not a binary. A posteriori langs cluster into recognised types:
+*futuristic* (Trigedasleng — American English evolved forward), *altlangs*
+(Brithenig — Romance in Britain), family-specific *romlangs / germlangs /
+PIE-langs*, *lostlangs* (invented to "explain" features in real languages), and
+*pidgins & creoles* (Lang Belta in The Expanse).
 
-## Goals
+**2. Means of expression**
 
-Lesson 01a asks for at least one goal in each of four categories.
+Spoken is the default, but the course lists written-only languages (UNLWS),
+signed languages (rikchik — 49-tentacled aliens, deliberately unlearnable by
+humans), whistled (Silbo Gomero), drummed (Bora, Kele), tactile (the gripping
+language), and musical (Solresol). Note: *a tonal language is not a musical
+language*. Also: writing systems ≠ written languages. An orthography transcribes
+a language that already exists; a written language expresses thought directly in
+writing.
 
-### Naturalism
-> Every feature must be attested somewhere in the world's languages, and the
-> *combination* must be typologically coherent.
+**3. Design goal**
 
-Concretely: I check features against WALS, Grambank, and PHOIBLE/BDPROTO before
-committing them. The `data/` directory in this repo has all of them. Rare features
-are allowed — one or two are what give a language character — but each one must
-be paid for by being ordinary everywhere else. No feature enters because it is
-cool.
-
-### The speakers
-> The grammar must reflect what the Keluri actually do all day.
-
-The load-bearing commitment: **obligatory evidential marking on the verb**, because
-Keluri water-rights reckoning is settled by testimony and the culture cares
-intensely about how you know what you claim. Second commitment: the
-**standing/leaving** contrast that organises their relationship to water should
-surface somewhere in the grammar, not only in the dictionary.
-
-### The medium
-> Worldbuilding + personal enjoyment. No performers have to pronounce it, but a
-> reader must be able to.
-
-So: it needs enough depth to survive scrutiny from someone who reads the grammar,
-and enough restraint that names and phrases in prose are readable at a glance. No
-phonemes that require a diacritic key to interpret. Romanisation stays ASCII-safe
-where possible.
-
-### Aesthetics
-> **Crisp and clean.** Finnish and Quechua as reference points, not as sources.
-
-Clear vowel qualities, no voicing contrast to blur the consonants, modest
-clusters, transparent syllable boundaries. The target is a language that *looks
-spellable* — where hearing a word tells you how to write it and vice versa.
-
----
-
-## Creative restraints
-
-Lesson 01a counts self-imposed restraints as goals. Mine:
-
-1. **Agglutinative.** One morpheme, one meaning, cleanly segmentable. Fusion is
-   only allowed where sound change (Lesson 11) *produces* it — never by design.
-2. **Suffixing.** Consistently. A language that suffixes its verbs and prefixes
-   its nouns is a common enough natlang situation, but a single dominant affix
-   position is what makes agglutination legible.
-3. **No voicing contrast** in the consonant inventory. This is the single
-   strongest constraint on the phonology and it is what will make the aesthetic
-   goal achievable rather than aspirational.
-4. **Non-accusative alignment.** Decided properly in Lesson 5 after reading the
-   alignment material, but SAE-style nominative–accusative is off the table
-   before I start, so that the choice gets made rather than defaulted into.
-
-## Anti-goals
-
-Named explicitly so I can be caught violating them:
-
-- **Not a relex.** No morpheme-for-morpheme correspondence with English. If a
-  Kelunta sentence glosses word-for-word into English, something has gone wrong.
-- **Not a kitchen sink.** Every feature must justify itself against the goals
-  above. When in doubt, cut.
-- **Not SAE.** Specifically avoiding: definite/indefinite articles, a *have*-
-  perfect, obligatory overt subject pronouns, do-support, comparative particles,
-  and a nominative–accusative + dative case frame.
-
----
-
-## Evaluation criteria
-
-Lesson 01a's step 4 is "evaluate your goals," so here is what I will check
-against at Lesson 8 (Documentation) and again at Lesson 13:
-
-- [ ] Can I translate a paragraph of connected prose without inventing new
-      grammar to do it?
-- [ ] Does every feature trace back to a goal above?
-- [ ] Would a linguist reading the grammar find the feature combination plausible?
-- [ ] Do Keluri place names and personal names read cleanly in English prose?
-- [ ] Is the evidential system actually used in every example sentence, or did it
-      quietly become optional?
-
----
-
-## Lesson 01a's questions, answered
-
-**1. Scared puppy or bouncy puppy?**
-Bouncy, structurally — the failure mode here is generating a lot of confident
-material fast and only later noticing it does not cohere. The correction is the
-evaluation checklist above and the discipline of checking features against the
-typological databases in `data/` rather than against intuition.
-
-**2. One goal from each category.** Above.
-
-**3. Which BEATS step gets skipped?**
-*Experiment.* The temptation is to go straight from Brainstorm to Apply — to
-decide a feature is in before testing whether it collides with anything. The
-mitigation: every new feature gets test-driven on example sentences in the same
-lesson that introduces it, before it is written up as settled.
-
-**4. When's the celebration party?**
-Lesson 13, and the puppies are invited.
-
----
-
-## Status
-
-| Lesson | Topic | State |
+| Type | Purpose | Examples |
 |---|---|---|
-| 01 / 01a | Introduction, goals | **done** |
-| 02 | Phonology 1 — IPA | next |
-| 03 | Morphology 1 | |
-| 04 | Verbs 1 | |
-| 05 | Nouns 1 — case, number, class, alignment | |
-| 06 | Phonology 2 — designing a phonology | |
-| 07 | Lexicon 1 | |
-| 08 | Documentation 1 | |
-| 09 | Verbs 2 | |
-| 10 | Phonology 3 | |
-| 11 | Phonology 4 — sound change | |
-| 12 | Lexicon 2 | |
-| 13 | Information structure | |
+| **Artlang** | Artistic — fiction, thought experiment, or fun | Dothraki, Quenya, Newspeak |
+| **Auxlang** | Ease real communication between real people | Esperanto, Interslavic (zonal) |
+| **Engelang** | Experiment — logical or philosophical | Lojban (loglang), Toki Pona, Láaden |
+| **Secret / personal** | Not meant to be taught outside a tiny circle | — |
+
+**4. Naturalism**
+
+Whether the language is plausible as something humans actually speak. This is a
+spectrum measured against the *average* of what real languages do: the rarer a
+feature is cross-linguistically, the less naturalistic it reads.
+
+Important warning from the course: **unless you say otherwise, readers assume you
+were aiming for naturalism and failed.** If you deviate deliberately, say so.
+
+### Three terms used as insults
+
+- **Relex** ("relexification", "involuntary cipher") — a conlang too close to a
+  real language, usually the author's own. Words swapped, grammar untouched. Many
+  conlangers don't count these as languages at all.
+- **Kitchen sink** — features thrown in at random with no thought for whether they
+  cohere. Dozens of arbitrary consonants; every grammatical distinction known to
+  man. "Too much stuff that doesn't fit together."
+- **SAE** (Standard Average European) — resembling major Western European
+  languages, on purpose or by accident. Refers to a specific set of features that
+  are common in Western Europe but *uncommon worldwide*.
+
+---
+
+## Part B — Lesson 01a: The Greatest Conlang Ever
+
+### The two myths
+
+"Conlanging is easy" and "conlanging is hard" are both wrong. The lesson sorts
+beginners into two failure modes:
+
+- **The scared puppy** sees "concatenative" and "valency operations" and quits.
+  Driven by perfectionism or intimidation.
+- **The bouncy puppy** assumes their conlang can't be that bad — it fixes
+  everything stupid about their native language and adds cool features from
+  Nahuatl. Excitement, overconfidence, unrealistic expectations, general mess.
+
+### What makes a conlang good
+
+Citing Deborah Hill (1987) on value-judgement terms: **something is good when it
+is as it should be.** So a good conlang requires first deciding what it *should*
+be. Hence the five steps:
+
+1. **Define your goals**
+2. **Study your goals**
+3. **Implement your goals**
+4. **Evaluate your goals**
+5. **Celebrate your goals**
+
+### Step 1 — the four goal categories
+
+The lesson asks for at least one goal in each:
+
+| Category | The question it answers |
+|---|---|
+| **Naturalism** | Natural or unnatural — either way, research what real languages do so you can follow or deviate *deliberately*. |
+| **The speakers** | Language is inseparable from culture. Who speaks it, and does the language represent them? |
+| **The medium** | D&D campaign, novel, film, community, personal enjoyment? A D&D language needs to be challenging and interesting *to play with*. |
+| **Aesthetics** | The "feel". If you don't like how it looks and sounds, you'll get bored or frustrated fast. "We like pretty things." |
+
+Self-imposed **creative restraints** count as goals too.
+
+### Step 2 — study
+
+Want Celtic feel? Read Irish, Welsh and Scottish grammars. Want agglutination?
+Read Hungarian and Lakota. The course discourages copying features wholesale —
+get the general idea, then tweak it for your own language.
+
+### Step 3 — implement, via BEATS
+
+> **B**rainstorm → **E**xperiment → **A**pply → **T**weak → **S**et
+
+- **Brainstorm** — list ideas regardless of whether they're good.
+- **Experiment** — hypothetically add a feature, see if it plays well with the rest.
+- **Apply** — it tested out; commit to it.
+- **Tweak** — inevitable changes as the language grows.
+- **Set** — the tweaking is over. (The lesson admits this is wishful thinking;
+  you'll tweak for the language's entire active life.)
+
+### Step 4 — evaluate
+
+Once it's functional, ask whether it accomplished your goals. If not, two options:
+change the conlang, or change the goals. Both are legitimate.
+
+### When you get stuck
+
+Guaranteed to happen. The route out: back to goals → study → BEATS → evaluate.
+Stuck on verbs? Look at your goals, see which ones verbs could accomplish, study
+verb systems that would do it, run BEATS, then evaluate against the goals.
+
+---
+
+## Part C — Decisions for you
+
+Lesson 01a poses four questions directly. Plus the Lesson 01 taxonomy needs
+settling. These are yours; my role is to lay out the options and the consequences.
+
+### C1. Classification (Lesson 01)
+
+- [ ] Inspiration: a priori / a posteriori
+- [ ] Means of expression: spoken / written / signed / other
+- [ ] Design goal: artlang / auxlang / engelang / secret
+- [ ] Naturalism: strict / naturalistic-with-exceptions / deliberately unnatural
+
+### C2. Goals — one from each category (Lesson 01a Q2)
+
+- [ ] **Naturalism** —
+- [ ] **The speakers** —
+- [ ] **The medium** —
+- [ ] **Aesthetics** —
+
+### C3. Creative restraints
+
+- [ ] —
+
+### C4. Anti-goals
+
+Explicit commitments about relex, kitchen sink, and SAE, so violations are
+catchable later.
+
+- [ ] —
+
+### C5. Self-assessment (Lesson 01a Q1, Q3, Q4)
+
+- [ ] Scared puppy or bouncy puppy — and what corrects for it?
+- [ ] Which BEATS step do you skip?
+- [ ] When's the party?
+
+### C6. Evaluation criteria
+
+What Lesson 01a's step 4 will actually be checked against, at Lesson 08
+(Documentation) and Lesson 13.
+
+- [ ] —
+
+---
+
+## Decisions already made
+
+Recorded so they aren't re-litigated:
+
+| Decision | Value | Where it binds |
+|---|---|---|
+| Setting | World Orogen (Planet #06cy8vf7zvurfgpbrgnm4l) | C2 speakers |
+| Aesthetic target | Crisp / clean | C2 aesthetics, Lesson 06 |
+| Morphological typology | Agglutinative | Lessons 03, 04, 05, 09 |
+| Working cadence | Lesson by lesson | — |
