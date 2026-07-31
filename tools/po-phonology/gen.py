@@ -23,7 +23,7 @@ import random
 import sys
 
 from inventory import (OBSTRUENTS, SONORANTS, NASALS, LIQUIDS, GLIDES,
-                       VOWELS, LONG_VOWELS, SYLLABIC, is_glottalized)
+                       VOWELS, LONG_VOWELS, SYLLABIC, is_glottalized, agrees)
 
 # Pesos das posições de onset e coda, proporcionais à contagem sobre as
 # raízes do PIE (docs/02 §4). "C" = obstruinte, "R" = sonorante.
@@ -42,7 +42,7 @@ CODA_SHAPES = [
 # uvular: /qː/ (→ *h₂), /qʷː/ (→ *h₃) e as não-fortis /q ʔq qʷ ʔqʷ/, que
 # colapsam em *h₁ na fase terrestre.
 LARYNGEALS = ["qː", "qʷː", "q", "ʔq", "qʷ", "ʔqʷ"]
-PLAIN_OBSTRUENTS = [o for o in OBSTRUENTS if o not in LARYNGEALS]
+NON_LARYNGEAL = [o for o in OBSTRUENTS if o not in LARYNGEALS]
 
 
 def _pick(shapes, rng):
@@ -55,15 +55,20 @@ def _pick(shapes, rng):
     return shapes[-1][0]
 
 
-def _fill(shape, rng):
+def _by_class(segs, cls):
+    """Filtra pela classe harmônica. Segmentos neutros passam sempre."""
+    return [s for s in segs if agrees(s, cls)]
+
+
+def _fill(shape, rng, cls):
     out = []
     for slot in shape:
         if slot == "C":
-            out.append(rng.choice(PLAIN_OBSTRUENTS))
+            out.append(rng.choice(_by_class(NON_LARYNGEAL, cls)))
         elif slot == "R":
-            out.append(rng.choice(SONORANTS))
+            out.append(rng.choice(SONORANTS))       # sonorantes são neutras
         elif slot == "H":
-            out.append(rng.choice(LARYNGEALS))
+            out.append(rng.choice(_by_class(LARYNGEALS, cls)))
         elif slot == "s":
             out.append("s")
     return out
@@ -73,14 +78,17 @@ def _glottal_count(segs):
     return sum(1 for s in segs if is_glottalized(s))
 
 
-def make_root(rng, long_vowel_chance=0.15):
-    """Gera uma raiz monossilábica no formato canônico."""
+def make_root(rng, long_vowel_chance=0.15, cls=None):
+    """Gera uma raiz monossilábica no formato canônico.
+
+    A raiz inteira pertence a uma classe harmônica: vogais e dorsais concordam.
+    """
+    cls = cls or rng.choice(["plain", "round"])
     for _ in range(80):
-        onset = _fill(_pick(ONSET_SHAPES, rng), rng)
-        coda = _fill(_pick(CODA_SHAPES, rng), rng)
-        nucleus = (rng.choice(LONG_VOWELS)
-                   if rng.random() < long_vowel_chance
-                   else rng.choice(VOWELS))
+        onset = _fill(_pick(ONSET_SHAPES, rng), rng, cls)
+        coda = _fill(_pick(CODA_SHAPES, rng), rng, cls)
+        nucleus = rng.choice(_by_class(
+            LONG_VOWELS if rng.random() < long_vowel_chance else VOWELS, cls))
         segs = onset + [nucleus] + coda
         if _glottal_count(segs) > 1:
             continue                      # dissimilação glotálica
@@ -106,25 +114,30 @@ def _bad_juncture(coda, onset):
     return False
 
 
-def make_word(rng, syllables=None):
-    """Gera uma palavra polissilábica, validando cada junção silábica."""
+def make_word(rng, syllables=None, cls=None):
+    """Gera uma palavra polissilábica, validando cada junção silábica.
+
+    A harmonia vale para a palavra toda — é o mesmo domínio da raiz enquanto
+    não houver morfologia derivacional para definir um domínio menor.
+    """
+    cls = cls or rng.choice(["plain", "round"])
     n = syllables or rng.choice([2, 2, 2, 3, 3, 4])
     syls = []
     for i in range(n):
         last = i == n - 1
         for _ in range(60):
-            onset = _fill(_pick(ONSET_SHAPES, rng), rng)
+            onset = _fill(_pick(ONSET_SHAPES, rng), rng, cls)
             if i > 0 and not onset:
-                onset = _fill("C", rng)             # evita hiato
+                onset = _fill("C", rng, cls)        # evita hiato
             if rng.random() < 0.12:
                 son = rng.choice(NASALS + LIQUIDS)
                 nucleus = SYLLABIC[son.rstrip("ː")]  # núcleo sonorante
             else:
-                nucleus = (rng.choice(LONG_VOWELS) if rng.random() < 0.12
-                           else rng.choice(VOWELS))
+                nucleus = rng.choice(_by_class(
+                    LONG_VOWELS if rng.random() < 0.12 else VOWELS, cls))
             # só a sílaba final carrega coda complexa
-            coda = (_fill(_pick(CODA_SHAPES, rng), rng) if last
-                    else _fill(rng.choice(["", "", "", "R", "C"]), rng))
+            coda = (_fill(_pick(CODA_SHAPES, rng), rng, cls) if last
+                    else _fill(rng.choice(["", "", "", "R", "C"]), rng, cls))
             if i > 0 and _bad_juncture(syls[-1][2], onset):
                 continue
             break
@@ -132,7 +145,7 @@ def make_word(rng, syllables=None):
 
     segs = [s for syl in syls for part in syl for s in part]
     if _glottal_count(segs) > 1:
-        return make_word(rng, syllables)
+        return make_word(rng, syllables, cls)
     return segs
 
 
@@ -163,8 +176,11 @@ def main():
     mode = "roots" if "--roots" in sys.argv else "words"
     print(f"# Proto-Orogeniano — {n} {mode} (seed {seed})\n")
     for _ in range(n):
-        segs = make_root(rng) if mode == "roots" else make_word(rng)
-        print("  /" + stress(segs, rng) + "/")
+        cls = rng.choice(["plain", "round"])
+        segs = (make_root(rng, cls=cls) if mode == "roots"
+                else make_word(rng, cls=cls))
+        mark = "−" if cls == "plain" else "+"
+        print(f"  [{mark}round]  /" + stress(segs, rng) + "/")
 
 
 if __name__ == "__main__":

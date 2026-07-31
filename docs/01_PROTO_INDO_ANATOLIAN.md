@@ -608,12 +608,20 @@ está fora.
 | Acento livre, condicionando lenição | §5.4 |
 | Oclusivas contrastando por **duração + glotalização** | §5.2 |
 | Laringais como **oclusivas uvulares** `/qː/`, `/qʷː/` | §5.1 |
-| **Nenhum fonema `*a`** | §5.1 |
+| **Nenhum fonema `*a` — no nó do PIH** ⚠ | §5.1 |
 | Assibilação `*-TT-` > `*-TsT-`, com `/tː/` monofonemática imune | §5.3 |
 | Plural coletivo vivo | §4.1 |
 | `*h₁eḱu-` 'cavalo' não tematizado | §3 nº 11 |
 | Genitivo `*-om` indiferente a número | §3 nº 14 |
 | Particípio de diátese não fixa | §3 nº 1 |
+
+> ⚠ **Onde cada restrição morde.** Toda linha desta tabela descreve o estado
+> **no nó do PIH** — é isso que a reconstrução atesta. Ela não obriga o
+> Proto-Orogeniano a já estar nesse estado alguns séculos antes: §9.4 licencia
+> explicitamente contrastes que colapsam no caminho, desde que o colapso seja
+> regular. A linha do `*a` é o caso vivo — ver
+> [`02_PROTO_OROGENIAN_PHONOLOGY.md`](02_PROTO_OROGENIAN_PHONOLOGY.md) §3.4,
+> onde `/a ɒ/` existem no Proto-Orogeniano e se fundem antes do PIH.
 
 ### 9.2 Proibido — são inovações posteriores à cisão
 
@@ -622,7 +630,7 @@ está fora.
 | Gênero feminino | a inovação não-anatólia de maior consenso |
 | Série de oclusivas **sonoras** | é reinterpretação tardia da duração (§5.2) |
 | Laringais **fricativas** | fricativização é inovação do PIE clássico (§5.1) |
-| Fonema `*a` | §5.1 |
+| Fonema `*a` **no PIH** | §5.1 |
 | Genitivo plural marcado | §3 nº 14 |
 | Temas em `*-o-` em 'cavalo', 'jugo', 'vento' | §3 nº 11–13 |
 | Particípios de diátese fixa sobre radicais têmporo-aspectuais | §4.1 |
@@ -645,6 +653,13 @@ Aspecto · origem da ḫi-conjugação · subjuntivo/optativo · clusividade ·
 sistema de número · e toda a fonologia **acima** do que o PIH exige (o
 Proto-Orogeniano pode ter contrastes que colapsaram antes do PIH, desde que
 alimentem o sistema de §9.1 por mudança regular).
+
+**Exemplo já usado:** o sistema vocálico. O documento 02 §3.4 dá ao
+Proto-Orogeniano quatro qualidades vocálicas em duas classes harmônicas
+(`/e a/` ~ `/o ɒ/`), das quais só as médias chegam ao PIH. O contraste de
+arredondamento colapsa no caminho e se relexicaliza — nas dorsais, como a série
+labiovelar; na morfologia, como o grau-o do ablaut. É o caso paradigmático
+desta cláusula: nada em §9.1 é violado, porque §9.1 descreve o nó de chegada.
 
 ### 9.5 A vantagem estrutural
 
