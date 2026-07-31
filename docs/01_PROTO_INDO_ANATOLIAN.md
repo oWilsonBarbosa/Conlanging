@@ -13,9 +13,9 @@ tabela de restrições de projeto.
 | | |
 |---|---|
 | Escopo | posição do anatólio no indo-europeu; reconstrução do PIA |
-| Fontes primárias | 3 artigos/capítulos lidos na íntegra (§10) |
+| Fontes primárias | 4 artigos/capítulos lidos na íntegra (§10) |
 | Última revisão | 2026-07 |
-| Status | levantamento fechado; a camada genética está pendente (§7.3) |
+| Status | levantamento fechado, camada genética incorporada (§7.3) |
 
 ## Convenção de rótulos
 
@@ -428,6 +428,7 @@ carecendo do distributivo. Rejeitado por Harðarson (1987a) e Tichy (1993).
 | PIA → proto-indo-tocário | 800–1000 anos | Kloekhorst & Pronk 2019 |
 | proto-indo-tocário → PIE "core" | provavelmente só séculos | Peyrot 2019: "not overwhelming" |
 | proto-anatólio → divergência interna | início por meados do 3º mil. AEC; possivelmente fim do 4º | Melchert |
+| cisão indo-anatólia (datação linguística) | **4300–3500 AEC** | Lazaridis et al. 2025, resumindo a literatura |
 
 ### 7.2 Datas absolutas e lugar
 
@@ -444,7 +445,71 @@ Melchert rejeita as pátrias anatólias de Renfrew (1987) e Gamkrelidze & Ivanov
 (1995): para ele as línguas indo-europeias da Ásia Menor são **intrusivas**,
 vindas de algum ponto mais ao norte na Europa.
 
-### 7.3 O substrato já previsto
+### 7.3 A camada genética — Lazaridis et al. 2025
+
+**ATESTADO.** 435 indivíduos (367 novos, 68 com qualidade de dado melhorada),
+6400–2000 AEC; 803 bibliotecas de DNA antigo e 198 novas datações de
+radiocarbono.
+
+O estudo identifica **três clinos genéticos** eneolíticos, todos divergindo da
+área delimitada pelo Baixo Don (Krivyansky), Baixo Volga (Berezhnovka-2) e
+Cáucaso do Norte (Progress-2, Vonyuchka-1, Sharakhalsun):
+
+| Clino | Formação | Resultado |
+|---|---|---|
+| **Cáucaso–Baixo Volga (CLV)** | extremo sul neolítico caucasiano ↔ extremo norte em Berezhnovka, no Baixo Volga; fluxo gênico bidirecional | populações intermediárias: Maikop (Cáucaso do Norte) e Remontnoye (estepe). Ordem do clino: Aknashen–Maikop–Remontnoye–Berezhnovka |
+| **Volga** | povos CLV misturam-se com populações rio acima de ancestralidade EHG | grupos hipervariáveis, entre eles **Khvalynsk** (4500–4350 AEC), com três faixas de mistura: Khi 76,8 %, Kmed 57,3 %, Klo 41,2 % de ancestralidade BPgroup |
+| **Dnipro** | povos CLV movem-se para oeste, misturando-se com UNHG ao longo do Dnipro e do Don | grupos **Serednii Stih**, de quem descendem os ancestrais Yamnaya |
+
+Cronologia resultante: os ancestrais dos Yamnaya se formam por volta de
+**4000 AEC** e crescem rapidamente **depois de 3750–3350 AEC**.
+
+**A proposta central**, nas palavras dos autores:
+
+> *"We therefore propose that the final unity of the speakers of
+> 'proto-Indo-Anatolian', the language ancestral to both Anatolian and
+> Indo-European people, occurred in CLV people some time between 4400 BC and
+> 4000 BC."*
+
+Os dois vetores de transmissão:
+
+- **Para os Yamnaya:** os CLV contribuíram com cerca de **quatro quintos** da
+  ancestralidade Yamnaya. Os autores identificam os Yamnaya como os
+  proto-indo-europeus (isto é, o nó não-anatólio), com a migração Afanasievo
+  levando plausivelmente as línguas ancestrais do tocário — a segunda cisão,
+  pós-anatólia. Confere com §2.2.
+- **Para a Anatólia:** entrando na Anatólia **provavelmente pelo leste**, os CLV
+  contribuíram com **pelo menos um décimo** da ancestralidade dos anatólios
+  centrais da Idade do Bronze, que falavam hitita. A proposta é uma migração
+  para o sul por volta de **4400 AEC**, um milênio antes dos Yamnaya, com
+  mistura ao longo do caminho; as misturas teriam começado por 4300–4000 AEC e
+  são datadas em **4382 ± 63 AEC**.
+
+Os anatólios centrais das fases Bronze Antigo (2750–2500 AEC), Colônia Assíria
+(2000–1750 AEC) e Hitita Antigo (1750–1500 AEC) são anômalos na paisagem
+anatólia por combinarem ancestralidade CLV com mesopotâmica (Çayönü). O aporte
+CLV varia conforme a fonte modelada: 10,8 ± 1,7 % de BPgroup, 19,0 ± 2,4 % de
+Remontnoye, ou 33,5 ± 4,8 % de Armenia_C.
+
+Há ainda um marcador de cromossomo Y coerente: o haplogrupo **R-V1636**,
+presente no indivíduo de Remontnoye, nos dois de Progress-2, em dois de três de
+Berezhnovka e em onze indivíduos do Volga, reaparece esporadicamente na Ásia
+Ocidental — Arslantepe (Anatólia oriental) e Kalavan (Armênia) — no Bronze
+Antigo.
+
+**Os autores registram a tensão** entre a expansão Yamnaya e a cisão anatólia,
+que é linguisticamente muito anterior: *"the timing of the Yamnaya expansion is
+in tension with the much-earlier linguistic split of Anatolian languages that
+form an outgroup to those of the inner Indo-European Core."* É por isso que a
+rota anatólia proposta é a migração de ~4400 AEC, e não uma derivação dos
+Yamnaya.
+
+Nota terminológica relevante: o artigo **adota explicitamente a terminologia
+indo-anatólia** — *"Here we use a newer terminology that denotes the entire
+group as Indo-Anatolian and restricts Indo-European to the related
+non-Anatolian language families"* — alinhando-se a §1 deste documento.
+
+### 7.4 O substrato já previsto
 
 Ponto de alto valor para o projeto. Kloekhorst & Pronk registram:
 
@@ -460,15 +525,50 @@ e/ou a leste**.
 estepe, e que sofreu influência de substrato ao chegar.** O projeto não precisa
 inventar nem a chegada nem o substrato: precisa apenas preencher a origem.
 
-### 7.4 Pendência
+### 7.5 O que a genética explicitamente **não** decide
 
-A camada genética (Lazaridis et al. 2025, *Nature*, e o clino Cáucaso–Baixo
-Volga) **não** está incorporada: o PDF disponível era apenas o *Author
-Correction* de 20/02/2025 — uma errata de afiliação, sem conteúdo. Os números
-que circularam em busca (população CLV entre 4400 e 4000 AEC; ~45–50 %
-neolítico caucasiano, ~30–35 % EHG, ~15–25 % adicional) **não foram
-verificados na fonte** e não devem ser usados como cânone até que o artigo
-seja lido.
+A seção mais útil do artigo para este projeto é onde ele declara os próprios
+limites. Três declarações, textuais:
+
+**1. A origem do BPgroup não é resolvível com os dados.** A ancestralidade rio
+acima (EHG) tem antecedentes bem estabelecidos no leste europeu; a ancestralidade
+rio abaixo (Berezhnovka) **não tem**. Os autores dão três razões: não há
+indivíduos sequenciados anteriores do Baixo Volga; os povos de Berezhnovka são
+distintos dos grupos precedentes; e o BPgroup não pode ser modelado como um
+clado com grupos contemporâneos ou anteriores (P < 0,001). A frase que resume:
+
+> *"Whatever BPgroup's origins are, we can use it as one proximate source for
+> the Volga cline…"*
+
+O BPgroup aparece ainda deslocado em direção a Afontova Gora-3 (Paleolítico
+Superior siberiano), caçadores-coletores da Sibéria Ocidental e Tutkaul (Ásia
+Central) — a componente "relacionada a siberianos", que os autores mostram ser
+necessária e insuficiente ao mesmo tempo.
+
+**2. Língua pode transferir-se sem genes.** Ao ligar Yamnaya e anatólios pela
+ancestralidade CLV, os autores ressalvam:
+
+> *"…which must stem from proto-Indo-Anatolian language speakers, **except for
+> the possibility of an early transfer of language without admixture**."*
+
+**3. Quem primeiro falou a língua é indeterminado.**
+
+> *"Our reconstruction, based on genetics, has traced both groups to the CLV
+> people north of the Caucasus, but **it cannot discern who first spoke
+> pre-Indo-Anatolian languages**."*
+
+Ver §9.6 para o que isso libera no projeto.
+
+### 7.6 Correção de registro
+
+A versão anterior deste documento marcava a camada genética como pendente e
+listava, como não verificados, números de composição do CLV que circulavam em
+resumos de busca: ~45–50 % neolítico caucasiano, ~30–35 % EHG, ~15–25 %
+adicional. Com o artigo em mãos: **esses percentuais não constam do texto**.
+São derivados de comentário secundário, não da fonte. Ficam descartados.
+
+Os números que **estão** no artigo são os de §7.3, e devem ser os únicos
+citados.
 
 ---
 
@@ -552,8 +652,28 @@ O argumento de Kloekhorst (§5.2) estabelece que **o PIE clássico se afastou de
 um sistema mais estranho**: duração, glotalização, uvulares. O sistema esquisito
 é o *antigo*. Uma língua vinda de fora não precisa, portanto, inventar
 estranheza alguma — precisa apenas **ser** aquilo que a literatura já
-reconstrói como anterior. E §7.3 mostra que a própria literatura já postula uma
+reconstrói como anterior. E §7.4 mostra que a própria literatura já postula uma
 chegada de fora à estepe, com substrato na chegada.
+
+### 9.6 A janela deixada em aberto pela genética
+
+§7.5 registra três declarações de limite feitas pelos próprios geneticistas.
+Juntas, elas delimitam com precisão o espaço em que a premissa do projeto opera
+**sem contradizer nenhum dado**:
+
+| Declaração | Consequência para o projeto |
+|---|---|
+| A origem do BPgroup do Baixo Volga não é resolvível: sem sequenciados anteriores no local, distintos dos precedentes, não modeláveis como clado com nenhum grupo contemporâneo ou anterior | Há um ponto de entrada genuíno no registro. A população aparece; sua procedência é declarada indeterminada pelos autores. |
+| *"except for the possibility of an early transfer of language without admixture"* | A transmissão linguística **sem** rastro genético é explicitamente admitida como possível pelos próprios autores. É a rota recomendada. |
+| *"it cannot discern who first spoke pre-Indo-Anatolian languages"* | A identidade dos primeiros falantes é declarada fora do alcance do método. |
+
+**Consequência de projeto.** A chegada deve ser posicionada **antes de 4400
+AEC** — a data em que os CLV começam a se mover para o sul e o relógio da
+unidade indo-anatólia começa a correr. Janela recomendada: **5000–4600 AEC**,
+no Baixo Volga, com o grupo dissolvendo-se geneticamente e sobrevivendo apenas
+na língua. Isso deixa o registro de DNA antigo intacto — nada a explicar — e
+faz da população local da estepe o substrato, que §7.4 mostra já ser exigido
+pela reconstrução linguística sob outro nome.
 
 ---
 
@@ -572,19 +692,20 @@ chegada de fora à estepe, com substrato na chegada.
 3. **Kloekhorst, A.** 2016. "The Anatolian stop system and the Indo-Hittite
    hypothesis". *Indogermanische Forschungen* 121, 213–247.
    — o sistema de oclusivas e o argumento de direção.
+4. **Lazaridis, I., Patterson, N., Anthony, D., Vyazov, L. et al.** 2025. "The
+   genetic origin of the Indo-Europeans". *Nature*,
+   doi:10.1038/s41586-024-08531-5 (recebido 16/04/2024, aceito 17/12/2024).
+   — os três clinos eneolíticos, a proposta do PIA nos povos CLV entre 4400 e
+   4000 AEC, a rota anatólia, e as declarações de limite de §7.5.
+   Errata: doi:10.1038/s41586-025-08789-3 (afiliação, sem efeito sobre o
+   conteúdo).
 
 **Lida como resenha:**
 
-4. **Rieken, E.** Resenha de Kloekhorst, A. 2014, *Accent in Hittite: A Study in
+5. **Rieken, E.** Resenha de Kloekhorst, A. 2014, *Accent in Hittite: A Study in
    Plene Spelling, Consonant Gradation, Clitics, and Metrics* (StBoT 56).
    Wiesbaden: Harrassowitz. *BSOAS*, doi:10.1017/S0041977X15000737.
    — acento e quantidade vocálica (§5.4), com as ressalvas da resenhista.
-
-**Não disponível:**
-
-5. **Lazaridis, I. et al.** 2025. "The genetic origin of the Indo-Europeans".
-   *Nature*, doi:10.1038/s41586-024-08531-5. — **pendente**; só se obteve o
-   *Author Correction* (doi:10.1038/s41586-025-08789-3), sem conteúdo.
 
 **Citadas de segunda mão** (via as fontes acima, não verificadas no original):
 Adiego 2001, 2016 · Anthony & Ringe 2015 · Blevins 2004 · De Vaan 2019 ·
@@ -600,7 +721,7 @@ Widmer 2005.
 
 ## Apêndice: notas de extração
 
-Os PDFs foram lidos por extração de texto (`pdfminer.six`), não por OCR. Duas
+Os PDFs foram lidos por extração de texto (`pdfminer.six`), não por OCR. Três
 limitações conhecidas:
 
 1. **Layout de duas colunas.** O item 15 da lista de §3 saiu com a linha
@@ -609,5 +730,12 @@ limitações conhecidas:
    como sequências de caracteres embaralhadas. Os sistemas foram reconstruídos
    a partir do texto corrido e das tabelas em prosa, que são inequívocos, mas
    quem for conferir deve olhar os diagramas originais nas pp. 234–237.
+3. **Extensão do Lazaridis et al. 2025.** O PDF tem 228 páginas (artigo +
+   material suplementar). §7.3 e §7.5 se baseiam nas **16 primeiras** —
+   resumo, resultados, discussão e a seção "The origin of Indo-Anatolian
+   languages". As legendas de figura saíram concatenadas e não foram usadas.
+   O material suplementar (seções 1–2, tabelas suplementares, dados
+   estendidos) **não foi lido**: quem precisar dos modelos qpAdm completos,
+   das datações individuais ou da lista de sítios deve ir às páginas 17+.
 
 Nenhuma outra passagem citada neste documento depende de trecho ambíguo.
