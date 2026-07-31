@@ -8,6 +8,13 @@ tipológicas, e a documentação do projeto **Proto-Orogeniano**.
 | Documento | Conteúdo |
 |---|---|
 | [`docs/01_PROTO_INDO_ANATOLIAN.md`](docs/01_PROTO_INDO_ANATOLIAN.md) | Estado da arte sobre o proto-indo-anatólio — o alvo de reconstrução contra o qual o Proto-Orogeniano é desenhado. Inclui a tabela de restrições de projeto (§9). |
+| [`docs/02_PROTO_OROGENIAN_PHONOLOGY.md`](docs/02_PROTO_OROGENIAN_PHONOLOGY.md) | O inventário fonêmico e a fonotática do Proto-Orogeniano. Resposta ao trabalho da lição Phonology 2 do curso. |
+
+## Ferramentas
+
+| Diretório | Conteúdo |
+|---|---|
+| [`tools/po-phonology/`](tools/po-phonology/) | Inventário fonêmico e gerador de palavras do Proto-Orogeniano (Python 3, sem dependências). |
 
 ## Dados
 
