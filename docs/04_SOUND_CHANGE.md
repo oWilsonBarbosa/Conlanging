@@ -2,14 +2,14 @@
 
 **Conlangs University · Phonology 4 — "Sound change"**
 
-> **Em andamento.** Este documento começou com a montagem do banco de provas e
-> a primeira medição. A derivação ordenada ainda não foi escrita.
+> **Em andamento.** Banco de provas, medição, ordenação e a tarefa 3 do
+> exercício estão feitos. Faltam as leis vocálicas e a tarefa 4.
 
 | | |
 |---|---|
 | Lição | Phonology 4 (Jasper, maio 2020) — a mais longa do curso |
 | Ferramenta | [`tools/po-derivation/`](../tools/po-derivation/) |
-| Estado | §1 e §2 fechados; §3 em diante pendente |
+| Estado | §1–§5 fechados; leis vocálicas e tarefa 4 pendentes |
 
 ---
 
@@ -164,20 +164,144 @@ lição as descreve sem saber que estava descrevendo o nosso caso:
 
 Isto é a cadeia de arraste de Kloekhorst, item por item: degeminação de
 `*/tː/` e vozeamento de `*/t/` entre vogais. **As duas são lenições de
-manual, no ambiente onde mais comumente ocorrem.** A derivação
-Proto-Orogeniano → PIE clássico não precisa de nenhuma mudança exótica — só
-das duas mais banais da taxonomia, na ordem certa.
+manual, no ambiente onde mais comumente ocorrem.**
+
+---
+
+## 4 | A derivação, ordenada
+
+Cinco regras levam do Proto-Orogeniano ao PIE clássico. Implementadas em
+[`derive.py`](../tools/po-derivation/derive.py).
+
+| # | regra | categoria da lição |
+|---|---|---|
+| **U1** | debucalização das uvulares não-fortis → `*h₁` | lenição · abertura (debucalização) |
+| **K1** | vozeamento de lenis e glotalizadas | lenição · **sonorização** |
+| **K2** | degeminação das oclusivas fortis | lenição · **abertura** |
+| **K4** | degeminação de sibilante e sonorantes | lenição · abertura — **com fusão** |
+| **K3** | espirantização das uvulares fortis → `*h₂ *h₃` | lenição · abertura (espirantização) |
+
+**A perna inteira é lenição.** Não há uma única fortição, assimilação ou
+metátese na derivação: são cinco pontos da mesma escala de abertura e
+sonorização que a lição descreve. Uma língua que atravessa alguns séculos de
+contato e sai do outro lado tendo apenas *enfraquecido* é exatamente o que se
+espera — e é o oposto de uma reconstrução que precisa de mudanças exóticas para
+funcionar.
+
+### 4.1 A ordem é forçada — e dá para medir
+
+A lição avisa que *"the order may be important!"*. Aqui isso foi medido, não
+afirmado. Rodando as 690 formas proto-orogenianas utilizáveis nas duas ordens:
+
+| ordem | saídas distintas | fusões | contrastes perdidos |
+|---|---|---|---|
+| **vozeamento antes da degeminação** | **688** | **0** | **0** |
+| degeminação antes do vozeamento | 644 | 44 | 44 |
+
+A ordem errada destrói **44 contrastes**. O mecanismo é visível nos exemplos:
+
+```
+*bʰed-   ←  /peʔt/  e  /pːeʔt/
+*bʰel-   ←  /pel/   e  /pːel/
+```
+
+Se `/tː/` degemina antes de `/t/` vozear, os dois viram `/t/` e se fundem;
+depois o vozeamento leva ambos ao mesmo lugar. O contraste triplo vira duplo.
+Se o vozeamento vem primeiro, `/t/` sai de cena virando `[d]` e a degeminação
+encontra o espaço vazio.
+
+É a *pull chain* de Kloekhorst, e agora ela não é uma metáfora: é uma
+ordenação com custo numérico.
+
+### 4.2 U1 antes de K1 — argumentada, não medida
+
+As uvulares não-fortis têm de sair **antes** do vozeamento. Se ainda
+estivessem lá, K1 as vozearia para `[ɢ]`, e `*h₁` carregaria efeito de voz.
+Não carrega: `*h₁` é a laringal incolor e surda. Ela saiu cedo.
+
+Este argumento é explanatório, não numérico — a métrica não o testa.
+
+### 4.3 O que é livre
+
+**K4 em relação a K1 e K2** e **K3 em relação a K2** são ordem-indiferentes: a
+degeminação de sibilante e sonorantes não toca as oclusivas, e a coluna uvular
+já foi isolada por U1. Distinguir o que é forçado do que é livre é metade do
+exercício.
+
+### 4.4 A assimetria que cai de graça
+
+K4 é **a única regra da cadeia que é pura fusão**. E é isso que explica um
+fato do PIE que nunca tínhamos justificado:
+
+| classe | o que acontece com a duração | resultado no PIE |
+|---|---|---|
+| oclusivas | é **recodificada** como voz (K1 + K2) | **três** séries |
+| sibilante, sonorantes | é simplesmente **perdida** (K4) | **um** `*s`, **um** `*m`… |
+
+O PIE tem três séries de oclusivas e uma só sibilante porque as oclusivas
+tinham para onde recodificar o contraste e as sibilantes não.
+
+**Custo:** essa fusão é **irrecuperável por inversão**. De um `*s` do PIE não
+há como saber se o Proto-Orogeniano tinha `/s/` ou `/sː/`. O banco de provas
+nunca gera `/sː/`, `/mː/` etc. a partir do PIE — a duração nas sonorantes está
+no inventário (documento 02 §3.3) mas fora do alcance deste corpus.
+
+---
+
+## 5 | Tarefa 3 do exercício
+
+> *"Have a look at the allophones you decided for on your conlang and in which
+> environments they appear. Can you classify them under any of the categories
+> above?"*
+
+As cinco regras sincrônicas do documento 03 §4, classificadas:
+
+| regra | ambiente | categoria |
+|---|---|---|
+| 4.1 silabificação de sonorantes | `[+cons] _ {[+cons], #}` | lenição · sonorização (**vocalização**) + **anaptixe** para o schwa |
+| 4.2 `/j w/` → `[i u]` | idem — é a mesma regra | vocalização |
+| 4.3 assibilação | entre coronais | epêntese · **excrescência** |
+| 4.4 vozeamento das lenis | entre núcleos | lenição · **sonorização**, passo 1 |
+| 4.5 assimilação de lugar nas nasais | antes de oclusiva | **assimilação regressiva** |
+
+Todas as cinco caem em categorias da lição, o que é um bom sinal: nenhuma
+precisou de uma categoria inventada.
+
+Três convergências valem registro, porque a lição dá os nossos casos como
+exemplos dela própria:
+
+- **Vocalização.** A lição fecha a escala da sonorização com a
+  l-vocalização — *"[l] vocalises into [i] or [w]"*. As nossas 4.1 e 4.2 são
+  exatamente isso, e a 4.2 explica por que o PIE tem `*i` e `*u` sem tê-los no
+  inventário.
+- **O schwa.** A lição diz que a vogal de apoio *"is not inserted at the end
+  but slightly before, **especially in the case of sonorants**"*, e dá
+  proto-germânico `*akraz` > inglês `acre` `[-ər]`. É estruturalmente idêntico
+  ao `*R̥ > /əR/` de Kloekhorst & Mens que o documento 03 §4.1 adotou.
+- **Excrescência.** Definida na lição como consoante inserida para **ligar um
+  aglomerado**. A nossa assibilação insere `/s/` entre duas oclusivas
+  coronais — o caso exato.
+
+### O elo entre as duas colunas
+
+A regra sincrônica **4.4** e a diacrônica **K1** são o mesmo vozeamento. A
+diferença é o ambiente: 4.4 vale entre núcleos, K1 vale em toda posição.
+
+A transição, então, não inventa nada. Ela **generaliza** uma alofonia que já
+existia, e a generalização se torna possível justamente quando a duração deixa
+de carregar o contraste. É por isso que o documento 03 §4.4 diz que a série
+sonora do PIE já existe no Proto-Orogeniano: ela existe como alofone, e a
+mudança só lhe tira a condição.
 
 ---
 
 ## O que falta
 
-1. **Ordenar as regras** e escrever a derivação completa.
-2. Classificar as regras sincrônicas do documento 03 §4 nas categorias da
-   lição — tarefa 3 do exercício.
-3. As duas leis que produzem `*o`: *Abtönung* e `*-ē̆m` > `*-ō̆m`. **Obstáculo
+1. As duas leis que produzem `*o`: *Abtönung* e `*-ē̆m` > `*-ō̆m`. **Obstáculo
    conhecido:** as raízes do dataset são citadas sem acento, e a *Abtönung* é
    condicionada por acento. Sem dado acentual, essa regra não é testável neste
    corpus.
-4. Tarefa 4 do exercício: dez palavras, dez mudanças aleatórias, e observar o
+2. Tarefa 4 do exercício: dez palavras, dez mudanças aleatórias, e observar o
    que funde.
+3. Tarefas 1 e 2 do exercício, que são drills genéricos sobre mudanças
+   atestadas — sem relação com a conlang, como o exercício da Phonology 1.

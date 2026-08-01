@@ -10,6 +10,8 @@ Especificação em [`docs/04_SOUND_CHANGE.md`](../../docs/04_SOUND_CHANGE.md).
 ```bash
 python3 invert.py             # todas as teorias, resumo comparativo
 python3 invert.py baseline    # uma teoria, com violações e colisões
+python3 derive.py             # deriva e compara as duas ordens de regras
+python3 derive.py --sample    # derivações passo a passo
 ```
 
 ## Arquivos
@@ -18,6 +20,7 @@ python3 invert.py baseline    # uma teoria, com violações e colisões
 |---|---|
 | `theories.py` | as variantes como **configuração**: correspondências PIE ↔ PO. Trocar de teoria é trocar um dicionário, não bifurcar o código |
 | `invert.py` | segmentação das raízes, inversão e as três medidas |
+| `derive.py` | a derivação ordenada PO → PIE clássico, e o teste de que a ordem importa |
 
 ## As três medidas, e por que não são circulares
 
