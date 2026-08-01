@@ -29,15 +29,12 @@ distintivo nesta língua; os demais ficam de fora, com o motivo:
 | grupo | usados | descartados, e por quê |
 |---|---|---|
 | classe maior | `[±cons]` `[±syll]` `[±son]` | — |
-| modo | `[±cont]` `[±nas]` `[±lat]` `[±DR]` | — |
+| modo | `[±cont]` `[±nas]` `[±lat]` | `[±DR]`: não há africada — ver §4.3 |
 | laríngeos | `[±voice]` `[±c.g.]` | `[±s.g.]`: não há aspiradas nem murmúrio |
 | lugar | `[±ant]` `[±cor]` `[±distr]` `[±front]` `[±back]` `[±high]` `[±low]` `[±round]` | `[±strid]` só para separar `/s/` de outra fricativa — e não há outra |
 | prosódia | `[±stress]` `[±long]` | — |
 | róticos | — | `[±trill]` `[±tap]`: só há um rótico, `/r/` |
 | vogais | — | `[±tense]` `[±ATR]`: uma só qualidade vocálica |
-
-`[±DR]` entra apesar de não haver africada no inventário: a regra de
-assibilação (§4.3) **cria** uma, e o traço é preciso para descrever a saída.
 
 `[±voice]` entra mas é **inerte nas obstruintes** — todas são `[−voice]`. Ele
 ganha vida só na alofonia (§4.4), e é essa alofonia que a lição 4 vai
@@ -64,6 +61,36 @@ previsível, e a história o preenche.
 glotal — precisamente a nossa série pré-glotalizada e o `/ʔ/` em que as
 uvulares não-fortis vão colapsar.
 
+### O traço que carrega o contraste é justamente o disputado
+
+Convém encarar isto de frente, porque a matriz inteira depende da escolha. Há
+**três** análises rivais do contraste fortis/lenis, e cada uma põe o peso num
+traço diferente:
+
+| análise | traço | quem |
+|---|---|---|
+| **duração** `/tː/` vs. `/t/` | `[±long]` | Kloekhorst; Melchert 1994; Vertegaal 2019–20 (para o lúvico) |
+| voz `/t/` vs. `/d/` | `[±voice]` | Simon 2020; a visão tradicional dos manuais |
+| aspiração `/tʰ/` vs. `/d/` | `[±s.g.]` | Patri 2009, 2019 |
+
+E há uma segunda disputa, sobre **em que nó** a duração existe:
+
+| posição | quem |
+|---|---|
+| só no hitita | Yates 2019 |
+| já no proto-anatólio | Kloekhorst; apoiado por Vertegaal, que acha o contraste também no lúvico |
+| já no PIH | Kloekhorst 2016 — rejeitado por Kümmel 2019 |
+
+Kloekhorst (2021) responde a Simon e a Patri item por item e conclui que a
+leitura por duração *"remains unsurpassed"*. Nós adotamos a duração **no nó do
+PIH**, que é a posição mais exposta das três: Yates a negaria até no
+proto-anatólio.
+
+Isso não muda nada na execução — a escolha já estava declarada no documento 01
+§2 — mas o leitor deve saber o tamanho da aposta. Se a leitura por aspiração
+estivesse certa, a matriz trocaria `[±long]` por `[±s.g.]` e boa parte de §4
+seria reescrita.
+
 ---
 
 ## 2 | A matriz
@@ -84,7 +111,7 @@ Valor **`0`** = impossível ou irrelevante, como na lição.
 | **uvular** | − | − | 0 | − | + | − | **+** | − |
 | labiouvular | − | − | 0 | − | + | − | **+** | **+** |
 
-Todas: `[+cons −syll −son −cont −DR −nas −lat −voice −s.g.]`, mais o ajuste
+Todas: `[+cons −syll −son −cont −nas −lat −voice −s.g.]`, mais o ajuste
 laríngeo de §1.
 
 Repare que **as uvulares são as únicas obstruintes `[+low]`**. É esse traço
@@ -168,6 +195,33 @@ Uma sonorante vira núcleo quando a sílaba não tem vogal:
 Produz `[m̩ n̩ r̩ l̩]`, e é o que sustenta formas como `/sr̩ˈkːl̩lpː/` e
 `/ˈpm̩qːenqʷ/`, palavras inteiras sem vogal plena.
 
+**Mas a realização provavelmente tem schwa.** Kloekhorst & Mens (2021) mostram
+que o hitita distingue `/ə/` de `/a/` de modo etimologicamente determinado —
+grafia consistente `CaR` reflete PIE `*CR̥` e `*CeR[C]`, alternância `CaR` ~
+`Ca-aR` reflete `*CoR` — e o par quase mínimo `/ˈpərsːtsi/` 'ele foge' <
+`*bʰérs-ti` contra `/paˈpːarsːtsi/` 'ele asperge' < `*pV-pórs-ti` prova que a
+distinção é fonêmica. A conclusão deles: **PIE `*R̥` > hit. `/əR/`**, com
+exemplos como `ḫappar` `/χā́pːər/` < `*h₃ép-r̥` e `ḫalzai-` `/χəltsái-/` <
+`*h₂l̥toi-`.
+
+Duas leituras, e a escolha muda o inventário fonético:
+
+| leitura | consequência |
+|---|---|
+| **(a)** a vocalização da sonorante *é* um schwa: `[əR]` | `[ə]` entra no inventário fonético como alofone; nada muda no fonêmico |
+| (b) o PIH tinha `[R̩]` puro e o anatólio inseriu o schwa | `[ə]` é inovação anatólia e não nos toca |
+
+Adotamos **(a)**, porque Kloekhorst & Mens tratam o schwa como a própria
+vocalização (*"cross-linguistically such vowels are very often centralized
+ones"*), e porque ela não custa nenhum fonema: `[ə]` é o que
+`[+syll]` soa numa sonorante. A regra fica, então, com realização explícita:
+
+```
+[+son −syll] → [ə] + [+son]   /  [+cons] _ {[+cons], #}
+```
+
+Registrado como escolha, não como fato: (b) continua disponível.
+
 ### 4.2 As altas
 
 A mesma regra, aplicada aos glides, produz as duas vogais altas:
@@ -198,7 +252,31 @@ segmentos coronais adjacentes; `/tː/` é **um** segmento, monofonemático
 (documento 01 §5.3). A regra simplesmente não se aplica — a exceção cai fora
 de graça, o que é um bom sinal de que a análise monofonemática está certa.
 
-A saída `[ts]` é `[+DR]`, e é o único contexto em que o traço aparece.
+**A saída é um aglomerado, não uma africada** — e isso é uma correção. A
+primeira versão desta seção dizia que `[ts]` era `[+DR]`. Kloekhorst (2019)
+abandonou explicitamente essa análise para o hitita: *"I no longer believe that
+Hittite possessed a monophonemic affricate /ts/. Instead, I think that z in all
+its occurrences represents a consonantal cluster of dental stop + sibilant."*
+
+A regra de epêntese acima já produz exatamente isso — um `/s/` **inserido como
+segmento próprio**, entre duas oclusivas. Nada a consertar na regra; só na
+descrição. E `[±DR]` sai do conjunto de traços (§1), porque nada na língua o
+usa.
+
+O mesmo artigo dá um reforço independente do sistema de duração: Kloekhorst
+distingue **quatro** aglomerados no hitita intervocálico, pela duração de cada
+membro separadamente —
+
+| aglomerado | grafia |
+|---|---|
+| `/t/` + `/s/` | `Vz-zV` |
+| `/t/` + `/sː/` | `Vz-šV` |
+| `/tː/` + `/s/` | `Vz-zV` |
+| `/tː/` + `/sː/` | `Vt-šV` |
+
+Quatro combinações em três grafias. Que a duração seja contrastiva
+*independentemente em cada membro de um aglomerado* é difícil de explicar sob
+uma análise por voz ou por aspiração.
 
 ### 4.4 Vozeamento alofônico das lenis
 
@@ -235,9 +313,10 @@ necessárias porque o inventário tem sete lugares, e dois traços não os separ
 Fonemas de §2, mais o que as regras acima produzem:
 
 ```
-[m̩] [n̩] [r̩] [l̩]      núcleos sonorantes                  (4.1)
+[ə]                      vocalização das sonorantes          (4.1)
+[m̩] [n̩] [r̩] [l̩]      as sonorantes nessa posição         (4.1)
 [i] [u]                  glides silábicos                    (4.2)
-[ts]                     africada de assibilação             (4.3)
+[t.s]                    aglomerado de assibilação           (4.3)
 [b] [d] [ɟ] [ɡ] [ɡʷ] [ɢ] [ɢʷ]   lenis vozeadas               (4.4)
 [ɱ] [ɲ] [ŋ] [ɴ]          nasais assimiladas                  (4.5)
 ```

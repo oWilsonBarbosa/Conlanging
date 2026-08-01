@@ -4,6 +4,10 @@ Conjunto de traços conforme Conlangs University, Phonology 3 (`course/10`):
 major class, manner, laryngeal, place, prosody. Valor `0` = impossível ou
 irrelevante para a distinção, como na lição.
 
+`[±delayed release]` foi retirado: a saída da assibilação é um **aglomerado**
+de oclusiva + sibilante, não uma africada monofonemática (Kloekhorst 2019).
+Sem africadas, o traço não faz trabalho nenhum.
+
 O ponto crítico do sistema: as três séries de obstruintes se distinguem **sem
 `[±voice]`**, por `[±long]` e `[±constricted glottis]`.
 
@@ -36,7 +40,7 @@ SERIES_LARYNGEAL = {
 # A célula [+long +cg] fica VAZIA no Proto-Orogeniano. É ela que o anatólio
 # preenche depois, por fusão de *T + h₁ (Kloekhorst 2022).
 
-STOP = dict(cons=+1, syll=-1, son=-1, cont=-1, dr=-1, nas=-1, lat=-1, stress=0)
+STOP = dict(cons=+1, syll=-1, son=-1, cont=-1, nas=-1, lat=-1, stress=0)
 
 
 def _stop(place, series):
@@ -55,7 +59,7 @@ for _pl in PLACE:
             MATRIX[_seg] = _stop(_pl, _ser)
 
 for _seg, _lng in (("s", -1), ("sː", +1)):          # sibilante
-    MATRIX[_seg] = dict(cons=+1, syll=-1, son=-1, cont=+1, dr=-1, nas=-1,
+    MATRIX[_seg] = dict(cons=+1, syll=-1, son=-1, cont=+1, nas=-1,
                         lat=-1, voice=-1, sg=-1, cg=-1, long=_lng, strid=+1,
                         stress=0, **PLACE["dental"])
 
@@ -63,18 +67,18 @@ for _seg in NASALS + LIQUIDS:
     _base = _seg.rstrip("ː")
     MATRIX[_seg] = dict(
         cons=+1, syll=-1, son=+1, cont=(-1 if _base in "mn" else +1),
-        dr=-1, nas=(+1 if _base in "mn" else -1),
+        nas=(+1 if _base in "mn" else -1),
         lat=(+1 if _base == "l" else -1), voice=+1, sg=-1, cg=-1,
         long=(+1 if _seg.endswith("ː") else -1), stress=0,
         **PLACE["labial" if _base == "m" else "dental"])
 
-MATRIX["j"] = dict(cons=-1, syll=-1, son=+1, cont=+1, dr=-1, nas=-1, lat=-1,
+MATRIX["j"] = dict(cons=-1, syll=-1, son=+1, cont=+1, nas=-1, lat=-1,
                    voice=+1, sg=-1, cg=-1, long=-1, stress=0, **PLACE["palatal"])
-MATRIX["w"] = dict(cons=-1, syll=-1, son=+1, cont=+1, dr=-1, nas=-1, lat=-1,
+MATRIX["w"] = dict(cons=-1, syll=-1, son=+1, cont=+1, nas=-1, lat=-1,
                    voice=+1, sg=-1, cg=-1, long=-1, stress=0, **PLACE["labiovelar"])
 
 for _v, _lng in ((VOWELS[0], -1), (LONG_VOWELS[0], +1)):
-    MATRIX[_v] = dict(cons=-1, syll=+1, son=+1, cont=+1, dr=-1, nas=-1, lat=-1,
+    MATRIX[_v] = dict(cons=-1, syll=+1, son=+1, cont=+1, nas=-1, lat=-1,
                       voice=+1, sg=-1, cg=-1, long=_lng, stress=0,
                       ant=0, cor=-1, distr=0,
                       front=+1, back=-1, high=-1, low=-1, round=-1)

@@ -418,10 +418,35 @@ Nota de notação: Kloekhorst escreveu `/tːʔ/` em 2010 e 2013, e passou a `/t'
 em 2022; para o PIH, em 2016, usa `*/ʔt/` — **pré**-glotalizada. Este projeto
 segue a notação de 2016, que é a do estágio que nos interessa.
 
-**Contestação (registrar sempre).** Kümmel (2019: 115–130, no mesmo volume)
-prefere um sistema de surda / sonora / **sonora implosiva** a surda fortis /
-lenis / pré-glotalizada. A tipologia das mudanças sonoras, para ele, favorece o
-primeiro.
+**Contestação — o mapa completo.** A tese tem oposição em dois eixos, e o
+projeto adota a posição mais exposta dos dois. Convém ter isto à mão.
+
+*Qual é a natureza do contraste:*
+
+| análise | quem |
+|---|---|
+| **duração** `/tː/` vs. `/t/` | Kloekhorst; Melchert 1994; Vertegaal 2019–20 (lúvico) |
+| voz `/t/` vs. `/d/` | Simon 2020; a visão tradicional dos manuais |
+| aspiração `/tʰ/` vs. `/d/` | Patri 2009, 2019 |
+
+*Em que nó a duração existe:*
+
+| posição | quem |
+|---|---|
+| só no hitita | Yates 2019 |
+| já no proto-anatólio | Kloekhorst; reforçado por Vertegaal, que acha o contraste também no lúvico |
+| **já no PIH** ← nossa posição | Kloekhorst 2016 — rejeitado por Kümmel 2019 |
+
+Kümmel (2019: 115–130) prefere surda / sonora / **sonora implosiva** a surda
+fortis / lenis / pré-glotalizada; para ele a tipologia das mudanças sonoras
+favorece o primeiro. Simon (2020) é uma refutação direta de Kloekhorst 2016 —
+o artigo em que este documento se apoia. Kloekhorst (2021) responde a Simon e
+a Patri item por item e conclui que a leitura por duração *"remains
+unsurpassed"*.
+
+Registrar isto não enfraquece o projeto: a escolha já estava declarada em §2.
+Mas a versão anterior deste documento nomeava só Kümmel, o que dava a impressão
+de uma dissidência isolada. Não é.
 
 ### 5.3 Regra de assibilação
 
