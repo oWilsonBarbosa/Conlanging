@@ -10,12 +10,14 @@ tipológicas, e a documentação do projeto **Proto-Orogeniano**.
 | [`docs/01_PROTO_INDO_ANATOLIAN.md`](docs/01_PROTO_INDO_ANATOLIAN.md) | Estado da arte sobre o proto-indo-anatólio — o alvo de reconstrução contra o qual o Proto-Orogeniano é desenhado. Inclui a tabela de restrições de projeto (§9). |
 | [`docs/02_PROTO_OROGENIAN_PHONOLOGY.md`](docs/02_PROTO_OROGENIAN_PHONOLOGY.md) | O inventário fonêmico e a fonotática do Proto-Orogeniano. Resposta ao trabalho da lição Phonology 2 do curso. |
 | [`docs/03_PROTO_OROGENIAN_FEATURES_RULES.md`](docs/03_PROTO_OROGENIAN_FEATURES_RULES.md) | Matriz de traços distintivos, classes naturais e as regras fonológicas — sincrônicas e diacrônicas. Lição Phonology 3. |
+| [`docs/04_SOUND_CHANGE.md`](docs/04_SOUND_CHANGE.md) | **Em andamento.** Mudança sonora: o banco de provas das teorias rivais e a primeira medição. Lição Phonology 4. |
 
 ## Ferramentas
 
 | Diretório | Conteúdo |
 |---|---|
 | [`tools/po-phonology/`](tools/po-phonology/) | Inventário fonêmico e gerador de palavras do Proto-Orogeniano (Python 3, sem dependências). |
+| [`tools/po-derivation/`](tools/po-derivation/) | Banco de provas da derivação e das teorias rivais — inverte as 766 raízes e mede legalidade, colisão e ambiguidade. |
 | [`tools/pdf-ocr/`](tools/pdf-ocr/) | Recupera texto de PDFs que são só imagem, envelopando o fluxo CCITT num TIFF mínimo e passando ao tesseract — sem renderizador externo. |
 
 ## Dados
