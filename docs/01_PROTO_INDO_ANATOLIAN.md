@@ -295,8 +295,8 @@ aproveitável do levantamento.
 (1932). As geminadas correspondem às surdas do PIE; as simples, às sonoras
 *e* às sonoras aspiradas.
 
-**Tese 1 (DISPUTADO).** O contraste fortis/lenis do hitita é de **duração, não
-de voz**. Dois argumentos:
+**Tese 1 (menos disputada do que parece).** O contraste fortis/lenis do hitita
+é de **duração, não de voz**. Dois argumentos:
 
 1. Se fosse de voz, seria inexplicável que os escribas hititas **não usassem** a
    distinção de voz já disponível na escrita cuneiforme mesopotâmica (PA vs.
@@ -304,6 +304,22 @@ de voz**. Dois argumentos:
    complicado de grafia simples vs. geminada.
 2. Palavras como `e-ku-ut-ta` ~ `e-uk-ta` 'ele bebeu' ficam foneticamente
    difíceis sob interpretação por voz.
+
+**Melchert concorda com esta tese**, o que é fácil de perder de vista porque
+ele é o contrapeso em quase tudo o mais. Kloekhorst (2016: 216 n.12) observa
+que a análise de Melchert (1994: 13–21) *"effectively means that Melchert also
+thinks that the phonological distinction between fortis and lenis stops was not
+one in voice, but rather one in consonantal length only: /pː/, /tː/, etc. vs.
+/p/, /t/, etc."* O que Melchert contesta é a **direção** da mudança (tese 2),
+não a natureza do contraste.
+
+**Extensão a fricativas e sonorantes (ATESTADO).** O contraste de duração não
+para nas oclusivas. Kloekhorst (2016: 216–17): o hitita grafa `š r l m n`
+contra `šš rr ll mm nn`, e ninguém jamais alegou que essa distinção fosse de
+voz. Ele conclui que também aí *"the distinction between fortis and lenis was
+one in consonantal length"* — `[s r l m n]` contra `[sː rː lː mː nː]`. E
+inclui **`ḫ(ḫ)`** na lista: `[χ]` contra `[χː]`. A uvular participa do
+contraste de duração.
 
 **Tese 2 (DISPUTADO).** Os dois sistemas:
 

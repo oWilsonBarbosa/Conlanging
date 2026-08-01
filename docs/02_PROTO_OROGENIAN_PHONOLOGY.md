@@ -180,9 +180,30 @@ A duração não é um traço só das oclusivas. Ela atravessa o sistema:
 | líquidas | `r` `l` | `rː` `lː` |
 | glides | `w` `j` | — |
 
-`/sː/` é exigido pelo hitita `e-eš-ši` `/ʔésːi/` < PIH `*h₁éssi`, contra o PIE
-clássico degeminado `*h₁ési`. `/mː/` é exigido pelo item 21 da lista de
-inovações: `*h₁mm-` > cl.PIE `*h₁m-`.
+A justificativa é **direta**, e mais forte do que a primeira versão deste
+documento registrava. Kloekhorst (2016: 216–17) estende o contraste
+explicitamente para além das oclusivas:
+
+> *"I therefore assume that also for these fricatives and resonants, including
+> ḫ(ḫ), the distinction between fortis and lenis was one in consonantal length:
+> the single spelled, lenis consonants were in fact short ([s], [χ], [r], [l],
+> [m], [n]), whereas the geminate spelled, fortis ones were in fact long
+> ([sː], [χː], [rː], [lː], [mː], [nː])."*
+
+O hitita grafa `š r l m n` contra `šš rr ll mm nn`, e nunca se alegou que essa
+distinção fosse de voz — ao contrário do que às vezes se propôs para `ḫ`/`ḫḫ`.
+
+*(A versão anterior justificava `/sː/` e `/mː/` pelos itens 31 e 21 da lista de
+inovações — `*h₁éssi` > `*h₁ési` e `*h₁mm-` > `*h₁m-`. Essas duas geminadas são
+**derivadas**: uma de fronteira de morfema, outra de assimilação de `*mn`. Elas
+mostram degeminação, não contraste lexical de duração. A citação foi
+corrigida.)*
+
+Ponto extra, e relevante para §3.2: Kloekhorst inclui **`ḫ(ḫ)`** nessa lista,
+isto é, `[χ]` contra `[χː]`. O sistema tolera uma uvular fortis e uma lenis —
+apoio parcial à coluna uvular completa. Parcial porque no hitita a lenis `ḫ` é
+**derivada** pela lenição proto-anatólia entre moras átonas (§4.4 do documento
+01), e portanto não atesta diretamente uma uvular não-fortis no PIH.
 
 Sonorantes silábicas servem de núcleo: `m̩ n̩ r̩ l̩`. E — ponto que resolve
 sozinho a pobreza vocálica — **`[i]` e `[u]` são os alofones silábicos de
@@ -215,19 +236,39 @@ neutras e ocorrem nas duas.
 | `[−round]` | `e eː a aː` | `k kː ʔk` · `q qː ʔq` |
 | `[+round]` | `o oː ɒ ɒː` | `kʷ kʷː ʔkʷ` · `qʷ qʷː ʔqʷ` |
 
-**PROJETO.** É a segunda e última invenção estrutural do projeto — a primeira
-foi a coluna uvular completa (§3.2). Ela paga três dívidas de uma vez:
+**PROJETO — e sob revisão.** É a segunda e última invenção estrutural do
+projeto; a primeira foi a coluna uvular completa (§3.2). Ela foi adotada para
+pagar três dívidas. A auditoria de fontes e dados manteve uma e derrubou duas:
 
-1. **O ablaut ganha origem.** A alternância `*e`/`*o` do PIE não tem causa no
-   nível do PIE: está simplesmente lá. Sob harmonia, o **grau-o é o resíduo da
-   classe `[+round]`** — quando a harmonia colapsa, o traço se relexicaliza
-   como morfologia. Registrado aqui como hipótese; a mecânica é da lição 4.
-2. **`*h₃` ganha razão para ser labializado.** Por que uma laringal é
-   arredondada e a outra não? Porque `/qː/` e `/qʷː/` são **a mesma uvular nas
-   duas classes**. A "coloração laringal" deixa de ser coloração e vira
-   concordância.
+1. ~~**O ablaut ganha origem.**~~ **Não funciona.** A ideia era que o grau-o
+   fosse o resíduo lexical da classe `[+round]`. Mas Melchert dá como
+   estabelecido que o PIE tinha presentes radicais com ablaut `*ó/é` — e o
+   grau-o **alterna dentro do paradigma** (hitita `karāp-`/`karēp-`), ao lado
+   do tipo `*é/zero`. Uma classe harmônica de raiz prevê que a raiz mostre `o`
+   *ou* `e` de forma constante; o que se atesta é alternância morfológica. Ver
+   "problemas em aberto" abaixo.
+2. **`*h₃` ganha razão para ser labializado** — mas é o elo mais fraco.
+   `/qː/` e `/qʷː/` seriam a mesma uvular nas duas classes, e a "coloração
+   laringal" viraria concordância. O teste de §4.5 mostra `*h₂` coocorrendo
+   com labiovelares em 10 raízes, o que sob essa atribuição é violação.
 3. **As labiovelares consonantais do PIE** (`*kʷ *gʷ *gʷʰ`) deixam de ser uma
-   série avulsa e passam a ser o que sobrou da harmonia nas dorsais.
+   série avulsa e passam a ser o que sobrou da harmonia nas dorsais. **Esta
+   sobrevive** — é uma propriedade lexical de raiz, exatamente o que harmonia
+   explica bem, e não conflita com nada nas fontes.
+
+#### Problemas em aberto
+
+| Problema | Gravidade |
+|---|---|
+| O grau-o alterna dentro do paradigma, não por raiz (Melchert) | **estrutural** — invalida a dívida 1 |
+| `*h₂` coocorre com labiovelares em 10 raízes (§4.5) | alta — a atribuição das laringais às classes não se sustenta bem |
+| Sem apoio empírico: 13 raízes com duas dorsais, sem supressão detectável | média — os dados não decidem |
+| `*h₁` viria do colapso de `/q ʔq/` **e** `/qʷ ʔqʷ/`, atravessando as duas classes, sem deixar traço de arredondamento | baixa — `*h₁` de fato não colore nem arredonda, o que é consistente |
+
+**Posição atual:** a harmonia fica registrada como opção de projeto, com a
+dívida 3 como única justificativa que resiste. Se o ablaut vier de acento e
+apofonia — como a corrente principal sustenta — as duas contas não competem: a
+harmonia explicaria as labiovelares, e o acento explicaria o ablaut.
 
 #### A ponte para o PIH
 
@@ -346,32 +387,40 @@ Todos são variações de **√CVC** com sonorantes e laringais ocupando as
 posições consonantais. A raiz canônica é monossilábica, com uma única vogal
 plena.
 
-### 4.4 Dissimilação glotálica
+### 4.4 Restrições de coocorrência nas oclusivas
 
-A restrição mais forte do sistema, e a mais interessante. Contando as séries
-de oclusivas que coocorrem nas 216 raízes com duas ou mais:
+As 873 raízes dão 216 com duas ou mais oclusivas, 216 pares. Comparando o
+observado com o esperado a partir da frequência de cada série entre os 423
+tokens (`T` 206, `Dʰ` 136, `D` 81):
 
-| par | n | % |
-|---|---|---|
-| fortis + fortis | 72 | 33,3 % |
-| glotalizada + fortis | 49 | 22,7 % |
-| lenis + lenis | 45 | 20,8 % |
-| glotalizada + lenis | 30 | 13,9 % |
-| lenis + fortis | 19 | 8,8 % |
-| **glotalizada + glotalizada** | **1** | **0,5 %** |
+| par (leitura glotálica) | obs. | esp. | razão | Poisson p(≤obs) |
+|---|---|---|---|---|
+| **glotalizada × glotalizada** | **1** | 7,9 | **0,13** | **0,0032** |
+| **lenis × fortis** | **19** | 67,6 | **0,28** | **< 0,0001** |
+| glotalizada × lenis | 30 | 26,6 | 1,13 | — |
+| glotalizada × fortis | 49 | 40,3 | 1,22 | — |
+| fortis × fortis | 72 | 51,2 | 1,41 | — |
+| lenis × lenis | 45 | 22,3 | 2,02 | — |
 
-Fortis com fortis: livre. Lenis com lenis: livre. **Duas glotalizadas na mesma
-raiz: praticamente proibido** — uma única exceção em 216, `*gʷeg-`.
+Duas restrições reais, não uma:
 
-Essa é a conhecida restrição do PIE contra duas oclusivas sonoras simples numa
-raiz. Sob a leitura tradicional ela é difícil de motivar: por que uma língua
-proibiria duas sonoras e permitiria livremente duas surdas e duas aspiradas?
-Sob a leitura glotálica ela é banal — é dissimilação de glotalização, do mesmo
-tipo atestado nos sistemas ejetivos semíticos e caucasianos.
+**1. Dissimilação glotálica.** Uma raiz em 216 onde se esperavam oito. É a
+conhecida restrição do PIE contra duas oclusivas sonoras simples numa raiz.
+Sob a leitura tradicional é difícil de motivar — por que proibir duas sonoras e
+liberar duas surdas e duas aspiradas? Sob a leitura glotálica é banal:
+dissimilação de glotalização, do tipo atestado em semítico e caucasiano.
 
-**Nosso dataset sustenta independentemente a leitura glotálica que o sistema de
-Kloekhorst exige.** É a única verificação empírica que este documento produz,
-e ela saiu a favor.
+**2. Concordância de ajuste laríngeo.** Lenis com fortis é suprimido tão forte
+quanto (0,28), enquanto fortis×fortis e lenis×lenis são *sobre*-representados.
+Ou seja: as raízes preferem repetir a mesma série — **exceto** a glotalizada,
+que dissimila. É a outra restrição clássica do PIE (surda + aspirada sonora), e
+a formulação glotálica unifica as duas num quadro coerente.
+
+A exceção única da primeira é `*gʷeg-`.
+
+**Este é o resultado empírico que resiste.** Ele sustenta independentemente a
+leitura glotálica que o sistema de Kloekhorst exige — ao contrário da previsão
+harmônica de §4.5, que não se confirma.
 
 Regra adotada: *no máximo uma obstruinte glotalizada por raiz.*
 
@@ -389,35 +438,42 @@ dentais, palatais, `/s sː/` e as sonorantes — são neutros e não interferem.
 Consequência prática: uma raiz nunca tem `/k/` e `/kʷ/` juntos, nem `/qː/` e
 `/qʷː/` juntos.
 
-#### A previsão, e o teste
+#### A previsão, e o teste — que **não** confirma a hipótese
 
-Essa consequência é **testável no PIE atestado**, porque a harmonia, ao
-colapsar, deixa as dorsais para trás como segmentos. Se as labiovelares do PIE
-são resíduo da classe `[+round]` e as velares simples da classe `[−round]`,
-então **elas não devem coocorrer numa mesma raiz**. Idem para `*h₂` e `*h₃`.
+Essa consequência é testável no PIE atestado, porque a harmonia, ao colapsar,
+deixaria as dorsais para trás como segmentos. Se as labiovelares do PIE são
+resíduo da classe `[+round]` e as velares simples da classe `[−round]`, elas
+não deveriam coocorrer numa mesma raiz.
 
-Medido sobre as 873 raízes, contra o esperado se os segmentos fossem
-independentes:
+> ⚠ **Correção.** A primeira versão desta seção anunciava "90 % de supressão"
+> comparando as coocorrências observadas contra `873 × p(labiovelar) ×
+> p(velar)`. Essa linha de base está **errada**: ela ignora que raízes do PIE
+> raramente contêm duas dorsais. Refeito o cálculo sobre a população certa, o
+> resultado desaparece. O que segue é a versão correta.
 
-| par | raízes com A | com B | **coocorrem** | esperado | supressão |
-|---|---|---|---|---|---|
-| labiovelar `*kʷ *gʷ *gʷʰ` × velar simples `*k *g *gʰ` | 81 | 217 | **2** | 20,1 | **90 %** |
-| `*h₂` × `*h₃` | 181 | 52 | **4** | 10,8 | **63 %** |
+Só **13 raízes em 873** contêm duas ou mais dorsais consonantais — 17 pares no
+total. Contra a frequência dos tipos entre os 438 tokens dorsais do corpus:
 
-A primeira linha é o resultado empírico mais forte do projeto até aqui. Duas
-raízes em 873 onde se esperavam vinte: as labiovelares e as velares simples do
-PIE comportam-se como se pertencessem a classes mutuamente exclusivas —
-que é precisamente o que "resíduo de harmonia" prevê.
+| par | observado | esperado | razão |
+|---|---|---|---|
+| labiovelar × velar simples | 2 | 3,2 | 0,62 |
+| velar × velar | 9 | 4,5 | 2,01 |
+| palatal × velar | 5 | 5,3 | 0,95 |
+| labiovelar × labiovelar | 0 | 0,6 | — |
 
-E as duas exceções são `*kneygʷʰ-` e **`*gʷeg-`**. Esta segunda é a mesma raiz
-que aparece como exceção única da dissimilação glotálica em §4.4. Uma forma que
-viola as duas restrições independentes do sistema é, quase por definição, não
-nativa — expressiva ou emprestada. O sistema aponta o próprio outlier.
+**Não há supressão detectável**, e com 17 pares a amostra não sustenta
+conclusão em nenhuma direção. O único desvio visível é a
+sobre-representação de velar × velar, que é repetição do mesmo tipo — outro
+fenômeno.
 
-A segunda linha é mais fraca: supressão clara, mas não categórica. Isso é
-normal — sistemas de harmonia reais convivem com raízes desarmônicas (turco e
-finlandês têm as suas). Das 4, `*h₂erh₃-` é justamente a raiz do item 2 da
-lista de inovações do documento 01.
+Ampliando para incluir as laringais, entre as 72 raízes com duas ou mais
+dorsais harmônicas, 52 (72 %) são de classe uniforme e 20 (28 %) são mistas. E
+a mistura concentra-se num lugar só: **labiovelar × `*h₂`, 10 casos** — que sob
+a nossa atribuição (`*h₂` = `[−round]`) é justamente a violação mais grave.
+
+Conclusão honesta: **a harmonia não tem apoio empírico nos dados que temos**, e
+a atribuição das laringais às classes opostas é o elo mais fraco da proposta.
+Ver §3.4, "problemas em aberto".
 
 Enquanto não houver morfologia derivacional, o domínio da harmonia é a palavra
 inteira. Definir um domínio menor é assunto das lições 03 e 05.
@@ -570,7 +626,7 @@ contêm `/o ɒ kʷ qʷ/`, e as `[+round]` não contêm `/e a k q/`.
 | Sonoridade sobe no onset, desce na coda | ✔ com as exceções de `/s/` (§4.2), todas nas bordas |
 | Máximo uma glotalizada por raiz | ✔ imposto pelo gerador; nenhuma forma de §5 viola |
 | Sem `/ʔp/` | ✔ ausente do inventário, não filtrado depois |
-| **Harmonia de raiz** | ✔ imposta na geração; 0 violações em 800 formas |
+| **Harmonia de raiz** | ✔ imposta na geração; 0 violações em 800 formas — mas a regra em si está sob revisão, §3.4 |
 | Junção medial ≤ 2 segmentos, sem geminação acidental | ✔ validado por `_bad_juncture` |
 | Acento marcado em toda forma | ✔ |
 
