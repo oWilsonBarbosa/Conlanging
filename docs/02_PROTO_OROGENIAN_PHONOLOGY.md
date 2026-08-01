@@ -117,14 +117,56 @@ O contraste é de **ajuste laríngeo**, não de vozeamento:
 Notação: `ḱ` é a palatal(izada); `ː` marca duração fonêmica; `ʔC` marca
 pré-glotalização. Total: **20 obstruintes**.
 
+### 3.1b O mesmo inventário em IPA
+
+A tabela acima usa a notação da indo-europeística, que é a certa para o
+trabalho comparativo mas **não é IPA** — o enunciado da lição pede IPA, e a
+diferença não é cosmética: `ḱ` não existe no alfabeto fonético.
+
+| | labial | dental | palatal | velar | labiovelar | uvular | labiouvular |
+|---|---|---|---|---|---|---|---|
+| **fortis** | `/pː/` | `/tː/` | `/cː/` | `/kː/` | `/kʷː/` | `/qː/` | `/qʷː/` |
+| **glotalizada** | — | `/ˀt/` | `/ˀc/` | `/ˀk/` | `/ˀkʷ/` | `/ˀq/` | `/ˀqʷ/` |
+| **lenis** | `/p/` | `/t/` | `/c/` | `/k/` | `/kʷ/` | `/q/` | `/qʷ/` |
+
+| classe | IPA |
+|---|---|
+| sibilante | `/s/` `/sː/` |
+| nasais | `/m/` `/mː/` `/n/` `/nː/` |
+| líquidas | `/r/` `/rː/` `/l/` `/lː/` |
+| glides | `/w/` `/j/` |
+| vogais | `/e/` `/eː/` |
+| núcleos silábicos | `[m̩]` `[n̩]` `[r̩]` `[l̩]` `[i]` `[u]` |
+
+Duas notas de tradução:
+
+- **`ḱ` → `/c/`.** A série "palatal" da indo-europeística é oclusiva palatal em
+  IPA. Alguns a reconstroem antes como palatalizada, `/kʲ/`; nada no projeto
+  depende da escolha.
+- **`ʔC` → `/ˀC/`.** Pré-glotalização se nota com o diacrítico sobrescrito
+  antes do segmento. A notação `ʔt` do restante do documento segue Kloekhorst
+  2016, que é a fonte do sistema.
+
+#### Carta vocálica
+
+```
+      anterior   central   posterior
+alto        i                    u      ← alofones de /j/ /w/
+médio       e ────────────────────
+baixo
+```
+
+Uma única posição preenchida fonemicamente. `[i]` e `[u]` aparecem na carta
+porque ocorrem foneticamente, mas são alofones silábicos (§3.4).
+
 ### 3.2 As duas lacunas, e por que só uma é surpreendente
 
 A lição distingue lacunas esperadas de lacunas surpreendentes. Temos uma de
 cada tipo, e elas se resolvem de modos opostos.
 
-**A lacuna em `/ʔp/` é esperada e fica.** Em sistemas glotálicos, o membro
-labial é justamente o que costuma faltar — a ejetiva labial é a mais rara das
-ejetivas, transculturalmente. É essa lacuna que produz a quase-ausência de
+**A lacuna em `/ʔp/` é esperada e fica.** Em sistemas glotálicos o membro
+labial é **o mais frágil dos pontos centrais** — medido no BDPROTO, falta em
+32 % das protolínguas com série ejetiva, contra 6 % para o velar (§3.7). É essa lacuna que produz a quase-ausência de
 `*b` no PIE clássico: **5 raízes em 873** no nosso dataset. Ou seja, um dos
 buracos mais famosos da reconstrução indo-europeia deixa de ser anomalia e
 vira consequência do sistema.
@@ -271,6 +313,76 @@ TOTAL        34
 
 Perfil consonante-pesado ao extremo: **32 consoantes contra 2 vogais**. Confere
 com o retrato de §1.
+
+### 3.7 Conferência tipológica
+
+A lição manda checar o inventário contra o que as línguas do mundo fazem, e
+aponta o WALS e o PHOIBLE. O repositório tem o **BDPROTO** em `data/`, que é a
+comparação certa: **229 protolínguas reconstruídas**, não línguas vivas. Isto
+é, o mesmo tipo de objeto que o Proto-Orogeniano.
+
+| medida | BDPROTO | nós | veredito |
+|---|---|---|---|
+| consoantes | mediana 20 | **32** | percentil 86 — grande, mas normal |
+| **qualidades vocálicas** | mediana 5 | **1** | ver abaixo |
+| tem uvulares | 17 % | sim | incomum, mas atestado |
+| tem consoantes longas | 13,5 % | sim | incomum, mas atestado |
+| tem ejetivas/glotalizadas | 16 % | sim | incomum, mas atestado |
+| **sem** contraste de voz nas oclusivas | **37 %** | sim | inteiramente banal |
+
+**O perfil consonantal existe.** Uvulares + longas + glotalizadas nas três ao
+mesmo tempo: proto-neocaledônio, acádio, sul-arábico antigo. Uvulares +
+glotalizadas, sem a duração: proto-atabascano, proto-kartveliano, proto-maia,
+proto-salish, proto-pomo, egípcio médio. Não estamos inventando uma combinação
+impossível.
+
+**O vocalismo é o ponto extremo, e é preciso dizer sem maquiagem.** Em 229
+protolínguas do BDPROTO, **uma única** tem uma só qualidade vocálica
+(proto-tsimshian) e **nenhuma** tem duas. Estamos sozinhos numa amostra de 229.
+
+Isso não invalida o sistema — ele é o que a reconstrução do estágio pré-PIH
+força (§3.4), e a carga funcional está no acento, no grau zero e nas
+sonorantes silábicas. Mas fica registrado como **o traço mais arriscado do
+inventário**, e o primeiro a revisar se a lição 4 mostrar que as regras não
+fecham.
+
+#### A lacuna labial, testada
+
+O §3.2 afirma que em sistemas glotálicos "o membro labial é o que costuma
+faltar". Medido nas 34 protolínguas do BDPROTO com série ejetiva de dois ou
+mais membros:
+
+| ponto sem ejetiva | n | % |
+|---|---|---|
+| uvular | 24 | 71 % |
+| **labial** | **11** | **32 %** |
+| velar | 2 | 6 % |
+
+A afirmação **se sustenta na direção certa mas estava forte demais**: entre os
+pontos centrais, o labial falta cinco vezes mais que o velar — é o elo frágil.
+Mas dois terços dos sistemas ejetivos *têm* a labial, então "costuma faltar"
+vira "**é o mais frágil dos pontos centrais**". A redação de §3.2 foi ajustada.
+
+(O uvular falta mais que todos, mas isso só reflete que uvulares são raras em
+geral, não fragilidade da glotalização nesse ponto.)
+
+#### Um controle externo que saiu a favor
+
+O BDPROTO traz o hitita a partir da gramática de Hoffner & Melchert (2008). O
+inventário consonantal listado é:
+
+```
+k kː  kʷ kʷː  l lː  m mː  n nː  p pː  r rː  s sː  t tː  ts tsː  w wː  hː  j jː
+```
+
+Contraste de duração atravessando oclusivas, sonorantes, sibilante e a
+laringal — e **nenhuma oclusiva sonora no inventário**. É exatamente o que
+§3.3 afirma citando Kloekhorst 2016, agora confirmado por uma fonte
+independente e de referência.
+
+Nota lateral: a entrada do próprio PIE no BDPROTO (a partir de Fortson 2011)
+lista `pʼ tʼ kʼ kʷʼ` — ejetivas. A leitura glotálica que adotamos não é
+excêntrica.
 
 ---
 
@@ -475,7 +587,21 @@ de que o M.O.P. só se aplica quando o onset resultante for legal.
 o onset, porque `/pː/` é monofonemática (§5.3 do documento 01: `/tː/` não é
 `/t/`+`/t/`).
 
+```
+      σ                    σ
+     / \            /   /  |  \
+    C   V          C   V   C   C
+    s   e          pː  eː  mː  tː
+```
+
 **3.** `/kʷːreˈnqʷenː/` → `[kʷːren]σ[ˈqʷenː]σ`
+
+```
+        σ                σ
+    /  /  \  \        /  |  \
+   C  C   V   C      C   V   C
+   kʷː r   e   n     qʷ  e   nː
+```
 
 Aqui o M.O.P. **falha**. Levar `nqʷ` inteiro para o onset daria um onset que
 desce em sonoridade (nasal → oclusiva), proibido por §4.1. O `n` fica na coda
@@ -483,6 +609,13 @@ da primeira sílaba, e o acento cai na segunda.
 
 **4.** `/rːeˈrqʷes/` → `[rːer]σ[ˈqʷes]σ` — mesma razão: `rqʷ` não é onset
 legal.
+
+```
+       σ              σ
+    /  |  \        /  |  \
+   C   V   C      C   V   C
+   rː  e   r      qʷ  e   s
+```
 
 **5.** `/ˈlːerjesḱekː/` → `[ˈlːer]σ[jes]σ[ḱekː]σ`
 
@@ -530,6 +663,28 @@ O teste que importa de verdade — o inventário alimenta o alvo de §9.1?
 | Fonema `*a` | ✔ ausente |
 
 Nada em conflito.
+
+### As sete tarefas do enunciado
+
+| # | Tarefa | Onde | Estado |
+|---|---|---|---|
+| 1 | Como a língua deve soar | §1 | ✔ |
+| 2 | Transcrever uma frase | §2 | ✔ transcrita; **gravação não feita** — o enunciado a dispensa ("the transcription will be enough") |
+| 3 | Tabela IPA e carta vocálica | §3.1b | ✔ |
+| 4 | Definir regras silábicas | §4 | ✔ |
+| 5 | Inventar palavras | §5 | ✔ |
+| 6 | Desmontar as sílabas de 5 delas | §6 | ✔ cinco, com árvore em quatro |
+| 7 | Conferir as regras | §7 | ✔ |
+
+Além do enunciado, a lição recomenda checar o inventário contra bases
+tipológicas (§3.7) — feito contra o BDPROTO.
+
+**Fica pendente, e é da lição 3, não desta:** o **inventário fonético**. A
+lição 2 distingue inventário fonêmico de fonético e observa que vale a pena
+construir o segundo justamente quando "you are not just documenting a snapshot
+of the language ... and want to have it evolve further down the line" — que é
+exatamente o nosso caso. Alofonia e realizações ficam para a lição 3, junto com
+a matriz de traços.
 
 ---
 
