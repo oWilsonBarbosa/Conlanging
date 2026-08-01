@@ -13,7 +13,7 @@ tabela de restrições de projeto.
 | | |
 |---|---|
 | Escopo | posição do anatólio no indo-europeu; reconstrução do PIA |
-| Fontes primárias | 9 artigos/capítulos lidos na íntegra (§10) |
+| Fontes primárias | 12 artigos/capítulos lidos na íntegra (§10) |
 | Última revisão | 2026-08 |
 | Status | levantamento fechado, camada genética incorporada (§7.3) |
 
@@ -383,6 +383,40 @@ clássico degeminou para `*h₁ési` → sânsc. `ási`, gr. `εἶ`.
 explica o sistema tocário `/t, ts, t/` mais facilmente que o PIE clássico — o
 que poderia indicar que **o tocário também se separou antes da inovação**. Ele
 deixa a questão fora do escopo.
+
+#### O sistema visto de dentro do hitita
+
+Dois artigos posteriores refinam o quadro, e é preciso não confundir os
+estágios.
+
+**Em posição inicial** (Kloekhorst 2010, *ZA* 100), os pares de sinais
+cuneiformes distinguem três coisas: `TA` vs. `DA` são fortis simples contra
+**fortis glotalizada** (`/ta/` vs. `/t'a/`), enquanto `KA` vs. `GA` são fortis
+contra lenis. O contraste triplo é visível também no início da palavra, não só
+entre vogais.
+
+**No sistema sincrônico do hitita** (Kloekhorst 2022, *BSOAS*), a análise passa
+a ser **2 × 2** — dois tipos, cada um com oposição de duração:
+
+| | curta | longa |
+|---|---|---|
+| **plana** | `/t/` | `/tː/` |
+| **ejetiva** | `/t'/` | `/t'ː/` |
+
+Isso **não** contradiz o sistema triplo do PIH: as ejetivas do hitita são
+**secundárias**, resultado da fusão de grupos oclusiva + laringal, quando a
+laringal já havia virado `/ʔ/` — desenvolvimento que Fallon (1998) mostra ser
+banal transculturalmente. O argumento de que são ejetivas e não aspiradas ou
+faringalizadas é elegante: o hitita não tem `/h/` nem faringais, e há
+universais ligando aspiradas a `/h/` e faringalização a faringais.
+
+**Consequência para o projeto.** O PIH tem `*/tː/`, `*/ʔt/`, `*/t/` — a célula
+*longa glotalizada* está vazia. É exatamente essa célula que o anatólio
+preenche por fusão de `*T + h₁`. Fica disponível como derivação para a lição 4.
+
+Nota de notação: Kloekhorst escreveu `/tːʔ/` em 2010 e 2013, e passou a `/t'ː/`
+em 2022; para o PIH, em 2016, usa `*/ʔt/` — **pré**-glotalizada. Este projeto
+segue a notação de 2016, que é a do estágio que nos interessa.
 
 **Contestação (registrar sempre).** Kümmel (2019: 115–130, no mesmo volume)
 prefere um sistema de surda / sonora / **sonora implosiva** a surda fortis /
@@ -771,13 +805,19 @@ pela reconstrução linguística sob outro nome.
    doi:10.1515/if-2024-0008. — uma segunda fonte condicionada para `*o`.
 8. **Kloekhorst, A.** "Phonemic glottal stop in Hittite as the outcome of PIE
    *h₁". — `*h₁` = `/ʔ/`, defendido contra as críticas.
-9. **Kloekhorst, A.** "Some Indo-Uralic aspects of Hittite". — o princípio
+9. **Kloekhorst, A.** 2010. "Initial stops in Hittite (with an excursus on the
+   spelling of stops in Alalaḫ Akkadian)". *Zeitschrift für Assyriologie* 100.
+   — o contraste triplo em posição inicial (§5.2).
+10. **Kloekhorst, A.** 2022. "Ejective stops in Hittite: evidence for a
+   phonemic length distinction". *BSOAS*, doi:10.1017/S0041977X2200060X.
+   — o sistema 2 × 2 do hitita sincrônico e a origem secundária das ejetivas.
+11. **Kloekhorst, A.** "Some Indo-Uralic aspects of Hittite". — o princípio
    metodológico de usar o urálico para desempatar entre anatólio e
    não-anatólio.
 
 **Lida como resenha:**
 
-10. **Rieken, E.** Resenha de Kloekhorst, A. 2014, *Accent in Hittite: A Study in
+12. **Rieken, E.** Resenha de Kloekhorst, A. 2014, *Accent in Hittite: A Study in
    Plene Spelling, Consonant Gradation, Clitics, and Metrics* (StBoT 56).
    Wiesbaden: Harrassowitz. *BSOAS*, doi:10.1017/S0041977X15000737.
    — acento e quantidade vocálica (§5.4), com as ressalvas da resenhista.
@@ -788,9 +828,17 @@ oclusivas iniciais, grafias `CaR`/`Ca-aR`, grupos "thorn", origem da
 ḫi-conjugação, tempo e aspecto, lício e cário, fonologia lídia, Kaneš,
 indo-urálico, resenhas) e dois sobre o sistema de casos proto-urálico. Foram
 lidos por amostragem dirigida às questões em aberto; o restante fica como
-reserva para as lições 03–05. Quatro chegaram como digitalização sem camada de
-texto e não puderam ser extraídos: `InitialStopsInHittite`,
-`ReviewHoffnerMelchert`, `Mahhanda`, `InitLar`.
+reserva para as lições 03–05.
+
+Quatro chegaram como **imagem pura** — o fluxo de conteúdo de cada página
+contém apenas `q / cm / Do / Q`, isto é, desenha uma imagem e nada mais; a
+fonte Helvetica declarada em `/Resources` nunca é usada. Foram recuperados por
+OCR próprio: as imagens são CCITT G4, envelopadas num TIFF mínimo (mesmo codec,
+compressão TIFF 4) e passadas ao tesseract, sem necessidade de renderizador
+externo. O script está em
+[`tools/pdf-ocr/`](../tools/pdf-ocr/). Qualidade boa o bastante para leitura e
+citação; dois deles (`InitialStopsInHittite`, `EjectiveStops`) entraram na
+lista de fontes primárias acima.
 
 **Citadas de segunda mão** (via as fontes acima, não verificadas no original):
 Adiego 2001, 2016 · Anthony & Ringe 2015 · Blevins 2004 · De Vaan 2019 ·

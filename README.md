@@ -15,6 +15,7 @@ tipológicas, e a documentação do projeto **Proto-Orogeniano**.
 | Diretório | Conteúdo |
 |---|---|
 | [`tools/po-phonology/`](tools/po-phonology/) | Inventário fonêmico e gerador de palavras do Proto-Orogeniano (Python 3, sem dependências). |
+| [`tools/pdf-ocr/`](tools/pdf-ocr/) | Recupera texto de PDFs que são só imagem, envelopando o fluxo CCITT num TIFF mínimo e passando ao tesseract — sem renderizador externo. |
 
 ## Dados
 
