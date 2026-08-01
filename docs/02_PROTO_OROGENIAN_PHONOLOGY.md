@@ -56,19 +56,16 @@ exigidas pelo alvo, não escolhidas:
 - **Glotalização.** A série que o PIE clássico reinterpretou como "sonora" era
   pré-glotalizada. Isso dá um ataque cortado, tenso, em um terço das
   obstruintes.
-- **Harmonia de arredondamento.** Oito vogais contra 32 consoantes: a língua
-  segue consonante-pesada, mas o vocalismo não é pobre — é **organizado**. Cada
-  raiz pertence a uma de duas classes, e ouve-se isso como uma cor que
-  atravessa a palavra inteira, dorsais inclusive.
+- **Pobreza vocálica extrema.** Uma qualidade de vogal contra 32 consoantes. A
+  informação lexical mora inteiramente nas consoantes, no acento e no contraste
+  de duração. Palavras inteiras podem não ter vogal plena nenhuma, apoiadas em
+  sonorantes silábicas.
 
-**Comparação com línguas reais.** Não há uma só: o perfil é duplo. Pelas
-consoantes — inventário denso, uvulares, glotalização — o mais próximo é o
-**Cáucaso Noroeste** (abkhaz, ubykh). Pela harmonia vocálica de raiz, o
-paralelo é **turco ou urálico**. O contraste de duração consonantal fazendo
-trabalho lexical lembra o finlandês ou o italiano.
-
-Essa combinação não existe em nenhuma língua real, e é a assinatura da língua:
-consoantes caucasianas com morfofonologia urálica.
+**Comparação com línguas reais.** O perfil mais próximo é o do **Cáucaso
+Noroeste** — abkhaz, ubykh — pela combinação de inventário consonantal denso,
+uvulares e vocalismo mínimo. A glotalização aproxima dos sistemas ejetivos
+caucasianos. E o contraste de duração consonantal fazendo trabalho lexical
+lembra o finlandês ou o italiano.
 
 Há uma coincidência agradável nisso, registrada como observação e não como
 argumento: §7.4 do documento 01 diz que o indo-europeu sofreu influência de
@@ -83,25 +80,14 @@ tom. Não tem nasais vocálicas, retroflexas, cliques nem faringais.
 ## 2 | Amostra sonora
 
 Arranjo fonoestético, **não uma frase analisada** — a morfologia é assunto das
-lições 03 e 05, e nenhuma decisão morfológica foi tomada ainda. O que segue é
-uma sequência de formas com o formato de raiz, arranjadas pelo som:
-
-Classe `[−round]`:
+lições 03 e 05, e nenhuma decisão morfológica foi tomada ainda:
 
 ```
 /ˈqːweq  ˈstːeqː  wejˈʔt-es  ˈlewkː-mn̩  pːenˈtː-eres/
 ```
 
-Classe `[+round]`:
-
-```
-/ˈqʷːor  ˈkʷːolːtː  moˈlqʷː-os  ˈtːol-nː̩/
-```
-
 As formas antes do hífen são derivadas de raízes reais (§5.1); o que vem depois
-é preenchimento silábico, sem valor gramatical. Repare que o preenchimento
-**também concorda** — `-es` numa palavra `[−round]`, `-os` numa `[+round]`. É
-essa concordância que colapsa e vira o ablaut.
+é preenchimento silábico, sem valor gramatical.
 
 Para ouvir o contraste central do sistema, o par mínimo que separa duração de
 vozeamento:
@@ -112,11 +98,9 @@ vozeamento:
 | `/ˈpent/` | `*bʰendʰ-` | 'atar' |
 
 No Proto-Orogeniano essas duas palavras diferem **só em duração**. No PIE
-clássico, depois do vozeamento e da degeminação de §3.5, elas diferem em
+clássico, depois do vozeamento e da degeminação de §5.1, elas diferem em
 vozeamento e aspiração. É a mudança inteira de Kloekhorst 2016 em duas
 palavras.
-
----
 
 ## 3 | O inventário
 
@@ -159,8 +143,8 @@ não-fortis colapsaram durante a fase terrestre:
 /q/, /ʔq/, /qʷ/, /ʔqʷ/   >   /ʔ/   =   *h₁
 ```
 
-É a **primeira** das duas invenções estruturais do documento — a segunda é a
-harmonia de §3.4 — e paga o próprio custo com três consequências verificáveis:
+É a **única invenção estrutural** que sobrou no documento, e paga o próprio
+custo com três consequências verificáveis:
 
 1. **`*h₁` ganha explicação.** Seu valor fonético é indeterminado na literatura
    (*"h ou oclusiva glotal"*) precisamente porque não é um som herdado, e sim
@@ -209,105 +193,65 @@ Sonorantes silábicas servem de núcleo: `m̩ n̩ r̩ l̩`. E — ponto que reso
 sozinho a pobreza vocálica — **`[i]` e `[u]` são os alofones silábicos de
 `/j/` e `/w/`**. É daí que saem `*i` e `*u` do PIE.
 
-### 3.4 Vogais e harmonia
+### 3.4 Vogais
 
-Quatro qualidades — duas alturas × duas classes — cada uma com contraste de
-duração. **Oito vogais.**
+**Uma qualidade, duas durações.**
 
-| | `[−round]` | `[+round]` |
-|---|---|---|
-| **médias** | `e` `eː` | `o` `oː` |
-| **baixas** | `a` `aː` | `ɒ` `ɒː` |
-
-As altas `[i]` e `[u]` **não são fonemas**: são os alofones silábicos de `/j/`
-e `/w/`. A prova é morfofonológica e vem do próprio PIE — `*weyd-` 'ver' tem
-grau zero `*wid-`, onde o `*i` **é** o `*y` silabificado. Medido: 1 raiz com
-`*i` e 7 com `*u`, em 873. Elas não ocorrem como vogal de raiz.
-
-#### O arredondamento é um traço de raiz
-
-Esta é a decisão estrutural da lição. O arredondamento não é propriedade de
-segmentos isolados: é **harmônico**, e a raiz inteira pertence a uma classe.
-Vogais e dorsais concordam; labiais, dentais, palatais e sonorantes são
-neutras e ocorrem nas duas.
-
-| classe | vogais | dorsais |
-|---|---|---|
-| `[−round]` | `e eː a aː` | `k kː ʔk` · `q qː ʔq` |
-| `[+round]` | `o oː ɒ ɒː` | `kʷ kʷː ʔkʷ` · `qʷ qʷː ʔqʷ` |
-
-**PROJETO — e sob revisão.** É a segunda e última invenção estrutural do
-projeto; a primeira foi a coluna uvular completa (§3.2). Ela foi adotada para
-pagar três dívidas. A auditoria de fontes e dados manteve uma e derrubou duas:
-
-1. ~~**O ablaut ganha origem.**~~ **Não funciona.** A ideia era que o grau-o
-   fosse o resíduo lexical da classe `[+round]`. Mas Melchert dá como
-   estabelecido que o PIE tinha presentes radicais com ablaut `*ó/é` — e o
-   grau-o **alterna dentro do paradigma** (hitita `karāp-`/`karēp-`), ao lado
-   do tipo `*é/zero`. Uma classe harmônica de raiz prevê que a raiz mostre `o`
-   *ou* `e` de forma constante; o que se atesta é alternância morfológica. Ver
-   "problemas em aberto" abaixo.
-2. **`*h₃` ganha razão para ser labializado** — mas é o elo mais fraco.
-   `/qː/` e `/qʷː/` seriam a mesma uvular nas duas classes, e a "coloração
-   laringal" viraria concordância. O teste de §4.5 mostra `*h₂` coocorrendo
-   com labiovelares em 10 raízes, o que sob essa atribuição é violação.
-3. **As labiovelares consonantais do PIE** (`*kʷ *gʷ *gʷʰ`) deixam de ser uma
-   série avulsa e passam a ser o que sobrou da harmonia nas dorsais. **Esta
-   sobrevive** — é uma propriedade lexical de raiz, exatamente o que harmonia
-   explica bem, e não conflita com nada nas fontes.
-
-#### Problemas em aberto
-
-| Problema | Gravidade |
+| | |
 |---|---|
-| O grau-o alterna dentro do paradigma, não por raiz (Melchert) | **estrutural** — invalida a dívida 1 |
-| `*h₂` coocorre com labiovelares em 10 raízes (§4.5) | alta — a atribuição das laringais às classes não se sustenta bem |
-| Sem apoio empírico: 13 raízes com duas dorsais, sem supressão detectável | média — os dados não decidem |
-| `*h₁` viria do colapso de `/q ʔq/` **e** `/qʷ ʔqʷ/`, atravessando as duas classes, sem deixar traço de arredondamento | baixa — `*h₁` de fato não colore nem arredonda, o que é consistente |
+| **média anterior** | `e` `eː` |
 
-**Posição atual:** a harmonia fica registrada como opção de projeto, com a
-dívida 3 como única justificativa que resiste. Se o ablaut vier de acento e
-apofonia — como a corrente principal sustenta — as duas contas não competem: a
-harmonia explicaria as labiovelares, e o acento explicaria o ablaut.
+Sistema radical, e é o que as fontes sustentam para este estágio. Kloekhorst
+reduz os seis paradigmas de acento-ablaut do PIE tardio a **três do PIE
+inicial**, e observa que neles
 
-#### A ponte para o PIH
+> *"all forms show only one morpheme that is accented and at the same time
+> shows \*e-grade, whereas all other morphemes are unaccented and show
+> zero-grade."*
 
-O sistema tem que chegar ao alvo sem `/a/`. Três passos, a formalizar na
-lição 4:
+Ou seja: no estágio anterior ao PIH, o vocalismo é **`/e/` acentuado contra
+grau zero**. Tudo o mais é derivado e posterior.
 
-1. `/a/` → `/e/` e `/ɒ/` → `/o/` fora da vizinhança de uvular;
-2. **junto a uvular a vogal baixa resiste.** Uvulares abaixam e recuam vogais
-   adjacentes — efeito bem atestado em semítico, caucasiano noroeste,
-   esquimó-aleúte e quíchua. É o que a tradição registra como a sequência
-   `*h₂e`;
-3. a harmonia colapsa e `[±round]` se relexicaliza (nas dorsais e no grau-o).
+#### As qualidades que não são fonemas
 
-Isso **inverte a coloração laringal**: as laringais não colorem as vogais —
-elas *protegem* a qualidade original de uma fusão que ocorreu em todo o resto.
-Mesmo resultado de superfície, história mais funda. A origem do grau-o é
-questão aberta na literatura, e é por isso que a vaga está livre para nós.
-
-#### O que os dados dizem sobre `*a`
-
-Medição sobre as 873 raízes, e o resultado separa duas populações que não se
-tocam:
-
-| | n | com `*h₂` |
+| forma | estatuto | origem |
 |---|---|---|
-| raízes com `*a` subjacente | 9 | **0** |
-| raízes com `*h₂` | 181 | — (179 com `*e`, **0 com `*a`**) |
+| `[o]` | derivado, posterior | perda de acento sobre `*e` — a *Abtönung* de Brugmann: *"mit dem Zurücktreten des Tons die Umfärbung von ē̆ zu ō̆ im Zusammenhang stand"*. E, diante de `*-m` final, a lei pré-PIE `*-ē̆m` > `*-ō̆m` (Kloekhorst 2024) |
+| `[a]` | **não existe** | Kloekhorst rejeita `*a` e `*ā` para o PIE — *"I myself do not see any good reason for reconstructing the vowels \*a and \*ā for PIE"* — e reanalisa os casos clássicos com `*h₂`: 'sal' é `*sh₂-ḗl / *sh₂-él-m / *sh₂-l-és`, não `*sāl` |
+| `[i]` `[u]` | alofones silábicos | de `/j/` e `/w/`; `*weyd-` 'ver' tem grau zero `*wid-`, onde o `*i` **é** o `*y` silabificado. Medido: 1 raiz com `*i`, 7 com `*u`, em 873 |
+| `m̩ n̩ r̩ l̩` | núcleos alternativos | sonorantes silábicas (§3.3) |
 
-Leitura obrigatória desse zero: **a coloração é invisível nas formas de
-citação**, porque a raiz é uma abstração no grau-e. O `*a` de `*h₂ent-` só
-aparece nos reflexos das filhas — lat. *ante*, gr. *anti*. Então o `*a`
-protegido por uvular de que trata o passo 2 **não é** o `*a` subjacente dessas
-9 raízes.
+Duas leis independentes derivam `[o]` de `*e`, e as duas são condicionadas —
+uma pelo acento, outra pelo contexto segmental. Nenhuma delas precisa de um
+`/o/` fonêmico no estágio anterior.
 
-E as 9 são um conjunto à parte: `kap`, `ḱad`, `kagʰ`, `h₁yaǵ`, `bak`, `smal`,
-`kakka`, `skabʰ`. Formato e sentido de empréstimo, substrato e linguagem
-infantil — `kakka` é literalmente a palavra que Kloekhorst descarta como
-irrelevante para a reconstrução. Onde `*a` é reconstruído como subjacente no
-PIE, ele cheira a não-nativo, o que é exatamente o que a nossa ponte prevê.
+#### Onde a carga funcional mora
+
+Um sistema de uma vogal é tipologicamente extremo, e a lição avisa que a
+maioria das línguas fica entre 5 e 8. Mas a lição também diz, duas vezes, que
+*"these generalities are not rules"*. Aqui não se quebra por gosto: o alvo
+obriga, e a informação lexical se distribui em quatro lugares —
+
+1. o **acento livre**, que é contrastivo (§3.5);
+2. o **grau zero**, que faz alternância morfológica sem material vocálico;
+3. as **sonorantes silábicas** como núcleos;
+4. o **contraste de duração** nas consoantes, que carrega o peso lexical.
+
+#### Nota histórica: a harmonia descartada
+
+Uma versão anterior deste documento deu ao Proto-Orogeniano quatro qualidades
+em duas classes harmônicas (`/e a/` ~ `/o ɒ/`), com o arredondamento como
+traço de raiz. A proposta pagava três dívidas. A auditoria contra as fontes
+primárias derrubou as três:
+
+| dívida | o que a derrubou |
+|---|---|
+| o grau-o seria resíduo da classe `[+round]` | **no PIE inicial o grau-o não existe** — o vocalismo é `*e` acentuado contra zero. Não há o que explicar. E onde `*o` surge, ele **alterna dentro do paradigma** (hit. `karāp-`/`karēp-`), o que uma classe lexical de raiz não produz |
+| `*h₃` ganharia razão para ser labializado | não precisa de harmonia: é o membro labializado da série uvular, exatamente como `*kʷ` está para `*k`. A coloração é assimilação comum — `*h₂` recua e abaixa sem arredondar, `*h₃` recua e arredonda |
+| as labiovelares consonantais deixariam de ser série avulsa | elas são simplesmente uma série labializada, que não pede explicação; e o teste de coocorrência não mostra supressão (§4.5) |
+
+A proposta era testável e foi testada. Fica registrada aqui porque o registro
+do que se descartou, e por quê, vale tanto quanto o do que se manteve.
 
 ### 3.5 Acento
 
@@ -321,12 +265,12 @@ ele que vai alimentar o ablaut. As regras ficam para a lição 3.
 ### 3.6 Total
 
 ```
-obstruintes  20    sibilantes   2    sonorantes  10    vogais  8
-TOTAL        40
+obstruintes  20    sibilantes   2    sonorantes  10    vogais  2
+TOTAL        34
 ```
 
-Perfil consonante-pesado: 32 consoantes contra 8 vogais. Dos 40 fonemas, 20
-são harmônicos (10 por classe) e 20 são neutros. Confere com o retrato de §1.
+Perfil consonante-pesado ao extremo: **32 consoantes contra 2 vogais**. Confere
+com o retrato de §1.
 
 ---
 
@@ -424,61 +368,7 @@ harmônica de §4.5, que não se confirma.
 
 Regra adotada: *no máximo uma obstruinte glotalizada por raiz.*
 
-### 4.5 Harmonia de raiz
-
-A segunda restrição de domínio, ao lado da dissimilação glotálica. Enquanto a
-dissimilação **proíbe** repetição de um traço, a harmonia **exige** repetição
-de outro:
-
-> Todos os segmentos harmônicos de uma raiz pertencem à mesma classe.
-
-Os vinte segmentos harmônicos são os de §3.4. Os outros vinte — labiais,
-dentais, palatais, `/s sː/` e as sonorantes — são neutros e não interferem.
-
-Consequência prática: uma raiz nunca tem `/k/` e `/kʷ/` juntos, nem `/qː/` e
-`/qʷː/` juntos.
-
-#### A previsão, e o teste — que **não** confirma a hipótese
-
-Essa consequência é testável no PIE atestado, porque a harmonia, ao colapsar,
-deixaria as dorsais para trás como segmentos. Se as labiovelares do PIE são
-resíduo da classe `[+round]` e as velares simples da classe `[−round]`, elas
-não deveriam coocorrer numa mesma raiz.
-
-> ⚠ **Correção.** A primeira versão desta seção anunciava "90 % de supressão"
-> comparando as coocorrências observadas contra `873 × p(labiovelar) ×
-> p(velar)`. Essa linha de base está **errada**: ela ignora que raízes do PIE
-> raramente contêm duas dorsais. Refeito o cálculo sobre a população certa, o
-> resultado desaparece. O que segue é a versão correta.
-
-Só **13 raízes em 873** contêm duas ou mais dorsais consonantais — 17 pares no
-total. Contra a frequência dos tipos entre os 438 tokens dorsais do corpus:
-
-| par | observado | esperado | razão |
-|---|---|---|---|
-| labiovelar × velar simples | 2 | 3,2 | 0,62 |
-| velar × velar | 9 | 4,5 | 2,01 |
-| palatal × velar | 5 | 5,3 | 0,95 |
-| labiovelar × labiovelar | 0 | 0,6 | — |
-
-**Não há supressão detectável**, e com 17 pares a amostra não sustenta
-conclusão em nenhuma direção. O único desvio visível é a
-sobre-representação de velar × velar, que é repetição do mesmo tipo — outro
-fenômeno.
-
-Ampliando para incluir as laringais, entre as 72 raízes com duas ou mais
-dorsais harmônicas, 52 (72 %) são de classe uniforme e 20 (28 %) são mistas. E
-a mistura concentra-se num lugar só: **labiovelar × `*h₂`, 10 casos** — que sob
-a nossa atribuição (`*h₂` = `[−round]`) é justamente a violação mais grave.
-
-Conclusão honesta: **a harmonia não tem apoio empírico nos dados que temos**, e
-a atribuição das laringais às classes opostas é o elo mais fraco da proposta.
-Ver §3.4, "problemas em aberto".
-
-Enquanto não houver morfologia derivacional, o domínio da harmonia é a palavra
-inteira. Definir um domínio menor é assunto das lições 03 e 05.
-
-### 4.6 Junção silábica
+### 4.5 Junção silábica
 
 Dentro da palavra a fonotática é mais apertada que nas bordas: o aglomerado
 resultante do encontro coda + onset não passa de dois segmentos, e segmentos
@@ -492,31 +382,24 @@ Geradas por [`tools/po-phonology/gen.py`](../tools/po-phonology/gen.py), que
 implementa §4. Saída com `--seed 4400`, curada (o gerador é uma primeira
 aproximação; a tarefa 7 é justamente conferir).
 
-O gerador sorteia uma classe harmônica por forma e filtra vogais e dorsais por
-ela, de modo que a harmonia é imposta na geração, não conferida depois.
-
-**Raízes `[−round]`:**
+**Raízes:**
 
 ```
-/ˈseqːtː/    /ˈtːelːt/    /ˈnaːq/
-/ˈḱeq/       /ˈseːmḱ/     /ˈsteʔqp/    /ˈpːeːmː/
-```
-
-**Raízes `[+round]`:**
-
-```
-/ˈqʷːor/     /ˈkʷːɒwḱ/    /ˈkʷːolːtː/
-/ˈtːol/      /ˈmɒːqʷː/
+/ˈkːen/      /ˈʔke/       /ˈkrenː/     /ˈsmeqʷː/
+/ˈkʷːelk/    /ˈqenːpː/    /ˈʔkeːtː/    /ˈpeḱːqː/
+/ˈkʷmew/     /ˈmːeːmḱː/
 ```
 
 **Polissilábicas:**
 
 ```
-[−round]   /ˈpaːstarḱː/    /ˈwakelːerːtː/    /seːˈkːwejpː/
-[+round]   /ˈqʷːopːoʔqʷ/   /qʷjɒˈtːrːn̩s/     /pːoˈlɒːʔtqʷ/
+/seˈkʷenq/       /ˈsepːeːmːtː/    /kʷːreˈnqʷenː/   /rːeˈrqʷes/
+/ˈlːerjesḱekː/   /ˈskʷemːejkː/    /weˈtelːʔk/      /ʔkʷeˈqʷn̩tːejpː/
 ```
 
-Repare que nenhuma forma mistura `e a` com `o ɒ`, nem `k q` com `kʷ qʷ`.
+Repare em `/sr̩ˈkːl̩lpː/` e `/ˈpm̩qːenqʷ/`, também da saída bruta: palavras sem
+nenhuma vogal plena, apoiadas só em sonorantes silábicas. É o efeito de §3.4
+levado ao limite, e é legal pelo molde.
 
 ### 5.1 Formas derivadas de raízes reais
 
@@ -532,31 +415,30 @@ correspondências que as produz:
 | `qʷː` | `qʷː` | `*h₃` |
 | `q ʔq qʷ ʔqʷ` | `ʔ` | `*h₁` |
 | `sː mː nː rː lː` | idem | `*s *m *n *r *l` (degeminadas) |
-| `e eː` / `o oː` | idem | `*e *ē` / `*o *ō` |
-| `a aː` / `ɒ ɒː` | — | fundidas antes do PIH (§3.4) |
+| `e eː` | idem | `*e *ē` |
+| — | — | `*o *ō` são **derivados**: perda de acento, e `*-ē̆m` > `*-ō̆m` (§3.4) |
+| `Ø` | `Ø` | grau zero, em sílaba átona |
 
-**As vogais não têm correspondência unívoca.** O colapso da harmonia e a
-reorganização em graus de ablaut se interpõem, de modo que a vogal da forma
-proto-orogeniana segue a **classe** da raiz, e não a vogal da citação do PIE.
-Formalizar isso é o trabalho da lição 4; aqui as formas são dadas na classe
-que suas dorsais exigem.
+**As vogais não têm correspondência unívoca.** Onde o PIE cita `*o`, o
+Proto-Orogeniano tem `/e/`: o grau-o é posterior e condicionado. Formalizar as
+duas leis que o produzem é trabalho da lição 4.
 
 Aplicada de trás para a frente:
 
-| PIE clássico | sentido | Proto-Orogeniano | classe |
-|---|---|---|---|
-| `*steh₂-` | ficar de pé | `/ˈstːeqː/` | `[−round]` |
-| `*lewk-` | brilhante | `/ˈlewkː/` | `[−round]` |
-| `*weyd-` | ver | `/ˈwejʔt/` | `[−round]` |
-| `*bʰer-` | carregar | `/ˈper/` | `[−round]` |
-| `*bʰendʰ-` | atar | `/ˈpent/` | `[−round]` |
-| `*pent-` | trilha | `/ˈpːentː/` | `[−round]` |
-| `*dʰeh₁-` | amamentar | `/ˈteq/` | `[−round]` |
-| `*ǵenh₁-` | gerar | `/ˈʔḱenq/` | `[−round]` |
-| `*h₂weh₁-` | soprar | `/ˈqːweq/` | `[−round]` |
-| `*h₁eḱu-` | cavalo | `/ˈqeḱːw/` | `[−round]` |
-| `*welh₃-` | golpear | `/ˈwolqʷː/` | `[+round]` |
-| `*kʷekʷlos` | roda | `/ˈkʷːokʷːlos/` | `[+round]` |
+| PIE clássico | sentido | Proto-Orogeniano |
+|---|---|---|
+| `*steh₂-` | ficar de pé | `/ˈstːeqː/` |
+| `*lewk-` | brilhante | `/ˈlewkː/` |
+| `*weyd-` | ver | `/ˈwejʔt/` |
+| `*bʰer-` | carregar | `/ˈper/` |
+| `*bʰendʰ-` | atar | `/ˈpent/` |
+| `*pent-` | trilha | `/ˈpːentː/` |
+| `*dʰeh₁-` | amamentar | `/ˈteq/` |
+| `*ǵenh₁-` | gerar | `/ˈʔḱenq/` |
+| `*h₂weh₁-` | soprar | `/ˈqːweq/` |
+| `*h₁eḱu-` | cavalo | `/ˈqeḱːw/` |
+| `*welh₃-` | golpear | `/ˈwelqʷː/` |
+| `*kʷekʷlos` | roda | `/ˈkʷːekʷːles/` |
 
 Três coisas a notar.
 
@@ -564,12 +446,14 @@ Três coisas a notar.
 inovações — a tematização é posterior à cisão, e o anatólio conserva a forma
 atemática.
 
-`*welh₃-` e `*kʷekʷlos` são os casos que mostram a não-univocidade: ambos são
-citados com `*e` no PIE, mas suas dorsais (`*h₃`, `*kʷ`) são `[+round]`, então
-a forma proto-orogeniana traz `/o/`. O `*e` do PIE é grau, não herança direta.
+`*kʷekʷlos` 'roda' mostra a não-univocidade: os dois `*o` da forma do PIE — o
+do radical e o da desinência temática `*-os` — não estão no Proto-Orogeniano.
+Ambos surgem depois, por perda de acento e pela lei `*-ē̆m` > `*-ō̆m`.
 
-E as duas laringais nunca aparecem na mesma linha, porque não podem: `*h₂` é
-`[−round]` e `*h₃` é `[+round]` — a supressão medida em §4.5.
+E `*h₂` (`/qː/`) e `*h₃` (`/qʷː/`) são a mesma uvular, plana e labializada,
+exatamente como `*k` está para `*kʷ`. A coloração que cada uma causa é
+assimilação comum: `*h₂` recua e abaixa sem arredondar, `*h₃` recua e
+arredonda.
 
 ---
 
@@ -578,43 +462,36 @@ E as duas laringais nunca aparecem na mesma linha, porque não podem: `*h₂` é
 Cinco polissilábicas, pelo Princípio do Onset Máximo (M.O.P.), com a ressalva
 de que o M.O.P. só se aplica quando o onset resultante for legal.
 
-**1.** `/ˈpaːstarḱː/` `[−round]` → `[ˈpaː]σ[starḱː]σ`
+**1.** `/seˈkʷenq/` → `[se]σ[ˈkʷenq]σ`
 
 ```
-      σ                    σ
-     / \            /   /  |  \   \
-    C   V          C   C   V   C   C
-    p   aː         s   t   a   r   ḱː
+      σ              σ
+     / \          /  |  \
+    C   V        C   V   C C
+    s   e        kʷ  e   n q
 ```
 
-O M.O.P. leva o grupo `st` inteiro para o onset da segunda sílaba — legal pela
-exceção do `/s/` (§4.2), embora desça em sonoridade.
+**2.** `/ˈsepːeːmːtː/` → `[ˈse]σ[pːeːmːtː]σ` — o M.O.P. leva `pː` inteiro para
+o onset, porque `/pː/` é monofonemática (§5.3 do documento 01: `/tː/` não é
+`/t/`+`/t/`).
 
-**2.** `/ˈsepːeːmːtː/` `[−round]` → `[ˈse]σ[pːeːmːtː]σ` — o M.O.P. leva `pː`
-inteiro para o onset, porque `/pː/` é monofonemática (§5.3 do documento 01:
-`/tː/` não é `/t/`+`/t/`).
-
-**3.** `/kʷːroˈnqʷonː/` `[+round]` → `[kʷːron]σ[ˈqʷonː]σ`
+**3.** `/kʷːreˈnqʷenː/` → `[kʷːren]σ[ˈqʷenː]σ`
 
 Aqui o M.O.P. **falha**. Levar `nqʷ` inteiro para o onset daria um onset que
 desce em sonoridade (nasal → oclusiva), proibido por §4.1. O `n` fica na coda
-da primeira sílaba, e o acento cai na segunda. *(Forma construída à mão para o
-exemplo, não saída do gerador — as demais são geradas.)*
+da primeira sílaba, e o acento cai na segunda.
 
-**4.** `/seːˈkːwejpː/` `[−round]` → `[seː]σ[ˈkːwejpː]σ` — onset `kːw` sobe em
-sonoridade (obstruinte → glide), legal, e o M.O.P. se aplica sem obstáculo.
+**4.** `/rːeˈrqʷes/` → `[rːer]σ[ˈqʷes]σ` — mesma razão: `rqʷ` não é onset
+legal.
 
-**5.** `/ˈqʷːopːoʔqʷ/` `[+round]` → `[ˈqʷːo]σ[pːoʔqʷ]σ`
+**5.** `/ˈlːerjesḱekː/` → `[ˈlːer]σ[jes]σ[ḱekː]σ`
 
 ```
-        σ                   σ
-      /   \            /    |    \
-     C     V          C     V     C
-     qʷː   o          pː    o     ʔqʷ
+       σ            σ           σ
+    /  |  \      /  |  \     /  |  \
+   C   V   C    C   V   C   C   V   C
+   lː  e   r    j   e   s   ḱ   e   kː
 ```
-
-Todas as cinco são harmonicamente uniformes: as três primeiras `[−round]` não
-contêm `/o ɒ kʷ qʷ/`, e as `[+round]` não contêm `/e a k q/`.
 
 ---
 
@@ -626,13 +503,12 @@ contêm `/o ɒ kʷ qʷ/`, e as `[+round]` não contêm `/e a k q/`.
 | Sonoridade sobe no onset, desce na coda | ✔ com as exceções de `/s/` (§4.2), todas nas bordas |
 | Máximo uma glotalizada por raiz | ✔ imposto pelo gerador; nenhuma forma de §5 viola |
 | Sem `/ʔp/` | ✔ ausente do inventário, não filtrado depois |
-| **Harmonia de raiz** | ✔ imposta na geração; 0 violações em 800 formas — mas a regra em si está sob revisão, §3.4 |
 | Junção medial ≤ 2 segmentos, sem geminação acidental | ✔ validado por `_bad_juncture` |
 | Acento marcado em toda forma | ✔ |
 
-Verificação automática das três restrições de domínio sobre 800 formas geradas
-(400 raízes + 400 palavras, sementes 0–399): **zero violações** de harmonia,
-zero de dissimilação glotálica, zero ocorrências de `/ʔp/`.
+Verificação automática sobre 800 formas geradas (400 raízes + 400 palavras,
+sementes 0–399): zero violações de dissimilação glotálica, zero ocorrências de
+`/ʔp/`.
 
 ### Conferência contra as restrições do documento 01
 
@@ -642,7 +518,7 @@ O teste que importa de verdade — o inventário alimenta o alvo de §9.1?
 |---|---|
 | Oclusivas por duração + glotalização, não por voz | ✔ §3.1 |
 | Laringais como oclusivas uvulares `/qː/`, `/qʷː/` | ✔ §3.1, coluna uvular |
-| **Nenhum fonema `*a` no nó do PIH** | ✔ `/a ɒ/` existem no Proto-Orogeniano e se fundem antes do PIH — §3.4, "a ponte" |
+| **Nenhum fonema `*a`** | ✔ ausente do inventário, e Kloekhorst rejeita `*a` para o PIE por completo — §3.4 |
 | Acento livre condicionando lenição | ✔ §3.5 |
 | `/tː/` monofonemática, distinta de `/t/`+`/t/` | ✔ §6, exemplo 2 |
 | Contraste de duração em `/s/` e sonorantes | ✔ §3.3 |
@@ -651,39 +527,55 @@ O teste que importa de verdade — o inventário alimenta o alvo de §9.1?
 |---|---|
 | Sem série de oclusivas sonoras | ✔ nenhuma sonora no inventário |
 | Sem laringais fricativas | ✔ são oclusivas |
-| Fonema `*a` **no PIH** | ✔ fundido antes do nó, §3.4 |
+| Fonema `*a` | ✔ ausente |
 
-Nada em conflito. A linha do `*a` é a única que mudou de leitura: a restrição
-vale no **nó do PIH**, não no Proto-Orogeniano, e o §9.4 do documento 01 já
-licenciava explicitamente contrastes que colapsam antes desse nó. A redação do
-§9.1 foi corrigida para dizer isso.
+Nada em conflito.
 
 ---
 
 ## O que fica em aberto para a lição 3
 
-A lição 3 pede traços distintivos e notação de regras. Cinco coisas ficam
+A lição 3 pede traços distintivos e notação de regras. Quatro coisas ficam
 esperando por ela:
 
 1. **A matriz de traços das obstruintes.** O contraste de três séries precisa
    de traços que o descrevam sem apelar a `[±voz]`: provavelmente `[±longo]` e
    `[±constrição glotal]`.
-2. **`[±round]` como traço único de dois subsistemas.** É o mesmo traço que
-   distingue `/k/` de `/kʷ/` e `/e/` de `/o/`. A lição 3 lista `[±round]` entre
-   os traços disponíveis; formalizar a harmonia é escrevê-la como regra de
-   espraiamento desse traço pelo domínio da raiz.
-3. **`[±low]` para separar `/e o/` de `/a ɒ/`**, e a formulação do abaixamento
-   uvular que protege as baixas (§3.4).
-4. **As regras de alofonia.** Silabificação das sonorantes, realização de
+2. **As regras de alofonia.** Silabificação das sonorantes, realização de
    `/j w/` como `[i u]`, e a lenição condicionada pelo acento.
-5. **A regra de assibilação.** `*-TT-` > `*-TsT-`, com `/tː/` imune por ser
-   monofonemática — está reconstruída já para o PIH e precisa de formulação
-   formal.
+3. **A regra de assibilação.** `*-TT-` > `*-TsT-`, com `/tː/` imune por ser
+   monofonemática. Melchert confirma que a regra é compartilhada entre PIE e
+   anatólio — hit. `/eːdten/` → `ēz(zaš)ten` `[eːtsten]` — e registra que não
+   conhece **nenhuma** regra fonológica sincrônica do PIE que seja
+   demonstravelmente inovação não-anatólia.
+4. **A regra de perda de vogal átona**, que é o que produz o grau zero e,
+   portanto, o motor do sistema inteiro (§3.4).
 
 E a lição 4, mudança sonora, é onde a tabela de §5.1 deixa de ser uma tabela e
 vira um conjunto de regras ordenadas, aplicável às 873 raízes e conferível
-contra elas. Duas coisas ficam explicitamente adiadas para lá:
+contra elas. Duas leis já estão identificadas e esperando formulação:
 
-- **o colapso da harmonia** e a relexicalização de `[±round]` nas dorsais;
-- **a origem do grau-o**, que é a dívida que a harmonia se propõe a pagar e que
-  este documento apenas registra como hipótese.
+- **Abtönung** — `*e` átono → `*o` (Brugmann; a origem do grau-o);
+- **`*-ē̆m` > `*-ō̆m`** — coloração diante de `*-m` final (Kloekhorst 2024).
+
+---
+
+## Apêndice | O que as fontes entregam para as lições 04 e 05
+
+Registro antecipado, porque saiu da mesma leitura e se perde se não for
+anotado. Kloekhorst reconstrói, para um **pré-estágio do PIE**, um sistema
+nominal com estas propriedades:
+
+- **alinhamento ergativo** — o caso central é o **absolutivo**;
+- **inventário de casos governado por animacidade**: casos centrais disponíveis
+  para todos os nomes (absolutivo, i-locativo, Ø-locativo, instrumental) contra
+  casos **restritos a animados** (acusativo, dativo, alativo, "ablativo");
+- apenas **duas classes acentuais**: estática e móvel;
+- na flexão móvel, **proterodinâmico = inanimado** e **hisserodinâmico =
+  animado**;
+- os seis paradigmas de acento-ablaut do PIE tardio reduzem-se a **três** do
+  PIE inicial.
+
+Isso confirma e amplia bastante duas linhas do §9.1 do documento 01 — "dois
+gêneros, animado/inanimado" e "alinhamento sensível a animacidade" — e é o
+ponto de partida pronto para a morfologia nominal do Proto-Orogeniano.

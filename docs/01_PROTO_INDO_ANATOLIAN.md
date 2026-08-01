@@ -13,8 +13,8 @@ tabela de restrições de projeto.
 | | |
 |---|---|
 | Escopo | posição do anatólio no indo-europeu; reconstrução do PIA |
-| Fontes primárias | 4 artigos/capítulos lidos na íntegra (§10) |
-| Última revisão | 2026-07 |
+| Fontes primárias | 9 artigos/capítulos lidos na íntegra (§10) |
+| Última revisão | 2026-08 |
 | Status | levantamento fechado, camada genética incorporada (§7.3) |
 
 ## Convenção de rótulos
@@ -271,7 +271,7 @@ consenso.
 
 | Estágio | `*h₁` | `*h₂` | `*h₃` |
 |---|---|---|---|
-| PIA (Kloekhorst 2018b) | — | `*[qː]` oclusiva uvular longa | `*[qːʷ]` oclusiva uvular longa labializada |
+| PIA (Kloekhorst 2018b) | `*[ʔ]` | `*[qː]` oclusiva uvular longa | `*[qʷː]` oclusiva uvular longa labializada |
 | PIA (Weiss 2016) | — | fricativa uvular | — |
 | PIE clássico | `/h/` ou oclusiva glotal | `*[ħ]` ou `*[ʕ]` | `*[ħʷ]` ou `*[ʕʷ]` |
 | Hitita/lúvio atestado | perdido | `ḫ` — fricativa uvular | `ḫ` parcialmente |
@@ -279,6 +279,32 @@ consenso.
 A inovação do PIE clássico é portanto a **fricativização de oclusivas
 uvulares** (item 19). Direção que importa: o estágio antigo tem **oclusivas**;
 as fricativas são recentes.
+
+**O argumento é a série fortis.** `*h₂` intervocálico dá **fortis** `-ḫḫ-`
+(`*péh₂ur` > hit. `paḫḫur` `[páχːor]`), enquanto `*s` — fricativa surda de
+verdade — dá **lenis** `-š-`. Se `*h₂` fosse fricativa, a assimetria seria
+inexplicável, e Kloekhorst observa que *"this problem has never been properly
+addressed, let alone solved"*. Sendo oclusiva, ela se alinha com `*t` > `[tː]`.
+E ele conclui: *"This would then imply that \*h₂ at this level was a long stop
+as well, \*[qː]."* Ou seja, **as laringais são a coluna uvular da série
+fortis** — não é inferência nossa, é a tese dele.
+
+Cadeia completa: PIA `*[qː]` → PAnat. `*[qː]` → PLuw. `*[qː]` → hit./luv.
+`[χː]`; e, do outro lado, pré-PIE `*[χ]` → PIE clássico `*[ħ]`/`*[ʕ]`. No
+cário e no lício o resultado é `[k]`, que é o argumento tipológico de partida:
+`[k]` sai mal de uma fricativa e bem de uma oclusiva.
+
+A **lenis `ḫ`** do hitita **é derivada**, pelas regras de lenição
+proto-anatólias (após vogal longa acentuada; entre duas átonas em posição
+pós-tônica). Ela não atesta uma uvular não-fortis no PIA.
+
+`*h₁` = **oclusiva glotal** `/ʔ/` é igualmente posição de Kloekhorst, que
+dedica um artigo inteiro a defender um `/ʔ/` fonêmico no hitita como reflexo de
+`*h₁`, contra as críticas.
+
+**Alternativa a registrar:** Kümmel (2007: 318–327) argumenta que as velares
+simples do PIE (`*k` etc.) podem ter sido elas próprias uvulares `*[q]` — o que
+Kloekhorst reconhece ser *"contradictive to the idea presented here"*.
 
 **Consequência corolária (Lubotsky 1989, Pronk 2019):** a consequência última da
 teoria laringal é que **o PIE não possuía o fonema `*a`**. Kloekhorst & Pronk
@@ -624,20 +650,20 @@ está fora.
 | Acento livre, condicionando lenição | §5.4 |
 | Oclusivas contrastando por **duração + glotalização** | §5.2 |
 | Laringais como **oclusivas uvulares** `/qː/`, `/qʷː/` | §5.1 |
-| **Nenhum fonema `*a` — no nó do PIH** ⚠ | §5.1 |
+| **Nenhum fonema `*a`** | §5.1 |
 | Assibilação `*-TT-` > `*-TsT-`, com `/tː/` monofonemática imune | §5.3 |
 | Plural coletivo vivo | §4.1 |
 | `*h₁eḱu-` 'cavalo' não tematizado | §3 nº 11 |
 | Genitivo `*-om` indiferente a número | §3 nº 14 |
 | Particípio de diátese não fixa | §3 nº 1 |
 
-> ⚠ **Onde cada restrição morde.** Toda linha desta tabela descreve o estado
-> **no nó do PIH** — é isso que a reconstrução atesta. Ela não obriga o
-> Proto-Orogeniano a já estar nesse estado alguns séculos antes: §9.4 licencia
-> explicitamente contrastes que colapsam no caminho, desde que o colapso seja
-> regular. A linha do `*a` é o caso vivo — ver
+> **Onde cada restrição morde.** Toda linha desta tabela descreve o estado no
+> nó do PIH. §9.4 licencia contrastes que colapsam no caminho, desde que o
+> colapso seja regular — mas isso é uma licença, não um convite: cada uso dela
+> precisa de motivo próprio. A tentativa de usá-la para o sistema vocálico foi
+> testada e descartada; ver
 > [`02_PROTO_OROGENIAN_PHONOLOGY.md`](02_PROTO_OROGENIAN_PHONOLOGY.md) §3.4,
-> onde `/a ɒ/` existem no Proto-Orogeniano e se fundem antes do PIH.
+> "nota histórica".
 
 ### 9.2 Proibido — são inovações posteriores à cisão
 
@@ -646,7 +672,7 @@ está fora.
 | Gênero feminino | a inovação não-anatólia de maior consenso |
 | Série de oclusivas **sonoras** | é reinterpretação tardia da duração (§5.2) |
 | Laringais **fricativas** | fricativização é inovação do PIE clássico (§5.1) |
-| Fonema `*a` **no PIH** | §5.1 |
+| Fonema `*a` | §5.1 |
 | Genitivo plural marcado | §3 nº 14 |
 | Temas em `*-o-` em 'cavalo', 'jugo', 'vento' | §3 nº 11–13 |
 | Particípios de diátese fixa sobre radicais têmporo-aspectuais | §4.1 |
@@ -670,12 +696,12 @@ sistema de número · e toda a fonologia **acima** do que o PIH exige (o
 Proto-Orogeniano pode ter contrastes que colapsaram antes do PIH, desde que
 alimentem o sistema de §9.1 por mudança regular).
 
-**Exemplo já usado:** o sistema vocálico. O documento 02 §3.4 dá ao
-Proto-Orogeniano quatro qualidades vocálicas em duas classes harmônicas
-(`/e a/` ~ `/o ɒ/`), das quais só as médias chegam ao PIH. O contraste de
-arredondamento colapsa no caminho e se relexicaliza — nas dorsais, como a série
-labiovelar; na morfologia, como o grau-o do ablaut. É o caso paradigmático
-desta cláusula: nada em §9.1 é violado, porque §9.1 descreve o nó de chegada.
+**Único uso corrente:** a coluna uvular completa (documento 02 §3.2), em que as
+uvulares não-fortis colapsam em `*h₁`. Uma segunda tentativa — dar ao
+Proto-Orogeniano um sistema vocálico harmônico de quatro qualidades — foi
+testada contra as fontes e **descartada**: no PIE inicial o vocalismo é `*e`
+acentuado contra grau zero, e as duas leis que produzem `*o` (perda de acento;
+`*-ē̆m` > `*-ō̆m`) são posteriores e condicionadas. Ver documento 02 §3.4.
 
 ### 9.5 A vantagem estrutural
 
@@ -731,12 +757,40 @@ pela reconstrução linguística sob outro nome.
    Errata: doi:10.1038/s41586-025-08789-3 (afiliação, sem efeito sobre o
    conteúdo).
 
+5. **Kloekhorst, A.** 2018b. "Anatolian evidence suggests that the
+   Indo-European laryngeals *h₂ and *h₃ were uvular stops". *Indo-European
+   Linguistics* 6, 69–94. — os valores fonéticos das laringais e o argumento
+   da série fortis (§5.1).
+6. **Kloekhorst, A.** "The origin of the Proto-Indo-European nominal
+   accent-ablaut paradigms". In: Rieken, E. (ed.), *100 Jahre Entzifferung des
+   Hethitischen*. Wiesbaden: Reichert, 179–203. — a redução dos seis
+   paradigmas a três, o vocalismo `*e`/zero do PIE inicial, e o esboço
+   ergativo/animado do pré-PIE.
+7. **Kloekhorst, A.** 2024. "Evidence for a new pre-Proto-Indo-European sound
+   law *-ē̆m > PIE *-ō̆m". *Indogermanische Forschungen*,
+   doi:10.1515/if-2024-0008. — uma segunda fonte condicionada para `*o`.
+8. **Kloekhorst, A.** "Phonemic glottal stop in Hittite as the outcome of PIE
+   *h₁". — `*h₁` = `/ʔ/`, defendido contra as críticas.
+9. **Kloekhorst, A.** "Some Indo-Uralic aspects of Hittite". — o princípio
+   metodológico de usar o urálico para desempatar entre anatólio e
+   não-anatólio.
+
 **Lida como resenha:**
 
-5. **Rieken, E.** Resenha de Kloekhorst, A. 2014, *Accent in Hittite: A Study in
+10. **Rieken, E.** Resenha de Kloekhorst, A. 2014, *Accent in Hittite: A Study in
    Plene Spelling, Consonant Gradation, Clitics, and Metrics* (StBoT 56).
    Wiesbaden: Harrassowitz. *BSOAS*, doi:10.1017/S0041977X15000737.
    — acento e quantidade vocálica (§5.4), com as ressalvas da resenhista.
+
+**Corpus consultado mas não esgotado.** Além das acima, o projeto dispõe de
+~30 artigos de Kloekhorst (ejetivas no hitita, fonética das fortis/lenis 2021,
+oclusivas iniciais, grafias `CaR`/`Ca-aR`, grupos "thorn", origem da
+ḫi-conjugação, tempo e aspecto, lício e cário, fonologia lídia, Kaneš,
+indo-urálico, resenhas) e dois sobre o sistema de casos proto-urálico. Foram
+lidos por amostragem dirigida às questões em aberto; o restante fica como
+reserva para as lições 03–05. Quatro chegaram como digitalização sem camada de
+texto e não puderam ser extraídos: `InitialStopsInHittite`,
+`ReviewHoffnerMelchert`, `Mahhanda`, `InitLar`.
 
 **Citadas de segunda mão** (via as fontes acima, não verificadas no original):
 Adiego 2001, 2016 · Anthony & Ringe 2015 · Blevins 2004 · De Vaan 2019 ·

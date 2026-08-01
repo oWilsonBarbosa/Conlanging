@@ -56,32 +56,28 @@ SYLLABIC = {"m": "m̩", "n": "n̩", "r": "r̩", "l": "l̩", "w": "u", "j": "i"}
 
 # ─── Vogais ─────────────────────────────────────────────────────────────────
 #
-# Quatro qualidades — duas alturas × duas classes harmônicas — cada uma com
-# contraste de duração. As altas [i] e [u] NÃO são fonemas: são os alofones
-# silábicos de /j/ e /w/, como o ablaut do PIE exige (*weyd- → grau zero *wid-).
+# UMA qualidade, duas durações. O sistema é radical e é o que as fontes
+# sustentam para o estágio anterior ao PIH:
 #
-# /a/ e /ɒ/ existem no Proto-Orogeniano e desaparecem antes do PIH. A restrição
-# "nenhum *a" (Lubotsky 1989, Pronk 2019) vale no nó do PIH, não aqui.
-
-VOWELS = ["e", "a", "o", "ɒ"]
-LONG_VOWELS = ["eː", "aː", "oː", "ɒː"]
-
-# ─── Harmonia ───────────────────────────────────────────────────────────────
+#   Kloekhorst reduz os seis paradigmas de acento-ablaut do PIE tardio a três
+#   do PIE inicial, e observa que neles "all forms show only one morpheme that
+#   is accented and at the same time shows *e-grade, whereas all other
+#   morphemes are unaccented and show zero-grade".
 #
-# O arredondamento é um traço DE RAIZ, não de segmento: uma raiz pertence a uma
-# classe, e vogais e dorsais concordam. Labiais, dentais e palatais são
-# neutras e ocorrem nas duas classes.
+# Ou seja: no estágio em que trabalhamos, o vocalismo é /e/ acentuado contra
+# grau zero. As outras qualidades são DERIVADAS e posteriores:
 #
-# É desse traço que sai, no colapso da harmonia, tanto a série labiovelar
-# consonantal do PIE quanto o grau-o do ablaut.
+#   [o]  <- perda de acento sobre *e (Abtönung; Brugmann 1897/1922)
+#        <- e, antes de *-m final, a lei *-ēm > *-ōm (Kloekhorst 2024)
+#   [a]  não existe. Kloekhorst rejeita *a e *ā para o PIE e reanalisa os casos
+#        clássicos com *h2 ('sal' = *sh2-ēl, não *sāl).
+#   [i u] alofones silábicos de /j/ e /w/ (*weyd- -> grau zero *wid-)
+#
+# A carga funcional fica no acento livre, nas sonorantes silábicas e no
+# contraste de duração consonantal.
 
-PLAIN = ["e", "eː", "a", "aː",
-         "k", "kː", "ʔk", "q", "qː", "ʔq"]
-ROUND = ["o", "oː", "ɒ", "ɒː",
-         "kʷ", "kʷː", "ʔkʷ", "qʷ", "qʷː", "ʔqʷ"]
-
-HARMONY = {seg: "plain" for seg in PLAIN}
-HARMONY.update({seg: "round" for seg in ROUND})
+VOWELS = ["e"]
+LONG_VOWELS = ["eː"]
 
 PHONEMES = OBSTRUENTS + SIBILANTS + SONORANTS + VOWELS + LONG_VOWELS
 
@@ -98,17 +94,6 @@ def is_glottalized(seg):
     return series_of(seg) == "glottalized"
 
 
-def harmony_of(seg):
-    """Retorna 'plain' | 'round' para segmentos harmônicos, None p/ neutros."""
-    return HARMONY.get(seg)
-
-
-def agrees(seg, cls):
-    """Um segmento serve numa raiz da classe `cls`? Neutros sempre servem."""
-    h = harmony_of(seg)
-    return h is None or h == cls
-
-
 if __name__ == "__main__":
     print(f"obstruintes  {len(OBSTRUENTS):3d}  {' '.join(OBSTRUENTS)}")
     print(f"sibilantes   {len(SIBILANTS):3d}  {' '.join(SIBILANTS)}")
@@ -117,7 +102,4 @@ if __name__ == "__main__":
           f"{' '.join(VOWELS + LONG_VOWELS)}")
     print(f"TOTAL        {len(PHONEMES):3d}")
     print()
-    neutral = [p for p in PHONEMES if harmony_of(p) is None]
-    print(f"classe [-round]  {' '.join(PLAIN)}")
-    print(f"classe [+round]  {' '.join(ROUND)}")
-    print(f"neutros ({len(neutral)})     {' '.join(neutral)}")
+    print(f"núcleos silábicos alternativos: {' '.join(SYLLABIC.values())}")
