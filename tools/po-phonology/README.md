@@ -14,6 +14,7 @@ python3 inventory.py            # imprime o inventário e o total de fonemas
 python3 gen.py 20 --roots       # 20 raízes monossilábicas canônicas
 python3 gen.py 20 --words       # 20 palavras polissilábicas
 python3 gen.py 20 --seed 1234   # outra semente (padrão: 4400)
+python3 features.py             # matriz de traços + verificação das classes
 ```
 
 A saída é determinística por semente — as formas citadas no documento 02 saem
@@ -24,6 +25,7 @@ com `--seed 4400`.
 | Arquivo | Conteúdo |
 |---|---|
 | `inventory.py` | os 34 fonemas, organizados por série e ponto de articulação; `series_of()` e `is_glottalized()` |
+| `features.py` | matriz de traços distintivos, classes naturais e verificação — `python3 features.py` confere que cada classe resolve para o conjunto pretendido |
 | `gen.py` | molde silábico, pesos de onset/coda medidos sobre as 873 raízes de `PIE_roots`, validação de junção silábica e acento livre |
 
 ## Restrições impostas

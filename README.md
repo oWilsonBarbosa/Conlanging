@@ -9,6 +9,7 @@ tipológicas, e a documentação do projeto **Proto-Orogeniano**.
 |---|---|
 | [`docs/01_PROTO_INDO_ANATOLIAN.md`](docs/01_PROTO_INDO_ANATOLIAN.md) | Estado da arte sobre o proto-indo-anatólio — o alvo de reconstrução contra o qual o Proto-Orogeniano é desenhado. Inclui a tabela de restrições de projeto (§9). |
 | [`docs/02_PROTO_OROGENIAN_PHONOLOGY.md`](docs/02_PROTO_OROGENIAN_PHONOLOGY.md) | O inventário fonêmico e a fonotática do Proto-Orogeniano. Resposta ao trabalho da lição Phonology 2 do curso. |
+| [`docs/03_PROTO_OROGENIAN_FEATURES_RULES.md`](docs/03_PROTO_OROGENIAN_FEATURES_RULES.md) | Matriz de traços distintivos, classes naturais e as regras fonológicas — sincrônicas e diacrônicas. Lição Phonology 3. |
 
 ## Ferramentas
 
