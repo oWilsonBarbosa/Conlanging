@@ -12,6 +12,9 @@ python3 invert.py             # todas as teorias, resumo comparativo
 python3 invert.py baseline    # uma teoria, com violações e colisões
 python3 derive.py             # deriva e compara as duas ordens de regras
 python3 derive.py --sample    # derivações passo a passo
+python3 stems.py              # perfil do corpus de formas flexionadas
+python3 stems.py --abtonung   # o grau-o contra o acento
+python3 stems.py --longas     # de onde vêm as vogais longas
 ```
 
 ## Arquivos
@@ -21,6 +24,7 @@ python3 derive.py --sample    # derivações passo a passo
 | `theories.py` | as variantes como **configuração**: correspondências PIE ↔ PO. Trocar de teoria é trocar um dicionário, não bifurcar o código |
 | `invert.py` | segmentação das raízes, inversão e as três medidas |
 | `derive.py` | a derivação ordenada PO → PIE clássico, e o teste de que a ordem importa |
+| `stems.py` | o corpus de **formas flexionadas** — 40.894 formas, 93 % com acento. É o corpus que permite testar a *Abtönung* e as vogais longas, que as raízes não permitem |
 
 ## As três medidas, e por que não são circulares
 
@@ -44,7 +48,12 @@ não pode falhá-la e marca menos. Ver `docs/04` §2.3.
 
 - A variante da aspiração usa símbolos que `is_glottalized()` não reconhece, e
   por isso escapa de uma violação que deveria marcar.
-- As raízes do dataset vêm **sem acento**, e a *Abtönung* é condicionada por
-  acento. Essa regra não é testável neste corpus.
+- As raízes do dataset vêm **sem acento** — mas isso não impede o teste da
+  *Abtönung*, só o desloca: use `stems.py`, que lê as tabelas de flexão, onde
+  93 % das formas marcam acento. *(O agudo é pré-composto; normalize para NFD
+  antes de contar, ou a contagem erra por duas ordens de grandeza.)*
+- O corpus de flexão não é evidência independente da *Abtönung*: quem
+  reconstruiu essas formas já assume a regra. O que ele mede é a consistência
+  da aplicação. Ver `docs/04` §8.2.
 - A inversão trabalha segmento a segmento; não há ainda ordenação de regras
   nem contexto.

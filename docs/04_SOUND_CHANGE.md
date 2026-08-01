@@ -2,14 +2,14 @@
 
 **Conlangs University · Phonology 4 — "Sound change"**
 
-> **Em andamento.** Banco de provas, medição, ordenação e a tarefa 3 do
-> exercício estão feitos. Faltam as leis vocálicas e a tarefa 4.
+> **Em andamento.** Banco de provas, medição, ordenação, a tarefa 3 e as leis
+> vocálicas estão feitos. Faltam o grau zero e a tarefa 4.
 
 | | |
 |---|---|
 | Lição | Phonology 4 (Jasper, maio 2020) — a mais longa do curso |
 | Ferramenta | [`tools/po-derivation/`](../tools/po-derivation/) |
-| Estado | §1–§5 fechados; leis vocálicas e tarefa 4 pendentes |
+| Estado | §1–§8 fechados; grau zero e tarefa 4 pendentes |
 
 ---
 
@@ -376,6 +376,12 @@ por perda de `*-s`.
 cai de dois fonemas para **um**, e toda duração vocálica passa a ser derivada —
 por perda de laringal ou de sibilante, com alongamento compensatório.
 
+> ⚠ **Corrigido em §8.3.** Duas coisas desta seção não sobreviveram ao corpus
+> de formas flexionadas. A frase "o corpus não pode testar isso" era falsa — ele
+> podia, com o corpus certo. E o **mecanismo** apontado aqui está errado: o
+> alongamento por perda de laringal responde por **2 %** das vogais longas, não
+> pela maioria. A *proposta* sai reforçada; a justificativa, refeita.
+
 **Mas o corpus não pode testar isso.** Com zero raízes exercendo o contraste, a
 variante "vogal longa derivada" produziria números idênticos ao baseline. Fica
 registrada como proposta com evidência, não executada — a mesma disciplina
@@ -386,13 +392,150 @@ contagem lá é de *qualidades* vocálicas, e ela já era 1.
 
 ---
 
+## 8 | O corpus errado
+
+A pergunta que abriu esta seção foi do usuário: *"não seria melhor testar com
+palavras ou stems?"*
+
+Sim. E o erro era mais caro do que parecia. Tudo o que §7 e a lista de
+pendências declararam **intestável** era intestável só porque o corpus estava
+errado — não porque a evidência não existisse.
+
+### 8.1 O corpus
+
+Uma raiz do PIE é uma abstração: citada em grau-e, sem flexão e sem acento.
+Três coisas ficam fora de alcance por construção — a *Abtönung* (condicionada
+por acento), as vogais longas (que raízes não carregam) e o grau zero (que
+precisa de paradigma).
+
+Mas as 1.891 entradas do `PIE_roots` não são só raízes. **1.018 são outra
+coisa** — substantivos, verbos, adjetivos, sufixos — e trazem tabelas de
+flexão:
+
+| | |
+|---|---|
+| formas flexionadas limpas | **40.894** |
+| **com acento marcado** | **38.128 (93 %)** |
+| com `*o` | 14.945 |
+| com vogal longa | 3.167 |
+| por classe | verbo 14.480 · subst. 9.417 · adj. 8.559 · sufixo 6.759 · pron. 776 |
+
+53 vezes o corpus de raízes, e com o dado acentual que faltava.
+
+*(Uma armadilha de codificação custou a primeira contagem: o agudo do dataset é
+**pré-composto** — `é` é U+00E9, não `e` + U+0301. Uma varredura ingênua por
+caractere combinante acha 470 formas acentuadas em vez de 38.128. `stems.py`
+normaliza para NFD antes de contar.)*
+
+### 8.2 A *Abtönung*, medida
+
+A tese de Brugmann: `*o` é o que sobra de um `*e` que perdeu o acento. Se ela
+vale, `*o` tem de aparecer átono com mais frequência que `*e`.
+
+| recorte | `*e` tôn / át | `*o` tôn / át | razão de chances | χ² |
+|---|---|---|---|---|
+| todas as posições | 25.817 / 20.460 | 9.228 / 20.766 | **2,84** | 4588 |
+| **só a 1ª vogal (raiz)** | 21.078 / 5.207 | 7.153 / 5.603 | **3,17** | 2494 |
+| não-primeiras (sufixos) | 4.739 / 15.253 | 2.075 / 15.163 | 2,27 | 843 |
+
+Na linha de cima o efeito é forte, mas há um artefato óbvio à espreita: a
+**vogal temática** é sufixal e átona quase por definição, e sozinha produziria
+esse número. Por isso o recorte do meio, que só olha a vogal da raiz e portanto
+a exclui.
+
+**O efeito sobrevive, e cresce.** Em posição de raiz, `*o` é **3,2 vezes** mais
+propenso a ser átono que `*e`, sobre 39.041 vogais. A *Abtönung* deixou de ser
+uma regra que herdamos de fé.
+
+Duas ressalvas, e são sérias:
+
+- **Circularidade parcial.** As reconstruções do Wiktionary são feitas por
+  indo-europeístas que *já assumem* a *Abtönung*. O corpus não é uma observação
+  independente da tese; é a tese aplicada com consistência. O que o número mede
+  de verdade é que a aplicação é **consistente** — o que não é nada, mas não é
+  confirmação.
+- **56 % do `*o` em posição de raiz continua tônico** (7.153 de 12.756) — a
+  maioria. Para o relato de Brugmann isso é muita analogia a absorver. O que a
+  medida mostra é uma **tendência forte**, não uma regra sem exceção: `*o` é
+  três vezes mais propenso a ser átono que `*e`, e ainda assim é tônico na
+  maior parte das vezes em que ocorre.
+
+Para o projeto, o que importa é o sinal: a regra tem direção e magnitude
+mensuráveis, e o Proto-Orogeniano pode implementá-la como perda de
+arredondamento sob acento em vez de herdá-la pronta.
+
+### 8.3 De onde vêm as vogais longas — correção do §7
+
+§7 respondeu com raízes e acertou o veredito pelo motivo errado.
+
+Confirmado, e agora com força muito maior:
+
+> **Nenhum lema do corpus tem vogal longa invariável.** De 867 lemas, 592
+> alternam longa~curta dentro do próprio paradigma e 275 não têm nenhuma longa.
+> **Zero** são só-longa. E 2.025 das formas longas têm irmã curta de esqueleto
+> idêntico no mesmo paradigma.
+
+Não há um único item lexical que exija duração subjacente. Isso é o que §7
+propôs, agora sobre 40.894 formas em vez de zero.
+
+**O mecanismo, porém, não é o que §7 disse.** Cruzando cada forma longa com o
+seu lema:
+
+| origem da vogal longa | formas | % |
+|---|---|---|
+| lema tem laringal, a forma **perdeu** (alongamento compensatório) | 63 | **2 %** |
+| lema tem laringal, a forma manteve | 1.017 | 32 % |
+| lema **sem nenhuma laringal** | 2.087 | **66 %** |
+
+Dois terços das vogais longas estão em palavras onde não há laringal alguma
+para perder. A fonte está em outro lugar — e as etiquetas gramaticais dizem
+onde:
+
+| categoria | formas longas / total | taxa |
+|---|---|---|
+| **subjuntivo** | 1.653 / 3.686 | **44,8 %** |
+| dual | 763 / 7.838 | 9,7 % |
+| todo o resto | 751 / 29.370 | **2,6 %** |
+
+O subjuntivo é **17 vezes** mais longo que a linha de base. É exatamente o que
+se espera: o subjuntivo do PIE se forma acrescentando `*-e-` ao tema, e num tema
+temático a vogal temática mais o `*-e-` **contraem** — `*-e/o-` + `*-e-` →
+`*-ē/ō-`. O mesmo em `*-o-es` → `*-ōs` (nom.pl.), `*-o-eys` → `*-ōys`
+(instr.pl.), `*-o-h₁` → `*-ō` (dual).
+
+A categoria certa não é *compensatory lengthening* (Moore §16) — é **fusão**
+(Moore §14), na fronteira de morfema. O alongamento compensatório existe, e a
+Lei de Szemerényi é real, mas juntos são a minoria.
+
+**Efeito sobre a proposta.** Ela fica de pé e melhor fundamentada: `/eː/` sai
+do inventário do Proto-Orogeniano, e a duração vocálica do PIE passa a ser
+inteiramente derivada — mas por **três** mecanismos ordenados por peso:
+contração em fronteira de morfema (dominante), perda de laringal, Lei de
+Szemerényi. Ainda registrada como proposta, não executada: mexer no inventário
+é revisão do documento 02, e a decisão de executá-la é do usuário.
+
+### 8.4 O que o corpus certo mudou
+
+| pendência | estado antes | agora |
+|---|---|---|
+| *Abtönung* | "não testável neste corpus" | medida — razão 3,2 em posição de raiz, n = 39.041 |
+| vogais longas | "o corpus não pode testar isso" | medida — zero lemas com duração lexical; fonte dominante é contração |
+| grau zero | fora de alcance (precisa de paradigma) | **em alcance** — 592 paradigmas com alternância; não medido ainda |
+
+A lição metodológica é a segunda deste documento a ter o mesmo formato do erro
+da "supressão de 90 %" (§2.4): as duas vezes, o número não estava errado — a
+**população** estava. Lá, o denominador; aqui, o corpus.
+
+---
+
 ## O que falta
 
-1. As duas leis que produzem `*o`: *Abtönung* e `*-ē̆m` > `*-ō̆m`. **Obstáculo
-   conhecido:** as raízes do dataset são citadas sem acento, e a *Abtönung* é
-   condicionada por acento. Sem dado acentual, essa regra não é testável neste
-   corpus.
-2. Tarefa 4 do exercício: dez palavras, dez mudanças aleatórias, e observar o
+1. **Grau zero.** Agora ao alcance (§8.4) e ainda não medido: 592 paradigmas
+   exibem alternância. A pergunta é se a distribuição do grau zero é previsível
+   pelo acento do mesmo modo que a da *Abtönung*.
+2. `*-ē̆m` > `*-ō̆m`, a segunda lei que produz `*o`, ainda não isolada no corpus
+   de formas.
+3. Tarefa 4 do exercício: dez palavras, dez mudanças aleatórias, e observar o
    que funde.
-3. Tarefas 1 e 2 do exercício, que são drills genéricos sobre mudanças
+4. Tarefas 1 e 2 do exercício, que são drills genéricos sobre mudanças
    atestadas — sem relação com a conlang, como o exercício da Phonology 1.
