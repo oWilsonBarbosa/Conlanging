@@ -104,6 +104,39 @@ def abtonung(forms):
     return results
 
 
+def lei_m(forms):
+    """As duas leis que produzem *o deixam rastros ortogonais?
+
+    A *Abtönung* é condicionada por acento; `*-ē̆m` > `*-ō̆m` (Kloekhorst 2024)
+    é condicionada por segmento. Se as duas existem, diante de *m o efeito do
+    acento tem de sumir — uma lei segmental não consulta o acento.
+
+    Só a 1ª vogal, para não misturar a vogal temática.
+    """
+    c = collections.Counter()
+    for entry in forms:
+        seq = analyse(entry["form"])
+        vs = [(k, cc, a) for k, (cc, a) in enumerate(seq) if cc in "eo"]
+        if not vs:
+            continue
+        k, cc, a = vs[0]
+        nxt = "".join(x for x, _ in seq[k + 1:k + 2])
+        c[(cc, a, "_m" if nxt == "m" else "outro")] += 1
+
+    rows = []
+    for cc in "eo":
+        for ctx in ("_m", "outro"):
+            t, at = c[(cc, True, ctx)], c[(cc, False, ctx)]
+            rows.append((cc, ctx, t, at, 100 * t / (t + at) if t + at else 0))
+    # razão de chances da Abtönung fora do contexto segmental
+    e1, e0 = c[("e", True, "outro")], c[("e", False, "outro")]
+    o1, o0 = c[("o", True, "outro")], c[("o", False, "outro")]
+    odds = (o0 / o1) / (e0 / e1)
+    ot = c[("o", True, "_m")] / (c[("o", True, "_m")] + c[("o", True, "outro")])
+    et = c[("e", True, "_m")] / (c[("e", True, "_m")] + c[("e", True, "outro")])
+    return rows, odds, ot, et
+
+
 def long_vowels(forms):
     """As vogais longas são adjacentes a laringal ou a *-s perdido?"""
     LONG = "ēōā"
@@ -136,6 +169,21 @@ def main():
                   f"{odds:7.2f} {chi:8.0f}")
         print("\nrazão = quanto *o é mais propenso a ser átono que *e "
               "(razão de chances)")
+        return
+    if "--lei-m" in sys.argv:
+        rows, odds, ot, et = lei_m(forms)
+        print("AS DUAS LEIS DO *o — a Abtönung é acentual, *-ē̆m > *-ō̆m é "
+              "segmental\n")
+        print(f"{'1ª vogal':22s} {'tônico':>8s} {'átono':>8s} {'% tôn':>8s}")
+        print("-" * 50)
+        for cc, ctx, t, at, pct in rows:
+            lab = f"*{cc} diante de *m" if ctx == "_m" else f"*{cc} em outro lugar"
+            print(f"{lab:22s} {t:8d} {at:8d} {pct:7.1f}%")
+        print(f"\ndiante de *m o efeito do acento some: *o fica tão tônico "
+              f"quanto *e")
+        print(f"razão de chances da Abtönung, excluído o contexto _m: {odds:.2f}")
+        print(f"dos *o tônicos, {100*ot:.1f}% estão diante de *m "
+              f"(contra {100*et:.1f}% dos *e tônicos)")
         return
     if "--longas" in sys.argv:
         tot, lar, fs, ex = long_vowels(forms)

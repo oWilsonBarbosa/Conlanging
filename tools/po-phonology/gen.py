@@ -73,18 +73,42 @@ def _glottal_count(segs):
     return sum(1 for s in segs if is_glottalized(s))
 
 
-def make_root(rng, long_vowel_chance=0.15):
-    """Gera uma raiz monossilábica no formato canônico."""
+def _repeated(cluster):
+    """Dois segmentos idênticos encostados dentro de um mesmo aglomerado.
+
+    A regra do documento 02 §4.5 é enunciada para a junção silábica, mas vale
+    igual dentro de um onset ou de uma coda: um onset `RR` sorteado duas vezes
+    da mesma sonorante produzia formas como `*/nnek/`.
+    """
+    return any(a.rstrip("ː") == b.rstrip("ː")
+               for a, b in zip(cluster, cluster[1:]))
+
+
+_SYLLABIC_BASE = {v: k for k, v in SYLLABIC.items()}
+
+
+def _base_of(seg):
+    """Sonorante silábica -> a sonorante correspondente. `m̩` -> `m`."""
+    return _SYLLABIC_BASE.get(seg, seg)
+
+
+def make_root(rng):
+    """Gera uma raiz monossilábica no formato canônico.
+
+    Sem duração vocálica: o Proto-Orogeniano não a contrasta (docs/04 §8.3).
+    Toda vogal longa do PIE é derivada por regra posterior.
+    """
     for _ in range(80):
         onset = _fill(_pick(ONSET_SHAPES, rng), rng)
         coda = _fill(_pick(CODA_SHAPES, rng), rng)
-        nucleus = rng.choice(
-            LONG_VOWELS if rng.random() < long_vowel_chance else VOWELS)
+        nucleus = rng.choice(VOWELS)
         segs = onset + [nucleus] + coda
         if _glottal_count(segs) > 1:
             continue                      # dissimilação glotálica
         if len(onset) and len(coda) and onset[-1] == coda[0]:
             continue                      # evita eco trivial em torno do núcleo
+        if _repeated(onset) or _repeated(coda):
+            continue                      # §4.5 vale dentro do aglomerado
         return segs
     return onset + [nucleus] + coda
 
@@ -119,11 +143,16 @@ def make_word(rng, syllables=None):
                 son = rng.choice(NASALS + LIQUIDS)
                 nucleus = SYLLABIC[son.rstrip("ː")]  # núcleo sonorante
             else:
-                nucleus = rng.choice(
-                    LONG_VOWELS if rng.random() < 0.12 else VOWELS)
+                nucleus = rng.choice(VOWELS)
             # só a sílaba final carrega coda complexa
             coda = (_fill(_pick(CODA_SHAPES, rng), rng) if last
                     else _fill(rng.choice(["", "", "", "R", "C"]), rng))
+            if _repeated(onset) or _repeated(coda):
+                continue
+            # núcleo sonorante não repete a sonorante que o precede: */mːm̩/
+            if onset and nucleus in SYLLABIC.values() \
+                    and _repeated([onset[-1], _base_of(nucleus)]):
+                continue
             if i > 0 and _bad_juncture(syls[-1][2], onset):
                 continue
             break

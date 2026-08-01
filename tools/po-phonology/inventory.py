@@ -76,8 +76,16 @@ SYLLABIC = {"m": "m̩", "n": "n̩", "r": "r̩", "l": "l̩", "w": "u", "j": "i"}
 # A carga funcional fica no acento livre, nas sonorantes silábicas e no
 # contraste de duração consonantal.
 
+#   [eː] tampouco é fonema. Medido em docs/04 §8.3: dos 867 lemas flexionados
+#        do corpus, NENHUM tem duração vocálica invariável — 592 alternam
+#        longa~curta no próprio paradigma e zero são só-longa. As três fontes
+#        de duração são todas derivadas e posteriores: contração em fronteira
+#        de morfema (dominante), perda de laringal, Lei de Szemerényi.
+#
+# Consequência: [±long] é traço EXCLUSIVAMENTE CONSONANTAL no Proto-Orogeniano.
+
 VOWELS = ["e"]
-LONG_VOWELS = ["eː"]
+LONG_VOWELS = []                       # vazio por decisão, não por omissão
 
 PHONEMES = OBSTRUENTS + SIBILANTS + SONORANTS + VOWELS + LONG_VOWELS
 

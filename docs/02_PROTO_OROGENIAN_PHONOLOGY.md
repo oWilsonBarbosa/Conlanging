@@ -135,7 +135,7 @@ diferença não é cosmética: `ḱ` não existe no alfabeto fonético.
 | nasais | `/m/` `/mː/` `/n/` `/nː/` |
 | líquidas | `/r/` `/rː/` `/l/` `/lː/` |
 | glides | `/w/` `/j/` |
-| vogais | `/e/` `/eː/` |
+| vogais | `/e/` |
 | núcleos silábicos | `[m̩]` `[n̩]` `[r̩]` `[l̩]` `[i]` `[u]` |
 
 Duas notas de tradução:
@@ -197,7 +197,8 @@ custo com três consequências verificáveis:
 
 ### 3.3 Sibilante e sonorantes
 
-A duração não é um traço só das oclusivas. Ela atravessa o sistema:
+A duração não é um traço só das oclusivas. Ela atravessa **todo o
+consonantismo**:
 
 | classe | breve | longa |
 |---|---|---|
@@ -205,6 +206,11 @@ A duração não é um traço só das oclusivas. Ela atravessa o sistema:
 | nasais | `m` `n` | `mː` `nː` |
 | líquidas | `r` `l` | `rː` `lː` |
 | glides | `w` `j` | — |
+| **vogais** | `e` | **— (§3.4)** |
+
+E para exatamente aí. `[±long]` é traço **consonantal** no Proto-Orogeniano:
+as vogais não o exercem, e por isso a matriz do documento 03 dá à vogal
+`long=0` — inaplicável — e não `[−long]`.
 
 A justificativa é **direta**, e mais forte do que a primeira versão deste
 documento registrava. Kloekhorst (2016: 216–17) estende o contraste
@@ -237,18 +243,37 @@ sozinho a pobreza vocálica — **`[i]` e `[u]` são os alofones silábicos de
 
 ### 3.4 Vogais
 
-**Uma qualidade, duas durações.**
+**Uma qualidade, uma duração. Uma vogal.**
 
 | | |
 |---|---|
-| **média anterior** | `e` `eː` |
+| **média anterior** | `e` |
 
-> **Proposta pendente.** O documento 04 §7 mede que **nenhuma** das 766 raízes
-> do corpus tem vogal longa própria, e que a fonte padrão de alongamento —
-> `V + laringal` — está em 120 delas. Se toda duração vocálica for derivada
-> por alongamento compensatório, `/eː/` sai do inventário e o vocalismo cai a
-> **um** fonema. O corpus não pode testar a proposta (zero raízes exercem o
-> contraste), então ela fica registrada e não executada.
+> **Executado.** Este documento registrava até aqui duas vogais (`/e eː/`) e uma
+> proposta pendente de reduzi-las a uma. O documento 04 §8.3 mediu a proposta
+> sobre o corpus de formas flexionadas e ela passou: dos **867 lemas**, nenhum
+> tem duração vocálica invariável — 592 alternam longa~curta dentro do próprio
+> paradigma, 275 não têm nenhuma longa, e **zero** são só-longa. Não há item
+> lexical no PIE que exija duração subjacente.
+>
+> A medição também **corrigiu o mecanismo**. A versão anterior atribuía a
+> duração ao alongamento compensatório por perda de laringal; esse caminho
+> responde por **2 %** das formas longas. A fonte dominante é **contração em
+> fronteira de morfema** — o subjuntivo é 17× mais longo que a linha de base,
+> porque `*-e/o-` + `*-e-` contraem. É fusão, não alongamento compensatório.
+
+As três fontes de duração vocálica do PIE, por peso:
+
+| fonte | mecanismo | peso |
+|---|---|---|
+| contração em fronteira de morfema | fusão | dominante |
+| perda de laringal | alongamento compensatório | 2 % |
+| Lei de Szemerényi (`*-s` perdido) | alongamento compensatório | minoritária |
+
+Nenhuma delas precisa de `/eː/` no estágio anterior. E a primeira **não é uma
+questão de fonologia**: ela exige que o Proto-Orogeniano tenha temas
+terminados em vogal e desinências iniciadas por vogal — restrição de
+morfologia, que passa às lições 5 e seguintes.
 
 Sistema radical, e é o que as fontes sustentam para este estágio. Kloekhorst
 reduz os seis paradigmas de acento-ablaut do PIE tardio a **três do PIE
@@ -265,7 +290,8 @@ grau zero**. Tudo o mais é derivado e posterior.
 
 | forma | estatuto | origem |
 |---|---|---|
-| `[o]` | derivado, posterior | perda de acento sobre `*e` — a *Abtönung* de Brugmann: *"mit dem Zurücktreten des Tons die Umfärbung von ē̆ zu ō̆ im Zusammenhang stand"*. E, diante de `*-m` final, a lei pré-PIE `*-ē̆m` > `*-ō̆m` (Kloekhorst 2024) |
+| `[o]` | derivado, posterior | perda de acento sobre `*e` — a *Abtönung* de Brugmann: *"mit dem Zurücktreten des Tons die Umfärbung von ē̆ zu ō̆ im Zusammenhang stand"*. E, diante de `*-m` final, a lei pré-PIE `*-ē̆m` > `*-ō̆m` (Kloekhorst 2024). **As duas medidas em separado — documento 04 §8.2** |
+| `[eː]` `[oː]` | derivados, posteriores | contração em fronteira de morfema (dominante), perda de laringal, Lei de Szemerényi. Nenhum lema do corpus tem duração invariável — §3.4 acima |
 | `[a]` | **não existe** | Kloekhorst rejeita `*a` e `*ā` para o PIE — *"I myself do not see any good reason for reconstructing the vowels \*a and \*ā for PIE"* — e reanalisa os casos clássicos com `*h₂`: 'sal' é `*sh₂-ḗl / *sh₂-él-m / *sh₂-l-és`, não `*sāl` |
 | `[i]` `[u]` | alofones silábicos | de `/j/` e `/w/`; `*weyd-` 'ver' tem grau zero `*wid-`, onde o `*i` **é** o `*y` silabificado. Medido: 1 raiz com `*i`, 7 com `*u`, em 873 |
 | `m̩ n̩ r̩ l̩` | núcleos alternativos | sonorantes silábicas (§3.3) |
@@ -273,6 +299,14 @@ grau zero**. Tudo o mais é derivado e posterior.
 Duas leis independentes derivam `[o]` de `*e`, e as duas são condicionadas —
 uma pelo acento, outra pelo contexto segmental. Nenhuma delas precisa de um
 `/o/` fonêmico no estágio anterior.
+
+E porque são condicionadas por coisas diferentes, deixam **rastros
+ortogonais** — o que as torna separáveis no corpus. O documento 04 §8.2 mede
+as duas: fora do contexto `_m`, `*o` é 3,5× mais propenso a ser átono que `*e`
+(*Abtönung*); dentro dele, o efeito do acento **desaparece** e `*o` fica tão
+tônico quanto `*e` (79,3 % contra 80,1 %), que é a assinatura de uma lei
+segmental. Não era desenho: as duas leis vieram das fontes, e a separação
+apareceu na medição.
 
 #### Onde a carga funcional mora
 
@@ -314,11 +348,11 @@ ele que vai alimentar o ablaut. As regras ficam para a lição 3.
 ### 3.6 Total
 
 ```
-obstruintes  20    sibilantes   2    sonorantes  10    vogais  2
-TOTAL        34
+obstruintes  20    sibilantes   2    sonorantes  10    vogais  1
+TOTAL        33
 ```
 
-Perfil consonante-pesado ao extremo: **32 consoantes contra 2 vogais**. Confere
+Perfil consonante-pesado ao extremo: **32 consoantes contra 1 vogal**. Confere
 com o retrato de §1.
 
 ### 3.7 Conferência tipológica
@@ -504,15 +538,15 @@ aproximação; a tarefa 7 é justamente conferir).
 **Raízes:**
 
 ```
-/ˈkːen/      /ˈʔke/       /ˈkrenː/     /ˈsmeqʷː/
-/ˈkʷːelk/    /ˈqenːpː/    /ˈʔkeːtː/    /ˈpeḱːqː/
-/ˈkʷmew/     /ˈmːeːmḱː/
+/ˈpeḱːqː/    /ˈkʷmew/     /ˈmːemḱː/    /ˈsmeqʷː/
+/ˈkːeqʷ/     /ˈkʷːeqʷ/    /ˈqːer/      /ˈʔḱewp/
+/ˈkːwem/     /ˈkʷenq/
 ```
 
 **Polissilábicas:**
 
 ```
-/seˈkʷenq/       /ˈsepːeːmːtː/    /kʷːreˈnqʷenː/   /rːeˈrqʷes/
+/seˈkʷenq/       /ˈsepːemːtː/     /kʷːreˈnqʷenː/   /rːeˈrqʷes/
 /ˈlːerjesḱekː/   /ˈskʷemːejkː/    /weˈtelːʔk/      /ʔkʷeˈqʷn̩tːejpː/
 ```
 
@@ -534,13 +568,15 @@ correspondências que as produz:
 | `qʷː` | `qʷː` | `*h₃` |
 | `q ʔq qʷ ʔqʷ` | `ʔ` | `*h₁` |
 | `sː mː nː rː lː` | idem | `*s *m *n *r *l` (degeminadas) |
-| `e eː` | idem | `*e *ē` |
-| — | — | `*o *ō` são **derivados**: perda de acento, e `*-ē̆m` > `*-ō̆m` (§3.4) |
+| `e` | idem | `*e` |
+| — | — | `*o` é **derivado**: perda de acento, e `*-ē̆m` > `*-ō̆m` (§3.4) |
+| — | — | `*ē *ō` são **derivados**: contração em fronteira de morfema, perda de laringal, Lei de Szemerényi (§3.4) |
 | `Ø` | `Ø` | grau zero, em sílaba átona |
 
-**As vogais não têm correspondência unívoca.** Onde o PIE cita `*o`, o
-Proto-Orogeniano tem `/e/`: o grau-o é posterior e condicionado. Formalizar as
-duas leis que o produzem é trabalho da lição 4.
+**As vogais não têm correspondência unívoca — e a coluna do PO tem uma linha
+só.** Onde o PIE cita `*o`, o Proto-Orogeniano tem `/e/`; onde cita `*ē` ou
+`*ō`, tem `/e/` também. Qualidade e duração são ambas posteriores e
+condicionadas. As leis que as produzem estão formalizadas no documento 04 §8.
 
 Aplicada de trás para a frente:
 
@@ -590,7 +626,7 @@ de que o M.O.P. só se aplica quando o onset resultante for legal.
     s   e        kʷ  e   n q
 ```
 
-**2.** `/ˈsepːeːmːtː/` → `[ˈse]σ[pːeːmːtː]σ` — o M.O.P. leva `pː` inteiro para
+**2.** `/ˈsepːemːtː/` → `[ˈse]σ[pːemːtː]σ` — o M.O.P. leva `pː` inteiro para
 o onset, porque `/pː/` é monofonemática (§5.3 do documento 01: `/tː/` não é
 `/t/`+`/t/`).
 
@@ -598,7 +634,7 @@ o onset, porque `/pː/` é monofonemática (§5.3 do documento 01: `/tː/` não 
       σ                    σ
      / \            /   /  |  \
     C   V          C   V   C   C
-    s   e          pː  eː  mː  tː
+    s   e          pː  e   mː  tː
 ```
 
 **3.** `/kʷːreˈnqʷenː/` → `[kʷːren]σ[ˈqʷenː]σ`
@@ -644,11 +680,19 @@ legal.
 | Máximo uma glotalizada por raiz | ✔ imposto pelo gerador; nenhuma forma de §5 viola |
 | Sem `/ʔp/` | ✔ ausente do inventário, não filtrado depois |
 | Junção medial ≤ 2 segmentos, sem geminação acidental | ✔ validado por `_bad_juncture` |
+| Segmentos idênticos não se encostam **dentro** do aglomerado | ✔ validado por `_repeated` |
+| Nenhuma vogal longa | ✔ `/eː/` fora do inventário (§3.4) |
 | Acento marcado em toda forma | ✔ |
 
 Verificação automática sobre 800 formas geradas (400 raízes + 400 palavras,
 sementes 0–399): zero violações de dissimilação glotálica, zero ocorrências de
-`/ʔp/`.
+`/ʔp/`, zero vogais longas.
+
+*(A linha do `_repeated` é nova. A regra do §4.5 estava enunciada para a
+junção silábica e implementada só ali, então um onset `RR` podia sortear duas
+vezes a mesma sonorante e produzir `*/nnek/`. O gerador agora aplica a mesma
+proibição dentro de onset e coda, e ao núcleo sonorante que segue a sua
+própria sonorante — `*/mːm̩.../`.)*
 
 ### Conferência contra as restrições do documento 01
 

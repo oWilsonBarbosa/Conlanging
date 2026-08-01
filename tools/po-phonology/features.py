@@ -77,9 +77,13 @@ MATRIX["j"] = dict(cons=-1, syll=-1, son=+1, cont=+1, nas=-1, lat=-1,
 MATRIX["w"] = dict(cons=-1, syll=-1, son=+1, cont=+1, nas=-1, lat=-1,
                    voice=+1, sg=-1, cg=-1, long=-1, stress=0, **PLACE["labiovelar"])
 
-for _v, _lng in ((VOWELS[0], -1), (LONG_VOWELS[0], +1)):
+# `long=0` — irrelevante, não [−long]. O Proto-Orogeniano não contrasta duração
+# vocálica (docs/04 §8.3), então a célula não é "curta": é inaplicável. É a
+# mesma convenção de `low=0` nas labiais. Nenhuma classe natural perde com
+# isso: as três que citam `long` exigem `son=-1`, e a vogal não entra.
+for _v in VOWELS:
     MATRIX[_v] = dict(cons=-1, syll=+1, son=+1, cont=+1, nas=-1, lat=-1,
-                      voice=+1, sg=-1, cg=-1, long=_lng, stress=0,
+                      voice=+1, sg=-1, cg=-1, long=0, stress=0,
                       ant=0, cor=-1, distr=0,
                       front=+1, back=-1, high=-1, low=-1, round=-1)
 
@@ -132,7 +136,8 @@ if __name__ == "__main__":
         "glotalizada": 6,
         "lenis": 7,
         "labializada": 7,
-    }
+        "núcleo possível": 1,       # só /e/ — as sonorantes silábicas são
+    }                               # alofones, e não estão na matriz
     ok = True
     for name, spec in NATURAL_CLASSES.items():
         got = resolve(spec)

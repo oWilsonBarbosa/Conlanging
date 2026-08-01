@@ -376,11 +376,12 @@ por perda de `*-s`.
 cai de dois fonemas para **um**, e toda duração vocálica passa a ser derivada —
 por perda de laringal ou de sibilante, com alongamento compensatório.
 
-> ⚠ **Corrigido em §8.3.** Duas coisas desta seção não sobreviveram ao corpus
-> de formas flexionadas. A frase "o corpus não pode testar isso" era falsa — ele
-> podia, com o corpus certo. E o **mecanismo** apontado aqui está errado: o
-> alongamento por perda de laringal responde por **2 %** das vogais longas, não
-> pela maioria. A *proposta* sai reforçada; a justificativa, refeita.
+> ⚠ **Corrigido e executado em §8.3.** Duas coisas desta seção não sobreviveram
+> ao corpus de formas flexionadas. A frase "o corpus não pode testar isso" era
+> falsa — ele podia, com o corpus certo. E o **mecanismo** apontado aqui está
+> errado: o alongamento por perda de laringal responde por **2 %** das vogais
+> longas, não pela maioria. A *proposta* saiu reforçada, foi executada, e o
+> inventário do documento 02 caiu para **33 fonemas**.
 
 **Mas o corpus não pode testar isso.** Com zero raízes exercendo o contraste, a
 variante "vogal longa derivada" produziria números idênticos ao baseline. Fica
@@ -464,6 +465,51 @@ Para o projeto, o que importa é o sinal: a regra tem direção e magnitude
 mensuráveis, e o Proto-Orogeniano pode implementá-la como perda de
 arredondamento sob acento em vez de herdá-la pronta.
 
+#### A segunda lei, e por que ela é separável
+
+O documento 02 §3.4 não postula uma lei produzindo `*o`, postula **duas**:
+
+1. a *Abtönung*, condicionada por **acento**;
+2. `*-ē̆m` > `*-ō̆m` (Kloekhorst 2024), condicionada por **segmento** — diante
+   de `*-m` final.
+
+Isso é uma previsão forte, e não foi feita para ser testada: se as duas leis
+existem e são condicionadas por coisas diferentes, elas têm de deixar
+**rastros ortogonais**. A segunda, sendo segmental, deve ser *cega ao acento*.
+
+Separando o contexto `_m` do resto, ainda só na 1ª vogal:
+
+| 1ª vogal (raiz) | tônico | átono | % tônico |
+|---|---|---|---|
+| `*e` diante de `*m` | 445 | 89 | 83,3 % |
+| `*e` em outro lugar | 20.633 | 5.118 | 80,1 % |
+| **`*o` diante de `*m`** | **1.017** | **266** | **79,3 %** |
+| **`*o` em outro lugar** | **6.136** | **5.337** | **53,5 %** |
+
+**Diante de `*m` o efeito do acento desaparece.** `*o` fica tão tônico quanto
+`*e` — 79,3 % contra 80,1 %, uma diferença de menos de um ponto. Fora desse
+contexto, despenca para 53,5 %. E `*o` tônico é **6,8× enriquecido** diante de
+`*m`: 14,2 % dos `*o` tônicos estão nesse contexto, contra 2,1 % dos `*e`
+tônicos.
+
+É exatamente a assinatura prevista. Uma lei segmental produz `*o` sem
+consultar o acento, e é por isso que o contexto `_m` é o único onde `*o`
+tônico é a norma e não a exceção.
+
+Duas consequências:
+
+- **A *Abtönung* fica mais nítida quando se controla pela outra lei.** Excluído
+  o contexto `_m`, a razão de chances sobe de 3,17 para **3,51**. As duas leis
+  estavam se contaminando na medição anterior.
+- **Parte do débito dos 56 % é absorvida.** A segunda lei explica 14 % do `*o`
+  tônico — e é precisamente o pedaço que ela foi postulada para cobrir. O resto
+  continua sem explicação e continua sendo o ponto fraco do relato.
+
+Vale registrar o que isso **não** é: as duas leis vieram das fontes (Brugmann e
+Kloekhorst), não do corpus. A separação apareceu ao medir. É o caso mais
+próximo de uma previsão fora da amostra que o projeto produziu até aqui — com a
+mesma ressalva de circularidade da subseção anterior, que vale para as duas.
+
 ### 8.3 De onde vêm as vogais longas — correção do §7
 
 §7 respondeu com raízes e acertou o veredito pelo motivo errado.
@@ -507,19 +553,35 @@ A categoria certa não é *compensatory lengthening* (Moore §16) — é **fusã
 (Moore §14), na fronteira de morfema. O alongamento compensatório existe, e a
 Lei de Szemerényi é real, mas juntos são a minoria.
 
-**Efeito sobre a proposta.** Ela fica de pé e melhor fundamentada: `/eː/` sai
-do inventário do Proto-Orogeniano, e a duração vocálica do PIE passa a ser
-inteiramente derivada — mas por **três** mecanismos ordenados por peso:
-contração em fronteira de morfema (dominante), perda de laringal, Lei de
-Szemerényi. Ainda registrada como proposta, não executada: mexer no inventário
-é revisão do documento 02, e a decisão de executá-la é do usuário.
+**Efeito sobre a proposta: executada.** `/eː/` saiu do inventário do
+Proto-Orogeniano, que cai de **34 para 33 fonemas** com uma única vogal `/e/`.
+A duração vocálica do PIE passa a ser inteiramente derivada, por **três**
+mecanismos ordenados por peso: contração em fronteira de morfema (dominante),
+perda de laringal, Lei de Szemerényi.
+
+A execução tem duas consequências que valem registro:
+
+- **`[±long]` vira traço exclusivamente consonantal.** O documento 02 §3.3
+  vendia a duração como propriedade transversal do sistema; ela atravessa todo
+  o consonantismo e para aí. A vogal recebe `[0long]` — inaplicável — e não
+  `[−long]`. Nenhuma classe natural se perde: as três que citam `long` exigem
+  `[−son]`.
+- **A restrição migra da fonologia para a morfologia.** A fonte dominante de
+  duração é contração em fronteira de morfema, o que não é questão de
+  inventário: exige que o Proto-Orogeniano tenha temas terminados em vogal e
+  desinências iniciadas por vogal. Isso passa às lições 5 e seguintes.
+
+E o custo medido é zero: reinvertidas as 766 raízes sem `/eː/`, as três métricas
+não se movem — 12 ilegais, 2 colisões, 9 sem correspondência, idênticas ao
+baseline anterior. Era o previsto, já que nenhuma raiz exercia o contraste.
 
 ### 8.4 O que o corpus certo mudou
 
 | pendência | estado antes | agora |
 |---|---|---|
-| *Abtönung* | "não testável neste corpus" | medida — razão 3,2 em posição de raiz, n = 39.041 |
-| vogais longas | "o corpus não pode testar isso" | medida — zero lemas com duração lexical; fonte dominante é contração |
+| *Abtönung* | "não testável neste corpus" | medida — razão **3,51** em posição de raiz, controlada pela lei segmental |
+| `*-ē̆m` > `*-ō̆m` | postulada, nunca isolada | **isolada** — §8.2: diante de `*m` o efeito do acento some |
+| vogais longas | "o corpus não pode testar isso" | medida, e a proposta **executada**: `/eː/` fora, 33 fonemas |
 | grau zero | fora de alcance (precisa de paradigma) | **em alcance** — 592 paradigmas com alternância; não medido ainda |
 
 A lição metodológica é a segunda deste documento a ter o mesmo formato do erro
@@ -530,12 +592,11 @@ da "supressão de 90 %" (§2.4): as duas vezes, o número não estava errado —
 
 ## O que falta
 
-1. **Grau zero.** Agora ao alcance (§8.4) e ainda não medido: 592 paradigmas
+1. **Tarefa 4 do exercício**: dez palavras, dez mudanças aleatórias, e observar
+   o que funde. É o único item do enunciado ainda em aberto.
+2. **Grau zero.** Agora ao alcance (§8.4) e ainda não medido: 592 paradigmas
    exibem alternância. A pergunta é se a distribuição do grau zero é previsível
-   pelo acento do mesmo modo que a da *Abtönung*.
-2. `*-ē̆m` > `*-ō̆m`, a segunda lei que produz `*o`, ainda não isolada no corpus
-   de formas.
-3. Tarefa 4 do exercício: dez palavras, dez mudanças aleatórias, e observar o
-   que funde.
-4. Tarefas 1 e 2 do exercício, que são drills genéricos sobre mudanças
+   pelo acento do mesmo modo que a da *Abtönung*. Não é exigência desta lição —
+   é material da 5 em diante, onde a morfologia entra.
+3. Tarefas 1 e 2 do exercício, que são drills genéricos sobre mudanças
    atestadas — sem relação com a conlang, como o exercício da Phonology 1.

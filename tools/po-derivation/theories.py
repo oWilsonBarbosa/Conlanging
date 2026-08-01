@@ -31,8 +31,13 @@ _LAR_FULL = {"h₂": "qː", "h₃": "qʷː", "h₁": "q", "H": "?H"}   # coluna 
 _LAR_MIN = {"h₂": "qː", "h₃": "qʷː", "h₁": "ʔ", "H": "?H"}    # *h₁ herdado
 
 # ─── Vogais ─────────────────────────────────────────────────────────────────
-_VOW_ONE = {"e": "e", "o": "e", "ē": "eː", "ō": "eː"}          # uma qualidade
-_VOW_TWO = {"e": "e", "o": "o", "ē": "eː", "ō": "oː"}          # duas
+# A duração vocálica NÃO é invertida: o Proto-Orogeniano não a contrasta
+# (docs/04 §8.3), e toda vogal longa do PIE é derivada depois — por contração
+# em fronteira de morfema, perda de laringal ou Lei de Szemerényi. As entradas
+# `ē`/`ō` existem só por completude; nenhuma das 766 raízes as exerce.
+# As duas variantes diferem em exatamente uma dimensão: a QUALIDADE.
+_VOW_ONE = {"e": "e", "o": "e", "ē": "e", "ō": "e"}            # uma qualidade
+_VOW_TWO = {"e": "e", "o": "o", "ē": "e", "ō": "o"}            # duas
 
 _SON = {"m": "m", "n": "n", "r": "r", "l": "l", "w": "w", "y": "j",
         "i": "j", "u": "w", "s": "s",

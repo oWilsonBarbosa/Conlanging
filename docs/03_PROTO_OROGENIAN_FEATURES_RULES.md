@@ -34,7 +34,7 @@ distintivo nesta língua; os demais ficam de fora, com o motivo:
 | lugar | `[±ant]` `[±cor]` `[±distr]` `[±front]` `[±back]` `[±high]` `[±low]` `[±round]` | `[±strid]` só para separar `/s/` de outra fricativa — e não há outra |
 | prosódia | `[±stress]` `[±long]` | — |
 | róticos | — | `[±trill]` `[±tap]`: só há um rótico, `/r/` |
-| vogais | — | `[±tense]` `[±ATR]`: uma só qualidade vocálica |
+| vogais | — | `[±tense]` `[±ATR]`: uma só qualidade vocálica — e `[±long]`, que é **consonantal** aqui (§2) |
 
 `[±voice]` entra mas é **inerte nas obstruintes** — todas são `[−voice]`. Ele
 ganha vida só na alofonia (§4.4), e é essa alofonia que a lição 4 vai
@@ -129,11 +129,19 @@ língua é irrelevante nelas, como a lição explica para `p`.
 | `/m mː n nː/` | `[+cons −syll +son −cont +nas +voice]` |
 | `/r rː l lː/` | `[+cons −syll +son +cont −nas]`, `/l/` é `[+lat]` |
 | `/w j/` | `[−cons −syll +son +cont +voice]`; `/j/` palatal, `/w/` labiovelar |
-| `/e eː/` | `[−cons +syll +son +cont −high −low +front −back −round]` |
+| `/e/` | `[−cons +syll +son +cont −high −low +front −back −round]`, e `[0long]` |
 
 `/sː/` cai na classe fortis pela definição de §1 — e **deve cair**: Kloekhorst
 inclui explicitamente as fricativas e sonorantes no contraste de duração
 (documento 02 §3.3). A matriz reproduz isso sem estipulação extra.
+
+**A vogal é `[0long]`, não `[−long]`.** O Proto-Orogeniano não contrasta
+duração vocálica (documento 02 §3.4), então a célula é *inaplicável*, do mesmo
+modo que `low` é inaplicável nas labiais — e `0`, pela convenção de §3, não
+satisfaz nem `[+long]` nem `[−long]`. Consequência prática: `[±long]` é traço
+**exclusivamente consonantal** neste sistema. Nada se perde nas classes
+naturais, porque as três que citam `long` — fortis, lenis e a de §4.2 — exigem
+todas `[−son]`, e a vogal não entra em nenhuma.
 
 ---
 
@@ -157,7 +165,7 @@ Três dos quatro saem de duas features cada. E as séries também:
 | glotalizada | `[+c.g.]` | 6 |
 | lenis | `[−son −cont −long −c.g.]` | 7 |
 | labializada | `[+round]` | 7 |
-| núcleo possível | `[+syll]` | 2 |
+| núcleo possível | `[+syll]` | 1 |
 
 ### O problema do `0`, que é real
 
@@ -321,7 +329,7 @@ Fonemas de §2, mais o que as regras acima produzem:
 [ɱ] [ɲ] [ŋ] [ɴ]          nasais assimiladas                  (4.5)
 ```
 
-O inventário fonético é **substancialmente maior** que o fonêmico — 34 fonemas
+O inventário fonético é **substancialmente maior** que o fonêmico — 33 fonemas
 contra ~52 fones. E note o que a coluna de 4.4 mostra: **a série sonora do PIE
 clássico já existe no Proto-Orogeniano, como alofonia.** Nada precisa ser
 criado; basta a duração cair.

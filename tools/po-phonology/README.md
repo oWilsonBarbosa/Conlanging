@@ -24,7 +24,7 @@ com `--seed 4400`.
 
 | Arquivo | Conteúdo |
 |---|---|
-| `inventory.py` | os 34 fonemas, organizados por série e ponto de articulação; `series_of()` e `is_glottalized()` |
+| `inventory.py` | os 33 fonemas, organizados por série e ponto de articulação; `series_of()` e `is_glottalized()` |
 | `features.py` | matriz de traços distintivos, classes naturais e verificação — `python3 features.py` confere que cada classe resolve para o conjunto pretendido |
 | `gen.py` | molde silábico, pesos de onset/coda medidos sobre as 873 raízes de `PIE_roots`, validação de junção silábica e acento livre |
 
@@ -49,9 +49,9 @@ O gerador é uma primeira aproximação e **não** modela:
 - ablaut, que é o que de fato organiza a alternância vocálica
 - qualquer morfologia
 
-O vocalismo é de **uma qualidade** (`/e eː/`): o grau zero e as sonorantes
-silábicas fazem o resto. `[o]`, `[a]`, `[i]` e `[u]` não são fonemas — ver
-documento 02 §3.4 para de onde cada um vem.
+O vocalismo é de **uma vogal** (`/e/`) — uma qualidade e nenhuma duração: o
+grau zero e as sonorantes silábicas fazem o resto. `[o]`, `[eː]`, `[a]`, `[i]`
+e `[u]` não são fonemas — ver documento 02 §3.4 para de onde cada um vem.
 
 A tarefa 7 da lição — conferir as regras — pressupõe curadoria da saída. As
 formas do documento 02 foram escolhidas da saída bruta, não aceitas em bloco.
