@@ -295,6 +295,97 @@ mudança só lhe tira a condição.
 
 ---
 
+## 6 | Conferência contra o PBase
+
+Dois textos externos entraram no projeto nesta altura: *Patterns of Allophony*
+(Annis, Fiat Lingua 2019) e um handout de linguística histórica, *Types of
+Sound Change* (Moore 2013). O primeiro não é útil pelo conteúdo — são gráficos,
+e a extração perdeu a estrutura — mas é útil por dizer **de onde vem**: o
+**PBase**, que está em `data/pbasefiles.zip` desde o primeiro dia e nunca havia
+sido aberto. 21.794 padrões de alofonia em 625 línguas.
+
+É a comparação certa para as regras sincrônicas, do mesmo modo que o BDPROTO
+foi a comparação certa para o inventário.
+
+| nossa regra | padrões no PBase | línguas | veredito |
+|---|---|---|---|
+| **4.4 / K1** vozeamento intervocálico de oclusiva surda | **72** | **25** | bem atestado |
+| **4.1** sonorante silábica na saída | 66 | 14 | atestado |
+| **K3** `/q/` → `[χ]` (espirantização) | 4 | — | atestado |
+| **U1** debucalização (C → `[ʔ]`) | **10** | **6** | **o mais raro dos nossos** |
+
+Alofonia de `/q/` no PBase, saídas mais frequentes: `qʰ` (12), `∅` (6),
+**`ɢ` (5)**, `qʷ` (4), `k` (4), **`χ` (4)**.
+
+### O que isso confirma
+
+O argumento de §4.2 — que as uvulares não-fortis tiveram de sair antes do
+vozeamento, porque senão `*h₁` carregaria efeito de voz — deixou de ser
+especulação: **`/q/` → `[ɢ]` é padrão atestado**, com cinco ocorrências. Era
+exatamente o que aconteceria se a ordem fosse outra.
+
+E o vozeamento intervocálico, o passo mais importante da derivação, está entre
+os padrões bem representados: 25 línguas.
+
+### O que isso complica
+
+**A debucalização é a nossa regra mais fraca.** Dez padrões em seis línguas,
+contra 72 em 25 do vozeamento. E a debucalização é precisamente a **U1**, a
+regra que implementa a única invenção estrutural do projeto — a coluna uvular
+completa colapsando em `*h₁`.
+
+Somando o que já se sabia:
+
+| custo da coluna uvular completa | medida |
+|---|---|
+| ambiguidade que introduz (§2.5) | 24 % das raízes com ponto não-invertível |
+| a métrica de legalidade a distingue da alternativa? | não (§2.5) |
+| suporte tipológico do mecanismo que ela exige | 6 línguas no PBase |
+
+A justificativa continua de pé — três consequências verificáveis, documento 02
+§3.2 — mas a conta do outro lado cresceu de novo. Registro, não veredito.
+
+*(Ressalva: o PBase cataloga alofonia sincrônica, não mudança diacrônica. A
+debucalização como mudança histórica — o `/t/` > `[ʔ]` do inglês — é
+comuníssima; o que a tabela mede é sua raridade como alternância sincrônica
+listada. A assimetria com o vozeamento é real, mas não é tão dura quanto os
+números crus sugerem.)*
+
+## 7 | Alongamento compensatório, e uma vogal a menos
+
+O handout de Moore lista uma categoria que a lição do curso não enfatiza:
+
+> **(16) Compensatory lengthening** — *"C deletion results in a lengthening of
+> the preceding vowel"*, com antigo irlandês `*magl > máːl`, `*etn > éːn`.
+
+Isso levanta uma pergunta sobre o nosso inventário. De onde vêm as vogais
+longas? Medido no corpus:
+
+| | raízes | % |
+|---|---|---|
+| citadas com vogal longa (`*ē`, `*ō`) | **0** | 0 % |
+| com sequência `V + laringal` | 120 | 15,7 % |
+
+**Nenhuma raiz do corpus tem vogal longa própria.** A fonte padrão de
+alongamento — vogal seguida de laringal — está em 120. E as vogais longas que
+aparecem nas fontes primárias são todas derivadas: os `*sḗm`, `*dḗm`, `*dʰǵḗm`
+de Kloekhorst (2024) vêm da Lei de Szemerényi, que é alongamento compensatório
+por perda de `*-s`.
+
+**Proposta:** o Proto-Orogeniano não precisa de `/eː/`. O inventário vocálico
+cai de dois fonemas para **um**, e toda duração vocálica passa a ser derivada —
+por perda de laringal ou de sibilante, com alongamento compensatório.
+
+**Mas o corpus não pode testar isso.** Com zero raízes exercendo o contraste, a
+variante "vogal longa derivada" produziria números idênticos ao baseline. Fica
+registrada como proposta com evidência, não executada — a mesma disciplina
+aplicada ao schwa no documento 03 §4.1.
+
+Nota para a tipologia: isso **não** agrava o alerta do documento 02 §3.7. A
+contagem lá é de *qualidades* vocálicas, e ela já era 1.
+
+---
+
 ## O que falta
 
 1. As duas leis que produzem `*o`: *Abtönung* e `*-ē̆m` > `*-ō̆m`. **Obstáculo

@@ -243,6 +243,13 @@ sozinho a pobreza vocálica — **`[i]` e `[u]` são os alofones silábicos de
 |---|---|
 | **média anterior** | `e` `eː` |
 
+> **Proposta pendente.** O documento 04 §7 mede que **nenhuma** das 766 raízes
+> do corpus tem vogal longa própria, e que a fonte padrão de alongamento —
+> `V + laringal` — está em 120 delas. Se toda duração vocálica for derivada
+> por alongamento compensatório, `/eː/` sai do inventário e o vocalismo cai a
+> **um** fonema. O corpus não pode testar a proposta (zero raízes exercem o
+> contraste), então ela fica registrada e não executada.
+
 Sistema radical, e é o que as fontes sustentam para este estágio. Kloekhorst
 reduz os seis paradigmas de acento-ablaut do PIE tardio a **três do PIE
 inicial**, e observa que neles

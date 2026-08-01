@@ -28,7 +28,7 @@ tipológicas, e a documentação do projeto **Proto-Orogeniano**.
 |---|---|---|
 | `bdproto-master.zip` | BDPROTO | inventários fonológicos de protolínguas — calibra o inventário do proto-ramo |
 | `clts-master.zip`, `clts-2.3.0.zip` | CLTS | sistema de traços fonéticos |
-| `pbasefiles.zip` | PBase | padrões e alternâncias fonológicas |
+| `pbasefiles.zip` | PBase | padrões e alternâncias fonológicas — 21.794 padrões em 625 línguas; usado em `docs/04` §6 para conferir a alofonia |
 | `phonotacticon-main.zip` | Phonotacticon | tipologia de estrutura silábica |
 | `wals-master.zip`, `wals-v2020.4.zip` | WALS | traços tipológicos e suas coocorrências |
 | `grambank-master.zip` | Grambank | traços gramaticais |
