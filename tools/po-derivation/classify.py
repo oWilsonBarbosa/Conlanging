@@ -45,7 +45,8 @@ from invert import segment as pie_segment                         # noqa: E402
 from stems import load_forms                                      # noqa: E402
 from features import MATRIX, matches, NATURAL_CLASSES             # noqa: E402
 from inventory import SYLLABIC                                    # noqa: E402
-from syllabify import syllabify                                   # noqa: E402
+from syllabify import (syllabify, CORE_ON, CORE_CD,               # noqa: E402
+                       legal_margin)
 
 ACUTE = "́"
 SYLLABIC_SET = set(SYLLABIC.values())
@@ -241,28 +242,52 @@ def main():
 
     if "--moldes" in sys.argv:
         on, cd = margins(rows)
-        tot_on, tot_cd = sum(on.values()), sum(cd.values())
-        DECL_ON = {"", "s", "C", "R", "sC", "sR", "CR", "sCR",
-                   "H", "HR", "sH"}
-        DECL_CD = {"", "R", "C", "s", "RC", "Rs", "Cs", "RCs",
-                   "H", "RH", "Hs"}
-        print("ONSETS atestados (classes naturais do documento 03 §3)\n")
-        print(f"{'molde':10s} {'n':>7s} {'%':>6s}   gerado pelo §4.1?")
-        print("-" * 48)
-        for k, v in on.most_common(16):
-            ok = "sim" if k in DECL_ON else "**NÃO**"
-            print(f"{k or '∅':10s} {v:7d} {100*v/tot_on:5.1f} %   {ok}")
-        print("\nCODAS atestadas\n")
-        print(f"{'molde':10s} {'n':>7s} {'%':>6s}   gerado pelo §4.1?")
-        print("-" * 48)
-        for k, v in cd.most_common(16):
-            ok = "sim" if k in DECL_CD else "**NÃO**"
-            print(f"{k or '∅':10s} {v:7d} {100*v/tot_cd:5.1f} %   {ok}")
-        falta_on = sum(v for k, v in on.items() if k not in DECL_ON)
-        falta_cd = sum(v for k, v in cd.items() if k not in DECL_CD)
-        print(f"\nnão gerado pelo molde declarado: "
-              f"{falta_on} onsets ({100*falta_on/tot_on:.1f} %), "
-              f"{falta_cd} codas ({100*falta_cd/tot_cd:.1f} %)")
+        print("MARGENS ATESTADAS, contra as camadas do documento 02 §4\n")
+        for lab, cnt, core, is_on in (("ONSETS", on, CORE_ON, True),
+                                      ("CODAS", cd, CORE_CD, False)):
+            tot = sum(cnt.values())
+            print(f"{lab}  ({tot} margens)\n")
+            print(f"{'molde':10s} {'n':>7s} {'%':>6s}   camada")
+            print("-" * 54)
+            for k, v in cnt.most_common(14):
+                if k.replace("H", "C") in core:
+                    camada = "nuclear §4.1"
+                elif legal_margin(k, core, is_on):
+                    camada = "apêndice H §4.2"
+                else:
+                    camada = "**juntura ou resíduo**"
+                print(f"{k or '∅':10s} {v:7d} {100*v/tot:5.1f} %   {camada}")
+            print()
+        # cobertura por camada, contando a posição na palavra
+        nuc = ap = junt = res = 0
+        resto = collections.Counter()
+        for r in rows:
+            m = r["_margens"]
+            for i, (o, c) in enumerate(m):
+                for pat, core, is_on, medial in ((o, CORE_ON, True, i > 0),
+                                                 (c, CORE_CD, False,
+                                                  i < len(m) - 1)):
+                    if pat.replace("H", "C") in core:
+                        nuc += 1
+                    elif legal_margin(pat, core, is_on):
+                        ap += 1
+                    elif medial:
+                        junt += 1
+                    else:
+                        res += 1
+                        resto[pat] += 1
+        t = nuc + ap + junt + res
+        print("COBERTURA POR CAMADA\n")
+        print(f"  molde nuclear (s)(C)(R) / (R)(C)(s)   {nuc:6d}  "
+              f"({100*nuc/t:5.1f} %)")
+        print(f"  + apêndice H na borda externa         {ap:6d}  "
+              f"({100*ap/t:5.1f} %)")
+        print(f"  + juntura de morfema (margem medial)  {junt:6d}  "
+              f"({100*junt/t:5.1f} %)")
+        print(f"  resíduo                               {res:6d}  "
+              f"({100*res/t:5.1f} %)")
+        print(f"\n  cobertura: {100*(t-res)/t:.1f} %")
+        print("  resíduo:", dict(resto.most_common(6)))
         return
 
     print(f"formas classificadas: {len(rows)}")

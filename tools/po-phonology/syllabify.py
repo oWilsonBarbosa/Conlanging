@@ -6,6 +6,12 @@ núcleo  V | R̩
 coda   (R)(C)(s)     máx. 3
 ```
 
+Duas camadas, como o §4.1 e o §4.2 do documento:
+
+1. o **molde nuclear** acima, que é do morfema;
+2. `/s/` e `H` como **apêndices extrassilábicos** na borda externa da margem —
+   à esquerda no onset, à direita na coda.
+
 O Princípio do Onset Máximo (M.O.P.) governa, **com a ressalva** de que só se
 aplica quando o onset resultante for legal — uma coda que suba em sonoridade
 não é coda, e força a sonorante a virar núcleo.
@@ -46,6 +52,13 @@ def segment(word):
     return out
 
 
+# A coluna uvular é uma classe à parte na fonotática (documento 02 §4.2): ela
+# é `[+low]`, a única obstruinte que é, e é extrassilábica como o `/s/`. Sem
+# separá-la de `C`, este módulo não conseguia enunciar a regra e precisava de
+# uma lista de moldes escrita à mão.
+LARYNGEALS = {"qː", "qʷː", "q", "ʔq", "qʷ", "ʔqʷ"}
+
+
 def kind(seg):
     if seg in VOWELS:
         return "V"
@@ -55,25 +68,53 @@ def kind(seg):
         return "s"
     if seg in SONORANTS:
         return "R"
+    if seg in LARYNGEALS:
+        return "H"
     if seg in OBSTRUENTS:
         return "C"
     return "?"
 
 
+def _core(pat, template):
+    """`pat` cabe no molde nuclear, com `H` valendo como `C`?"""
+    return pat.replace("H", "C") in template
+
+
+# Molde nuclear do documento 02 §4.1, expandido: (s)(C)(R) e (R)(C)(s).
+CORE_ON = {"", "s", "C", "R", "sC", "sR", "CR", "sCR"}
+CORE_CD = {"", "R", "C", "s", "RC", "Rs", "Cs", "RCs"}
+
+
+def legal_margin(pat, core, left):
+    """Molde nuclear, ou molde nuclear depois de retirar o apêndice.
+
+    `H` é extrassilábico como o `/s/` (§4.2), e com a **mesma geometria**:
+    ancora na borda externa — à esquerda no onset, à direita na coda. Retirar
+    `H` de dentro da margem não vale, e não pode valer: a coda `HR` de
+    `/seqːl/` sobe em sonoridade e continua ilegal, que é o que força o `/l/`
+    a ser núcleo.
+    """
+    if _core(pat, core):
+        return True
+    while pat and pat[0 if left else -1] == "H":
+        pat = pat[1:] if left else pat[:-1]
+        if _core(pat, core):
+            return True
+    return False
+
+
 def legal_onset(segs):
-    """(s)(C)(R), máx. 3."""
+    """(s)(C)(R), máx. 3 — mais o apêndice extrassilábico à esquerda."""
     if len(segs) > 3:
         return False
-    pat = "".join(kind(s) for s in segs)
-    return pat in ("", "s", "C", "R", "sC", "sR", "CR", "sCR", "CC", "RR")
+    return legal_margin("".join(kind(s) for s in segs), CORE_ON, left=True)
 
 
 def legal_coda(segs):
-    """(R)(C)(s), máx. 3."""
+    """(R)(C)(s), máx. 3 — mais o apêndice extrassilábico à direita."""
     if len(segs) > 3:
         return False
-    pat = "".join(kind(s) for s in segs)
-    return pat in ("", "R", "C", "s", "RC", "Rs", "Cs", "RCs", "CC")
+    return legal_margin("".join(kind(s) for s in segs), CORE_CD, left=False)
 
 
 # Escala de sonoridade para decidir QUAL sonorante vira núcleo. Glides são as

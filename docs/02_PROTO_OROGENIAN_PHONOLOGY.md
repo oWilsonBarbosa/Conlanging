@@ -462,15 +462,80 @@ Distribuição medida (raízes monossilábicas), `C` = obstruinte, `R` = sonoran
 
 Leitura: o onset típico sobe em sonoridade (obstruinte → sonorante) e a coda
 típica desce (sonorante → obstruinte) — o sequenciamento de sonoridade que a
-lição descreve. `CC` em onset é raríssimo (5 casos).
+lição descreve.
 
-### 4.2 A exceção do /s/
+#### O molde é do morfema, não da palavra
+
+> ⚠ **Corrigido.** Esta seção declarava o molde acima e, logo abaixo, media
+> uma distribuição que ele **não gera** — `RR` (12), `CC` (5) em onset, `HC`
+> (35) e `CH` (7) em coda. O molde tem um vão de obstruinte só. As margens de
+> duas obstruintes estavam medidas e não estavam licenciadas, e o
+> `syllabify.py` remendou isso com uma lista escrita à mão.
+
+Medido sobre as 34.658 formas flexionadas de
+[`data/derived/po_formas.tsv.gz`](../data/derived/po_formas.tsv.gz) —
+182.234 margens:
+
+| camada | margens | % |
+|---|---|---|
+| **molde nuclear** `(s)(C)(R)` / `(R)(C)(s)` | 173.135 | **95,0 %** |
+| **+ apêndice `H`** na borda externa (§4.2) | 6.077 | 3,3 % |
+| **+ juntura de morfema** (margem medial, §4.5) | 506 | 0,3 % |
+| resíduo | 2.516 | 1,4 % |
+
+O molde acima é, portanto, o molde do **morfema** — descreve a raiz e o afixo,
+e é o que o gerador impõe. A palavra é mais frouxa que o morfema, porque a
+morfologia concatena. Isso não é peculiaridade nossa: é a razão de o inglês ter
+`sixths` `[sɪksθs]` sem que `[ksθs]` seja um molde de coda do inglês.
+
+**A evidência de que a folga é de juntura, não de raiz:** das margens que o
+molde nuclear não gera, entre **81 % e 100 % são mediais na palavra** —
+`RR` 88 %, `HC` 92 %, `CH` 83 %, `CC` 81 %, `HH` 100 %. E as ilegais que são
+finais vêm de desinência consonantal colada a tema terminado em consoante:
+`*teh₂h₁` (dual `*-h₁`), `*-swedʰh₂` (`*-dʰh₂`), `*-esh₁`.
+
+**`máx. 3` é uma tendência, não um teto.** No corpus, 99,8 % dos onsets e
+99,9 % das codas têm três segmentos ou menos; o resto chega a cinco
+(`/pːqːstːqːer/`).
+
+**O resíduo de 1,4 %** é nomeável: coda `sCH` (879, de `*-sdʰh₂`), onset `CC`
+(349) e `CH` (297), e o tipo `CHC` de `*ph₂tḗr` 'pai' (279) — este último
+genuinamente interno ao morfema, e a única falha real do molde.
+
+### 4.2 As duas exceções: `/s/` e `H`
 
 `sC` (60) e `sCR` (9) violam a sonoridade: a fricativa é mais sonora que a
 oclusiva que a segue. É exatamente o caso que a lição levanta em inglês
 (*"stretch"*, *"space"*). No Proto-Orogeniano, `/s/` é **extrassilábico** nas
 bordas — anexa-se fora do molde, à esquerda do onset e à direita da coda
 (`Rs`, 39; `Hs`, 6).
+
+**A coluna uvular faz o mesmo, e isso faltava.** Medido sobre os segmentos em
+margem nas 34.658 formas:
+
+| classe | em margem | em margem que o molde nuclear não gera | enriquecimento |
+|---|---|---|---|
+| `H` | 30.371 | 34,7 % | **1,82×** |
+| `C` | 48.253 | 23,6 % | 1,24× |
+| `R` | 51.627 | 10,2 % | 0,54× |
+| `s` | 22.519 | **8,6 %** | **0,45×** |
+
+O `/s/` é o segmento que **menos** aparece em margem irregular — porque esta
+seção já lhe deu saída. O `H` é o que mais aparece, e nunca teve. A correção é
+tratá-los igual:
+
+> `/s/` e `H` são **extrassilábicos** nas bordas da margem — à esquerda no
+> onset, à direita na coda.
+
+A geometria importa e não é decorativa. Retirar `H` do **meio** da margem
+licenciaria a coda `HR` de `/seqːl/` 'sal', que sobe em sonoridade — e é
+justamente a ilegalidade dessa coda que força o `/l/` a virar núcleo,
+`[ˈse]σ[qːl̩]σ` (§6). O apêndice ancora na borda externa ou a regra se
+autodestrói.
+
+Motivação independente: `H` é a única obstruinte `[+low]` do sistema
+(documento 03 §2), isto é, uma classe natural de **um traço só**. Não é um
+recorte inventado para salvar o molde.
 
 ### 4.3 Formato canônico da raiz
 
@@ -526,9 +591,19 @@ Regra adotada: *no máximo uma obstruinte glotalizada por raiz.*
 
 ### 4.5 Junção silábica
 
-Dentro da palavra a fonotática é mais apertada que nas bordas: o aglomerado
-resultante do encontro coda + onset não passa de dois segmentos, e segmentos
-idênticos não se encostam (`*nnː`, `*tːt`, `*ss`).
+Segmentos idênticos não se encostam (`*nnː`, `*tːt`, `*ss`) — nem entre
+sílabas nem dentro da mesma margem, e é `_repeated()` que impõe isso no
+gerador (§7).
+
+Quanto ao tamanho, esta seção dizia que o encontro coda + onset "não passa de
+dois segmentos". Isso vale para o que o **gerador** produz, e é uma escolha
+conservadora dele; **não** vale para a língua. É na juntura que aparecem as
+margens de duas obstruintes que o molde nuclear não gera (§4.1), e elas são
+81–100 % mediais justamente por isso.
+
+A regra correta, então, é assimétrica: o molde nuclear de §4.1 governa o
+morfema; a juntura tolera o que a concatenação produzir, dentro do teto de
+três segmentos que 99,8 % das margens respeitam.
 
 ---
 
@@ -824,12 +899,13 @@ segmento.
 
 | Regra | Verificação |
 |---|---|
-| Onset ≤ 3, coda ≤ 3 | ✔ nenhuma forma de §5 excede |
+| Onset ≤ 3, coda ≤ 3 | ✔ nenhuma forma de §5 excede; no corpus, 99,8 % e 99,9 % (§4.1) |
 | Sonoridade sobe no onset, desce na coda | ✔ com as exceções de `/s/` (§4.2), todas nas bordas |
 | Máximo uma glotalizada por raiz | ✔ imposto pelo gerador; nenhuma forma de §5 viola |
 | Sem `/ʔp/` | ✔ ausente do inventário, não filtrado depois |
 | Junção medial ≤ 2 segmentos, sem geminação acidental | ✔ validado por `_bad_juncture` |
 | Segmentos idênticos não se encostam **dentro** do aglomerado | ✔ validado por `_repeated` |
+| Margens cabem no molde nuclear + apêndices | ✔ 98,3 % do corpus (§4.1); `syllabify.py` deriva a regra em vez de tabelá-la |
 | Nenhuma vogal longa | ✔ `/eː/` fora do inventário (§3.4) |
 | Acento marcado em toda forma | ✔ |
 
