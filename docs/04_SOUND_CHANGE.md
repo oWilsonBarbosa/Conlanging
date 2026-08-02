@@ -510,24 +510,41 @@ Isso é uma previsão forte, e não foi feita para ser testada: se as duas leis
 existem e são condicionadas por coisas diferentes, elas têm de deixar
 **rastros ortogonais**. A segunda, sendo segmental, deve ser *cega ao acento*.
 
-Separando o contexto `_m` do resto, ainda só na 1ª vogal:
+> ⚠ **Corrigido depois de ler a fonte em primeira mão.** A primeira versão
+> deste teste mediu `*o` **seguido de `*m` em qualquer posição**. A lei de
+> Kloekhorst (2024, *Indogermanische Forschungen*, doi 10.1515/if-2024-0008) é
+> `*-ē̆m > *-ō̆m` em **final de palavra**. O teste era largo demais, e o
+> resultado correto é bem mais forte.
 
-| 1ª vogal (raiz) | tônico | átono | % tônico |
-|---|---|---|---|
-| `*e` diante de `*m` | 445 | 89 | 83,3 % |
-| `*e` em outro lugar | 20.633 | 5.118 | 80,1 % |
-| **`*o` diante de `*m`** | **1.017** | **266** | **79,3 %** |
-| **`*o` em outro lugar** | **6.136** | **5.337** | **53,5 %** |
+Separando por posição do `*m`, ainda só na 1ª vogal:
 
-**Diante de `*m` o efeito do acento desaparece.** `*o` fica tão tônico quanto
-`*e` — 79,3 % contra 80,1 %, uma diferença de menos de um ponto. Fora desse
-contexto, despenca para 53,5 %. E `*o` tônico é **6,8× enriquecido** diante de
-`*m`: 14,2 % dos `*o` tônicos estão nesse contexto, contra 2,1 % dos `*e`
-tônicos.
+| contexto | `*e` | `*o` | razão `o : e` | % de `*o` tônico |
+|---|---|---|---|---|
+| **`_m#` — final, o ambiente da lei** | **35** | **583** | **16,7 : 1** | **87,5 %** |
+| `_m…` — medial | 499 | 700 | 1,4 : 1 | 72,4 % |
+| outro | 25.751 | 11.473 | 0,45 : 1 | 53,5 % |
 
-É exatamente a assinatura prevista. Uma lei segmental produz `*o` sem
-consultar o acento, e é por isso que o contexto `_m` é o único onde `*o`
-tônico é a norma e não a exceção.
+Duas leituras, e a primeira é a boa:
+
+**O `*e` praticamente não existe diante de `*m` final.** 35 ocorrências contra
+583 de `*o` — uma razão **37× maior** que a do resto do corpus. Isso é o que
+uma mudança sonora incondicional faz: ela *esvazia* o contexto de entrada. É
+evidência muito mais direta do que a do acento, e eu não a tinha medido.
+
+**E o efeito do acento desaparece ali.** 87,5 % dos `*o` em `_m#` são tônicos,
+contra 53,5 % fora — porque uma lei segmental produz `*o` sem consultar o
+acento. O contexto medial fica no meio (72,4 %), como se espera de uma mistura
+entre a lei e a *Abtönung*.
+
+Kloekhorst lista as formas afetadas: loc.sg. `*dʰǵ-ṓm`, `*dṓm` 'casa', gen.pl.
+`*-óm`, 1sg.pret. temático `*-o-m`, `*ǵʰi-ṓm`. As duas últimas são desinências
+produtivas — é por isso que 583 formas do corpus caem no contexto.
+
+Ele também dá a **cronologia relativa** (§8 do artigo), que o projeto não
+tinha: as regras de alongamento e a Lei de Szemerényi **precedem** esta lei —
+`*sém(-s)` > `*sḗm` > `*sḗms` > e só então a coloração. E dois paralelos
+tipológicos para o ambiente `_m#`: hitita `*ḱóm > kūn` `/kṓn/` contra
+`*ḱós > kāš` `/kā́s/`; lituano gen.pl. `*-om > -ų` contra nom.sg. `*-os > -as`.
 
 Duas consequências:
 

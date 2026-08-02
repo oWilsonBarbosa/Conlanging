@@ -46,6 +46,21 @@ tipológicas, e a documentação do projeto **Proto-Orogeniano**.
 |---|---|
 | `po_formas.tsv.gz` | 34.658 formas flexionadas do PIE invertidas para o Proto-Orogeniano, com esqueleto em classes naturais, silabificação, grau e o esqueleto invariante do paradigma. Gerado por `tools/po-derivation/classify.py` |
 
+## Fontes
+
+Os PDFs na raiz do repositório são a bibliografia primária. Além do corpo
+Kloekhorst (~30 artigos), entraram nesta rodada:
+
+| Fonte | Uso |
+|---|---|
+| Ewen & van der Hulst, *The Phonological Structure of Words* | estrutura silábica — prependix/apêndice (doc 02 §4.2) e peso por rima ramificada (§4.5) |
+| Clements & Keyser, *CV Phonology* | teoria da sílaba |
+| Rischel, *Sound Structure in Language* | — |
+| Good, *Linguistic Universals and Language Change* | — |
+| *Index Diachronica* v.10.2 | catálogo de mudanças sonoras atestadas |
+| Kloekhorst, *The PIE Acrostatic Inflection Reconsidered* | o `*ó` de `*wódr̥`/`*dóru` (doc 02 §5.1) |
+| Kloekhorst, *Evidence for a new pre-PIE sound law `*-ē̆m > *-ō̆m`* | doc 04 §8.2, agora em primeira mão |
+
 ## Curso
 
 `course/` contém as 13 aulas numeradas (fonologia 1–4, morfologia, verbos,

@@ -29,6 +29,7 @@ Sem dependências externas.
 
 import sys
 
+from features import MATRIX
 from inventory import (OBSTRUENTS, SONORANTS, SIBILANTS, VOWELS, SYLLABIC,
                        PHONEMES)
 
@@ -117,11 +118,31 @@ def legal_coda(segs):
     return legal_margin("".join(kind(s) for s in segs), CORE_CD, left=False)
 
 
-# Escala de sonoridade para decidir QUAL sonorante vira núcleo. Glides são as
-# mais sonoras, e é por isso que /w/ e /j/ vocalizam antes de /r l/ ou /m n/ —
-# a regra 4.2 do documento 03. Sem isso, `/ʔterw/` (< *dóru) sairia
-# `[ˈʔte]σ[r̩w]σ` em vez do correto `[ˈʔte]σ[ru]σ`.
-SONORITY = {"w": 3, "j": 3, "r": 2, "l": 2, "m": 1, "n": 1}
+def sonority(seg):
+    """Sonoridade, **derivada dos traços** — não uma escala escrita à mão.
+
+    Ewen & van der Hulst (§2.6, §3.3) definem a escala pelos mesmos traços que
+    a matriz do documento 03 já tem:
+
+        *"the higher the sonority of a segment, the closer it is to the peak of
+        the syllable"*
+        *"[+continuant] segments are higher on the sonority hierarchy than
+        [−continuant]"*
+
+    Com `[±cons]` e `[±cont]`, a ordem cai sozinha:
+
+        /w j/  [−cons +cont]  3     glides
+        /r l/  [+cons +cont]  1     líquidas
+        /m n/  [+cons −cont]  0     nasais
+
+    É essa ordem que faz `/ʔterw/` (< *dóru) dar `[ˈʔte]σ[ru]σ` e não
+    `[ˈʔte]σ[r̩w]σ` — e, por consequência, é por isso que o PIE tem *dóru e
+    não **dór̥w.
+    """
+    f = MATRIX.get(seg.rstrip("ː"))
+    if f is None:
+        return 0
+    return (2 if f.get("cons") == -1 else 0) + (1 if f.get("cont") == +1 else 0)
 
 
 def _promote(segs, run, nucs=()):
@@ -141,8 +162,7 @@ def _promote(segs, run, nucs=()):
     def dist(i):
         return min((abs(i - n) for n in nucs), default=0)
 
-    return max(cands, key=lambda i: (SONORITY.get(segs[i].rstrip("ː"), 0),
-                                     dist(i), -i))
+    return max(cands, key=lambda i: (sonority(segs[i]), dist(i), -i))
 
 
 def nuclei(segs):

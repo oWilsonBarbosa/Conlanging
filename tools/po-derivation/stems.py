@@ -107,9 +107,11 @@ def abtonung(forms):
 def lei_m(forms):
     """As duas leis que produzem *o deixam rastros ortogonais?
 
-    A *Abtönung* é condicionada por acento; `*-ē̆m` > `*-ō̆m` (Kloekhorst 2024)
-    é condicionada por segmento. Se as duas existem, diante de *m o efeito do
-    acento tem de sumir — uma lei segmental não consulta o acento.
+    A *Abtönung* é condicionada por acento; `*-ē̆m` > `*-ō̆m` (Kloekhorst 2024,
+    IF, doi 10.1515/if-2024-0008) é condicionada por segmento **em final de
+    palavra**. Se as duas existem, em `_m#` o efeito do acento tem de sumir —
+    e, mais importante, o `*e` tem de estar quase ausente ali, porque uma
+    mudança incondicional esvazia o próprio contexto de entrada.
 
     Só a 1ª vogal, para não misturar a vogal temática.
     """
@@ -120,21 +122,24 @@ def lei_m(forms):
         if not vs:
             continue
         k, cc, a = vs[0]
-        nxt = "".join(x for x, _ in seq[k + 1:k + 2])
-        c[(cc, a, "_m" if nxt == "m" else "outro")] += 1
+        resto = "".join(x for x, _ in seq[k + 1:])
+        if resto == "m":
+            ctx = "_m#  (final)"
+        elif resto[:1] == "m":
+            ctx = "_m…  (medial)"
+        else:
+            ctx = "outro"
+        c[(cc, a, ctx)] += 1
 
     rows = []
-    for cc in "eo":
-        for ctx in ("_m", "outro"):
-            t, at = c[(cc, True, ctx)], c[(cc, False, ctx)]
-            rows.append((cc, ctx, t, at, 100 * t / (t + at) if t + at else 0))
-    # razão de chances da Abtönung fora do contexto segmental
-    e1, e0 = c[("e", True, "outro")], c[("e", False, "outro")]
-    o1, o0 = c[("o", True, "outro")], c[("o", False, "outro")]
-    odds = (o0 / o1) / (e0 / e1)
-    ot = c[("o", True, "_m")] / (c[("o", True, "_m")] + c[("o", True, "outro")])
-    et = c[("e", True, "_m")] / (c[("e", True, "_m")] + c[("e", True, "outro")])
-    return rows, odds, ot, et
+    for ctx in ("_m#  (final)", "_m…  (medial)", "outro"):
+        e1, e0 = c[("e", True, ctx)], c[("e", False, ctx)]
+        o1, o0 = c[("o", True, ctx)], c[("o", False, ctx)]
+        et, ot = e1 + e0, o1 + o0
+        rows.append((ctx, et, ot, ot / et if et else 0,
+                     100 * o1 / ot if ot else 0))
+    base = rows[-1][3]
+    return rows, base
 
 
 def long_vowels(forms):
@@ -171,19 +176,17 @@ def main():
               "(razão de chances)")
         return
     if "--lei-m" in sys.argv:
-        rows, odds, ot, et = lei_m(forms)
-        print("AS DUAS LEIS DO *o — a Abtönung é acentual, *-ē̆m > *-ō̆m é "
-              "segmental\n")
-        print(f"{'1ª vogal':22s} {'tônico':>8s} {'átono':>8s} {'% tôn':>8s}")
-        print("-" * 50)
-        for cc, ctx, t, at, pct in rows:
-            lab = f"*{cc} diante de *m" if ctx == "_m" else f"*{cc} em outro lugar"
-            print(f"{lab:22s} {t:8d} {at:8d} {pct:7.1f}%")
-        print(f"\ndiante de *m o efeito do acento some: *o fica tão tônico "
-              f"quanto *e")
-        print(f"razão de chances da Abtönung, excluído o contexto _m: {odds:.2f}")
-        print(f"dos *o tônicos, {100*ot:.1f}% estão diante de *m "
-              f"(contra {100*et:.1f}% dos *e tônicos)")
+        rows, base = lei_m(forms)
+        print("AS DUAS LEIS DO *o\n")
+        print("  Abtönung — acentual  |  *-ē̆m > *-ō̆m — segmental, em _m#\n")
+        print(f"{'contexto':16s} {'*e':>7s} {'*o':>7s} {'razão o:e':>11s} "
+              f"{'% *o tônico':>12s}")
+        print("-" * 58)
+        for ctx, et, ot, razao, pct in rows:
+            print(f"{ctx:16s} {et:7d} {ot:7d} {razao:10.2f}  {pct:11.1f} %")
+        enr = rows[0][3] / base if base else 0
+        print(f"\nem _m# o *o é {enr:.0f}× mais frequente contra *e que no resto")
+        print("do corpus — a lei esvaziou o próprio contexto de entrada.")
         return
     if "--longas" in sys.argv:
         tot, lar, fs, ex = long_vowels(forms)

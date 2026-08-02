@@ -527,6 +527,19 @@ tratá-los igual:
 > `/s/` e `H` são **extrassilábicos** nas bordas da margem — à esquerda no
 > onset, à direita na coda.
 
+Isso tem nome na literatura, e chegamos a ele pelos dados antes de o encontrar.
+Ewen & van der Hulst (*The Phonological Structure of Words*, §3.4) dão à sílaba
+a estrutura:
+
+```
+σ:   prependix — onset — rima — apêndice (ESP)
+                         núcleo  coda
+```
+
+**Prependix** é o material extrassilábico à esquerda, **apêndice** o da
+direita. É exatamente a geometria que a medição impôs. O `/s/` do
+Proto-Orogeniano é prependix no onset e apêndice na coda; o `H` faz o mesmo.
+
 A geometria importa e não é decorativa. Retirar `H` do **meio** da margem
 licenciaria a coda `HR` de `/seqːl/` 'sal', que sobe em sonoridade — e é
 justamente a ilegalidade dessa coda que força o `/l/` a virar núcleo,
@@ -589,7 +602,34 @@ harmônica de §4.5, que não se confirma.
 
 Regra adotada: *no máximo uma obstruinte glotalizada por raiz.*
 
-### 4.5 Junção silábica
+### 4.5 Peso silábico
+
+Ewen & van der Hulst (§3.4) definem peso por **ramificação da rima**: pesada é
+a sílaba cuja rima tem mais de um segmento. No Proto-Orogeniano isso simplifica
+de um jeito que nenhuma outra língua permite — como não há vogal longa (§3.4)
+nem ditongo no núcleo, o núcleo é **sempre** de um segmento. Logo:
+
+> **Sílaba pesada = sílaba com coda.** Não há terceira possibilidade.
+
+E isso torna a pergunta testável. O acento é livre (§3.5); é livre *mesmo*, ou
+é sensível a peso? Medido sobre as 34.658 formas classificadas, contando só as
+que trazem acento marcado:
+
+| | sílabas | tônicas | % |
+|---|---|---|---|
+| **pesada** (com coda) | 34.880 | 17.604 | **50,5 %** |
+| **leve** (sem coda) | 45.165 | 11.953 | **26,5 %** |
+
+**Razão de chances 2,83.** E o efeito não é artefato de "o acento cai na
+primeira sílaba": excluindo a inicial, pesadas ficam em 47,9 % contra 29,0 %
+das leves.
+
+O acento do Proto-Orogeniano é livre quanto à posição, mas **atraído por
+peso**. Isso não estava no documento e não é decorativo: é o elo que faltava
+entre a fonotática e o ablaut, já que o grau zero é condicionado por acento
+(documento 04 §8.2).
+
+### 4.6 Junção silábica
 
 Segmentos idênticos não se encostam (`*nnː`, `*tːt`, `*ss`) — nem entre
 sílabas nem dentro da mesma margem, e é `_repeated()` que impõe isso no
@@ -681,9 +721,23 @@ reorganiza a palavra inteira:
 |---|---|---|
 | nom.sg | `*wódr̥` | `/ˈwe.ʔtr̩/` |
 | nom.col | `*wédōr` | `/ˈwe.ʔter/` |
-| gen.sg | `*wédn̥s` | `/ˈwe.ʔtn̩s/` |
+| gen.sg | `*wédn̥s` ⚠ | `/ˈwe.ʔtn̩s/` |
 | dat.sg | `*wédney` | `/ˈwe.ʔtnej/` |
 | gen.col | `*udnés` | `/u.ˈʔtnes/` |
+
+> ⚠ **A forma `*wédn̥s` é disputada, e Kloekhorst a rejeita.** Ela vem da
+> reconstrução acrostática de Schindler (1975a), com acento fixo na raiz.
+> Kloekhorst (2014, *Das Nomen im Indogermanischen*, 154–5) mostra que o hitita
+> grafa `ú-i-te-e-ni` com acento no **sufixo**, e que o `e/i` da raiz pode ser
+> vogal epentética `[ə]` em vez de `*e` pretônico. Ele reconstrói o oblíquo
+> como **`*ud-én-`** — grau zero na raiz — e conclui que 'água' *"cannot be
+> used as an argument anymore in favor of reconstructing an ó/é-ablauting
+> acrostatic inflection type"*.
+>
+> Na nossa tabela isso significa que a linha `gen.col` `*udnés` → `/u.ˈʔtnes/`
+> é a forma **boa**, e a `gen.sg` é a que herda uma reconstrução contestada. O
+> dataset traz as duas porque o Wiktionary segue a análise antiga. Mantidas
+> ambas, com a etiqueta.
 
 **`*dóru` 'árvore'** — grau pleno contra grau zero na mesma raiz:
 
