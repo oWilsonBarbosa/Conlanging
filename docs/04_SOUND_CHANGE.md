@@ -10,7 +10,7 @@
 |---|---|
 | Lição | Phonology 4 (Jasper, maio 2020) — a mais longa do curso |
 | Ferramenta | [`tools/po-derivation/`](../tools/po-derivation/) |
-| Estado | §1–§9 fechados; lição concluída |
+| Estado | §1–§10 fechados; lição concluída |
 
 ---
 
@@ -22,6 +22,7 @@ apostas em aberto? **Quatro das cinco, sim.** Uma delas não é teoria.
 | aposta | é teoria rival? | a métrica separa? |
 |---|---|---|
 | vocalismo: 1 ou 2 qualidades | sim | **sim** — ver §2 |
+| grau zero: já presente ou criado por síncope | sim | **sim** — ver §10 |
 | oclusivas: duração / voz / aspiração | sim, três | **não como acurácia** — ver §2.3 |
 | laringais: coluna uvular completa ou `*h₁` herdado | sim | **não** — indistinguíveis na métrica |
 | schwa: `[əR]` ou `[R̩]` | sim, mas fonético | não — mesma saída na derivação |
@@ -78,6 +79,7 @@ medir o dataset, não a derivação).
 | aspiração (Patri) | 11 | 2 | 9 |
 | laringal mínima (`*h₁` herdado) | 12 | 2 | 9 |
 | duas vogais | 12 | **0** | 9 |
+| pré-síncope (§10) | 12 | **5** | 9 |
 
 ### 2.3 Menos violações **não** é melhor teoria
 
@@ -791,6 +793,113 @@ flexão do PIE é sufixal, um catálogo enviesado para a borda direita superesti
 a fusão. O ranking de §9.4 é robusto — a síncope, que não é final, lidera — mas
 o número absoluto de §9.3 deve ser lido como ordem de grandeza, não como
 estimativa.
+
+## 10 | A variante pré-síncope
+
+Uma pergunta do usuário abriu esta seção: e se o grau zero **ainda não
+existisse** no Proto-Orogeniano? Ele escreveu três formas de `*ǵenh₁-` com o
+vão vocálico reposto —
+
+```
+/ˈʔḱen.qme/     /ʔḱen.ˈqmens/     /ʔḱen.qme.ˈnes/
+```
+
+— contra as atestadas `/ˈʔḱen.qme/`, `/ʔkn̩.ˈqmens/`, `/ʔkn̩.qm̩.ˈnes/`. É o
+Proto-Orogeniano **antes** de a síncope de átona operar: a raiz `ʔḱen-` fica
+invariante, o ablaut desaparece, e as sonorantes silábicas não existem.
+
+### 10.1 O teste que a hipótese tem de passar
+
+Se o grau zero é síncope de vogal átona, então **o acento nunca pode cair
+num grau zero**. Medido sobre os 9.415 núcleos de grau zero do corpus:
+
+| | | |
+|---|---|---|
+| átonos | 9.310 | **98,9 %** |
+| tônicos — proibidos pela hipótese | 105 | 1,1 % |
+
+E os 105 estão em **5 lemas de 867**: `*wĺ̥kʷos` 'lobo', `*h₂ŕ̥tḱos` 'urso',
+`*h₂wĺ̥h₁neh₂` 'lã', `*pĺ̥h₂seh₂`, `*tn̥néh₂` — o conjunto que a
+indo-europeística já trata como irregular, com suspeita de deformação por tabu
+nos dois primeiros. **A hipótese passa em 99,4 % dos lemas.**
+
+### 10.2 Implementada como variante
+
+`theories.py` ganhou `_SON_PRE`, que difere do baseline em **exatamente uma
+dimensão** — o tratamento das silábicas:
+
+| | baseline (A) | pré-síncope (B) |
+|---|---|---|
+| `*m̥ *n̥ *r̥ *l̥` | `m n r l` | `em en er el` |
+| `*i *u` | `j w` | `ej ew` |
+
+A posição da vogal reposta não é escolha livre: a raiz `*ǵenh₁-` tem grau
+pleno `ǵen-` e zero `ǵn̥-`, então o vão é **antes** da sonorante. Isso também
+é o que Kloekhorst & Mens leem como `[əR]` (documento 03 §4.1).
+
+`invert()` passou a aceitar valores em tupla, porque aqui um segmento do PIE
+corresponde a dois no PO.
+
+### 10.3 O placar
+
+**O que B ganha:**
+
+| | A | B |
+|---|---|---|
+| núcleos que são `/e/` pleno | 72,8 % | **97,0 %** |
+| núcleos que são alofone silábico | 27,2 % | 3,0 % |
+| palavras sem nenhuma vogal plena | 1.177 (3,4 %) | **49 (0,1 %)** |
+
+E ganha o argumento estrutural: o ablaut deixa de ser herdado e passa a ser
+**fabricado** na derivação, por síncope condicionada por acento — que é o
+ethos do projeto inteiro. O alerta tipológico do documento 02 §3.7 fica menos
+duro: continua sendo uma qualidade vocálica só, mas ela passa a ocorrer em
+quase toda sílaba em vez de em três quartos delas.
+
+**O que B perde:**
+
+| | A | B |
+|---|---|---|
+| colisões nas 766 raízes | 2 | **5** |
+| distinções de paradigma perdidas (com acento) | — | **520 (2,4 %)** |
+
+As três colisões extras são todas do mesmo tipo — `*kelH`/`*kl̥H`,
+`*pewH`/`*puH`, `*strew`/`*stru` — grau pleno fundindo com grau zero. Para B
+isso não é erro, é a tese: antes da síncope eram a mesma palavra. Mas então o
+acento tem de carregar a distinção, e **ele só resgata um quarto dela**: sem
+acento B perde 706 distinções de paradigma, com acento ainda perde 520.
+
+### 10.4 E o que motivou B **não** se confirma
+
+> ⚠ Eu disse ao usuário, ao apresentar a hipótese, que B daria "aglomerados
+> muito mais leves". **Medido, é o contrário.**
+
+Aglomerado medial (coda + onset seguinte), 56 mil junturas:
+
+| segmentos | A | B |
+|---|---|---|
+| 0–1 | 56,2 % | 41,7 % |
+| 2 | 37,0 % | 43,4 % |
+| **3 ou mais** | **6,8 %** | **14,8 %** |
+| **média** | **1,44** | **1,68** |
+
+A razão é estrutural e eu devia tê-la previsto: em A, uma sonorante entre
+consoantes vira **núcleo** e por isso **quebra** o aglomerado. Em B ela recebe
+uma vogal à esquerda e vira **coda**, encostando no onset seguinte. B não
+reduz a densidade consonantal — ele a **redistribui**, tirando das sonorantes
+silábicas e pondo nas margens. Sílabas pesadas sobem junto: 43,2 % → 60,2 %.
+
+### 10.5 Veredito
+
+B é uma teoria real, passa no seu próprio teste com 99,4 %, e tem o melhor
+argumento estrutural do projeto — derivar o ablaut em vez de herdá-lo. Mas ela
+**não resolve o problema que a motivou**, custa 2,4 % das distinções de
+paradigma, e empurra o Proto-Orogeniano para um estágio que nada no PIH atesta
+diretamente.
+
+Fica registrada como variante rodável (`python3 invert.py pré-síncope`), não
+executada. É a mesma disciplina do schwa (documento 03 §4.1) e da harmonia
+descartada (documento 02 §3.4): quem quiser retomá-la tem os números.
 
 ---
 

@@ -39,16 +39,34 @@ _LAR_MIN = {"h₂": "qː", "h₃": "qʷː", "h₁": "ʔ", "H": "?H"}    # *h₁ 
 _VOW_ONE = {"e": "e", "o": "e", "ē": "e", "ō": "e"}            # uma qualidade
 _VOW_TWO = {"e": "e", "o": "o", "ē": "e", "ō": "o"}            # duas
 
-_SON = {"m": "m", "n": "n", "r": "r", "l": "l", "w": "w", "y": "j",
-        "i": "j", "u": "w", "s": "s",
-        # as silábicas do PIE são o resultado da regra 4.1 do documento 03,
-        # não segmentos próprios: desfazem-se na sonorante correspondente
-        "m̥": "m", "n̥": "n", "r̥": "r", "l̥": "l"}
+# ─── Sonorantes, e o estágio em que o Proto-Orogeniano está ─────────────────
+# Esta é a dimensão do grau zero, e ela decide QUANDO o PO fica na história.
+#
+# `_SON_POS` — pós-síncope. As silábicas do PIE são o resultado da regra 4.1
+# do documento 03, não segmentos próprios: desfazem-se na sonorante
+# correspondente, e o silabificador redescobre a silabicidade pelo molde.
+_SON_POS = {"m": "m", "n": "n", "r": "r", "l": "l", "w": "w", "y": "j",
+            "i": "j", "u": "w", "s": "s",
+            "m̥": "m", "n̥": "n", "r̥": "r", "l̥": "l"}
+
+# `_SON_PRE` — pré-síncope. O grau zero **não existe ainda**: cada núcleo
+# silábico do PIE reflete um `/e/` que a síncope de átona ainda vai apagar.
+# Medido em docs/04 §10: 98,9 % dos núcleos de grau zero do corpus são átonos,
+# e os tônicos estão em 5 lemas de 867 — os anômalos conhecidos (*wĺ̥kʷos
+# 'lobo', *h₂ŕ̥tḱos 'urso', *h₂wĺ̥h₁neh₂ 'lã').
+#
+# Valores em tupla = mais de um segmento na saída.
+_SON_PRE = {"m": "m", "n": "n", "r": "r", "l": "l", "w": "w", "y": "j",
+            "i": ("e", "j"), "u": ("e", "w"), "s": "s",
+            "m̥": ("e", "m"), "n̥": ("e", "n"),
+            "r̥": ("e", "r"), "l̥": ("e", "l")}
+
+_SON = _SON_POS
 
 
-def _theory(stops, lar, vow, name, note):
+def _theory(stops, lar, vow, name, note, son=None):
     m = {}
-    m.update(stops); m.update(lar); m.update(vow); m.update(_SON)
+    m.update(stops); m.update(lar); m.update(vow); m.update(son or _SON)
     return {"name": name, "note": note, "map": m}
 
 
@@ -65,4 +83,7 @@ VARIANTS = [
             "*h₁ herdado como /ʔ/, sem coluna uvular completa"),
     _theory(_STOPS_LENGTH, _LAR_FULL, _VOW_TWO, "duas vogais",
             "/e o/ fonêmicos, sem derivar *o por regra"),
+    _theory(_STOPS_LENGTH, _LAR_FULL, _VOW_ONE, "pré-síncope",
+            "grau zero ainda não existe: cada núcleo é um /e/ por apagar",
+            son=_SON_PRE),
 ]

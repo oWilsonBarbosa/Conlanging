@@ -11,6 +11,7 @@ Especificação em [`docs/04_SOUND_CHANGE.md`](../../docs/04_SOUND_CHANGE.md).
 python3 invert.py             # todas as teorias, resumo comparativo
 python3 invert.py baseline    # uma teoria, com violações e colisões
 python3 invert.py --ambiguidade  # onde a inversão escolhe sem evidência
+python3 invert.py pré-síncope    # a variante do grau zero (docs/04 §10)
 python3 derive.py             # deriva e compara as duas ordens de regras
 python3 derive.py --sample    # derivações passo a passo
 python3 stems.py              # perfil do corpus de formas flexionadas

@@ -108,10 +108,21 @@ def check(form):
 
 
 def invert(word, theory):
+    """PIE -> Proto-Orogeniano, segmento a segmento.
+
+    Um valor do mapa pode ser uma **tupla**, quando um segmento do PIE
+    corresponde a mais de um no PO: a variante pré-síncope devolve `*m̥` como
+    `("e", "m")`, porque para ela a silábica é um `/e/` que a síncope ainda
+    vai apagar mais a sonorante.
+    """
     out, unknown = [], []
     for seg in segment(word):
         if seg in theory["map"]:
-            out.append(theory["map"][seg])
+            val = theory["map"][seg]
+            if isinstance(val, tuple):
+                out.extend(val)
+            else:
+                out.append(val)
         else:
             unknown.append(seg); out.append(seg)
     return out, unknown
