@@ -15,6 +15,9 @@ python3 derive.py --sample    # derivações passo a passo
 python3 stems.py              # perfil do corpus de formas flexionadas
 python3 stems.py --abtonung   # o grau-o contra o acento
 python3 stems.py --longas     # de onde vêm as vogais longas
+python3 stems.py --lei-m      # as duas leis do *o, separadas
+python3 tarefa4.py            # tarefa 4: dez mudanças sorteadas, aplicadas
+python3 tarefa4.py --custo    # o que cada mudança funde, sozinha
 ```
 
 ## Arquivos
@@ -24,6 +27,7 @@ python3 stems.py --longas     # de onde vêm as vogais longas
 | `theories.py` | as variantes como **configuração**: correspondências PIE ↔ PO. Trocar de teoria é trocar um dicionário, não bifurcar o código |
 | `invert.py` | segmentação das raízes, inversão e as três medidas |
 | `derive.py` | a derivação ordenada PO → PIE clássico, e o teste de que a ordem importa |
+| `tarefa4.py` | a tarefa 4 do exercício — sorteia dez mudanças de um catálogo de vinte **antes** de ver as palavras, aplica, e mede o que funde nos paradigmas |
 | `stems.py` | o corpus de **formas flexionadas** — 40.894 formas, 93 % com acento. É o corpus que permite testar a *Abtönung* e as vogais longas, que as raízes não permitem |
 
 ## As três medidas, e por que não são circulares

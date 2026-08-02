@@ -10,7 +10,7 @@ tipológicas, e a documentação do projeto **Proto-Orogeniano**.
 | [`docs/01_PROTO_INDO_ANATOLIAN.md`](docs/01_PROTO_INDO_ANATOLIAN.md) | Estado da arte sobre o proto-indo-anatólio — o alvo de reconstrução contra o qual o Proto-Orogeniano é desenhado. Inclui a tabela de restrições de projeto (§9). |
 | [`docs/02_PROTO_OROGENIAN_PHONOLOGY.md`](docs/02_PROTO_OROGENIAN_PHONOLOGY.md) | O inventário fonêmico e a fonotática do Proto-Orogeniano. Resposta ao trabalho da lição Phonology 2 do curso. |
 | [`docs/03_PROTO_OROGENIAN_FEATURES_RULES.md`](docs/03_PROTO_OROGENIAN_FEATURES_RULES.md) | Matriz de traços distintivos, classes naturais e as regras fonológicas — sincrônicas e diacrônicas. Lição Phonology 3. |
-| [`docs/04_SOUND_CHANGE.md`](docs/04_SOUND_CHANGE.md) | **Em andamento.** Mudança sonora: o banco de provas das teorias rivais, a derivação ordenada e as leis vocálicas medidas sobre as formas flexionadas. Lição Phonology 4. |
+| [`docs/04_SOUND_CHANGE.md`](docs/04_SOUND_CHANGE.md) | Mudança sonora: o banco de provas das teorias rivais, a derivação ordenada e as leis vocálicas medidas sobre as formas flexionadas. Lição Phonology 4. |
 
 ## Ferramentas
 

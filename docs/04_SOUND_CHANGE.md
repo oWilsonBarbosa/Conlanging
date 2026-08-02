@@ -2,14 +2,15 @@
 
 **Conlangs University · Phonology 4 — "Sound change"**
 
-> **Em andamento.** Banco de provas, medição, ordenação, a tarefa 3 e as leis
-> vocálicas estão feitos. Faltam o grau zero e a tarefa 4.
+> **Fechado.** As quatro tarefas do enunciado estão feitas, mais o banco de
+> provas das teorias rivais, a derivação ordenada e as leis vocálicas medidas
+> sobre as formas flexionadas.
 
 | | |
 |---|---|
 | Lição | Phonology 4 (Jasper, maio 2020) — a mais longa do curso |
 | Ferramenta | [`tools/po-derivation/`](../tools/po-derivation/) |
-| Estado | §1–§8 fechados; grau zero e tarefa 4 pendentes |
+| Estado | §1–§9 fechados; lição concluída |
 
 ---
 
@@ -590,13 +591,172 @@ da "supressão de 90 %" (§2.4): as duas vezes, o número não estava errado —
 
 ---
 
+## 9 | Tarefa 4 do exercício
+
+> *"Take ten random words from your conlang and try to make ten random sound
+> changes **before applying them**. What do you see? Are all words affected
+> equally much? Does it happen to merge grammatically distinct forms?"*
+
+Ferramenta: [`tools/po-derivation/tarefa4.py`](../tools/po-derivation/tarefa4.py).
+
+### 9.1 O desenho, e por que o "before" importa
+
+O *before applying them* é a única parte do enunciado que pode ser burlada sem
+que ninguém perceba — escolhidas depois de ver as palavras, as mudanças viram
+decoração. Aqui a regra é imposta pela construção: as dez saem de um catálogo
+de vinte por sorteio com semente, numa função que **não recebe as palavras**.
+
+O catálogo cobre as categorias da lição e do handout de Moore: lenição (quatro
+tipos), perda (apócope, síncope, redução de aglomerado, degeminação final),
+adição (epêntese, prótese), fortição, assimilação (nasal, palatalização,
+coloração laringal), metátese, rotacismo, vocalização e fusão.
+
+A terceira pergunta precisa de algo que a conlang **não tem**: paradigma. A
+morfologia é a lição 5. A saída foi inverter para o Proto-Orogeniano as formas
+flexionadas reais do corpus (§8) e rodar as mudanças sobre elas — formas
+gramaticalmente distintas de verdade, com etiqueta. O corpus de paradigmas fica
+**fixo** enquanto a semente varia, senão não se sabe qual das duas coisas moveu
+o número.
+
+### 9.2 Todas as palavras são afetadas igualmente? Não
+
+Dez palavras geradas, semente 4400:
+
+| antes | depois | regras que pegaram |
+|---|---|---|
+| `/eqʷew/` | `/eːew/` | 1/10 |
+| `/pːm̩wnekʷːe/` | `/pːwŋkʷe/` | 3/10 |
+| `/pm̩qːenqʷ/` | `/pːm̩ːqʷ/` | 5/10 |
+| `/rːekʷːʔqʷenːpː/` | `/rːkʷːʔqʷepː/` | 2/10 |
+| `/ʔḱl̩semːkʷen/` | `/ʔḱseŋːkʷn/` | 2/10 |
+| `/ḱepːemḱː/` | `/ḱːpeḱː/` | 4/10 |
+| `/tːetːmːr̩n/` | `/tːtːmːr̩n/` | 1/10 |
+| `/meqepːqerː/` | `/ɴqepːqrː/` | 2/10 |
+| `/kːleḱːtːespːenːp/` | `/kːlḱːtːspːep/` | 2/10 |
+| `/tːewḱːewḱ/` | `/tːewḱːḱ/` | 2/10 |
+
+**Nenhuma palavra saiu intacta, e nenhuma foi atingida por mais da metade das
+regras.** A dispersão é de 1 a 5 de 10, média 2,4 — uma palavra pode ser
+cinco vezes mais afetada que outra pelo mesmo conjunto de mudanças. O que
+determina isso é a composição: quanto mais aglomerado final e vogal átona,
+mais superfície de ataque.
+
+Varrendo sete sementes, a média por palavra fica entre 1,4 e 3,1. A ordem de
+grandeza é estável; o detalhe, não.
+
+### 9.3 Funde formas gramaticalmente distintas? Sim — e há uma surpresa antes
+
+Seis paradigmas, 179 formas flexionadas:
+
+| | formas distintas |
+|---|---|
+| no PIE | 179 |
+| **depois de invertidas para o Proto-Orogeniano** | **128** |
+| depois das dez mudanças (semente 4400) | 115 |
+
+**A inversão sozinha custa 51 distinções — 28 %, antes de qualquer mudança
+sonora.** Isso não estava previsto e é o achado mais interessante da tarefa:
+a derivação que o projeto inteiro define é ela própria fortemente
+neutralizante. `*e` e `*o` voltam ambos a `/e/`, a duração vocálica desaparece
+(§8.3), as três séries de oclusivas colapsam menos do que se pensa. O
+Proto-Orogeniano tinha **menos** formas distintas que o PIE, e boa parte da
+riqueza flexional do PIE foi *criada* pelas mudanças, não herdada.
+
+As dez mudanças sorteadas custam mais 13. Varrendo sementes, com o corpus fixo:
+
+| semente | distintas depois | distinções perdidas |
+|---|---|---|
+| 2026 | 127 | 1 |
+| 42 | 126 | 2 |
+| 7 | 125 | 3 |
+| 1 | 123 | 5 |
+| 4400 | 115 | 13 |
+| 31337 | 107 | 21 |
+| 100 | 102 | 26 |
+
+De 1 a 26 sobre 128, conforme o sorteio. A resposta ao enunciado é **sim, e o
+quanto depende inteiramente de *quais* mudanças caem**.
+
+Os sincretismos produzidos não são aleatórios:
+
+```
+*ph₃tós        /pːqʷːtːq/     <- nom.du | voc.du | ac.du
+*ph₃tós        /pːqʷːtːqːps/  <- abl.pl | dat.pl | instr.pl
+*h₂ḱh₂owsyéti  /qːkːqːwses/   <- 2sg.pres.ind | 2sg.past.ind | 2sg.subj
+```
+
+Nominativo/vocativo/acusativo fundidos no dual, o plural oblíquo fundido em
+uma forma só, presente/passado/subjuntivo fundidos na 2ª pessoa — são
+exatamente os sincretismos que as línguas indo-europeias reais exibem. Não foi
+desenhado; caiu do sorteio.
+
+### 9.4 O que funde, e o que não funde
+
+O sorteio responde *se*; aplicar cada mudança **sozinha** responde *o quê*.
+Sobre 150 paradigmas, 2.738 formas distintas:
+
+| perdas | mudança | categoria |
+|---|---|---|
+| **107** | síncope: `V > ∅` átona entre consoantes | perda |
+| **81** | redução de aglomerado: `CC > C / _#` | perda |
+| **68** | **epêntese: `∅ > e` entre duas consoantes finais** | **adição** |
+| 19 | apócope: `V > ∅ / _#` | perda |
+| 4 | degeminação final: `Cː > C / _#` | perda |
+| 2 | queda de laringal com alongamento compensatório | fusão |
+| 1 | prótese: `∅ > e / #_CC` | adição |
+| **0** | **as outras 13** — todas as lenições, todas as assimilações, metátese, rotacismo, vocalização, fortição, desglotalização, coalescência | — |
+
+Duas conclusões, e a segunda desmonta a primeira.
+
+**1. Mudanças que preservam a estrutura não fundem nada.** Treze das vinte
+custam zero, mesmo em 2.738 formas — e entre elas há mudanças claramente
+não-injetivas, como a debucalização (`toda oclusiva final > ʔ`), que
+*deveria* fundir. A razão está no paradigma: **dentro de um paradigma a raiz é
+constante e só a desinência varia.** Uma mudança que ataca o miolo da palavra
+atinge todas as formas igualmente e não separa nem junta nenhuma. Só as
+mudanças que alcançam a **borda direita** — onde mora a flexão — podem fundir.
+
+**2. Mas não é "perda funde, adição não".** A epêntese é a terceira mais
+destrutiva, e ela *acrescenta* material. O mecanismo:
+
+```
+*tritós   dat.sg  /tːrjtːeqːej/
+          loc.sg  /tːrjtːeqːj/   ->  /tːrjtːeqːej/   (epêntese)
+```
+
+A locativa ganha um `e` e vira **exatamente** a dativa, que já existia. A
+adição funde quando produz uma forma que o paradigma já tinha.
+
+A generalização correta não é sobre acrescentar ou apagar material: é sobre
+**injetividade sobre as formas presentes**. Uma mudança funde quando leva dois
+membros do paradigma ao mesmo lugar — por deleção, por adição ou por
+substituição, indiferentemente. É a mesma propriedade que §4.1 mediu na ordem
+das regras: lá, a degeminação antes do vozeamento fundia 44 raízes por ser
+não-injetiva naquele ponto da derivação. Duas medições diferentes, o mesmo
+princípio.
+
+### 9.5 Ressalva
+
+O catálogo tem viés de posição: 5 das 20 mudanças têm ambiente `_#`. Como a
+flexão do PIE é sufixal, um catálogo enviesado para a borda direita superestima
+a fusão. O ranking de §9.4 é robusto — a síncope, que não é final, lidera — mas
+o número absoluto de §9.3 deve ser lido como ordem de grandeza, não como
+estimativa.
+
+---
+
 ## O que falta
 
-1. **Tarefa 4 do exercício**: dez palavras, dez mudanças aleatórias, e observar
-   o que funde. É o único item do enunciado ainda em aberto.
-2. **Grau zero.** Agora ao alcance (§8.4) e ainda não medido: 592 paradigmas
+Nada do enunciado da Phonology 4. As quatro tarefas estão feitas: 1 e 2 são
+drills genéricos sobre mudanças atestadas, sem relação com a conlang (mesma
+situação do exercício da Phonology 1); 3 está em §5; 4 em §9.
+
+Fica registrado, para as lições seguintes:
+
+1. **Grau zero.** Ao alcance desde §8.4 e ainda não medido: 592 paradigmas
    exibem alternância. A pergunta é se a distribuição do grau zero é previsível
-   pelo acento do mesmo modo que a da *Abtönung*. Não é exigência desta lição —
-   é material da 5 em diante, onde a morfologia entra.
-3. Tarefas 1 e 2 do exercício, que são drills genéricos sobre mudanças
-   atestadas — sem relação com a conlang, como o exercício da Phonology 1.
+   pelo acento do mesmo modo que a da *Abtönung*. É material da lição 5 em
+   diante, onde a morfologia entra.
+2. **Temas em vogal e desinências em vogal.** §8.3 mostrou que a fonte
+   dominante de duração vocálica é contração em fronteira de morfema. Isso é
+   uma restrição sobre a morfologia do Proto-Orogeniano, e ela vence na lição 5.
