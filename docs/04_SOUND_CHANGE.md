@@ -133,15 +133,47 @@ Mas a medição expôs um custo da nossa invenção que eu não tinha quantifica
 |---|---|---|
 | com `*h₁` — 4 origens possíveis (`/q ʔq qʷ ʔqʷ/`) | 115 | 15 % |
 | com `*H` — laringal indeterminada na própria filologia | 71 | 9 % |
-| **total com ponto ambíguo** | **186** | **24 %** |
+| **subtotal, ambiguidade laringal** | **180** | **23 %** |
 
-Um quarto das raízes tem pelo menos um ponto onde a derivação não é
-invertível. Os 71 de `*H` não são culpa nossa — a filologia não decide. Mas os
-115 de `*h₁` são: a coluna uvular completa transforma cada `*h₁` numa escolha
-de quatro. A teoria da laringal mínima paga zero por isso.
+Os 71 de `*H` não são culpa nossa — a filologia não decide. Mas os 115 de `*h₁`
+são: a coluna uvular completa transforma cada `*h₁` numa escolha de quatro. A
+teoria da laringal mínima paga zero por isso.
+
+> ⚠ **Corrigido.** Esta seção dizia que **24 %** das raízes têm ponto ambíguo, e
+> tratava esse número como o custo da invenção uvular. Estava subcontado, e a
+> comparação estava mal posta.
+>
+> A regra **K4** de §4 degemina sonorantes e sibilante. Logo `/l/` e `/lː/` dão
+> ambos `*l`, `/n/` e `/nː/` dão ambos `*n`, e assim por diante — cada `*s *m
+> *n *r *l` do PIE é uma escolha entre duas fontes proto-orogenianas, do mesmo
+> modo que `*h₁` é uma escolha entre quatro. Eu contei as laringais e não contei
+> as sonorantes.
+
+| origem da ambiguidade | raízes | % |
+|---|---|---|
+| laringal (`*h₁`, `*H`) — **a invenção do projeto paga esta** | 180 | 23 % |
+| sonorante ou `*s` — **paga por K4, em toda teoria** | 560 | **73 %** |
+| **com algum ponto ambíguo** | **611** | **80 %** |
+
+Isso muda a leitura do custo em duas direções opostas, e as duas importam:
+
+- **Em termos absolutos, é muito pior.** Quatro quintos das raízes têm pelo
+  menos um ponto onde a inversão escolhe sem evidência, não um quarto. Toda
+  forma proto-orogeniana citada nos documentos é *uma* das pré-imagens legais,
+  não a única.
+- **Em termos relativos, a invenção sai melhor.** Os 73 % das sonorantes são
+  pagos por **todas** as teorias — vêm da degeminação de Kloekhorst, não de
+  nós. A coluna uvular acrescenta 23 pontos sobre um piso que já era 73. Ela
+  não é o que torna a derivação não-invertível; ela agrava algo que já era.
+
+O documento 02 §5.2 registra a escolha feita na prática: onde há fusão de
+sonorante, a inversão toma sempre a lenis, por simplicidade e não por
+evidência. A evidência existiria na grafia geminada do hitita (Kloekhorst 2016),
+e cruzá-la com o dataset é trabalho ainda não feito.
 
 O documento 02 §3.2 justifica a invenção por três consequências verificáveis.
-Agora há um preço do outro lado da balança, e ele está medido.
+Agora há um preço do outro lado da balança, e ele está medido — e é menor, em
+proporção, do que esta seção afirmava.
 
 ---
 

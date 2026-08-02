@@ -24,6 +24,7 @@ com `--seed 4400`.
 
 | Arquivo | Conteúdo |
 |---|---|
+| `syllabify.py` | divisão silábica pelo molde de §4.1 — M.O.P. com checagem de legalidade, e promoção de sonorante a núcleo pela escala de sonoridade |
 | `inventory.py` | os 33 fonemas, organizados por série e ponto de articulação; `series_of()` e `is_glottalized()` |
 | `features.py` | matriz de traços distintivos, classes naturais e verificação — `python3 features.py` confere que cada classe resolve para o conjunto pretendido |
 | `gen.py` | molde silábico, pesos de onset/coda medidos sobre as 873 raízes de `PIE_roots`, validação de junção silábica e acento livre |

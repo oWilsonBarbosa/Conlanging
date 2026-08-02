@@ -80,14 +80,17 @@ tom. Não tem nasais vocálicas, retroflexas, cliques nem faringais.
 ## 2 | Amostra sonora
 
 Arranjo fonoestético, **não uma frase analisada** — a morfologia é assunto das
-lições 03 e 05, e nenhuma decisão morfológica foi tomada ainda:
+lições 03 e 05, e nenhuma decisão morfológica foi tomada ainda. Todas as formas
+são léxico real retro-construído (§5.1), nenhuma é preenchimento:
 
 ```
-/ˈqːweq  ˈstːeqː  wejˈʔt-es  ˈlewkː-mn̩  pːenˈtː-eres/
+/ˈqːner   ˈʔkʷen   ˈʔte.ru   ˈwe.ʔtr̩   ˈse.qːl̩   ˈpːe.kːu/
+  homem    mulher   árvore     água       sal        rebanho
 ```
 
-As formas antes do hífen são derivadas de raízes reais (§5.1); o que vem depois
-é preenchimento silábico, sem valor gramatical.
+Uma versão anterior desta amostra usava três formas inventadas com sufixos sem
+valor gramatical (`-es`, `-mn̩`, `-eres`). Foram trocadas: se a língua é
+definida por retro-construção, não há razão para preencher sílabas à mão.
 
 Para ouvir o contraste central do sistema, o par mínimo que separa duração de
 vozeamento:
@@ -98,7 +101,7 @@ vozeamento:
 | `/ˈpent/` | `*bʰendʰ-` | 'atar' |
 
 No Proto-Orogeniano essas duas palavras diferem **só em duração**. No PIE
-clássico, depois do vozeamento e da degeminação de §5.1, elas diferem em
+clássico, depois do vozeamento e da degeminação de §5.2, elas diferem em
 vozeamento e aspiração. É a mudança inteira de Kloekhorst 2016 em duas
 palavras.
 
@@ -531,33 +534,103 @@ idênticos não se encostam (`*nnː`, `*tːt`, `*ss`).
 
 ## 5 | Palavras
 
-Geradas por [`tools/po-phonology/gen.py`](../tools/po-phonology/gen.py), que
-implementa §4. Saída com `--seed 4400`, curada (o gerador é uma primeira
-aproximação; a tarefa 7 é justamente conferir).
+Uma versão anterior desta seção abria com dez formas do gerador. Estavam
+erradas de método: uma palavra sorteada é legal pelo molde e mais nada, e
+não há como conferi-la contra coisa alguma. **O material primário desta seção
+passou a ser léxico real retro-construído** — palavras do PIE invertidas pela
+tabela de §5.2, onde cada forma é verificável por quem discorde. O gerador
+continua em §5.4, no papel para o qual serve: mostrar o que a fonotática
+licencia, não o que a língua tinha.
 
-**Raízes:**
+Um filtro de cronologia governa a escolha, e ele descarta muita coisa
+bonita. As formações **pós-anatólias** da lista de inovações do documento 01
+§3 não podem aparecer como palavra do Proto-Orogeniano:
 
-```
-/ˈpeḱːqː/    /ˈkʷmew/     /ˈmːemḱː/    /ˈsmeqʷː/
-/ˈkːeqʷ/     /ˈkʷːeqʷ/    /ˈqːer/      /ˈʔḱewp/
-/ˈkːwem/     /ˈkʷenq/
-```
+| formação | item | exemplo que fica de fora |
+|---|---|---|
+| tematização (`-o-`) | 11, 12, 13 | `*h₁éteros`, `*kʷóteros`, `*oḱtṓwos` |
+| `*-e/o-` como sufixo verbal | 15 | presentes temáticos em `*-eti` |
+| causativos `*CoC-éye/o-` | 34 | `*moréyeti`, `*bʰoréyeti`, `*logʰéyeti` |
+| perfeito reduplicado | 24 (fraco) | `*memóne`, `*tetóne` — evitados por precaução |
 
-**Polissilábicas:**
+Sobra o que o anatólio de fato conserva: **substantivos atemáticos**, e é
+com eles que a seção trabalha.
 
-```
-/seˈkʷenq/       /ˈsepːemːtː/     /kʷːreˈnqʷenː/   /rːeˈrqʷes/
-/ˈlːerjesḱekː/   /ˈskʷemːejkː/    /weˈtelːʔk/      /ʔkʷeˈqʷn̩tːejpː/
-```
+### 5.1 Léxico
 
-Repare em `/sr̩ˈkːl̩lpː/` e `/ˈpm̩qːenqʷ/`, também da saída bruta: palavras sem
-nenhuma vogal plena, apoiadas só em sonorantes silábicas. É o efeito de §3.4
-levado ao limite, e é legal pelo molde.
+Substantivos atemáticos, invertidos pela tabela de §5.2. Todos verificados
+com `invert.py`, todos legais pela fonotática de §4:
 
-### 5.1 Formas derivadas de raízes reais
+| PIE | sentido | Proto-Orogeniano |
+|---|---|---|
+| `*pṓds` | pé | `/ˈpːeʔts/` |
+| `*dóru` | árvore | `/ˈʔte.ru/` |
+| `*ǵónu` | joelho | `/ˈʔke.nu/` |
+| `*médʰu` | mel | `/ˈme.tu/` |
+| `*wódr̥` | água | `/ˈwe.ʔtr̩/` |
+| `*h₂ṓws` | orelha | `/ˈqːews/` |
+| `*néh₂s` | nariz | `/ˈneqːs/` |
+| `*yókʷr̥` | fígado | `/ˈje.kʷːr̩/` |
+| `*h₂nḗr` | homem | `/ˈqːner/` |
+| `*sḗh₂l` | sal | `/ˈse.qːl̩/` |
+| `*gʷṓws` | gado | `/ˈʔkʷews/` |
+| `*péḱu` | rebanho | `/ˈpːe.kːu/` |
+| `*gʷḗn` | mulher | `/ˈʔkʷen/` |
+| `*dóm` | casa | `/ˈʔtem/` |
+| `*ǵʰmṓ` | humano | `/ˈkme/` |
 
-Mais úteis que as geradas, porque já são material do projeto. A tabela de
-correspondências que as produz:
+Note que **nenhuma tem `[o]`**, embora quase todas sejam citadas com `*o` na
+convenção da indo-europeística. É o §3.4 em funcionamento: o grau-o é
+posterior, e a forma de citação do PIE já o traz.
+
+#### Onde as polissilábicas realmente vêm
+
+Não do léxico — as raízes e temas do PIE são curtos. Vêm do **paradigma**, e
+é aí que o Proto-Orogeniano fica interessante, porque a alternância de grau
+reorganiza a palavra inteira:
+
+**`*sḗh₂l` 'sal'** — o paradigma que Kloekhorst usa para dispensar `*ā`
+(§3.4):
+
+| caso | PIE | Proto-Orogeniano |
+|---|---|---|
+| nom.sg | `*sḗh₂l` | `/ˈse.qːl̩/` |
+| voc.sg | `*sh₂él` | `/ˈsqːel/` |
+| ac.sg | `*sh₂élm̥` | `/ˈsqːe.l̩m/` |
+| gen.sg | `*sh₂lés` | `/ˈsqːles/` |
+| dat.sg | `*sh₂léy` | `/ˈsqːlej/` |
+
+**`*wódr̥` 'água'** — o heteroclítico `r`/`n`, que o anatólio conserva:
+
+| caso | PIE | Proto-Orogeniano |
+|---|---|---|
+| nom.sg | `*wódr̥` | `/ˈwe.ʔtr̩/` |
+| nom.col | `*wédōr` | `/ˈwe.ʔter/` |
+| gen.sg | `*wédn̥s` | `/ˈwe.ʔtn̩s/` |
+| dat.sg | `*wédney` | `/ˈwe.ʔtnej/` |
+| gen.col | `*udnés` | `/u.ˈʔtnes/` |
+
+**`*dóru` 'árvore'** — grau pleno contra grau zero na mesma raiz:
+
+| caso | PIE | Proto-Orogeniano |
+|---|---|---|
+| nom.sg | `*dóru` | `/ˈʔte.ru/` |
+| gen.sg | `*dréws` | `/ˈʔtrews/` |
+| dat.sg | `*dréwey` | `/ˈʔtre.wej/` |
+| abl.pl | `*drúmos` | `/ˈʔtru.mes/` |
+
+Três coisas ficam visíveis aqui que nenhuma palavra sorteada mostraria:
+
+1. **O acento se move**, e é ele que decide onde cai o grau zero — `/ˈseqːl/`
+   contra `/sqːˈles/`, com a raiz esvaziada na segunda.
+2. **`/w/` e `/j/` alternam entre consoante e núcleo.** Em `/ˈʔterw/` o `/w/`
+   é coda; em `/ˈʔtrews/` a mesma raiz o tem em ditongo e o `/r/` é que se
+   consoantiza. É a regra 4.2 do documento 03, na prática.
+3. **Palavras sem vogal plena existem de verdade**, não só na saída do
+   gerador: `/wʔtˈnes/` e `/sqːˈles/` apoiam-se em sonorante silábica e no
+   único `/e/`.
+
+### 5.2 A tabela de correspondências
 
 | Proto-Orogeniano | PIH | PIE clássico |
 |---|---|---|
@@ -567,7 +640,7 @@ correspondências que as produz:
 | `qː` | `qː` | `*h₂` |
 | `qʷː` | `qʷː` | `*h₃` |
 | `q ʔq qʷ ʔqʷ` | `ʔ` | `*h₁` |
-| `sː mː nː rː lː` | idem | `*s *m *n *r *l` (degeminadas) |
+| `sː mː nː rː lː` **e** `s m n r l` | idem | `*s *m *n *r *l` — **fusão**, ver abaixo |
 | `e` | idem | `*e` |
 | — | — | `*o` é **derivado**: perda de acento, e `*-ē̆m` > `*-ō̆m` (§3.4) |
 | — | — | `*ē *ō` são **derivados**: contração em fronteira de morfema, perda de laringal, Lei de Szemerényi (§3.4) |
@@ -577,6 +650,23 @@ correspondências que as produz:
 só.** Onde o PIE cita `*o`, o Proto-Orogeniano tem `/e/`; onde cita `*ē` ou
 `*ō`, tem `/e/` também. Qualidade e duração são ambas posteriores e
 condicionadas. As leis que as produzem estão formalizadas no documento 04 §8.
+
+**A linha das sonorantes também não é unívoca, e a versão anterior desta
+tabela escondia isso.** Ela dizia `sː mː nː rː lː → *s *m *n *r *l
+(degeminadas)`, o que sugere uma origem só. Mas a regra **K4** da derivação
+(documento 04 §4) degemina sonorantes e sibilante, e o PO tem as duas durações
+— logo `/l/` **e** `/lː/` dão `*l`. É fusão, e portanto a inversão de um `*l`
+do PIE é uma escolha entre duas fontes.
+
+Isso vale para `*s *m *n *r *l`, que estão em **560 das 766 raízes (73 %)**.
+Nas formas deste documento a inversão escolhe sempre a **lenis**, por ser a
+opção mais simples — não porque haja evidência. Onde a evidência existiria é
+na grafia geminada do hitita, que Kloekhorst (2016) lê como fortis; cruzar o
+dataset com um léxico hitita decidiria caso a caso, e é trabalho que o projeto
+ainda não fez.
+
+Consequência para o documento 04 §2.5, onde estava subcontada: a ambiguidade
+da inversão não é de 24 % das raízes, é de **80 %**.
 
 Aplicada de trás para a frente:
 
@@ -593,80 +683,139 @@ Aplicada de trás para a frente:
 | `*h₂weh₁-` | soprar | `/ˈqːweq/` |
 | `*h₁eḱu-` | cavalo | `/ˈqeḱːw/` |
 | `*welh₃-` | golpear | `/ˈwelqʷː/` |
-| `*kʷekʷlos` | roda | `/ˈkʷːekʷːles/` |
 
-Três coisas a notar.
+Duas coisas a notar.
 
 `*h₁eḱu-` 'cavalo' sai **sem tema em `-o-`**, como exige o item 11 da lista de
 inovações — a tematização é posterior à cisão, e o anatólio conserva a forma
 atemática.
 
-`*kʷekʷlos` 'roda' mostra a não-univocidade: os dois `*o` da forma do PIE — o
-do radical e o da desinência temática `*-os` — não estão no Proto-Orogeniano.
-Ambos surgem depois, por perda de acento e pela lei `*-ē̆m` > `*-ō̆m`.
+*(Uma versão anterior desta lista fechava com `*kʷekʷlos` 'roda' →
+`/ˈkʷːekʷːles/`, para ilustrar que os `*o` do PIE não estão no
+Proto-Orogeniano. O exemplo estava errado pelo mesmo motivo que o texto acabara
+de dar para `*h₁eḱu-`: `*kʷekʷlos` é uma formação **temática**, e a tematização
+é pós-anatólia. Foi retirado — a não-univocidade das vogais já está dita na
+tabela, sem precisar de uma palavra anacrônica.)*
 
 E `*h₂` (`/qː/`) e `*h₃` (`/qʷː/`) são a mesma uvular, plana e labializada,
 exatamente como `*k` está para `*kʷ`. A coloração que cada uma causa é
 assimilação comum: `*h₂` recua e abaixa sem arredondar, `*h₃` recua e
 arredonda.
 
+### 5.3 O que a fonotática licencia
+
+O gerador [`tools/po-phonology/gen.py`](../tools/po-phonology/gen.py)
+implementa §4 e sorteia formas legais. O que ele produz **não é vocabulário** —
+é a demonstração de que o molde tem extensão, e o instrumento com que a tarefa
+7 se verifica. Saída com `--seed 4400`, curada:
+
+```
+/ˈqːer/     /ˈsmeqʷː/    /ˈtːel/      /ˈkʷenq/
+/ˈnːem/     /ˈkːeqʷ/     /ˈḱejpː/     /ˈpeqʷ/
+/ˈkːwem/    /ˈʔḱewp/     /ˈkːekʷː/    /ˈqʷmeḱ/
+```
+
+Comparadas com o léxico de §5.1, essas formas são indistinguíveis em molde —
+`/ˈqːer/` tem a forma de `/ˈqːner/` 'homem', `/ˈkːwem/` a de `/ˈʔkʷen/`
+'mulher'. É o que se queria mostrar: a fonotática de §4 não é apertada demais
+nem frouxa demais para o léxico que a língua de fato tem.
+
+O que elas **não** têm é sentido, etimologia ou testemunho. Por isso saíram da
+frente do documento.
+
+### 5.4 Como isso soa
+
+O inventário assusta no papel — 32 consoantes contra uma vogal — mas a fala que
+sai da retro-construção é menos extrema do que a tabela sugere, por três
+razões que só aparecem nas formas reais:
+
+1. **A vogal única quase nunca é a única sílaba.** Em `/ˈʔte.ru/` 'árvore' e
+   `/ˈpːe.kːu/` 'rebanho', a segunda sílaba tem núcleo `[u]` — um glide
+   vocalizado. Foneticamente há duas qualidades vocálicas na palavra; só uma
+   delas é fonema.
+2. **As sonorantes silábicas quebram os aglomerados.** `/ˈse.qːl̩/` 'sal' não é
+   `[seqːl]` com três consoantes empilhadas: é `[se.qːl̩]`, duas sílabas, com
+   o `[l̩]` fazendo núcleo.
+3. **O contraste de duração é o que se ouve primeiro.** `/ˈpːeʔts/` 'pé' abre
+   com uma oclusiva longa e fecha com uma pré-glotalizada — a distância entre
+   as três séries é de tempo e de ataque, não de vozeamento, e é isso que dá o
+   caráter "cortado" descrito em §1.
+
+O efeito somado: uma língua de sílabas curtas e pesadas, com contraste de
+quantidade fazendo o trabalho que o vozeamento faz nas filhas. O paralelo do
+Cáucaso Noroeste (§1) vale mais para o inventário do que para o ritmo.
+
 ---
 
 ## 6 | Divisão silábica
 
-Cinco polissilábicas, pelo Princípio do Onset Máximo (M.O.P.), com a ressalva
-de que o M.O.P. só se aplica quando o onset resultante for legal.
+Cinco formas reais do §5.1, pelo Princípio do Onset Máximo (M.O.P.), com a
+ressalva de que o M.O.P. só se aplica quando o onset resultante for legal.
 
-**1.** `/seˈkʷenq/` → `[se]σ[ˈkʷenq]σ`
+Computado por
+[`tools/po-phonology/syllabify.py`](../tools/po-phonology/syllabify.py), que
+implementa o molde de §4.1 — `python3 syllabify.py --doc` reproduz esta seção.
+Antes, a divisão era feita à mão; a ferramenta pegou dois erros meus.
 
-```
-      σ              σ
-     / \          /  |  \
-    C   V        C   V   C C
-    s   e        kʷ  e   n q
-```
-
-**2.** `/ˈsepːemːtː/` → `[ˈse]σ[pːemːtː]σ` — o M.O.P. leva `pː` inteiro para
-o onset, porque `/pː/` é monofonemática (§5.3 do documento 01: `/tː/` não é
-`/t/`+`/t/`).
+**1.** `*wédney` 'água', dat.sg. → `[ˈwe]σ[ʔtnej]σ`
 
 ```
-      σ                    σ
-     / \            /   /  |  \
-    C   V          C   V   C   C
-    s   e          pː  e   mː  tː
+      σ                σ
+     / \        /   /  |  \
+    R   V      C   R   V   R
+    w   e     ʔt   n   e   j
 ```
 
-**3.** `/kʷːreˈnqʷenː/` → `[kʷːren]σ[ˈqʷenː]σ`
+O M.O.P. leva `ʔtn` inteiro para o onset — sobe em sonoridade, é legal.
+
+**2.** `*sḗh₂l` 'sal', nom.sg. → `[ˈse]σ[qːl̩]σ`
 
 ```
-        σ                σ
-    /  /  \  \        /  |  \
-   C  C   V   C      C   V   C
-   kʷː r   e   n     qʷ  e   nː
+      σ            σ
+     / \         / \
+    s   V       C   V
+    s   e      qː  l̩
 ```
 
-Aqui o M.O.P. **falha**. Levar `nqʷ` inteiro para o onset daria um onset que
-desce em sonoridade (nasal → oclusiva), proibido por §4.1. O `n` fica na coda
-da primeira sílaba, e o acento cai na segunda.
+Aqui está o caso que a mão erra. `/seqːl/` **não** é uma sílaba com coda
+`qːl`: a coda desce em sonoridade (§4.1), e `qːl` sobe. Sem coda possível, o
+`/l/` é forçado a ser núcleo — a regra 4.1 do documento 03 caindo do molde,
+não estipulada à parte.
 
-**4.** `/rːeˈrqʷes/` → `[rːer]σ[ˈqʷes]σ` — mesma razão: `rqʷ` não é onset
-legal.
-
-```
-       σ              σ
-    /  |  \        /  |  \
-   C   V   C      C   V   C
-   rː  e   r      qʷ  e   s
-```
-
-**5.** `/ˈlːerjesḱekː/` → `[ˈlːer]σ[jes]σ[ḱekː]σ`
+**3.** `*dóru` 'árvore', nom.sg. → `[ˈʔte]σ[ru]σ`
 
 ```
-       σ            σ           σ
-    /  |  \      /  |  \     /  |  \
-   C   V   C    C   V   C   C   V   C
-   lː  e   r    j   e   s   ḱ   e   kː
+      σ            σ
+     / \         / \
+    C   V       R   V
+   ʔt   e       r   u
+```
+
+O segundo erro que a ferramenta pegou: qual sonorante vira núcleo. Em `/ʔterw/`
+tanto `/r/` quanto `/w/` poderiam, mas a saída correta é `[ru]` e não `[r̩w]`
+— **a mais sonora vence**, e glides são mais sonoras que líquidas. É por isso
+que o PIE tem `*dóru` e não `*dór̥w`.
+
+**4.** `*udnés` 'água', gen.col. → `[u]σ[ˈʔtnes]σ`
+
+```
+     σ              σ
+     |        /   /  |  \
+     V       C   R   V   s
+     u      ʔt   n   e   s
+```
+
+Grau zero na raiz: a primeira sílaba é uma vogal só, e ela é o `/w/` de
+`/ˈwe.ʔtr̩/` vocalizado. A mesma raiz, dois graus, dois destinos do mesmo
+segmento.
+
+**5.** `*drúmos` 'árvore', abl.pl. → `[ˈʔtru]σ[mes]σ`
+
+```
+        σ              σ
+    /  /  \         /  |  \
+   C   R   V       R   V   s
+  ʔt   r   u       m   e   s
 ```
 
 ---
@@ -723,12 +872,19 @@ Nada em conflito.
 | 2 | Transcrever uma frase | §2 | ✔ transcrita; **gravação não feita** — o enunciado a dispensa ("the transcription will be enough") |
 | 3 | Tabela IPA e carta vocálica | §3.1b | ✔ |
 | 4 | Definir regras silábicas | §4 | ✔ |
-| 5 | Inventar palavras | §5 | ✔ |
-| 6 | Desmontar as sílabas de 5 delas | §6 | ✔ cinco, com árvore em quatro |
+| 5 | Inventar palavras | §5 | ✔ **léxico retro-construído** (§5.1) mais o que a fonotática licencia (§5.3) |
+| 6 | Desmontar as sílabas de 5 delas | §6 | ✔ cinco, com árvore, computadas por `syllabify.py` |
 | 7 | Conferir as regras | §7 | ✔ |
 
 Além do enunciado, a lição recomenda checar o inventário contra bases
 tipológicas (§3.7) — feito contra o BDPROTO.
+
+*(A tarefa 5 diz "inventar", e a resposta deste documento é deliberadamente
+outra: as palavras do §5.1 não são inventadas, são retro-construídas de léxico
+real do PIE, com filtro de cronologia para excluir formações pós-anatólias.
+Numa conlang *a posteriori* definida pelo alvo, inventar vocabulário sem
+etimologia é o único movimento que o método não licencia. O gerador de §5.3
+cobre a leitura literal da tarefa.)*
 
 **Fica pendente, e é da lição 3, não desta:** o **inventário fonético**. A
 lição 2 distingue inventário fonêmico de fonético e observa que vale a pena
@@ -757,7 +913,7 @@ esperando por ela:
 4. **A regra de perda de vogal átona**, que é o que produz o grau zero e,
    portanto, o motor do sistema inteiro (§3.4).
 
-E a lição 4, mudança sonora, é onde a tabela de §5.1 deixa de ser uma tabela e
+E a lição 4, mudança sonora, é onde a tabela de §5.2 deixa de ser uma tabela e
 vira um conjunto de regras ordenadas, aplicável às 873 raízes e conferível
 contra elas. Duas leis já estão identificadas e esperando formulação:
 

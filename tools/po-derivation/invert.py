@@ -117,6 +117,29 @@ def invert(word, theory):
     return out, unknown
 
 
+# Segmentos do PIE com mais de uma origem possível no Proto-Orogeniano.
+# Duas fontes distintas, e a segunda ficou de fora da primeira contagem:
+#   - laringal: *h₁ vem de qualquer uvular não-fortis (4 opções); *H é
+#     indeterminado na própria filologia;
+#   - sonorante e sibilante: a regra K4 degemina, então */l/ e */lː/ dão ambos
+#     *l. Vale para *s *m *n *r *l e para as silábicas.
+AMBIG_LAR = {"h₁", "H"}
+AMBIG_SON = {"s", "m", "n", "r", "l", "m̥", "n̥", "r̥", "l̥"}
+
+
+def ambiguity(roots):
+    """Quantas raízes têm ponto não-invertível, por origem."""
+    lar = son = both = 0
+    for w in roots:
+        segs = segment(w)
+        a = any(s in AMBIG_LAR for s in segs)
+        b = any(s in AMBIG_SON for s in segs)
+        lar += a
+        son += b
+        both += (a or b)
+    return dict(lar=lar, son=son, total=both, n=len(roots))
+
+
 def run(theory, roots, verbose=False):
     amb = collections.Counter()
     unknown = collections.Counter()
@@ -142,6 +165,18 @@ def run(theory, roots, verbose=False):
 def main():
     roots = load_roots()
     only = sys.argv[1] if len(sys.argv) > 1 else None
+    if "--ambiguidade" in sys.argv:
+        a = ambiguity(roots)
+        n = a["n"]
+        print(f"raízes: {n}\n")
+        print("pontos onde a inversão escolhe sem evidência:\n")
+        print(f"  laringal (*h₁, *H)            {a['lar']:4d}  "
+              f"({100*a['lar']/n:2.0f} %)   custo da coluna uvular")
+        print(f"  sonorante ou *s (via K4)      {a['son']:4d}  "
+              f"({100*a['son']/n:2.0f} %)   pago por toda teoria")
+        print(f"  {'com algum ponto ambíguo':28s}{a['total']:4d}  "
+              f"({100*a['total']/n:2.0f} %)")
+        return
     print(f"raízes: {len(roots)}\n")
     print(f"{'teoria':18s} {'ilegais':>8s} {'colisões':>9s} "
           f"{'sem corresp.':>13s}   nota")

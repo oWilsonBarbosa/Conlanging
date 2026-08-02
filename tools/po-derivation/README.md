@@ -10,6 +10,7 @@ Especificação em [`docs/04_SOUND_CHANGE.md`](../../docs/04_SOUND_CHANGE.md).
 ```bash
 python3 invert.py             # todas as teorias, resumo comparativo
 python3 invert.py baseline    # uma teoria, com violações e colisões
+python3 invert.py --ambiguidade  # onde a inversão escolhe sem evidência
 python3 derive.py             # deriva e compara as duas ordens de regras
 python3 derive.py --sample    # derivações passo a passo
 python3 stems.py              # perfil do corpus de formas flexionadas
@@ -39,7 +40,10 @@ para a frente devolveria o PIE por construção — um "índice de acerto" daria
 - **legalidade** — as formas resultantes obedecem à fonotática do documento 02
   §4? É o teste que pode reprovar uma teoria.
 - **colisão** — quantas raízes distintas fundem na mesma forma.
-- **ambiguidade** — quantos pontos não são invertíveis.
+- **ambiguidade** — quantos pontos não são invertíveis. **80 % das raízes têm
+  pelo menos um**: 23 % por laringal (`*h₁`, `*H`) e 73 % por sonorante ou
+  `*s`, que a regra K4 degemina. Toda forma proto-orogeniana citada nos
+  documentos é *uma* das pré-imagens legais, não a única.
 
 ## Armadilha na leitura dos números
 
