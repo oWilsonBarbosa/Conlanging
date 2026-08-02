@@ -38,6 +38,14 @@ tipológicas, e a documentação do projeto **Proto-Orogeniano**.
 | `wiktextract-master.zip` | wiktextract | extração do Wiktionary |
 | `dev-master.zip` | — | ver o README interno do arquivo |
 
+## Dados derivados
+
+`data/derived/` guarda o que as ferramentas produzem, não o que se baixou:
+
+| Arquivo | Conteúdo |
+|---|---|
+| `po_formas.tsv.gz` | 34.658 formas flexionadas do PIE invertidas para o Proto-Orogeniano, com esqueleto em classes naturais, silabificação, grau e o esqueleto invariante do paradigma. Gerado por `tools/po-derivation/classify.py` |
+
 ## Curso
 
 `course/` contém as 13 aulas numeradas (fonologia 1–4, morfologia, verbos,

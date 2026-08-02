@@ -19,6 +19,10 @@ python3 stems.py --longas     # de onde vêm as vogais longas
 python3 stems.py --lei-m      # as duas leis do *o, separadas
 python3 tarefa4.py            # tarefa 4: dez mudanças sorteadas, aplicadas
 python3 tarefa4.py --custo    # o que cada mudança funde, sozinha
+python3 classify.py           # resumo do corpus classificado
+python3 classify.py --moldes  # onsets e codas atestados vs. o molde declarado
+python3 classify.py --lema dóru        # um paradigma, legível
+python3 classify.py --tsv saida.tsv.gz # as 34.658 linhas
 ```
 
 ## Arquivos
@@ -29,6 +33,7 @@ python3 tarefa4.py --custo    # o que cada mudança funde, sozinha
 | `invert.py` | segmentação das raízes, inversão e as três medidas |
 | `derive.py` | a derivação ordenada PO → PIE clássico, e o teste de que a ordem importa |
 | `tarefa4.py` | a tarefa 4 do exercício — sorteia dez mudanças de um catálogo de vinte **antes** de ver as palavras, aplica, e mede o que funde nos paradigmas |
+| `classify.py` | classifica as formas flexionadas em termos do PO: esqueleto em classes naturais, silabificação, grau e esqueleto invariante do paradigma. Gera `data/derived/po_formas.tsv.gz` |
 | `stems.py` | o corpus de **formas flexionadas** — 40.894 formas, 93 % com acento. É o corpus que permite testar a *Abtönung* e as vogais longas, que as raízes não permitem |
 
 ## As três medidas, e por que não são circulares

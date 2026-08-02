@@ -83,12 +83,25 @@ def legal_coda(segs):
 SONORITY = {"w": 3, "j": 3, "r": 2, "l": 2, "m": 1, "n": 1}
 
 
-def _promote(segs, run):
-    """Índice da sonorante mais sonora de `run` (lista de índices)."""
+def _promote(segs, run, nucs=()):
+    """Índice da sonorante que vira núcleo, dentre as de `run`.
+
+    Critério primário: **sonoridade** — `/w j/` antes de `/r l/` antes de
+    `/m n/`. É o que faz `/ʔterw/` (< *dóru) dar `[ˈʔte]σ[ru]σ`.
+
+    Desempate: a **mais distante** de um núcleo já existente. Com dois glides
+    lado a lado, o que sobrevive é o mais afastado — `/ʔtrewj/` (< *drewi) dá
+    `[ˈʔtrew]σ[i]σ`, e não `[ˈʔtre]σ[uj]σ`.
+    """
     cands = [i for i in run if kind(segs[i]) == "R"]
     if not cands:
         return None
-    return max(cands, key=lambda i: (SONORITY.get(segs[i].rstrip("ː"), 0), -i))
+
+    def dist(i):
+        return min((abs(i - n) for n in nucs), default=0)
+
+    return max(cands, key=lambda i: (SONORITY.get(segs[i].rstrip("ː"), 0),
+                                     dist(i), -i))
 
 
 def nuclei(segs):
@@ -100,8 +113,14 @@ def nuclei(segs):
     """
     ix = sorted(i for i, s in enumerate(segs) if kind(s) == "V")
     if not ix:
-        i = _promote(segs, range(len(segs)))
-        return [i] if i is not None else []
+        # Palavra sem vogal plena: a mais sonora abre a primeira sílaba, e daí
+        # o refinamento abaixo trata as margens como em qualquer outra palavra.
+        # Devolver só esse índice deixava passar coda ilegal — `/ʔtrwmjs/`
+        # saía como uma sílaba com coda `RRs`.
+        i = _promote(segs, range(len(segs)), ())
+        if i is None:
+            return []
+        ix = [i]
 
     for _ in range(len(segs)):            # itera até estabilizar
         changed = False
@@ -117,7 +136,7 @@ def nuclei(segs):
                     continue
             elif legal_onset([segs[i] for i in run]):
                 continue
-            j = _promote(segs, run)
+            j = _promote(segs, run, ix)
             if j is not None and j not in ix:
                 ix.append(j)
                 ix.sort()
@@ -128,7 +147,7 @@ def nuclei(segs):
         # e o material depois do último núcleo, numa coda legal
         tail = list(range(ix[-1] + 1, len(segs)))
         if not legal_coda([segs[i] for i in tail]):
-            j = _promote(segs, tail)
+            j = _promote(segs, tail, ix)
             if j is not None and j not in ix:
                 ix.append(j)
                 ix.sort()
